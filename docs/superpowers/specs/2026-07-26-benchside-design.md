@@ -2,8 +2,7 @@
 
 **Date:** 2026-07-26
 **Status:** Approved by Pete (brainstorming session)
-**Codename:** rulerotom (repo/directory name only — never user-facing)
-**Public name:** Benchside (subject to availability check, see Research Gate)
+**Name:** Benchside — repo, project, and public App Store name (availability check in Research Gate)
 
 ## What this is
 
@@ -46,7 +45,7 @@ Both run as automated tests against the real shipped database.
 | Content updates | Baked in; new app release when TPCi revises a document |
 | Pricing | Free, no ads, no IAP for v1; future tiers possible (nothing structural needed now) |
 | v1 features | Search + read only. No bookmarks, history, or judge tools in v1 |
-| Name | Benchside publicly; rulerotom as internal codename only |
+| Name | Benchside everywhere — repo, Xcode project, and App Store |
 
 ## Architecture
 
