@@ -4,11 +4,15 @@ import argparse
 import sys
 from pathlib import Path
 
+from collections import Counter
+
 from benchside_pipeline.build import build_db
+from benchside_pipeline.content_check import check_rewrites
 from benchside_pipeline.download import download_doc
 from benchside_pipeline.manifest import load_manifest
-from benchside_pipeline.model import dump_document
+from benchside_pipeline.model import dump_document, load_document
 from benchside_pipeline.parse import parse_pdf
+from benchside_pipeline.rewrites import load_rewrites
 from benchside_pipeline.verify import verify_db
 
 
@@ -26,18 +30,38 @@ def cmd_parse(root: Path) -> int:
 
 def cmd_build(root: Path) -> int:
     db_path = root / "build" / "benchside.db"
-    build_db(root / "content", db_path)
+    build_db(root / "content", db_path, rewrites_dir=root / "rewrites")
     print(f"built {db_path}")
     return 0
 
 
-def cmd_verify(root: Path) -> int:
+def cmd_verify(root: Path, release: bool = False) -> int:
     errors = verify_db(root / "build" / "benchside.db")
+    if (root / "rewrites").is_dir():
+        errors.extend(check_rewrites(root / "content", root / "rewrites", release=release))
+    warnings = [e for e in errors if e.startswith("warning:")]
+    errors = [e for e in errors if not e.startswith("warning:")]
+    for w in warnings:
+        print(w, file=sys.stderr)
     for e in errors:
         print(f"VERIFY FAIL: {e}", file=sys.stderr)
     if not errors:
-        print("verify OK")
+        print(f"verify OK ({len(warnings)} warnings)" if warnings else "verify OK")
     return 1 if errors else 0
+
+
+def cmd_content_status(root: Path) -> int:
+    entries = load_rewrites(root / "rewrites") if (root / "rewrites").is_dir() else {}
+    for path in sorted((root / "content").glob("*.json")):
+        source, sections = load_document(path)
+        leaves = [s.id for s in sections if s.body.strip()]
+        covered = [sid for sid in leaves if sid in entries]
+        archetypes = Counter(entries[sid]["archetype"] for sid in covered)
+        reviewed = sum(1 for sid in covered if entries[sid].get("review") == "reviewed")
+        pct = 100 * len(covered) // len(leaves) if leaves else 100
+        mix = " ".join(f"{k}={v}" for k, v in sorted(archetypes.items())) or "-"
+        print(f"{source.id}: {len(covered)}/{len(leaves)} leaves ({pct}%) | {mix} | reviewed {reviewed}/{len(covered) or 1}")
+    return 0
 
 
 def cmd_download(root: Path) -> int:
@@ -69,9 +93,12 @@ def cmd_download(root: Path) -> int:
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="benchside_pipeline")
-    parser.add_argument("command", choices=["parse", "build", "verify", "download", "all"])
+    parser.add_argument("command",
+                        choices=["parse", "build", "verify", "download", "content-status", "all"])
     parser.add_argument("--root", type=Path, default=Path.cwd().parent,
                         help="repo root (default: parent of CWD, i.e. run from pipeline/)")
+    parser.add_argument("--release", action="store_true",
+                        help="verify: escalate coverage/review warnings to errors")
     args = parser.parse_args(argv)
     root = args.root.resolve()
     if args.command == "parse":
@@ -79,14 +106,16 @@ def main(argv: list[str] | None = None) -> int:
     if args.command == "build":
         return cmd_build(root)
     if args.command == "verify":
-        return cmd_verify(root)
+        return cmd_verify(root, release=args.release)
     if args.command == "download":
         return cmd_download(root)
+    if args.command == "content-status":
+        return cmd_content_status(root)
     rc = cmd_parse(root)
     if rc == 0:
         rc = cmd_build(root)
     if rc == 0:
-        rc = cmd_verify(root)
+        rc = cmd_verify(root, release=args.release)
     return rc
 
 

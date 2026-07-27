@@ -28,6 +28,10 @@ all:
 test:
     cd pipeline && uv run pytest
 
+# Rewrites-layer coverage / archetype / review report
+content-status:
+    cd pipeline && uv run python -m benchside_pipeline content-status --root ..
+
 # --- iOS app (Plan 2) ---
 
 # Copy the built rules DB into the app bundle resources (runs pipeline build first)

@@ -58,3 +58,19 @@ def test_download_new_then_changed(tmp_path, fixture_pdf):
     yaml_path.write_text(yaml_path.read_text().replace(
         'file: "fixture.pdf"', 'file: "fixture.pdf"\n    sha256: "' + "0" * 64 + '"'))
     assert main(["download", "--root", str(root)]) == 1  # hash mismatch -> "changed"
+
+
+def test_release_verify_and_content_status(tmp_path, fixture_pdf):
+    import json
+
+    root = make_repo(tmp_path, fixture_pdf)
+    assert main(["parse", "--root", str(root)]) == 0
+    (root / "rewrites").mkdir()
+    # cover only one of the leaf sections -> release verify must fail
+    (root / "rewrites" / "fixture-doc.json").write_text(json.dumps({
+        "fix-3.2": {"archetype": "note", "tier": "standard",
+                    "summary": "Structured.", "paragraphs": ["Line."]}}))
+    assert main(["build", "--root", str(root)]) == 0
+    assert main(["verify", "--root", str(root)]) == 0          # warnings only
+    assert main(["verify", "--release", "--root", str(root)]) == 1
+    assert main(["content-status", "--root", str(root)]) == 0

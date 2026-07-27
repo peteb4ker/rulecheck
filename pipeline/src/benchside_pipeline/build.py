@@ -3,7 +3,9 @@ from __future__ import annotations
 import sqlite3
 from pathlib import Path
 
+from benchside_pipeline.flatten import flatten_entry
 from benchside_pipeline.model import load_document
+from benchside_pipeline.rewrites import load_rewrites
 from benchside_pipeline.xrefs import detect_xrefs
 
 SCHEMA = """
@@ -36,7 +38,12 @@ CREATE VIRTUAL TABLE sections_fts USING fts5(
 """
 
 
-def build_db(content_dir: Path, out_path: Path) -> None:
+def build_db(content_dir: Path, out_path: Path, rewrites_dir: Path | None = None) -> None:
+    """Build the shipped DB. When a section has a rewrite entry, its body is
+    the flattened structured content (phase 1 of the structured rulebase);
+    sections without entries keep verbatim text — verify owns the coverage
+    gate, not build."""
+    rewrites = load_rewrites(rewrites_dir) if rewrites_dir and Path(rewrites_dir).is_dir() else {}
     out_path = Path(out_path)
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.unlink(missing_ok=True)
@@ -52,7 +59,8 @@ def build_db(content_dir: Path, out_path: Path) -> None:
             )
             con.executemany(
                 "INSERT INTO sections VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
-                [(s.id, s.doc_id, s.parent_id, s.number, s.title, s.body,
+                [(s.id, s.doc_id, s.parent_id, s.number, s.title,
+                  flatten_entry(rewrites[s.id]) if s.id in rewrites else s.body,
                   s.breadcrumb, s.order) for s in sections],
             )
             con.executemany(

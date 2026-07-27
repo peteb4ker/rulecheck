@@ -1,0 +1,50 @@
+{
+  "trh-1": {
+    "archetype": "note",
+    "paragraphs": [
+      "Play! Pokémon runs its events on three words: fun, fast, fair. The handbook applies at every scale, from a casual League night to a Championship Series stage.",
+      "Integrity is a shared job. Competitors, spectators, Judges, and Tournament Organizers are all expected to know this handbook and act by it."
+    ],
+    "see_also": [
+      "trh-1.1"
+    ],
+    "summary": "The handbook binds everyone at a Play! Pokémon event — players, staff, and onlookers alike — to fun, fast, fair play.",
+    "tier": "standard"
+  },
+  "trh-1.1": {
+    "archetype": "note",
+    "paragraphs": [
+      "Read alongside: the Standards of Conduct, Terms of Use, Inclusion Policy, Accessibility Policy, and the game-specific guidelines for whichever title you're playing (TCG, video games, GO, or UNITE). All live on the Play! Pokémon Rules and Resources page.",
+      "Everything is re-reviewed every quarter — re-check each document quarterly and consult the Summary of Changes section for what moved."
+    ],
+    "see_also": [
+      "trh-1"
+    ],
+    "summary": "The handbook travels with a family of companion policies, all refreshed quarterly.",
+    "tier": "standard"
+  },
+  "trh-4.3.1": {
+    "archetype": "procedure",
+    "see_also": [
+      "pen-5.6.1"
+    ],
+    "steps": [
+      {
+        "action": "Gather every deck list and team list at Championship Series events",
+        "actor": "Staff",
+        "note": "collection is mandatory"
+      },
+      {
+        "action": "Run legality checks at any moment, in any tournament phase",
+        "actor": "Staff"
+      },
+      {
+        "action": "Cover a minimum of one deck or team in ten",
+        "actor": "Staff",
+        "note": "and as many beyond that as quality and pacing allow"
+      }
+    ],
+    "summary": "Deck and team lists are gathered at every Championship Series event, and legality checking can happen whenever staff choose.",
+    "tier": "judge"
+  }
+}

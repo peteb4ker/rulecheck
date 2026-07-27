@@ -1,0 +1,83 @@
+{
+  "pen-1": {
+    "archetype": "note",
+    "paragraphs": [
+      "Competitive Pokémon aims for tournaments that are fun, fast, and fair — which requires the rules to actually hold. Mistakes and infractions happen, intentionally or not, and everyone shares the duty of protecting the integrity of games, matches, and events.",
+      "Discipline is guided by the Spirit of the Game: the point is education that prevents the next infraction. These guidelines keep judges current on how to respond when something goes wrong mid-tournament."
+    ],
+    "see_also": [
+      "pen-2"
+    ],
+    "summary": "Penalties exist to protect tournament integrity and teach, not to punish.",
+    "tier": "standard"
+  },
+  "pen-2": {
+    "archetype": "note",
+    "paragraphs": [
+      "The Spirit of the Game anchors this document: fun, fair, respectful tournaments that grow the community. Because Play! Pokémon spans several different games, the philosophy stays consistent across all of them, with deviations called out explicitly where a specific game needs one.",
+      "Judges reach events through the Professor Program. They weigh each base infraction and its effect on the game state, then apply the appropriate penalty. The document belongs to The Pokémon Company International and Play! Pokémon, but Judges are trusted to rule fairly and explain their rulings."
+    ],
+    "see_also": [
+      "pen-1",
+      "trh-1"
+    ],
+    "summary": "One consistent philosophy spans every Pokémon game, delivered through trusted Judges from the Professor Program.",
+    "tier": "standard"
+  },
+  "pen-5.6.1": {
+    "archetype": "penalty",
+    "base_penalty": [
+      {
+        "examples": [
+          "Uniform wear scattered across the whole sleeved deck",
+          "A few factory-defect sleeve backs with no useful pattern",
+          "A list that omits a collector number where only one card of that name exists in the set",
+          "The deck runs a premium illustration variant while the list names another printing of the same card"
+        ],
+        "note": "little or no advantage available; no proxy or Energy replacement needed for trivial list variances",
+        "penalty": "Warning",
+        "tier": "Minor"
+      },
+      {
+        "examples": [
+          "Deck or list totals something other than 60",
+          "Counts swapped between two cards relative to the list",
+          "Sleeves on certain Special Energy sit taller than the rest",
+          "Five copies of a card where format rules cap it at four",
+          "Same card name on list and deck but from different sets and collector numbers",
+          "A damaged card raising an identifiable ridge in its sleeve back",
+          "Signs that key cards carry markings"
+        ],
+        "note": "an advantage becomes possible, usually via list/deck divergence or a marked-card pattern",
+        "penalty": "Game Loss",
+        "tier": "Major"
+      },
+      {
+        "examples": [
+          "Key cards clearly marked on purpose",
+          "Unlisted cards in the deck that provide a real edge"
+        ],
+        "note": "deliberate manipulation, list/deck divergence, or repeated marked-card patterns that threaten tournament integrity",
+        "penalty": "Disqualification",
+        "tier": "Severe"
+      }
+    ],
+    "handling": [
+      "Replace the offending card or cards in every case, on top of whatever penalty applies",
+      "The deck list is authoritative: whenever list and physical deck disagree, correct the deck to match the list",
+      "For marked cards, the Judge weighs severity by looking for a pattern and asking whether it could confer an advantage — ordinary wear can mimic marking without intent",
+      "A short list (under 60), unidentifiable entries, or illegal entries on the list: pad the list to legal with Basic Energy of the competitor's choosing, then fix the deck to match",
+      "Extra cards or a second deck in the deck box get reviewed; visibly distinct or non-format-legal extras may need to be stored elsewhere for the rest of the event",
+      "Clear signs the extras or modifications were used for advantage? Escalate the review toward Cheating instead"
+    ],
+    "infraction": "Illegal cards or deck/list mismatch found during a legality check",
+    "see_also": [
+      "trh-4.3.1"
+    ],
+    "summary": "Deck legality covers any card that shouldn't be in tournament play — wrong condition, wrong language, wrong format — plus mismatches between deck and deck list.",
+    "tier": "judge",
+    "upgrade_conditions": [
+      "Evidence of intent to gain advantage moves the matter to a Cheating review"
+    ]
+  }
+}

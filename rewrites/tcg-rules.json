@@ -1,0 +1,527 @@
+{
+  "tcg-Asleep": {
+    "archetype": "mechanic",
+    "branch": {
+      "options": [
+        {
+          "condition": "Heads",
+          "detail": "Stand the card right-side up.",
+          "outcome": "Wakes up"
+        },
+        {
+          "condition": "Tails",
+          "detail": "Flip again at the next Checkup.",
+          "outcome": "Still Asleep"
+        }
+      ],
+      "when": "Pokémon Checkup"
+    },
+    "effects": {
+      "Abilities": "Still usable",
+      "Attack": "Blocked",
+      "Retreat": "Blocked"
+    },
+    "see_also": [
+      "tcg-Special Conditions",
+      "tcg-Removing Special Conditions"
+    ],
+    "state": [
+      "Rotated counterclockwise",
+      "No attacking",
+      "No retreating"
+    ],
+    "summary": "A sleeping Pokémon is rotated counterclockwise and skips both attacking and retreating until a coin flip wakes it.",
+    "tier": "standard"
+  },
+  "tcg-Burned": {
+    "archetype": "mechanic",
+    "branch": {
+      "options": [
+        {
+          "condition": "First",
+          "outcome": "Add 2 damage counters to the Burned Pokémon"
+        },
+        {
+          "condition": "Then flip — Heads",
+          "detail": "Take the Burn marker off.",
+          "outcome": "Healed"
+        },
+        {
+          "condition": "Tails",
+          "outcome": "Still Burned"
+        }
+      ],
+      "when": "Pokémon Checkup"
+    },
+    "see_also": [
+      "tcg-Special Conditions",
+      "tcg-Removing Special Conditions"
+    ],
+    "state": [
+      "Carries a Burn marker (keep it visually distinct from damage counters)",
+      "A second burn never stacks — the newer one replaces the older"
+    ],
+    "summary": "A Burn marker deals two damage counters every Checkup, with a coin flip deciding whether the burn heals.",
+    "tier": "standard"
+  },
+  "tcg-Confused": {
+    "archetype": "mechanic",
+    "branch": {
+      "options": [
+        {
+          "condition": "Heads",
+          "outcome": "Attack proceeds normally"
+        },
+        {
+          "condition": "Tails",
+          "detail": "Add 3 damage counters to the Confused Pokémon.",
+          "outcome": "Attack fails"
+        }
+      ],
+      "when": "Declaring an attack while Confused"
+    },
+    "effects": {
+      "Attack": "Coin flip required",
+      "Retreat": "Allowed"
+    },
+    "see_also": [
+      "tcg-Special Conditions",
+      "tcg-Removing Special Conditions"
+    ],
+    "state": [
+      "Rotated with the card top facing its owner"
+    ],
+    "summary": "A confused Pokémon is rotated top-toward-you and must win a coin flip to attack; failing hurts it instead.",
+    "tier": "standard"
+  },
+  "tcg-Full details of taking a mulligan": {
+    "archetype": "procedure",
+    "see_also": [
+      "tcg-Setting Up to Play"
+    ],
+    "steps": [
+      {
+        "action": "Both hands empty of Basics? Show them, reshuffle, and restart setup together"
+      },
+      {
+        "action": "One player only: they declare the mulligan and wait for the opponent to finish setting up"
+      },
+      {
+        "action": "The stuck player shows their hand, shuffles it into their deck, and redraws until a Basic appears"
+      },
+      {
+        "action": "The other player may then draw one card per extra mulligan taken beyond their own count",
+        "note": "example: 2 mulligans each plus 3 extra by one side lets the other side draw up to 3; any Basics drawn this way may go straight to the Bench"
+      },
+      {
+        "action": "Reveal all Active and Benched Pokémon and start the game"
+      }
+    ],
+    "summary": "A hand with zero Basic Pokémon gets shuffled away and redrawn, and the opponent may profit with bonus draws.",
+    "tier": "standard"
+  },
+  "tcg-Glossary": {
+    "archetype": "definition",
+    "terms": [
+      {
+        "meaning": "A non-attack effect printed on a Pokémon; some run constantly, others must be activated — read each one for its exact timing.",
+        "term": "Ability"
+      },
+      {
+        "meaning": "A high-power card class capped at a single copy per deck.",
+        "term": "ACE SPEC"
+      },
+      {
+        "meaning": "Your one in-play Pokémon that isn't Benched; only it can attack.",
+        "term": "Active Pokémon"
+      },
+      {
+        "meaning": "A special power printed under certain Pokémon's names; neither attack nor Ability, so effects that shut those off leave it alone.",
+        "term": "Ancient Trait"
+      },
+      {
+        "meaning": "Moving a card from hand onto one of your in-play Pokémon.",
+        "term": "attach"
+      },
+      {
+        "meaning": "Either the act of your Active Pokémon fighting, or the printed move text on a card — a Pokémon may carry several.",
+        "term": "attack"
+      },
+      {
+        "meaning": "The Active Pokémon while it performs an attack.",
+        "term": "Attacking Pokémon"
+      },
+      {
+        "meaning": "An Energy card of one of the nine basic types: Grass, Fire, Water, Lightning, Psychic, Fighting, Darkness, Metal, or Fairy.",
+        "term": "Basic Energy card"
+      },
+      {
+        "meaning": "A Pokémon playable straight from your hand on your turn.",
+        "term": "Basic Pokémon card"
+      },
+      {
+        "meaning": "Home for in-play Pokémon not currently fighting; they step in when the Active retreats or is Knocked Out, and ignore Weakness and Resistance while Benched.",
+        "term": "Bench"
+      },
+      {
+        "meaning": "Older name for Pokémon Checkup — the hand-off point between turns where conditions resolve and Knock Outs are checked.",
+        "term": "between-turns step"
+      },
+      {
+        "meaning": "An Evolution that keeps every attack, Ability, Weakness, Resistance, and Retreat Cost of the stage beneath it.",
+        "term": "BREAK Evolution"
+      },
+      {
+        "meaning": "The reminder marker for Burned; comes off when the Pokémon benches or evolves.",
+        "term": "Burn marker"
+      },
+      {
+        "meaning": "The usual product of an attack; reaching total damage at or above Hit Points means a Knock Out.",
+        "term": "damage"
+      },
+      {
+        "meaning": "A marker representing 10 damage that persists through benching and evolving; 50s and 100s are shorthand only — rules text always means the 10 unit.",
+        "term": "damage counter"
+      },
+      {
+        "meaning": "The Pokémon on the receiving end of an attack.",
+        "term": "Defending Pokémon"
+      },
+      {
+        "meaning": "Undoing an evolution; the devolved Pokémon also sheds Special Conditions and lingering effects.",
+        "term": "devolve"
+      },
+      {
+        "meaning": "Your face-up discards, open for anyone to inspect at any time.",
+        "term": "discard pile"
+      },
+      {
+        "meaning": "A Pokémon holding two types simultaneously.",
+        "term": "dual-type Pokémon"
+      },
+      {
+        "meaning": "Fuel for attacks; see Basic Energy card.",
+        "term": "Energy card"
+      },
+      {
+        "meaning": "Played on top of a Basic (or a lower Evolution) to power it up.",
+        "term": "Evolution card"
+      },
+      {
+        "meaning": "An in-play Pokémon stacked on top of another.",
+        "term": "evolved Pokémon"
+      },
+      {
+        "meaning": "Trainer cards that behave like Basic Pokémon once in play — but count as Trainers, not Basics, while in hand, deck, or discard.",
+        "term": "Fossil Trainer cards"
+      },
+      {
+        "meaning": "A once-per-game super attack exclusive to Pokémon-GX.",
+        "term": "GX attack"
+      },
+      {
+        "meaning": "A reminder token flipped face down once your game's GX attack is spent.",
+        "term": "GX marker"
+      },
+      {
+        "meaning": "The damage budget a Pokémon can absorb before being Knocked Out.",
+        "term": "Hit Points (HP)"
+      },
+      {
+        "meaning": "On the table: your board Pokémon and attachments. Deck, discard pile, and Prizes don't count; the Bench does.",
+        "term": "in play"
+      },
+      {
+        "meaning": "A Trainer card you resolve and discard.",
+        "term": "Item card"
+      },
+      {
+        "meaning": "Damage at or past Hit Points sends the Pokémon and its attachments to the discard pile — and hands your opponent a Prize.",
+        "term": "Knocked Out"
+      },
+      {
+        "meaning": "Exile: cards there are out of the game, kept face up beside play.",
+        "term": "Lost Zone"
+      },
+      {
+        "meaning": "A Pokémon ex upgrade that surrenders 3 Prizes when Knocked Out.",
+        "term": "Mega Evolution Pokémon ex"
+      },
+      {
+        "meaning": "A Pokémon-EX upgrade; forming one ends your turn.",
+        "term": "Mega Evolution Pokémon-EX"
+      },
+      {
+        "meaning": "The reminder marker for Poisoned; comes off when the Pokémon benches or evolves.",
+        "term": "Poison marker"
+      },
+      {
+        "meaning": "An always-on effect lasting while its Pokémon is in play.",
+        "term": "Poké-Body"
+      },
+      {
+        "meaning": "A once-per-turn optional power, usually disabled while its Pokémon has a Special Condition.",
+        "term": "Poké-Power"
+      },
+      {
+        "meaning": "The game's fighters, represented by Basic Pokémon and Evolution cards.",
+        "term": "Pokémon"
+      },
+      {
+        "meaning": "The current name for the between-turns step: resolve Poisoned, Burned, Asleep, and Paralyzed, then check for Knock Outs.",
+        "term": "Pokémon Checkup"
+      },
+      {
+        "meaning": "Powerful, but worth 2 Prizes when Knocked Out; distinct from Pokémon-EX.",
+        "term": "Pokémon ex"
+      },
+      {
+        "meaning": "A stronger form worth two Prizes when Knocked Out; distinct from Pokémon ex.",
+        "term": "Pokémon-EX"
+      },
+      {
+        "meaning": "A stronger form worth two Prizes when Knocked Out, each packing a GX attack.",
+        "term": "Pokémon-GX"
+      },
+      {
+        "meaning": "Twin cards depicting Legendary Pokémon, playable only as a pair.",
+        "term": "Pokémon LEGEND"
+      },
+      {
+        "meaning": "An upgrade placed on the same-named Pokémon, adding capabilities.",
+        "term": "Pokémon LV.X"
+      },
+      {
+        "meaning": "Legacy umbrella for Poké-Power and Poké-Body, always labeled as such.",
+        "term": "Pokémon Power"
+      },
+      {
+        "meaning": "A Pokémon bearing an ownership mark in its name; the mark makes it a different name from the plain version.",
+        "term": "Pokémon SP"
+      },
+      {
+        "meaning": "A Trainer card attached to a Pokémon, one Tool per Pokémon.",
+        "term": "Pokémon Tool"
+      },
+      {
+        "meaning": "High-HP Basics with strong attacks, worth 2 Prizes when Knocked Out.",
+        "term": "Pokémon V"
+      },
+      {
+        "meaning": "The next stage of Pokémon V — enormous HP, worth 3 Prizes when Knocked Out.",
+        "term": "Pokémon VMAX"
+      },
+      {
+        "meaning": "Evolves from Pokémon V, worth 2 Prizes when Knocked Out, each with a VSTAR Power.",
+        "term": "Pokémon VSTAR"
+      },
+      {
+        "meaning": "A four-card giant assembled onto the Bench from the discard pile, all pieces at once.",
+        "term": "Pokémon V-UNION"
+      },
+      {
+        "meaning": "Limited to one of each name per deck, and heads to the Lost Zone instead of the discard pile.",
+        "term": "Prism Star card"
+      },
+      {
+        "meaning": "Your six face-down setup cards; each opposing Knock Out pays out one (or more for premium Pokémon), and the last one wins you the game.",
+        "term": "Prize cards"
+      },
+      {
+        "meaning": "A Shiny-colored Basic, capped at one per deck.",
+        "term": "Radiant Pokémon"
+      },
+      {
+        "meaning": "Reduced damage from attackers of a listed type.",
+        "term": "Resistance"
+      },
+      {
+        "meaning": "Played via its matching fossil Item card.",
+        "term": "Restored Pokémon card"
+      },
+      {
+        "meaning": "Swapping the Active for a Benched Pokémon at the cost of discarding Energy equal to Retreat Cost — once per turn.",
+        "term": "retreat"
+      },
+      {
+        "meaning": "The five afflictions: Asleep, Burned, Confused, Paralyzed, Poisoned.",
+        "term": "Special Conditions"
+      },
+      {
+        "meaning": "A Trainer that stays on the table; only one Stadium at a time (a newcomer discards the old), one played per turn.",
+        "term": "Stadium card"
+      },
+      {
+        "meaning": "A Trainer limited to one per turn.",
+        "term": "Supporter card"
+      },
+      {
+        "meaning": "A Basic Pokémon-GX pairing with a 3-Prize penalty and a bonus-boosted GX attack.",
+        "term": "TAG TEAM"
+      },
+      {
+        "meaning": "Two Trainers sharing one Supporter; discard extra cards on play to unlock its bonus.",
+        "term": "TAG TEAM Supporter card"
+      },
+      {
+        "meaning": "A Trainer attached to a Pokémon, lending it the printed attack while attached.",
+        "term": "Technical Machine"
+      },
+      {
+        "meaning": "A Pokémon ex shielded from attack damage while Benched; still worth 2 Prizes.",
+        "term": "Tera Pokémon ex"
+      },
+      {
+        "meaning": "When both players win simultaneously, a fresh game decides it — first Prize taken wins.",
+        "term": "tiebreaker game"
+      },
+      {
+        "meaning": "The advantage-generating card family: Items, Tools, Stadiums, Supporters.",
+        "term": "Trainer card"
+      },
+      {
+        "meaning": "A Pokémon whose title carries its Trainer's name; ownership is part of the name, so it only evolves within the same owned line.",
+        "term": "Trainer's Pokémon"
+      },
+      {
+        "meaning": "A reminder token flipped face down once your game's VSTAR Power is spent.",
+        "term": "VSTAR marker"
+      },
+      {
+        "meaning": "A once-per-game attack or Ability exclusive to Pokémon VSTAR.",
+        "term": "VSTAR Power"
+      },
+      {
+        "meaning": "Increased damage from attackers of a listed type.",
+        "term": "Weakness"
+      }
+    ],
+    "tier": "standard"
+  },
+  "tcg-How to Win": {
+    "archetype": "mechanic",
+    "state": [
+      "You win by taking your final Prize card",
+      "You win if your opponent has no Pokémon remaining in play",
+      "You win if your opponent cannot draw a card at the start of their turn"
+    ],
+    "summary": "Three roads to victory: collect all your Prizes, empty the opponent's board, or leave them unable to draw.",
+    "tier": "standard"
+  },
+  "tcg-Paralyzed": {
+    "archetype": "mechanic",
+    "effects": {
+      "Attack": "Blocked",
+      "Duration": "One round, then automatic recovery",
+      "Retreat": "Blocked"
+    },
+    "ends_when": [
+      "The Checkup after its owner's next turn ends — stand the card back up"
+    ],
+    "see_also": [
+      "tcg-Special Conditions",
+      "tcg-Removing Special Conditions"
+    ],
+    "state": [
+      "Rotated clockwise",
+      "No attacking",
+      "No retreating"
+    ],
+    "summary": "A paralyzed Pokémon is rotated clockwise and frozen out of attacking and retreating for one round.",
+    "tier": "standard"
+  },
+  "tcg-Poisoned": {
+    "archetype": "mechanic",
+    "branch": {
+      "options": [
+        {
+          "condition": "Always",
+          "outcome": "Add 1 damage counter to the Poisoned Pokémon"
+        }
+      ],
+      "when": "Pokémon Checkup"
+    },
+    "see_also": [
+      "tcg-Special Conditions",
+      "tcg-Removing Special Conditions"
+    ],
+    "state": [
+      "Carries a Poison marker (keep it visually distinct from damage counters)",
+      "A second poisoning never stacks — the newer one replaces the older"
+    ],
+    "summary": "A Poison marker drips one damage counter at every Checkup and stays until the Pokémon benches, evolves, or is healed.",
+    "tier": "standard"
+  },
+  "tcg-Removing Special Conditions": {
+    "archetype": "mechanic",
+    "see_also": [
+      "tcg-Special Conditions",
+      "tcg-Asleep",
+      "tcg-Paralyzed"
+    ],
+    "state": [
+      "Evolving or returning to the Bench cures every Special Condition at once",
+      "Retreating is blocked only by Asleep and Paralyzed",
+      "Asleep, Confused, and Paralyzed share the card rotation — the newest of the three is the only one in effect",
+      "Burned and Poisoned live on markers, so they coexist with the rotation conditions",
+      "A single Pokémon can suffer Burned, Paralyzed, and Poisoned simultaneously"
+    ],
+    "summary": "Benching or evolving clears everything; rotations overwrite each other while markers stack independently.",
+    "tier": "standard"
+  },
+  "tcg-Setting Up to Play": {
+    "archetype": "procedure",
+    "see_also": [
+      "tcg-Full details of taking a mulligan",
+      "tcg-How to Win"
+    ],
+    "steps": [
+      {
+        "action": "Greet your opponent with a handshake"
+      },
+      {
+        "action": "Coin flip",
+        "note": "the winner picks who takes the first turn"
+      },
+      {
+        "action": "Shuffle your 60 cards and draw 7"
+      },
+      {
+        "action": "Look for Basic Pokémon among your 7",
+        "note": "none at all? See the mulligan rules"
+      },
+      {
+        "action": "Choose one Basic as your Active Pokémon, placed face down"
+      },
+      {
+        "action": "Add up to 5 more Basics face down to your Bench"
+      },
+      {
+        "action": "Deal yourself 6 face-down Prize cards from the top of your deck"
+      },
+      {
+        "action": "Both players turn their Pokémon face up and begin"
+      }
+    ],
+    "summary": "Eight steps take both players from handshake to a face-down board ready to reveal.",
+    "tier": "standard"
+  },
+  "tcg-Special Conditions": {
+    "archetype": "mechanic",
+    "see_also": [
+      "tcg-Asleep",
+      "tcg-Burned",
+      "tcg-Confused",
+      "tcg-Paralyzed",
+      "tcg-Poisoned",
+      "tcg-Removing Special Conditions"
+    ],
+    "state": [
+      "Only the Active Pokémon can have a Special Condition",
+      "Moving to the Bench removes every Special Condition",
+      "Evolving removes every Special Condition"
+    ],
+    "summary": "Five Special Conditions can afflict the Active Pokémon: Asleep, Burned, Confused, Paralyzed, and Poisoned.",
+    "tier": "standard"
+  }
+}
