@@ -5,6 +5,7 @@ import sys
 from pathlib import Path
 
 from benchside_pipeline.build import build_db
+from benchside_pipeline.download import download_doc
 from benchside_pipeline.manifest import load_manifest
 from benchside_pipeline.model import dump_document
 from benchside_pipeline.parse import parse_pdf
@@ -39,9 +40,36 @@ def cmd_verify(root: Path) -> int:
     return 1 if errors else 0
 
 
+def cmd_download(root: Path) -> int:
+    dest = root / "sources"
+    changed = failures = 0
+    for source in load_manifest(root / "sources" / "sources.yaml"):
+        try:
+            result = download_doc(source, dest)
+        except OSError as exc:
+            print(f"ERROR: {source.id}: download failed from {source.url}: {exc}",
+                  file=sys.stderr)
+            failures += 1
+            continue
+        if result.status == "ok":
+            print(f"{source.id}: ok ({result.sha256[:12]}…)")
+        elif result.status == "new":
+            print(f"{source.id}: downloaded; no recorded hash. Add to sources.yaml:")
+            print(f'  sha256: "{result.sha256}"')
+        else:
+            changed += 1
+            print(
+                f"WARNING: {source.id}: upstream document changed "
+                f"(recorded {source.sha256}, fetched {result.sha256}).\n"
+                f"  TPCi revised this document — re-ingest and cut an app release.",
+                file=sys.stderr,
+            )
+    return 1 if (changed or failures) else 0
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="benchside_pipeline")
-    parser.add_argument("command", choices=["parse", "build", "verify", "all"])
+    parser.add_argument("command", choices=["parse", "build", "verify", "download", "all"])
     parser.add_argument("--root", type=Path, default=Path.cwd().parent,
                         help="repo root (default: parent of CWD, i.e. run from pipeline/)")
     args = parser.parse_args(argv)
@@ -52,6 +80,8 @@ def main(argv: list[str] | None = None) -> int:
         return cmd_build(root)
     if args.command == "verify":
         return cmd_verify(root)
+    if args.command == "download":
+        return cmd_download(root)
     rc = cmd_parse(root)
     if rc == 0:
         rc = cmd_build(root)

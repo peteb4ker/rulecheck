@@ -118,20 +118,19 @@ jobs:
         working-directory: pipeline
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: astral-sh/setup-uv@v5
         with:
-          python-version: '3.12'
-          cache: pip
-          cache-dependency-path: pipeline/pyproject.toml
-      - name: Install
-        run: pip install -e '.[dev]'
+          enable-cache: true
+          cache-dependency-glob: pipeline/uv.lock
+      - name: Install (locked)
+        run: uv sync --locked --all-extras
       - name: Unit tests (fixture-based, no real PDFs)
-        run: pytest -v
+        run: uv run pytest -v
       - name: Build and verify committed content
         if: needs.detect.outputs.has-content == 'true'
         run: |
-          python -m benchside_pipeline build --root ..
-          python -m benchside_pipeline verify --root ..
+          uv run python -m benchside_pipeline build --root ..
+          uv run python -m benchside_pipeline verify --root ..
 
   app:
     needs: detect

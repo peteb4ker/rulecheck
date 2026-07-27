@@ -67,8 +67,9 @@ Two things, one PR:
 ### Sync (same PR, per CLAUDE.md)
 
 - README "Running the pipeline" rewritten around the new bootstrap:
-  `brew install uv && uv tool install rust-just && just setup && just all`
-  → ends `verify OK`.
+  `brew install uv && uv tool install rust-just && just setup && just download && just all`
+  → ends `verify OK`. (`just download` is required on a fresh clone: PDFs
+  are git-ignored, and `all` starts with parse, which reads them.)
 - CLAUDE.md dev-loop wording updated (no more "venv active"; commands go
   through `just`).
 - CI `pipeline` job switches to `astral-sh/setup-uv` + `uv sync --locked`

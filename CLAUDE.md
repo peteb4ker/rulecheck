@@ -55,8 +55,9 @@ the spec wins if this file and the spec ever disagree.
 
 ## Quality gates
 
-- **Pipeline** (`pipeline/`, Python): `pytest` green, always. Logic changes
-  have unit tests — no exceptions. Every module gets a test file.
+- **Pipeline** (`pipeline/`, Python, via uv — `just test`): `pytest` green,
+  always. Logic changes have unit tests — no exceptions. Every module gets
+  a test file.
 - **App** (`app/`, Swift): Xcode unit + UI tests green. The two persona
   acceptance tests (player: "asleep"; judge: "deck check") must pass against
   the real database before any release.
@@ -74,6 +75,7 @@ the spec wins if this file and the spec ever disagree.
 ## Layout
 
 ```
+justfile           # dev commands: just setup / all / test / download …
 pipeline/          # Python: ingest → parse → build → verify
 sources/           # sources.yaml manifest (+ git-ignored PDFs)
 content/           # parsed intermediate JSON (committed, reviewable)

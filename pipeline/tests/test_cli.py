@@ -42,3 +42,19 @@ def test_verify_failure_exit_code(tmp_path, fixture_pdf):
         "Flip a coin between turns. If heads, the Pokemon wakes up.", ""))
     assert main(["build", "--root", str(root)]) == 0
     assert main(["verify", "--root", str(root)]) == 1
+
+
+def test_download_new_then_changed(tmp_path, fixture_pdf):
+    root = make_repo(tmp_path, fixture_pdf)
+    origin = tmp_path / "origin.pdf"
+    origin.write_bytes(b"%PDF-1.4 official pdf bytes")
+    yaml_path = root / "sources" / "sources.yaml"
+    yaml_path.write_text(yaml_path.read_text().replace(
+        'url: "https://example.com/fixture.pdf"', f'url: "{origin.as_uri()}"'))
+
+    assert main(["download", "--root", str(root)]) == 0  # no recorded hash -> "new"
+    assert (root / "sources" / "fixture.pdf").read_bytes() == b"%PDF-1.4 official pdf bytes"
+
+    yaml_path.write_text(yaml_path.read_text().replace(
+        'file: "fixture.pdf"', 'file: "fixture.pdf"\n    sha256: "' + "0" * 64 + '"'))
+    assert main(["download", "--root", str(root)]) == 1  # hash mismatch -> "changed"

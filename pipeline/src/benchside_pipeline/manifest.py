@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import sys
 from pathlib import Path
 
 import yaml
@@ -7,7 +8,8 @@ import yaml
 from benchside_pipeline.model import SourceDoc
 
 REQUIRED = ("id", "prefix", "title", "version", "published", "url", "file", "heading_rules")
-OPTIONAL = ("strip_lines",)
+OPTIONAL = ("strip_lines", "sha256")
+KNOWN = set(REQUIRED) | set(OPTIONAL)
 
 
 class ManifestError(Exception):
@@ -24,6 +26,12 @@ def load_manifest(path: Path) -> list[SourceDoc]:
         missing = [k for k in REQUIRED if k not in entry]
         if missing:
             raise ManifestError(f"document entry missing fields: {', '.join(missing)}")
+        unknown = sorted(set(entry) - KNOWN)
+        if unknown:
+            print(
+                f"warning: {entry['id']}: unknown manifest keys ignored: {', '.join(unknown)}",
+                file=sys.stderr,
+            )
         fields = {k: entry[k] for k in REQUIRED}
         fields.update({k: entry[k] for k in OPTIONAL if k in entry})
         docs.append(SourceDoc(**fields))

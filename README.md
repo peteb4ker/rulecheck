@@ -12,24 +12,28 @@ under two seconds.
 
 ## Running the pipeline
 
-One-time setup (Python 3.12+; PDFs go in `sources/`, registered in
-`sources/sources.yaml`, and are never committed):
+One-time bootstrap:
 
 ```bash
-cd pipeline && python3.13 -m venv .venv && source .venv/bin/activate && pip install -e '.[dev]'
+brew install uv
+uv tool install rust-just
+just setup
+just download   # PDFs are git-ignored, so a fresh clone needs this once (network)
 ```
 
-Then, from `pipeline/` with the venv active:
+Day to day:
 
 ```bash
-python -m benchside_pipeline all --root ..
+just all        # parse → build → verify (offline; ends "verify OK")
+just test       # pytest suite
+just download   # fetch official PDFs (network; exits 1 if TPCi revised a doc)
 ```
 
-runs parse → build → verify and must end with `verify OK`. It writes
-reviewable per-document JSON to `content/` (committed) and the app database
-to `build/benchside.db` (git-ignored). Re-run after any `sources.yaml` edit
-or document revision; `pytest` runs the suite, including two persona
-acceptance tests against the built database.
+`just` with no arguments lists every recipe. PDFs land in `sources/`
+(never committed; `sources.yaml` records each document's origin URL and
+sha256). Parsed JSON goes to `content/` (committed, reviewable); the app
+database to `build/benchside.db` (git-ignored). Re-run `just all` after
+any `sources.yaml` edit or document revision.
 
 ## Layout
 

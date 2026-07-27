@@ -46,3 +46,23 @@ def test_duplicate_prefix_raises(tmp_path):
     )
     with pytest.raises(ManifestError, match="prefix"):
         load_manifest(write(tmp_path, doubled))
+
+
+def test_sha256_optional_field(tmp_path):
+    with_hash = VALID.replace(
+        '    file: "fixture.pdf"\n',
+        '    file: "fixture.pdf"\n    sha256: "abc123"\n',
+    )
+    assert load_manifest(write(tmp_path, with_hash))[0].sha256 == "abc123"
+    assert load_manifest(write(tmp_path, VALID))[0].sha256 is None
+
+
+def test_unknown_key_warns(tmp_path, capsys):
+    typoed = VALID.replace(
+        '    file: "fixture.pdf"\n',
+        '    file: "fixture.pdf"\n    sha265: "typo"\n',
+    )
+    docs = load_manifest(write(tmp_path, typoed))
+    assert docs[0].sha256 is None
+    err = capsys.readouterr().err
+    assert "sha265" in err and "fixture-doc" in err
