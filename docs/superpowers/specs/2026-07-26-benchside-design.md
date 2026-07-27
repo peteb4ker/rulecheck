@@ -1,13 +1,13 @@
-# TopCut — Design Spec
+# Benchside — Design Spec
 
 **Date:** 2026-07-26
 **Status:** Approved by Pete (brainstorming session)
 **Codename:** rulerotom (repo/directory name only — never user-facing)
-**Public name:** TopCut (subject to availability check, see Research Gate)
+**Public name:** Benchside (subject to availability check, see Research Gate)
 
 ## What this is
 
-TopCut is a free, fully offline iOS app that lets Pokemon TCG players and
+Benchside is a free, fully offline iOS app that lets Pokemon TCG players and
 professors (judges) look up rules fast. A search-first interface over the
 official core game rulebook and the Play! Pokemon tournament documents,
 optimized for "phone in hand, answer in under two seconds, no venue Wi-Fi."
@@ -46,7 +46,7 @@ Both run as automated tests against the real shipped database.
 | Content updates | Baked in; new app release when TPCi revises a document |
 | Pricing | Free, no ads, no IAP for v1; future tiers possible (nothing structural needed now) |
 | v1 features | Search + read only. No bookmarks, history, or judge tools in v1 |
-| Name | TopCut publicly; rulerotom as internal codename only |
+| Name | Benchside publicly; rulerotom as internal codename only |
 
 ## Architecture
 
@@ -146,9 +146,12 @@ rewrite pass. The pipeline and app are identical either way.
    terms governing reuse of downloaded documents.
 3. **Precedents.** How unofficial companion/rulings apps (Pokemon and MTG
    judge apps) have fared on the App Store.
-4. **Name availability.** "TopCut" on the App Store plus a basic trademark
-   scan ("top cut" is common TCG vocabulary; prior candidate "Prof's
-   Companion" was rejected after finding an existing business).
+4. **Name availability.** "Benchside" on the App Store plus a USPTO
+   trademark scan. Quick web screens found no collisions. Prior candidates
+   rejected: "Prof's Companion" (existing tutoring business), "TopCut"
+   (topcut.cards, an existing Pokemon website). Names containing Pokemon
+   character/species names (e.g., "Rotom") are out of bounds — character
+   names are TPCi trademarks and actively enforced, unlike rules facts.
 5. **App Store posture.** Disclaimer wording and Apple guideline 5.2
    (intellectual property) requirements for unofficial companion apps.
 
@@ -158,7 +161,7 @@ rewrite pass. The pipeline and app are identical either way.
 pipeline/          # Python: ingest, parse, build, verify
 sources/           # source PDFs + sources.yaml manifest
 content/           # parsed intermediate JSON (committed, reviewable)
-app/               # Xcode project: TopCut (SwiftUI + GRDB)
+app/               # Xcode project: Benchside (SwiftUI + GRDB)
 docs/superpowers/  # specs, plans, research notes
 ```
 
