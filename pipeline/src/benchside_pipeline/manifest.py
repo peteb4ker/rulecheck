@@ -8,7 +8,7 @@ import yaml
 from benchside_pipeline.model import SourceDoc
 
 REQUIRED = ("id", "prefix", "title", "version", "published", "url", "file", "heading_rules")
-OPTIONAL = ("strip_lines", "sha256")
+OPTIONAL = ("strip_lines", "sha256", "layout")
 KNOWN = set(REQUIRED) | set(OPTIONAL)
 
 

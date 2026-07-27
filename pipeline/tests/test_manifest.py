@@ -66,3 +66,12 @@ def test_unknown_key_warns(tmp_path, capsys):
     assert docs[0].sha256 is None
     err = capsys.readouterr().err
     assert "sha265" in err and "fixture-doc" in err
+
+
+def test_layout_optional_field(tmp_path):
+    with_layout = VALID.replace(
+        '    file: "fixture.pdf"\n',
+        '    file: "fixture.pdf"\n    layout: true\n',
+    )
+    assert load_manifest(write(tmp_path, with_layout))[0].layout is True
+    assert load_manifest(write(tmp_path, VALID))[0].layout is False

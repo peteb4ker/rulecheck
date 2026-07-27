@@ -6,6 +6,7 @@ documents:
   published: '2026-07-16'
   url: https://www.pokemon.com/static-assets/content-assets/cms2/pdf/trading-card-game/rulebook/pbl_rulebook_en.pdf
   file: tcg-rules.pdf
+  layout: true
   sha256: "60ba9297524f40303a97dc19d3f2219a384a6298486f3d252e70ca2940c9b02a"
   heading_rules:
   - ^((Appendix \d+:(?!.*\.{2,}).*|Become\ a\ Pokémon\ Master!|Pokémon\ TCG\ Basic\ Concepts|Playing\
@@ -20,7 +21,7 @@ documents:
     Restored\ Pokémon\ Notes))$
   - ^((Asleep|Burned|Confused|Paralyzed|Poisoned|Removing\ Special\ Conditions|Other\ Effects))$
   strip_lines:
-  - '^THE POKÉMON TRADING CARD GAME: WEB RULEBOOK \| 2026 \d+$'
+  - '^THE POKÉMON TRADING CARD GAME:\s+WEB RULEBOOK\s+\|\s+2026\s+\d+$'
   - '^Appendix 18: Rare Fossil, Unidentified Fossil, and$'
 - id: tournament-rules
   prefix: trh

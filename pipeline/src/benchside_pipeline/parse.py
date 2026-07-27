@@ -10,11 +10,13 @@ from benchside_pipeline.headings import classify_line
 from benchside_pipeline.model import Section, SourceDoc
 
 
-def extract_lines(pdf_path: Path) -> list[str]:
+def extract_lines(pdf_path: Path, layout: bool = False) -> list[str]:
+    """Extract text lines; layout=True uses pdfplumber's layout-aware
+    mode, which preserves column geometry on multi-column pages."""
     lines: list[str] = []
     with pdfplumber.open(pdf_path) as pdf:
         for page in pdf.pages:
-            text = page.extract_text() or ""
+            text = page.extract_text(layout=layout) or ""
             lines.extend(text.splitlines())
     return lines
 
@@ -33,12 +35,14 @@ def build_tree(lines: list[str], source: SourceDoc) -> list[Section]:
             sec.body = f"{sec.body}\n{text}".strip() if sec.body else text
         body.clear()
 
-    for raw in lines:
-        line = raw.strip()
-        if not line:
-            continue
-        if any(r.search(line) for r in strip_res):
-            continue
+    clean = [
+        line for line in (raw.strip() for raw in lines)
+        if line and not any(r.search(line) for r in strip_res)
+    ]
+
+    i = 0
+    while i < len(clean):
+        line = clean[i]
         heading = classify_line(line, source.heading_rules)
         if heading is not None:
             sec_id = f"{source.prefix}-{heading.number}"
@@ -62,7 +66,18 @@ def build_tree(lines: list[str], source: SourceDoc) -> list[Section]:
                 heading = None
         if heading is None:
             body.append(line)
+            i += 1
             continue
+        # A PDF title that wraps loses its tail to the next line; the
+        # known signature is a title ending in a comma. Join exactly one
+        # continuation line, provided it isn't itself a heading.
+        if (
+            heading.title.endswith(",")
+            and i + 1 < len(clean)
+            and classify_line(clean[i + 1], source.heading_rules) is None
+        ):
+            heading.title = f"{heading.title} {clean[i + 1]}"
+            i += 1
         flush()
         while stack and stack[-1][0] >= heading.level:
             stack.pop()
@@ -81,9 +96,10 @@ def build_tree(lines: list[str], source: SourceDoc) -> list[Section]:
         sections.append(sec)
         seen_ids.add(sec.id)
         stack.append((heading.level, sec))
+        i += 1
     flush()
     return sections
 
 
 def parse_pdf(pdf_path: Path, source: SourceDoc) -> list[Section]:
-    return build_tree(extract_lines(pdf_path), source)
+    return build_tree(extract_lines(pdf_path, layout=source.layout), source)

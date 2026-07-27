@@ -18,6 +18,7 @@ class SourceDoc:
     heading_rules: list[str]
     strip_lines: list[str] = dataclasses.field(default_factory=list)
     sha256: str | None = None
+    layout: bool = False
 
 
 @dataclass

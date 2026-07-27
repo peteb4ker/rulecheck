@@ -69,3 +69,23 @@ def test_strip_lines_removes_matching_lines(fixture_source):
     assert "PAGE FOOTER" not in by_id["fix-1"].body
     assert "body a" in by_id["fix-1"].body
     assert "more body a" in by_id["fix-1"].body
+
+
+def test_wrapped_title_ending_in_comma_joins_next_line(fixture_source):
+    lines = ["1. Alpha, Beta,", "and Gamma Cards", "body text here"]
+    sections = build_tree(lines, fixture_source)
+    assert sections[0].title == "Alpha, Beta, and Gamma Cards"
+    assert sections[0].body == "body text here"
+
+
+def test_no_join_when_next_line_is_heading(fixture_source):
+    lines = ["1. Alpha,", "2. Beta", "body b"]
+    sections = build_tree(lines, fixture_source)
+    assert [s.title for s in sections] == ["Alpha,", "Beta"]
+
+
+def test_extract_lines_layout_mode(fixture_pdf, fixture_source):
+    lines = extract_lines(fixture_pdf, layout=True)
+    stripped = [l.strip() for l in lines if l.strip()]
+    assert "1. Setup" in stripped
+    assert any("wakes up" in l for l in stripped)
