@@ -29,9 +29,11 @@ final class RulesRepository {
     func search(_ raw: String, scope: SearchScope, limit: Int = 30) throws -> [SearchHit] {
         guard let match = QuerySanitizer.ftsMatch(raw) else { return [] }
         return try dbQueue.read { db in
+            // char(57344)/char(57345) are U+E000/U+E001 — must stay in sync
+            // with SnippetHighlighter.start/end.
             var sql = """
                 SELECT s.id, s.doc_id, s.parent_id, s.number, s.title, s.body, s.breadcrumb, s.sort_order,
-                       snippet(sections_fts, 1, '', '', '…', 14) AS snip
+                       snippet(sections_fts, 1, char(57344), char(57345), '…', 14) AS snip
                 FROM sections_fts f JOIN sections s ON s.rowid = f.rowid
                 WHERE sections_fts MATCH ?
                 """

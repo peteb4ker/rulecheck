@@ -19,6 +19,15 @@ final class RulesRepositoryTests: XCTestCase {
         XCTAssertFalse(hits.isEmpty)
         XCTAssertTrue(hits.allSatisfy { ["tournament-rules", "penalty-guidelines"].contains($0.section.docId) })
     }
+    func testSearchSnippetsCarryMatchMarkers() throws {
+        let hits = try repo.search("asleep", scope: .all)
+        let marked = hits.filter { $0.snippet.contains(SnippetHighlighter.start) }
+        XCTAssertFalse(marked.isEmpty, "FTS match ranges must reach the app as sentinel markers")
+        let s = try XCTUnwrap(marked.first).snippet
+        XCTAssertEqual(s.filter { $0 == SnippetHighlighter.start }.count,
+                       s.filter { $0 == SnippetHighlighter.end }.count,
+                       "markers must be balanced")
+    }
     func testGarbageQueryDoesNotThrow() throws {
         XCTAssertTrue(try repo.search("\"asleep AND (", scope: .all).count >= 0)
         XCTAssertEqual(try repo.search("   ", scope: .all).count, 0)

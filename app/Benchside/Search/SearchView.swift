@@ -34,7 +34,8 @@ struct SearchView: View {
                                         Text(hit.section.breadcrumb)
                                             .font(.caption2).foregroundStyle(.secondary).lineLimit(1)
                                         Text(sectionRowTitle(hit.section)).font(.headline)
-                                        Text(hit.snippet).font(.caption).foregroundStyle(.secondary).lineLimit(2)
+                                        Text(SnippetHighlighter.attributed(hit.snippet))
+                                            .font(.caption).foregroundStyle(.secondary).lineLimit(2)
                                     }
                                 }
                             }
