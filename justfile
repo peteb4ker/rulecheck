@@ -44,6 +44,13 @@ app-build: app-db
     cd app && xcodebuild build -project Benchside.xcodeproj -scheme Benchside \
       -destination 'platform=iOS Simulator,name={{_first-sim}}' -quiet
 
+# Full pre-PR gate: unit + UI tests (slow — cold builds and sim flows)
 app-test: app-db
-    cd app && xcodebuild test -project Benchside.xcodeproj -scheme Benchside \
+    cd app && time xcodebuild test -project Benchside.xcodeproj -scheme Benchside \
       -destination 'platform=iOS Simulator,name={{_first-sim}}' -quiet
+
+# Fast inner loop: unit tests only, incl. the persona gates (~5s warm)
+app-test-unit: app-db
+    cd app && time xcodebuild test -project Benchside.xcodeproj -scheme Benchside \
+      -destination 'platform=iOS Simulator,name={{_first-sim}}' \
+      -only-testing:BenchsideTests -quiet

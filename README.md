@@ -42,7 +42,8 @@ any `sources.yaml` edit or document revision.
 Requires full Xcode (16+) and `brew install xcodegen`. Then:
 
 ```bash
-just app-test   # builds the DB, copies it into the bundle, runs unit + UI tests
+just app-test        # full gate: unit + UI tests (slow; run before PRs)
+just app-test-unit   # inner loop: unit tests incl. persona gates (~5s warm)
 ```
 
 `just app-gen` regenerates `app/Benchside.xcodeproj` after editing `app/project.yml`.
