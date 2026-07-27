@@ -38,7 +38,7 @@ Both run as automated tests against the real shipped database.
 
 | Decision | Choice |
 |---|---|
-| Content scope | Core game rulebook + tournament rules handbook + penalty guidelines |
+| Content scope | Core game rulebook + tournament rules handbook + penalty guidelines. Informal names used throughout this spec; the exact TPCi document titles and versions are pinned in `sources.yaml` at ingest time |
 | Lookup UX | Search-first: instant as-you-type full-text search; browse as secondary |
 | Offline | Fully offline; all content bundled; app makes zero network calls |
 | Content source | Ingest official TPCi documents; surface rule text verbatim by default, gated on the Research Gate below |
