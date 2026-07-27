@@ -139,6 +139,17 @@ jobs:
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+          cache-dependency-glob: pipeline/uv.lock
+      - name: Build rules DB for app bundle
+        run: |
+          cd pipeline && uv sync --locked --all-extras
+          uv run python -m benchside_pipeline build --root ..
+          uv run python -m benchside_pipeline verify --root ..
+          mkdir -p ../app/Benchside/Resources
+          cp ../build/benchside.db ../app/Benchside/Resources/benchside.db
       - name: Discover project and scheme
         id: xcode
         run: |

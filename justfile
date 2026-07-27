@@ -28,4 +28,22 @@ all:
 test:
     cd pipeline && uv run pytest
 
-# --- Plan 2 (iOS app) recipes land here: app-build, app-test ---
+# --- iOS app (Plan 2) ---
+
+# Copy the built rules DB into the app bundle resources (runs pipeline build first)
+app-db: build
+    cp build/benchside.db app/Benchside/Resources/benchside.db
+
+# Regenerate the Xcode project from app/project.yml
+app-gen:
+    cd app && xcodegen generate
+
+_first-sim := `xcrun simctl list devices available | grep -m1 -o 'iPhone [^(]*' | sed 's/ *$//' || true`
+
+app-build: app-db
+    cd app && xcodebuild build -project Benchside.xcodeproj -scheme Benchside \
+      -destination 'platform=iOS Simulator,name={{_first-sim}}' -quiet
+
+app-test: app-db
+    cd app && xcodebuild test -project Benchside.xcodeproj -scheme Benchside \
+      -destination 'platform=iOS Simulator,name={{_first-sim}}' -quiet

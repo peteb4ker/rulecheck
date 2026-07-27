@@ -7,7 +7,9 @@ A free, fully offline iOS app for Pokemon TCG players and professors (judges)
 to look up rules fast. Search-first, works with zero connectivity, answers in
 under two seconds.
 
-**Status:** content pipeline complete; iOS app not yet started. See the
+**Status:** content pipeline complete; iOS app (Benchwise) working end to
+end — search, reader, browse, and About against the real database, with
+persona acceptance and UI tests green. See the
 [design spec](docs/superpowers/specs/2026-07-26-benchside-design.md).
 
 ## Running the pipeline
@@ -34,6 +36,17 @@ just download   # fetch official PDFs (network; exits 1 if TPCi revised a doc)
 sha256). Parsed JSON goes to `content/` (committed, reviewable); the app
 database to `build/benchside.db` (git-ignored). Re-run `just all` after
 any `sources.yaml` edit or document revision.
+
+## Building the app
+
+Requires full Xcode (16+) and `brew install xcodegen`. Then:
+
+```bash
+just app-test   # builds the DB, copies it into the bundle, runs unit + UI tests
+```
+
+`just app-gen` regenerates `app/Benchside.xcodeproj` after editing `app/project.yml`.
+The app's display name is Benchwise; it ships fully offline with the database bundled.
 
 ## Layout
 
