@@ -65,6 +65,11 @@ the spec wins if this file and the spec ever disagree.
   root cause.
 - **Fail loudly.** Pipeline verify errors fail the build; app data-layer
   failures show an error screen, never a silent `print`.
+- **CI enforces the gates.** `.github/workflows/ci.yml` runs the guard
+  checks (no PDFs/DBs in git, manifest + content validity), pipeline
+  tests, content build+verify, and app tests on app-relevant changes.
+  Checks are advisory (no branch protection on the current GitHub plan) —
+  a red check still means stop and fix.
 
 ## Layout
 

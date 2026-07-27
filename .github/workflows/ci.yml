@@ -1,0 +1,167 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '17 6 * * 1' # weekly drift check (Mon 06:17 UTC)
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  detect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      has-pipeline: ${{ steps.scan.outputs.has-pipeline }}
+      has-app: ${{ steps.scan.outputs.has-app }}
+      has-content: ${{ steps.scan.outputs.has-content }}
+      app-relevant: ${{ steps.scan.outputs.app-relevant }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # merge-base against the PR base branch
+      - name: Scan repo state and changed paths
+        id: scan
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: |
+          has_pipeline=false
+          [ -f pipeline/pyproject.toml ] && has_pipeline=true
+          has_app=false
+          compgen -G 'app/*.xcodeproj' > /dev/null && has_app=true
+          has_content=false
+          compgen -G 'content/*.json' > /dev/null && has_content=true
+
+          # push / schedule / dispatch always count as app-relevant so a
+          # path-filter gap is caught at merge and weekly, never lingering.
+          app_relevant=true
+          if [ "$EVENT_NAME" = "pull_request" ]; then
+            merge_base=$(git merge-base "$BASE_SHA" HEAD)
+            changed=$(git diff --name-only "$merge_base" HEAD)
+            printf 'changed files:\n%s\n' "$changed"
+            app_relevant=false
+            if printf '%s\n' "$changed" | grep -qE '^(app/|content/|pipeline/src/benchside_pipeline/build\.py|\.github/workflows/)'; then
+              app_relevant=true
+            fi
+          fi
+
+          {
+            echo "has-pipeline=$has_pipeline"
+            echo "has-app=$has_app"
+            echo "has-content=$has_content"
+            echo "app-relevant=$app_relevant"
+          } >> "$GITHUB_OUTPUT"
+
+  guards:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: No tracked PDFs
+        run: |
+          tracked=$(git ls-files -- '*.pdf')
+          if [ -n "$tracked" ]; then
+            echo '::error::Source PDFs must never be committed (CLAUDE.md non-negotiable). Tracked:'
+            printf '%s\n' "$tracked"
+            exit 1
+          fi
+      - name: No tracked build products
+        run: |
+          tracked=$(git ls-files -- 'build/*' '*.db')
+          if [ -n "$tracked" ]; then
+            echo '::error::build/ output and .db files are build products, not source. Tracked:'
+            printf '%s\n' "$tracked"
+            exit 1
+          fi
+      - name: sources.yaml parses
+        run: |
+          if [ -f sources/sources.yaml ]; then
+            pip install --quiet pyyaml
+            python3 -c 'import yaml; yaml.safe_load(open("sources/sources.yaml"))'
+            echo 'sources.yaml OK'
+          else
+            echo 'sources/sources.yaml not present yet; skipping'
+          fi
+      - name: content JSON parses
+        run: |
+          shopt -s nullglob
+          fail=0
+          for f in content/*.json; do
+            if ! python3 -m json.tool "$f" > /dev/null; then
+              echo "::error file=$f::invalid JSON"
+              fail=1
+            fi
+          done
+          [ "$fail" -eq 0 ] && echo 'content JSON OK (or none present)'
+          exit "$fail"
+      - name: actionlint
+        run: |
+          bash <(curl -fsSL https://raw.githubusercontent.com/rhysd/actionlint/v1.7.7/scripts/download-actionlint.bash) 1.7.7 "$RUNNER_TEMP"
+          "$RUNNER_TEMP/actionlint" -color
+
+  pipeline:
+    needs: detect
+    if: needs.detect.outputs.has-pipeline == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: pipeline
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: pipeline/pyproject.toml
+      - name: Install
+        run: pip install -e '.[dev]'
+      - name: Unit tests (fixture-based, no real PDFs)
+        run: pytest -v
+      - name: Build and verify committed content
+        if: needs.detect.outputs.has-content == 'true'
+        run: |
+          python -m benchside_pipeline build --root ..
+          python -m benchside_pipeline verify --root ..
+
+  app:
+    needs: detect
+    if: needs.detect.outputs.has-app == 'true' && needs.detect.outputs.app-relevant == 'true'
+    runs-on: macos-15
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Discover project and scheme
+        id: xcode
+        run: |
+          shopt -s nullglob
+          projects=(app/*.xcodeproj)
+          if [ "${#projects[@]}" -ne 1 ]; then
+            echo "::error::expected exactly one .xcodeproj under app/, found ${#projects[@]}"
+            exit 1
+          fi
+          project="${projects[0]}"
+          scheme=$(xcodebuild -list -project "$project" -json \
+            | python3 -c 'import json,sys; s=json.load(sys.stdin)["project"]["schemes"]; print(s[0] if s else "")')
+          if [ -z "$scheme" ]; then
+            echo "::error::no shared schemes in $project — share the Benchside scheme in Xcode"
+            exit 1
+          fi
+          echo "project=$project" >> "$GITHUB_OUTPUT"
+          echo "scheme=$scheme" >> "$GITHUB_OUTPUT"
+      - name: Unit and UI tests
+        run: |
+          xcodebuild test \
+            -project '${{ steps.xcode.outputs.project }}' \
+            -scheme '${{ steps.xcode.outputs.scheme }}' \
+            -destination 'platform=iOS Simulator,name=iPhone 16' \
+            CODE_SIGNING_ALLOWED=NO

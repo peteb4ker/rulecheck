@@ -1,0 +1,24 @@
+name: PR Title
+
+on:
+  pull_request:
+    types: [opened, edited, reopened, synchronize]
+
+permissions: {}
+
+jobs:
+  conventional-title:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Conventional Commits title
+        env:
+          TITLE: ${{ github.event.pull_request.title }}
+        run: |
+          pattern='^(feat|fix|chore|docs|ci|refactor|test)(\([a-z0-9-]+\))?!?: .+'
+          if printf '%s' "$TITLE" | grep -qE "$pattern"; then
+            echo "PR title OK: $TITLE"
+          else
+            echo "::error::PR title must be Conventional Commits — type(scope)?: summary, type in {feat,fix,chore,docs,ci,refactor,test}. Squash-merge makes this the main commit subject. Got: $TITLE"
+            exit 1
+          fi
