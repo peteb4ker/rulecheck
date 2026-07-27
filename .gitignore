@@ -5,6 +5,7 @@
 __pycache__/
 *.pyc
 .venv/
+*.egg-info/
 
 # Xcode
 app/build/
@@ -14,3 +15,7 @@ xcuserdata/
 
 # Build products
 *.db
+
+# Source PDFs and build artifacts
+sources/*.pdf
+build/

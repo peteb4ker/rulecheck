@@ -660,7 +660,7 @@ import re
 
 from benchside_pipeline.model import Section
 
-XREF_RE = re.compile(r"[Ss]ection\s+(\d+(?:\.\d+)*)")
+XREF_RE = re.compile(r"\b[Ss]ection\s+(\d+(?:\.\d+)*)")
 
 
 def detect_xrefs(sections: list[Section]) -> list[tuple[str, str]]:
@@ -859,7 +859,7 @@ git commit -m "feat(pipeline): SQLite+FTS5 build from content JSON"
 
 **Interfaces:**
 - Consumes: DB produced by `build_db` (Task 6).
-- Produces: `verify_db(db_path: Path) -> list[str]` — empty list means OK. Checks: (1) every document has ≥1 section; (2) no **leaf** section (no children) with empty body; (3) every `xrefs.to_id` exists in `sections`; (4) `sections_fts` row count equals `sections` row count; (5) every `parent_id` exists.
+- Produces: `verify_db(db_path: Path) -> list[str]` — empty list means OK. Checks: (1) every document has ≥1 section; (2) no **leaf** section (no children) with empty body; (3) every `xrefs.to_id` exists in `sections`; (4) the FTS index passes FTS5's official `integrity-check` command against its external-content table (shadow tables are private API — never query them); (5) every `parent_id` exists.
 
 - [ ] **Step 1: Write the failing test**
 
@@ -908,9 +908,10 @@ def test_broken_xref_fails(fixture_pdf, fixture_source, tmp_path):
 
 
 def test_fts_count_mismatch_fails(fixture_pdf, fixture_source, tmp_path):
+    # deleting a section desyncs the external-content FTS index (no sync triggers)
     db_path = make_db(fixture_pdf, fixture_source, tmp_path)
     con = sqlite3.connect(db_path)
-    con.execute("INSERT INTO sections_fts(title, body) VALUES ('extra', 'row')")
+    con.execute("DELETE FROM sections WHERE id = 'fix-2'")
     con.commit(); con.close()
     errors = verify_db(db_path)
     assert any("fts" in e.lower() for e in errors)
@@ -959,10 +960,12 @@ def verify_db(db_path: Path) -> list[str]:
             "WHERE s.parent_id IS NOT NULL AND p.id IS NULL"
         ):
             errors.append(f"parent {parent_id}: missing")
-        n_sections = con.execute("SELECT COUNT(*) FROM sections").fetchone()[0]
-        n_fts = con.execute("SELECT COUNT(*) FROM sections_fts").fetchone()[0]
-        if n_sections != n_fts:
-            errors.append(f"fts row count {n_fts} != sections {n_sections}")
+        try:
+            con.execute(
+                "INSERT INTO sections_fts(sections_fts, rank) VALUES('integrity-check', 1)"
+            )
+        except sqlite3.DatabaseError:
+            errors.append("fts index out of sync with sections")
     finally:
         con.close()
     return errors
@@ -1247,39 +1250,53 @@ DB = Path(__file__).resolve().parents[2] / "build" / "benchside.db"
 pytestmark = pytest.mark.skipif(not DB.exists(), reason="real DB not built")
 
 
-def top_hit(query: str, doc_id: str | None = None) -> tuple[str, str]:
+def top_hits(query: str, docs: tuple[str, ...] | None = None) -> list[tuple[str, str, str, str]]:
     con = sqlite3.connect(DB)
-    sql = (
-        "SELECT s.id, s.title, s.doc_id FROM sections_fts f "
+    doc_filter = ""
+    params: list = [query]
+    if docs:
+        doc_filter = f"AND s.doc_id IN ({','.join('?' * len(docs))}) "
+        params.extend(docs)
+    rows = con.execute(
+        "SELECT s.id, s.doc_id, s.number, s.title FROM sections_fts f "
         "JOIN sections s ON s.rowid = f.rowid "
         "WHERE sections_fts MATCH ? "
-        "ORDER BY bm25(sections_fts, 10.0, 1.0) LIMIT 5"
-    )
-    rows = con.execute(sql, (query,)).fetchall()
+        + doc_filter
+        + "ORDER BY bm25(sections_fts, 10.0, 1.0) LIMIT 5",
+        params,
+    ).fetchall()
     con.close()
     assert rows, f"no hits for {query!r}"
-    return rows[0][0], rows[0][2]
+    return rows
 
 
 def test_player_asleep():
-    sec_id, doc_id = top_hit("asleep")
+    # Player persona: default All scope; the Asleep mechanic is the top hit.
+    sec_id, doc_id, number, title = top_hits("asleep")[0]
     assert doc_id == "tcg-rules"
-    # exact id depends on the current rulebook numbering; the title row must
-    # be the Asleep special-condition section — assert via title:
-    con = sqlite3.connect(DB)
-    title = con.execute("SELECT title FROM sections WHERE id = ?", (sec_id,)).fetchone()[0]
-    con.close()
     assert "asleep" in title.lower()
 
 
 def test_judge_deck_check():
-    sec_id, doc_id = top_hit("deck check")
+    # Judge persona: queries under the app's Tournament scope (spec, personas
+    # section). All-scope ranking is dominated by rulebook body-frequency
+    # noise; the scope filter is the design's answer to that tension.
+    sec_id, doc_id, number, title = top_hits(
+        "deck check", docs=("tournament-rules", "penalty-guidelines")
+    )[0]
     assert doc_id in ("tournament-rules", "penalty-guidelines")
-    con = sqlite3.connect(DB)
-    title = con.execute("SELECT title FROM sections WHERE id = ?", (sec_id,)).fetchone()[0]
-    con.close()
-    assert "deck check" in title.lower()
+    assert number and number[0].isdigit()  # citable by section number
+    assert "deck" in title.lower()
 ```
+
+> **Reality note (2026-07-26):** the real corpus contains no section titled
+> "Deck Check"; the closest is penalty-guidelines §5.6.1 "Pokémon TCG Deck
+> Legality", and All-scope bm25 ranks rulebook body-frequency noise above it
+> (title-weight changes don't alter this; the literal phrase "deck check"
+> appears in no document). The judge anchor therefore runs under the
+> Tournament scope — matching how the design says the judge persona actually
+> uses the app. Improving All-scope ranking is follow-up work (better
+> extraction of the garbled rulebook sections would remove most noise).
 
 - [ ] **Step 2: Run the test**
 

@@ -1,0 +1,51 @@
+documents:
+- id: tcg-rules
+  prefix: tcg
+  title: Pokémon Trading Card Game Rules
+  version: 'Web Rulebook, Last Updated: July 2026'
+  published: '2026-07-16'
+  url: https://www.pokemon.com/static-assets/content-assets/cms2/pdf/trading-card-game/rulebook/pbl_rulebook_en.pdf
+  file: tcg-rules.pdf
+  heading_rules:
+  - ^((Appendix \d+:(?!.*\.{2,}).*|Become\ a\ Pokémon\ Master!|Pokémon\ TCG\ Basic\ Concepts|Playing\
+    the\ Game|Play!\ Pokémon\ Stores\ and\ League\ Battle\ Decks|Advanced\ Rules|Deck\ Building|Glossary|Credits))$
+  - ^((How\ to\ Win|Energy\ Types|Parts\ of\ a\ Pokémon\ Card|3\ Card\ Types|Zones\ of\ the\ Pokémon\
+    TCG|How\ to\ Win\ the\ Game|Setting\ Up\ to\ Play|Parts\ of\ a\ Turn|Turn\ Actions|Special\ Conditions|Full\
+    details\ of\ taking\ a\ mulligan|What\ counts\ as\ an\ attack\?|Full\ details\ of\ attacking|What’s\
+    the\ difference\ between\ “up\ to”\ and\ “any\ amount”\?|What\ if\ you\ should\ draw\ more\ cards\
+    than\ you\ have\?|What\ if\ both\ players\ win\ at\ the\ same\ time\?|What’s\ a\ tiebreaker\ game\?|What\
+    does\ and\ doesn’t\ count\ for\ a\ Pokémon’s\ name\?|Special\ rules\ for\ Pokémon\-GX|Special\ rules\
+    for\ Pokémon\ BREAK|Special\ rules\ for\ Pokémon\-EX|Special\ rules\ for\ Mega\ Evolution\ Pokémon\-EX|Key\
+    Restored\ Pokémon\ Notes))$
+  - ^((Asleep|Burned|Confused|Paralyzed|Poisoned|Removing\ Special\ Conditions|Other\ Effects))$
+  strip_lines:
+  - '^THE POKÉMON TRADING CARD GAME: WEB RULEBOOK \| 2026 \d+$'
+  - '^Appendix 18: Rare Fossil, Unidentified Fossil, and$'
+- id: tournament-rules
+  prefix: trh
+  title: Play! Pokémon Tournament Rules Handbook
+  version: 'English Version, Last Revision: May 21, 2026'
+  published: '2026-05-21'
+  url: https://www.pokemon.com/static-assets/content-assets/cms2/pdf/play-pokemon/rules/play-pokemon-tournament-rules-handbook-en.pdf
+  file: tournament-rules.pdf
+  heading_rules:
+  - ^(Appendix [A-Z]|[1-8]):?\s+(?!.*\.{2,})(?=.*[A-Za-z])([^a-z].*)$
+  - ^([1-8]\.\d+):?\s+(?!.*\.{2,})(?=.*[A-Za-z])([^a-z].*)$
+  - ^([1-8]\.\d+\.\d+):?\s+(?!.*\.{2,})(?=.*[A-Za-z])([^a-z].*)$
+  - ^([1-8]\.\d+\.\d+\.\d+):?\s+(?!.*\.{2,})(?=.*[A-Za-z])([^a-z].*)$
+  strip_lines:
+  - ^\d{1,3}$
+- id: penalty-guidelines
+  prefix: pen
+  title: Play! Pokémon Penalty Guidelines
+  version: 'Pokémon TCG, VG, GO, and UNITE — English Version, Last Revision: May 21, 2026'
+  published: '2026-05-21'
+  url: https://www.pokemon.com/static-assets/content-assets/cms2/pdf/play-pokemon/rules/play-pokemon-penalty-guidelines-en.pdf
+  file: penalty-guidelines.pdf
+  heading_rules:
+  - ^([1-8]):?\s+(?!.*\.{2,})(?=.*[A-Za-z])([^a-z].*)$
+  - ^([1-8]\.\d+):?\s+(?!.*\.{2,})(?=.*[A-Za-z])([^a-z].*)$
+  - ^([1-8]\.\d+\.\d+):?\s+(?!.*\.{2,})(?=.*[A-Za-z])([^a-z].*)$
+  - ^([1-8]\.\d+\.\d+\.\d+):?\s+(?!.*\.{2,})(?=.*[A-Za-z])([^a-z].*)$
+  strip_lines:
+  - ^\d{1,3}$

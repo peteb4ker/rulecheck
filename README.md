@@ -7,8 +7,29 @@ A free, fully offline iOS app for Pokemon TCG players and professors (judges)
 to look up rules fast. Search-first, works with zero connectivity, answers in
 under two seconds.
 
-**Status:** design phase. See the
+**Status:** content pipeline complete; iOS app not yet started. See the
 [design spec](docs/superpowers/specs/2026-07-26-benchside-design.md).
+
+## Running the pipeline
+
+One-time setup (Python 3.12+; PDFs go in `sources/`, registered in
+`sources/sources.yaml`, and are never committed):
+
+```bash
+cd pipeline && python3.13 -m venv .venv && source .venv/bin/activate && pip install -e '.[dev]'
+```
+
+Then, from `pipeline/` with the venv active:
+
+```bash
+python -m benchside_pipeline all --root ..
+```
+
+runs parse → build → verify and must end with `verify OK`. It writes
+reviewable per-document JSON to `content/` (committed) and the app database
+to `build/benchside.db` (git-ignored). Re-run after any `sources.yaml` edit
+or document revision; `pytest` runs the suite, including two persona
+acceptance tests against the built database.
 
 ## Layout
 
