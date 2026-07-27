@@ -1,0 +1,16 @@
+# macOS
+.DS_Store
+
+# Python (pipeline)
+__pycache__/
+*.pyc
+.venv/
+
+# Xcode
+app/build/
+DerivedData/
+*.xcuserstate
+xcuserdata/
+
+# Build products
+*.db
