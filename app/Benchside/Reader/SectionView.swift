@@ -22,28 +22,32 @@ struct SectionView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 12) {
                 Text(section.breadcrumb)
-                    .font(.caption).foregroundStyle(.secondary)
-                Text(sectionRowTitle(section))
-                    .font(.title2.bold())
-                Text(section.body)
-                    .font(.body)
-                    .textSelection(.enabled)
+                    .citationStyle()
+                    .foregroundStyle(Palette.secondary)
+                title(for: section)
+                    .font(.largeTitle.bold())
+                paragraphs(of: section.body)
                 if !refs.isEmpty {
-                    Divider()
-                    Text("See also").font(.caption).foregroundStyle(.secondary)
+                    Divider().overlay(Palette.hairline)
+                    Text("See also").sectionLabelStyle()
                     ForEach(refs) { ref in
                         Button(sectionRowTitle(ref)) { path.append(ref.id) }
                             .font(.subheadline)
+                            .tint(Palette.accent)
+                            .frame(minHeight: 44 / 2)
                     }
                 }
                 if let doc {
-                    Divider()
+                    Divider().overlay(Palette.hairline)
                     Text("\(doc.title) — version \(doc.version), \(doc.published)")
-                        .font(.caption2).foregroundStyle(.secondary)
+                        .citationStyle()
+                        .foregroundStyle(Palette.secondary)
+                        .padding(.top, 12)
                 }
             }
-            .padding()
+            .padding(18)
         }
+        .background(Palette.canvas)
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItemGroup(placement: .bottomBar) {
@@ -56,5 +60,35 @@ struct SectionView: View {
                 }.disabled(neighbors.next == nil)
             }
         }
+        .tint(Palette.accent)
+    }
+
+    /// Title with the § number in accent monospaced — the citable part is
+    /// visually the citation, the words are the ink.
+    private func title(for section: RuleSection) -> Text {
+        if let n = section.citableNumber {
+            return Text("§ \(n)").font(.title2.monospaced().bold()).foregroundColor(Palette.accent)
+                + Text("  ")
+                + Text(section.title).foregroundColor(Palette.ink)
+        }
+        return Text(section.title).foregroundColor(Palette.ink)
+    }
+
+    /// Bodies are newline-joined lines from the pipeline; render each line
+    /// as a paragraph with breathing room (typography only — no structure
+    /// is invented, and content is verbatim-pending-rewrite per #20).
+    private func paragraphs(of body: String) -> some View {
+        let parts = body.components(separatedBy: "\n").filter {
+            !$0.trimmingCharacters(in: .whitespaces).isEmpty
+        }
+        return VStack(alignment: .leading, spacing: 10) {
+            ForEach(Array(parts.enumerated()), id: \.offset) { _, part in
+                Text(part)
+                    .font(.body)
+                    .foregroundStyle(Palette.body)
+                    .lineSpacing(3)
+            }
+        }
+        .textSelection(.enabled)
     }
 }
