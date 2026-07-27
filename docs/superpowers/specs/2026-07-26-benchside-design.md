@@ -2,7 +2,9 @@
 
 **Date:** 2026-07-26
 **Status:** Approved by Pete (brainstorming session)
-**Name:** Benchside — repo, project, and public App Store name (availability check in Research Gate)
+**Name:** Benchwise — public App Store name (decided at Research Gate close;
+"Benchside" was blocked by an existing iOS app). Repo/codebase remain
+"benchside" unless renamed later.
 
 ## What this is
 
@@ -40,12 +42,12 @@ Both run as automated tests against the real shipped database.
 | Content scope | Core game rulebook + tournament rules handbook + penalty guidelines. Informal names used throughout this spec; the exact TPCi document titles and versions are pinned in `sources.yaml` at ingest time |
 | Lookup UX | Search-first: instant as-you-type full-text search; browse as secondary |
 | Offline | Fully offline; all content bundled; app makes zero network calls |
-| Content source | Ingest official TPCi documents; surface rule text verbatim by default, gated on the Research Gate below |
+| Content source | Ingest official TPCi documents. **Research Gate outcome (2026-07-26): hybrid** — shipped text is faithful paraphrase by default, short verbatim quotes only where exact wording is load-bearing for judges; parsed verbatim JSON is internal-only (see research/2026-07-26-research-gate-synthesis.md; rewrite stage = Plan 1.2) |
 | Stack | Native SwiftUI, iOS 17+, GRDB as the only dependency |
 | Content updates | Baked in; new app release when TPCi revises a document |
 | Pricing | Free, no ads, no IAP for v1; future tiers possible (nothing structural needed now) |
 | v1 features | Search + read only. No bookmarks, history, or judge tools in v1 |
-| Name | Benchside everywhere — repo, Xcode project, and App Store |
+| Name | Benchwise on the App Store (Research Gate decision); repo/Xcode project stay "benchside" unless renamed later |
 
 ## Architecture
 
@@ -129,6 +131,12 @@ surface is deliberately tiny:
   documents; verify version strings.
 
 ## Research Gate (pre-ship, parallel with development)
+
+> **CLOSED 2026-07-26.** Findings and decisions:
+> [research/2026-07-26-research-gate-synthesis.md](../research/2026-07-26-research-gate-synthesis.md).
+> Outcomes: hybrid content (paraphrase default, load-bearing verbatim quotes
+> only), repo private until paraphrase ships, public name Benchwise. The
+> items below are retained as the original scope.
 
 A discrete research step, findings written to `docs/superpowers/research/`
 with citations. Verbatim body text is the default the pipeline produces;
