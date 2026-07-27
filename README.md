@@ -1,6 +1,7 @@
 # Benchside
 
 [![CI](https://github.com/peteb4ker/benchside/actions/workflows/ci.yml/badge.svg)](https://github.com/peteb4ker/benchside/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/peteb4ker/benchside)](https://github.com/peteb4ker/benchside/releases)
 
 A free, fully offline iOS app for Pokemon TCG players and professors (judges)
 to look up rules fast. Search-first, works with zero connectivity, answers in
