@@ -2,7 +2,7 @@ import json
 
 import pytest
 
-from benchside_pipeline.rewrites import (
+from rulecheck_pipeline.rewrites import (
     RewriteError,
     load_rewrites,
     validate_entry,

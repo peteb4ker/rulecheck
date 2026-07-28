@@ -1,13 +1,13 @@
 # CLAUDE.md
 
-Steering for AI agents working on Benchside.
+Steering for AI agents working on RuleCheck.
 
 ## What this project is
 
-> **Benchside lets Pokemon TCG players and professors look up rules fast — offline, search-first, answer in under two seconds.**
+> **RuleCheck lets Pokemon TCG players and professors look up rules fast — offline, search-first, answer in under two seconds.**
 
 Every PR is evaluated against that sentence. The full design is in
-[docs/superpowers/specs/2026-07-26-benchside-design.md](docs/superpowers/specs/2026-07-26-benchside-design.md);
+[docs/superpowers/specs/2026-07-26-rulecheck-design.md](docs/superpowers/specs/2026-07-26-rulecheck-design.md);
 the spec wins if this file and the spec ever disagree.
 
 ### Out of scope (do not propose)
@@ -79,12 +79,12 @@ justfile           # dev commands: just setup / all / test / download …
 pipeline/          # Python: ingest → parse → build → verify
 sources/           # sources.yaml manifest (+ git-ignored PDFs)
 content/           # parsed intermediate JSON (committed, reviewable)
-build/             # benchside.db build product (git-ignored)
+build/             # rulecheck.db build product (git-ignored)
 app/               # Xcode project: SwiftUI + GRDB, iOS 17+
 docs/superpowers/  # specs, plans, research notes
 ```
 
-The SQLite schema in `pipeline/src/benchside_pipeline/build.py` is the
+The SQLite schema in `pipeline/src/rulecheck_pipeline/build.py` is the
 contract between pipeline and app. Schema changes touch both sides in the
 same PR, or ship pipeline-first with backward compatibility.
 

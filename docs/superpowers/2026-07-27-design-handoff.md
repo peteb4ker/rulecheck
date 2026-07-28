@@ -1,5 +1,7 @@
 # Benchwise — Design Session Hand-off
 
+> **Superseded 2026-07-28:** the app was renamed **Benchwise -> Rule Check** (Xcode project `Benchside` -> `RuleCheck`). This document is kept as the record of what was decided at the time; the names below are historical.
+
 For a design-focused Claude session working on the app's look and feel.
 Read this, then CLAUDE.md, then the
 [design spec](specs/2026-07-26-benchside-design.md). This document doesn't

@@ -13,7 +13,7 @@ Pipeline tests (0.2s) need nothing.
 
 | Decision | Choice |
 |---|---|
-| Local inner loop | New `just app-test-unit`: `-only-testing:BenchsideTests` on the already-booted simulator, no erase/boot churn. Persona gates are in the unit tier, so the release gate stays in the fast path. |
+| Local inner loop | New `just app-test-unit`: `-only-testing:RuleCheckTests` on the already-booted simulator, no erase/boot churn. Persona gates are in the unit tier, so the release gate stays in the fast path. |
 | Full gate | `just app-test` unchanged in meaning (unit + UI) — the pre-PR/CI tier. |
 | Timing visibility | Both recipes print wall time (`time`), so regressions are visible in every run and PRs can quote before/after. |
 | CI | ~~Cache SPM checkouts + DerivedData~~ **Evaluated and dropped** (2026-07-27): warm-cache app job measured 6m43s vs 6m39s cold — the job is ~entirely one xcodebuild step, and fresh macOS runners invalidate DerivedData regardless of cache. Per the data-first rule below, the cache was removed rather than kept as cargo cult. CI <5m needs different levers (e.g., unit-only PR tier with full suite on merge — a coverage decision, not taken unilaterally); documented on #26. |

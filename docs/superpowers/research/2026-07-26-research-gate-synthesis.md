@@ -1,5 +1,7 @@
 # Research Gate — Synthesis & Recommendations
 
+> **Superseded 2026-07-28:** the app was renamed **Benchwise -> Rule Check** (Xcode project `Benchside` -> `RuleCheck`). This document is kept as the record of what was decided at the time; the names below are historical.
+
 **Date:** 2026-07-26 · **Issue:** #16 · **Status:** DECIDED (Pete, 2026-07-26)
 
 **Decisions:**

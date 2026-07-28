@@ -3,8 +3,8 @@ import hashlib
 
 import pytest
 
-from benchside_pipeline.download import download_doc
-from benchside_pipeline.model import SourceDoc
+from rulecheck_pipeline.download import download_doc
+from rulecheck_pipeline.model import SourceDoc
 
 PDF_BYTES = b"%PDF-1.7\nfake pdf bytes"
 

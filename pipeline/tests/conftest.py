@@ -38,7 +38,7 @@ def fixture_pdf(tmp_path):
 
 @pytest.fixture
 def fixture_source():
-    from benchside_pipeline.model import SourceDoc
+    from rulecheck_pipeline.model import SourceDoc
 
     return SourceDoc(
         id="fixture-doc", prefix="fix", title="Fixture Rules Document",

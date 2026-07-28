@@ -2,8 +2,8 @@ import json
 
 import pytest
 
-from benchside_pipeline.content_check import check_rewrites
-from benchside_pipeline.model import Section, SourceDoc, dump_document
+from rulecheck_pipeline.content_check import check_rewrites
+from rulecheck_pipeline.model import Section, SourceDoc, dump_document
 
 SOURCE_BODY = (
     "An Active card that is Asleep is turned sideways. It cannot attack or "

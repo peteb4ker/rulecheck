@@ -35,7 +35,7 @@ launch screen.
 
 ## Token architecture
 
-`app/Benchside/Palette.xcassets` with one Color Set per token, **Any
+`app/RuleCheck/Palette.xcassets` with one Color Set per token, **Any
 appearance = Solar (light), Dark appearance = Lunar**. Hex values from the
 handoff tables verbatim (the handoff states hex is the intended sRGB
 rounding of the authoritative oklch for the asset catalog). Exposed through

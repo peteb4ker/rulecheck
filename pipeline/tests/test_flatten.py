@@ -1,4 +1,4 @@
-from benchside_pipeline.flatten import flatten_entry
+from rulecheck_pipeline.flatten import flatten_entry
 
 
 def test_mechanic_golden():

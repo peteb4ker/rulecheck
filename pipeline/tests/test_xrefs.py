@@ -1,5 +1,5 @@
-from benchside_pipeline.model import Section
-from benchside_pipeline.xrefs import detect_xrefs
+from rulecheck_pipeline.model import Section
+from rulecheck_pipeline.xrefs import detect_xrefs
 
 
 def sec(id, number, body, doc_id="fixture-doc"):

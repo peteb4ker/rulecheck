@@ -61,7 +61,7 @@ jobs:
             fi
             changed=$(git diff --name-only "$base" HEAD)
             printf 'changed files:\n%s\n' "$changed"
-            if printf '%s\n' "$changed" | grep -qE '^(app/|pipeline/src/benchside_pipeline/build\.py|\.github/workflows/)'; then
+            if printf '%s\n' "$changed" | grep -qE '^(app/|pipeline/src/rulecheck_pipeline/build\.py|\.github/workflows/)'; then
               app_relevant=true
             fi
           fi
@@ -142,8 +142,8 @@ jobs:
       - name: Build and verify committed content
         if: needs.detect.outputs.has-content == 'true'
         run: |
-          uv run python -m benchside_pipeline build --root ..
-          uv run python -m benchside_pipeline verify --root ..
+          uv run python -m rulecheck_pipeline build --root ..
+          uv run python -m rulecheck_pipeline verify --root ..
       - name: Unit tests (incl. persona gates against the built database)
         run: uv run pytest -v
 
@@ -161,10 +161,10 @@ jobs:
       - name: Build rules DB for app bundle
         run: |
           cd pipeline && uv sync --locked --all-extras
-          uv run python -m benchside_pipeline build --root ..
-          uv run python -m benchside_pipeline verify --root ..
-          mkdir -p ../app/Benchside/Resources
-          cp ../build/benchside.db ../app/Benchside/Resources/benchside.db
+          uv run python -m rulecheck_pipeline build --root ..
+          uv run python -m rulecheck_pipeline verify --root ..
+          mkdir -p ../app/RuleCheck/Resources
+          cp ../build/rulecheck.db ../app/RuleCheck/Resources/rulecheck.db
       - name: Discover project and scheme
         id: xcode
         run: |
@@ -178,7 +178,7 @@ jobs:
           scheme=$(xcodebuild -list -project "$project" -json \
             | python3 -c 'import json,sys; s=json.load(sys.stdin)["project"]["schemes"]; print(s[0] if s else "")')
           if [ -z "$scheme" ]; then
-            echo "::error::no shared schemes in $project — share the Benchside scheme in Xcode"
+            echo "::error::no shared schemes in $project — share the RuleCheck scheme in Xcode"
             exit 1
           fi
           echo "project=$project" >> "$GITHUB_OUTPUT"

@@ -1,4 +1,4 @@
-from benchside_pipeline.model import Section, SourceDoc, dump_document, load_document
+from rulecheck_pipeline.model import Section, SourceDoc, dump_document, load_document
 
 SOURCE = SourceDoc(
     id="fixture-doc", prefix="fix", title="Fixture Rules Document",

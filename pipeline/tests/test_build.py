@@ -1,8 +1,8 @@
 import sqlite3
 
-from benchside_pipeline.build import build_db
-from benchside_pipeline.model import dump_document
-from benchside_pipeline.parse import parse_pdf
+from rulecheck_pipeline.build import build_db
+from rulecheck_pipeline.model import dump_document
+from rulecheck_pipeline.parse import parse_pdf
 
 
 def test_build_db(fixture_pdf, fixture_source, tmp_path):
@@ -11,7 +11,7 @@ def test_build_db(fixture_pdf, fixture_source, tmp_path):
     sections = parse_pdf(fixture_pdf, fixture_source)
     dump_document(fixture_source, sections, content_dir / "fixture-doc.json")
 
-    db_path = tmp_path / "benchside.db"
+    db_path = tmp_path / "rulecheck.db"
     build_db(content_dir, db_path)
 
     con = sqlite3.connect(db_path)
@@ -40,7 +40,7 @@ def test_rebuild_is_fresh(fixture_pdf, fixture_source, tmp_path):
     content_dir.mkdir()
     sections = parse_pdf(fixture_pdf, fixture_source)
     dump_document(fixture_source, sections, content_dir / "fixture-doc.json")
-    db_path = tmp_path / "benchside.db"
+    db_path = tmp_path / "rulecheck.db"
     build_db(content_dir, db_path)
     build_db(content_dir, db_path)  # second build must not duplicate rows
     con = sqlite3.connect(db_path)
@@ -63,7 +63,7 @@ def test_build_substitutes_flattened_rewrite_body(fixture_pdf, fixture_source, t
                     "summary": "Structured summary.",
                     "paragraphs": ["Structured body line."]}}))
 
-    db_path = tmp_path / "benchside.db"
+    db_path = tmp_path / "rulecheck.db"
     build_db(content_dir, db_path, rewrites_dir=rewrites_dir)
     con = sqlite3.connect(db_path)
     body = con.execute("SELECT body FROM sections WHERE id='fix-3.2'").fetchone()[0]
@@ -86,7 +86,7 @@ def test_skipped_sections_are_excluded_from_db(fixture_pdf, fixture_source, tmp_
     (rewrites_dir / "fixture-doc.json").write_text(json.dumps({
         "fix-3.2": {"skip": "diagram furniture, never shipped"}}))
 
-    db_path = tmp_path / "benchside.db"
+    db_path = tmp_path / "rulecheck.db"
     build_db(content_dir, db_path, rewrites_dir=rewrites_dir)
     con = sqlite3.connect(db_path)
     assert con.execute("SELECT COUNT(*) FROM sections WHERE id='fix-3.2'").fetchone()[0] == 0
@@ -110,7 +110,7 @@ def test_structure_column_carries_the_authored_entry(fixture_pdf, fixture_source
     rewrites_dir.mkdir()
     (rewrites_dir / "fixture-doc.json").write_text(json.dumps({"fix-3.2": entry}))
 
-    db_path = tmp_path / "benchside.db"
+    db_path = tmp_path / "rulecheck.db"
     build_db(content_dir, db_path, rewrites_dir=rewrites_dir)
     con = sqlite3.connect(db_path)
     raw = con.execute("SELECT structure FROM sections WHERE id='fix-3.2'").fetchone()[0]

@@ -1,4 +1,4 @@
-# Benchside dev commands.
+# RuleCheck dev commands.
 # Bootstrap: brew install uv && uv tool install rust-just && just setup
 
 default:
@@ -10,33 +10,33 @@ setup:
 
 # Fetch official source PDFs (network!); exits 1 if TPCi revised a document
 download:
-    cd pipeline && uv run python -m benchside_pipeline download --root ..
+    cd pipeline && uv run python -m rulecheck_pipeline download --root ..
 
 parse:
-    cd pipeline && uv run python -m benchside_pipeline parse --root ..
+    cd pipeline && uv run python -m rulecheck_pipeline parse --root ..
 
 build:
-    cd pipeline && uv run python -m benchside_pipeline build --root ..
+    cd pipeline && uv run python -m rulecheck_pipeline build --root ..
 
 verify:
-    cd pipeline && uv run python -m benchside_pipeline verify --root ..
+    cd pipeline && uv run python -m rulecheck_pipeline verify --root ..
 
 # parse → build → verify (offline; must end "verify OK")
 all:
-    cd pipeline && uv run python -m benchside_pipeline all --root ..
+    cd pipeline && uv run python -m rulecheck_pipeline all --root ..
 
 test:
     cd pipeline && uv run pytest
 
 # Rewrites-layer coverage / archetype / review report
 content-status:
-    cd pipeline && uv run python -m benchside_pipeline content-status --root ..
+    cd pipeline && uv run python -m rulecheck_pipeline content-status --root ..
 
 # Release build for a physical device. Debug builds are unoptimized and
 # launch far slower on real hardware than in the simulator — use this for
 # anything you actually carry to a tournament.
 app-device: app-db
-    cd app && xcodebuild build -project Benchside.xcodeproj -scheme Benchside \
+    cd app && xcodebuild build -project RuleCheck.xcodeproj -scheme RuleCheck \
       -configuration Release -destination 'generic/platform=iOS' -quiet
     @echo "Built Release. In Xcode: Product > Scheme > Edit Scheme > Run > Build Configuration = Release, then Run to your phone."
 
@@ -44,8 +44,8 @@ app-device: app-db
 
 # After authoring: schema, coverage, quotes, overlap, see-also, personas
 check-decomposition: build
-    cd pipeline && uv run python -m benchside_pipeline verify --root ..
-    cd pipeline && uv run python -m benchside_pipeline content-status --root ..
+    cd pipeline && uv run python -m rulecheck_pipeline verify --root ..
+    cd pipeline && uv run python -m rulecheck_pipeline content-status --root ..
     cd pipeline && uv run pytest tests/test_personas.py -q
 
 # After review: every shipped entry has a fresh, well-formed verdict
@@ -61,7 +61,7 @@ check-ingest *ARGS:
 
 # Copy the built rules DB into the app bundle resources (runs pipeline build first)
 app-db: build
-    cp build/benchside.db app/Benchside/Resources/benchside.db
+    cp build/rulecheck.db app/RuleCheck/Resources/rulecheck.db
 
 # Regenerate the Xcode project from app/project.yml
 app-gen:
@@ -70,16 +70,16 @@ app-gen:
 _first-sim := `xcrun simctl list devices available | grep -m1 -o 'iPhone [^(]*' | sed 's/ *$//' || true`
 
 app-build: app-db
-    cd app && xcodebuild build -project Benchside.xcodeproj -scheme Benchside \
+    cd app && xcodebuild build -project RuleCheck.xcodeproj -scheme RuleCheck \
       -destination 'platform=iOS Simulator,name={{_first-sim}}' -quiet
 
 # Full pre-PR gate: unit + UI tests (slow — cold builds and sim flows)
 app-test: app-db
-    cd app && time xcodebuild test -project Benchside.xcodeproj -scheme Benchside \
+    cd app && time xcodebuild test -project RuleCheck.xcodeproj -scheme RuleCheck \
       -destination 'platform=iOS Simulator,name={{_first-sim}}' -quiet
 
 # Fast inner loop: unit tests only, incl. the persona gates (~5s warm)
 app-test-unit: app-db
-    cd app && time xcodebuild test -project Benchside.xcodeproj -scheme Benchside \
+    cd app && time xcodebuild test -project RuleCheck.xcodeproj -scheme RuleCheck \
       -destination 'platform=iOS Simulator,name={{_first-sim}}' \
-      -only-testing:BenchsideTests -quiet
+      -only-testing:RuleCheckTests -quiet

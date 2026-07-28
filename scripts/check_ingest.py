@@ -25,9 +25,9 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "pipeline" / "src"))
 
-from benchside_pipeline.manifest import load_manifest  # noqa: E402
-from benchside_pipeline.model import load_document  # noqa: E402
-from benchside_pipeline.parse import parse_pdf  # noqa: E402
+from rulecheck_pipeline.manifest import load_manifest  # noqa: E402
+from rulecheck_pipeline.model import load_document  # noqa: E402
+from rulecheck_pipeline.parse import parse_pdf  # noqa: E402
 
 
 def body_hash(text: str) -> str:

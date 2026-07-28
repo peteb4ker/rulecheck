@@ -54,7 +54,7 @@ Never tune blind. Dump the raw lines first:
 
 ```bash
 cd pipeline && uv run python -c "
-from benchside_pipeline.parse import extract_lines
+from rulecheck_pipeline.parse import extract_lines
 for l in extract_lines('../sources/<file>.pdf')[:120]: print(repr(l))
 "
 ```

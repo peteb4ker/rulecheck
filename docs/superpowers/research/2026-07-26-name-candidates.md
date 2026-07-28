@@ -1,5 +1,7 @@
 # Benchside replacement — app name candidates
 
+> **Superseded 2026-07-28:** the app was renamed **Benchwise -> Rule Check** (Xcode project `Benchside` -> `RuleCheck`). This document is kept as the record of what was decided at the time; the names below are historical.
+
 Context: "Benchside" is dead (exact-name collision, apps.apple.com id6445801735).
 Prior casualties: "Prof's Companion" (existing tutoring business), "TopCut"
 (topcut.cards), "Rulepoint" (Informatica trademark), any Pokemon character/

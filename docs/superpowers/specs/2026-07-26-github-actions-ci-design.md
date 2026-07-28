@@ -1,4 +1,4 @@
-# Benchside — GitHub Actions CI Design Spec
+# RuleCheck — GitHub Actions CI Design Spec
 
 **Date:** 2026-07-26
 **Status:** Designed autonomously per Pete's request ("build out robust gh actions CI"); decisions documented here for review
@@ -68,7 +68,7 @@ Every job has a `timeout-minutes`.
 - `has-content` — any `content/*.json` exists
 - `app-relevant` — true on push/schedule/dispatch; on PRs, true when the
   diff against the merge base touches `app/**`, `content/**`,
-  `pipeline/src/benchside_pipeline/build.py` (the schema contract), or
+  `pipeline/src/rulecheck_pipeline/build.py` (the schema contract), or
   `.github/workflows/**`
 
 **Job `guards`** (ubuntu, always runs). The repo's non-negotiables plus
@@ -85,7 +85,7 @@ Python 3.12 via `actions/setup-python` with pip caching:
 
 1. `pip install -e '.[dev]'` in `pipeline/`.
 2. `pytest -v` — the full suite, fixture-based, no real PDFs needed.
-3. When `has-content`: `python -m benchside_pipeline build` then `verify`
+3. When `has-content`: `python -m rulecheck_pipeline build` then `verify`
    against the committed JSON — the verify step's build-failing checks run
    on every PR, so a bad content commit can't land quietly. (`parse` is
    excluded; it needs the git-ignored PDFs.)

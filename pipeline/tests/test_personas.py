@@ -3,7 +3,7 @@ from pathlib import Path
 
 import pytest
 
-DB = Path(__file__).resolve().parents[2] / "build" / "benchside.db"
+DB = Path(__file__).resolve().parents[2] / "build" / "rulecheck.db"
 
 pytestmark = pytest.mark.skipif(not DB.exists(), reason="real DB not built")
 

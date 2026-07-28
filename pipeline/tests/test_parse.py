@@ -1,6 +1,6 @@
 import dataclasses
 
-from benchside_pipeline.parse import build_tree, extract_lines, parse_pdf
+from rulecheck_pipeline.parse import build_tree, extract_lines, parse_pdf
 
 
 def test_extract_lines(fixture_pdf):

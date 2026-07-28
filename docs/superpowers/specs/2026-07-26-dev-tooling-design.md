@@ -22,7 +22,7 @@ Two things, one PR:
 |---|---|
 | Task runner | `just` (installed via `uv tool install rust-just` — uv is the single bootstrap tool, no brew formula needed) |
 | Python env | Full uv adoption: `uv sync`, committed `uv.lock`, no manual venv activation anywhere; pip/venv instructions deleted |
-| Download logic | Pipeline CLI subcommand (`python -m benchside_pipeline download`), NOT a standalone script or shell recipe — tested like everything else, manifest stays the single source of truth |
+| Download logic | Pipeline CLI subcommand (`python -m rulecheck_pipeline download`), NOT a standalone script or shell recipe — tested like everything else, manifest stays the single source of truth |
 | Upstream revisions | `sha256` recorded per document in `sources.yaml`; download compares and warns loudly on drift |
 | Network policy | Only `download` touches the network; `all` stays offline-deterministic and does not grow a download step; tests use `file://` URLs, never live network |
 
@@ -34,7 +34,7 @@ Two things, one PR:
   digest of the PDF as ingested). `manifest.py` loads it, and gains a
   validation pass that warns on unknown keys (so a typoed `sha256:` cannot
   be silently dropped — the slice of issue #9 this work touches).
-- New module `pipeline/src/benchside_pipeline/download.py`:
+- New module `pipeline/src/rulecheck_pipeline/download.py`:
   `download_doc(source: SourceDoc, dest_dir: Path) -> DownloadResult`.
   Fetches `source.url` via stdlib `urllib.request` (no new runtime deps)
   with a plain descriptive User-Agent, writes atomically (temp file in
@@ -56,7 +56,7 @@ Two things, one PR:
 - Root `justfile`, recipes: `setup` (runs `uv sync` in `pipeline/`; prints
   the one-time `uv tool install rust-just` bootstrap hint), `download`,
   `parse`, `build`, `verify`, `all`, `test` — each a thin
-  `uv run --project pipeline python -m benchside_pipeline <cmd> --root .`
+  `uv run --project pipeline python -m rulecheck_pipeline <cmd> --root .`
   (or equivalent) wrapper. uv auto-syncs on `uv run`, so there is no
   activation step and no stale-env failure mode.
 - A commented block reserves Plan 2's surface (`app-build`, `app-test`) so

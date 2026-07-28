@@ -1,9 +1,9 @@
 import sqlite3
 
-from benchside_pipeline.build import build_db
-from benchside_pipeline.model import dump_document
-from benchside_pipeline.parse import parse_pdf
-from benchside_pipeline.verify import verify_db
+from rulecheck_pipeline.build import build_db
+from rulecheck_pipeline.model import dump_document
+from rulecheck_pipeline.parse import parse_pdf
+from rulecheck_pipeline.verify import verify_db
 
 
 def make_db(fixture_pdf, fixture_source, tmp_path):
@@ -11,7 +11,7 @@ def make_db(fixture_pdf, fixture_source, tmp_path):
     content_dir.mkdir()
     sections = parse_pdf(fixture_pdf, fixture_source)
     dump_document(fixture_source, sections, content_dir / "fixture-doc.json")
-    db_path = tmp_path / "benchside.db"
+    db_path = tmp_path / "rulecheck.db"
     build_db(content_dir, db_path)
     return db_path
 

@@ -1,6 +1,6 @@
 import shutil
 
-from benchside_pipeline.__main__ import main
+from rulecheck_pipeline.__main__ import main
 
 
 def make_repo(tmp_path, fixture_pdf):
@@ -30,7 +30,7 @@ def test_all_pipeline(tmp_path, fixture_pdf):
     root = make_repo(tmp_path, fixture_pdf)
     assert main(["all", "--root", str(root)]) == 0
     assert (root / "content" / "fixture-doc.json").exists()
-    assert (root / "build" / "benchside.db").exists()
+    assert (root / "build" / "rulecheck.db").exists()
 
 
 def test_verify_failure_exit_code(tmp_path, fixture_pdf):

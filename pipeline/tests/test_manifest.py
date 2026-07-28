@@ -2,7 +2,7 @@ from pathlib import Path
 
 import pytest
 
-from benchside_pipeline.manifest import ManifestError, load_manifest
+from rulecheck_pipeline.manifest import ManifestError, load_manifest
 
 VALID = """
 documents:

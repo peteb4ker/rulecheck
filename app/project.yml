@@ -1,4 +1,4 @@
-name: Benchside
+name: RuleCheck
 options:
   bundleIdPrefix: com.skyetrail
   deploymentTarget:
@@ -8,13 +8,13 @@ packages:
     url: https://github.com/groue/GRDB.swift
     majorVersion: 7.0.0
 targets:
-  Benchside:
+  RuleCheck:
     type: application
     platform: iOS
     sources:
-      - path: Benchside
+      - path: RuleCheck
     resources:
-      - path: Benchside/Resources
+      - path: RuleCheck/Resources
         optional: true
     dependencies:
       - package: GRDB
@@ -23,46 +23,46 @@ targets:
     # continuous in both temperatures (Info.plist merges with the
     # generated one; the file's UILaunchScreen wins).
     info:
-      path: Benchside/Info.plist
+      path: RuleCheck/Info.plist
       properties:
         UILaunchScreen:
           UIColorName: canvas
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.skyetrail.benchwise
+        PRODUCT_BUNDLE_IDENTIFIER: com.skyetrail.rulecheck
         # Signing team lives here so `just app-gen` stops wiping it on every
         # regeneration. Team IDs are not secret (they ship in app metadata).
         DEVELOPMENT_TEAM: T27ZNJQMWN
         CODE_SIGN_STYLE: Automatic
-        INFOPLIST_KEY_CFBundleDisplayName: Benchwise
+        INFOPLIST_KEY_CFBundleDisplayName: "Rule Check"
         GENERATE_INFOPLIST_FILE: YES
         SWIFT_VERSION: "5.10"
-  BenchsideTests:
+  RuleCheckTests:
     type: bundle.unit-test
     platform: iOS
-    sources: [BenchsideTests]
+    sources: [RuleCheckTests]
     dependencies:
-      - target: Benchside
+      - target: RuleCheck
     settings:
       base:
-        TEST_HOST: $(BUILT_PRODUCTS_DIR)/Benchside.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Benchside
+        TEST_HOST: $(BUILT_PRODUCTS_DIR)/RuleCheck.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RuleCheck
         BUNDLE_LOADER: $(TEST_HOST)
         GENERATE_INFOPLIST_FILE: YES
-  BenchsideUITests:
+  RuleCheckUITests:
     type: bundle.ui-testing
     platform: iOS
-    sources: [BenchsideUITests]
+    sources: [RuleCheckUITests]
     dependencies:
-      - target: Benchside
+      - target: RuleCheck
     settings:
       base:
         GENERATE_INFOPLIST_FILE: YES
 schemes:
-  Benchside:
+  RuleCheck:
     build:
       targets:
-        Benchside: all
-        BenchsideTests: [test]
-        BenchsideUITests: [test]
+        RuleCheck: all
+        RuleCheckTests: [test]
+        RuleCheckUITests: [test]
     test:
-      targets: [BenchsideTests, BenchsideUITests]
+      targets: [RuleCheckTests, RuleCheckUITests]

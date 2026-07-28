@@ -1,4 +1,4 @@
-from benchside_pipeline.headings import Heading, classify_line
+from rulecheck_pipeline.headings import Heading, classify_line
 
 RULES = [r"^(\d+)\.\s+(.+)$", r"^(\d+\.\d+)\s+(.+)$"]
 
