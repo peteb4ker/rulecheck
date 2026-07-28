@@ -20,6 +20,8 @@ enum Palette {
     static let docGame = Color("docGame")
     static let docTournament = Color("docTournament")
     static let docPenalty = Color("docPenalty")
+    /// "Blocked" values in effects tables and penalty outcomes (visual spec §1).
+    static let negative = Color("negative")
 }
 
 extension DocumentInfo {

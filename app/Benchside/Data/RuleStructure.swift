@@ -1,0 +1,87 @@
+import Foundation
+
+/// The authored structure behind a section — what the reader renders.
+///
+/// Decoded leniently on purpose: an entry that gains a field the app does
+/// not know about yet should render what it can rather than failing. The
+/// pipeline is the schema authority; the app is a renderer.
+struct RuleStructure: Decodable, Hashable {
+    enum Archetype: String, Decodable {
+        case mechanic, procedure, penalty, definition, note
+    }
+
+    struct BranchOption: Decodable, Hashable, Identifiable {
+        let condition: String
+        let outcome: String
+        let detail: String?
+        var id: String { condition + outcome }
+    }
+
+    struct Branch: Decodable, Hashable {
+        let when: String
+        let options: [BranchOption]
+    }
+
+    struct Step: Decodable, Hashable, Identifiable {
+        let actor: String?
+        let action: String
+        let note: String?
+        var id: String { action }
+    }
+
+    struct PenaltyRow: Decodable, Hashable, Identifiable {
+        let tier: String
+        let penalty: String
+        let note: String?
+        let examples: [String]?
+        var id: String { tier }
+    }
+
+    struct Term: Decodable, Hashable, Identifiable {
+        let term: String
+        let meaning: String
+        var id: String { term }
+    }
+
+    let archetype: Archetype
+    let summary: String?
+
+    // mechanic
+    let state: [String]?
+    let branch: Branch?
+    let endsWhen: [String]?
+    let effects: [String: String]?
+
+    // procedure
+    let steps: [Step]?
+
+    // penalty
+    let infraction: String?
+    let handling: [String]?
+    let examples: [String]?
+    let basePenalty: [PenaltyRow]?
+    let upgradeConditions: [String]?
+
+    // definition / note
+    let terms: [Term]?
+    let paragraphs: [String]?
+
+    enum CodingKeys: String, CodingKey {
+        case archetype, summary, state, branch, effects, steps, infraction
+        case handling, examples, terms, paragraphs
+        case endsWhen = "ends_when"
+        case basePenalty = "base_penalty"
+        case upgradeConditions = "upgrade_conditions"
+    }
+
+    /// `effects` in a stable order — dictionaries do not preserve one, and a
+    /// truth table that reshuffles between launches is disorienting.
+    var orderedEffects: [(label: String, value: String)] {
+        (effects ?? [:]).sorted { $0.key < $1.key }.map { (label: $0.key, value: $0.value) }
+    }
+
+    static func decode(_ json: String?) -> RuleStructure? {
+        guard let json, let data = json.data(using: .utf8) else { return nil }
+        return try? JSONDecoder().decode(RuleStructure.self, from: data)
+    }
+}

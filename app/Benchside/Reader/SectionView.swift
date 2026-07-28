@@ -3,7 +3,7 @@ import SwiftUI
 struct SectionView: View {
     let id: String
     let repository: RulesRepository
-    @Binding var path: [String]
+    @Binding var path: [Route]
 
     var body: some View {
         if let section = try? repository.section(id: id) {
@@ -26,12 +26,17 @@ struct SectionView: View {
                     .foregroundStyle(Palette.secondary)
                 title(for: section)
                     .font(.largeTitle.bold())
-                paragraphs(of: section.body)
+                if let structure = section.structure {
+                    StructuredRuleView(structure: structure)
+                } else {
+                    // Reference text for sections not yet authored.
+                    paragraphs(of: section.body)
+                }
                 if !refs.isEmpty {
                     Divider().overlay(Palette.hairline)
                     Text("See also").sectionLabelStyle()
                     ForEach(refs) { ref in
-                        Button(sectionRowTitle(ref)) { path.append(ref.id) }
+                        Button(sectionRowTitle(ref)) { path.append(.section(ref.id)) }
                             .font(.subheadline)
                             .tint(Palette.accent)
                             .frame(minHeight: 44 / 2)
@@ -51,11 +56,11 @@ struct SectionView: View {
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItemGroup(placement: .bottomBar) {
-                Button { if let p = neighbors.prev { path[path.count - 1] = p.id } } label: {
+                Button { if let p = neighbors.prev { path[path.count - 1] = .section(p.id) } } label: {
                     Label("Previous", systemImage: "chevron.up")
                 }.disabled(neighbors.prev == nil)
                 Spacer()
-                Button { if let n = neighbors.next { path[path.count - 1] = n.id } } label: {
+                Button { if let n = neighbors.next { path[path.count - 1] = .section(n.id) } } label: {
                     Label("Next", systemImage: "chevron.down")
                 }.disabled(neighbors.next == nil)
             }

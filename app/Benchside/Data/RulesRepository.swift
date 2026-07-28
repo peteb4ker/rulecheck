@@ -103,11 +103,12 @@ final class RulesRepository {
     }
 
     private static let sectionSQL =
-        "SELECT id, doc_id, parent_id, number, title, body, breadcrumb, sort_order FROM sections"
+        "SELECT id, doc_id, parent_id, number, title, body, breadcrumb, sort_order, structure FROM sections"
 
     private static func section(from row: Row) -> RuleSection {
         RuleSection(id: row["id"], docId: row["doc_id"], parentId: row["parent_id"],
                     number: row["number"], title: row["title"], body: row["body"],
-                    breadcrumb: row["breadcrumb"], sortOrder: row["sort_order"])
+                    breadcrumb: row["breadcrumb"], sortOrder: row["sort_order"],
+                    structure: RuleStructure.decode(row["structure"]))
     }
 }

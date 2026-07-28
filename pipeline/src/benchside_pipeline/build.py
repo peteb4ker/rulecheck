@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 import sqlite3
 from pathlib import Path
 
@@ -25,7 +26,10 @@ CREATE TABLE sections(
   title TEXT NOT NULL,
   body TEXT NOT NULL,
   breadcrumb TEXT NOT NULL,
-  sort_order INTEGER NOT NULL
+  sort_order INTEGER NOT NULL,
+  -- The authored entry as JSON. FTS indexes the flattened `body`; the app
+  -- renders this. NULL for sections still shipping verbatim reference text.
+  structure TEXT
 );
 CREATE TABLE xrefs(
   from_id TEXT NOT NULL REFERENCES sections(id),
@@ -62,10 +66,12 @@ def build_db(content_dir: Path, out_path: Path, rewrites_dir: Path | None = None
             shipped = [s for s in sections
                        if not (s.id in rewrites and is_skip(rewrites[s.id]))]
             con.executemany(
-                "INSERT INTO sections VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+                "INSERT INTO sections VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
                 [(s.id, s.doc_id, s.parent_id, s.number, s.title,
                   flatten_entry(rewrites[s.id]) if s.id in rewrites else s.body,
-                  s.breadcrumb, s.order) for s in shipped],
+                  s.breadcrumb, s.order,
+                  json.dumps(rewrites[s.id], sort_keys=True, ensure_ascii=False)
+                  if s.id in rewrites else None) for s in shipped],
             )
             shipped_ids = {s.id for s in shipped}
             con.executemany(

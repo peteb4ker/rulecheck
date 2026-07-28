@@ -4,7 +4,7 @@ struct SearchView: View {
     @Bindable var model: SearchViewModel
     let repository: RulesRepository
     @AppStorage("searchScope") private var storedScope: String = SearchScope.all.rawValue
-    @State private var path: [String] = []
+    @State private var path: [Route] = []
 
     var body: some View {
         NavigationStack(path: $path) {
@@ -15,7 +15,7 @@ struct SearchView: View {
                 } else if model.query.trimmingCharacters(in: .whitespaces).isEmpty {
                     Section {
                         ForEach(model.documents.filter { model.scope.docIds?.contains($0.id) ?? true }) { doc in
-                            NavigationLink(value: doc) {
+                            NavigationLink(value: Route.document(doc)) {
                                 HStack(spacing: 14) {
                                     RoundedRectangle(cornerRadius: 10)
                                         .fill(doc.hue)
@@ -52,7 +52,7 @@ struct SearchView: View {
                     ForEach(model.groups, id: \.doc.id) { group in
                         Section {
                             ForEach(group.hits) { hit in
-                                NavigationLink(value: hit.section.id) {
+                                NavigationLink(value: Route.section(hit.section.id)) {
                                     VStack(alignment: .leading, spacing: 5) {
                                         Text(citationLine(hit.section))
                                             .citationStyle()
@@ -117,11 +117,13 @@ struct SearchView: View {
                     .accessibilityIdentifier("About")
                 }
             }
-            .navigationDestination(for: String.self) { id in
-                SectionView(id: id, repository: repository, path: $path)
-            }
-            .navigationDestination(for: DocumentInfo.self) { doc in
-                DocumentOutlineView(doc: doc, repository: repository)
+            .navigationDestination(for: Route.self) { route in
+                switch route {
+                case .section(let id):
+                    SectionView(id: id, repository: repository, path: $path)
+                case .document(let doc):
+                    DocumentOutlineView(doc: doc, repository: repository)
+                }
             }
             .task(id: model.query) {
                 try? await Task.sleep(for: .milliseconds(150))

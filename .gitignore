@@ -19,3 +19,4 @@ xcuserdata/
 # Source PDFs and build artifacts
 sources/*.pdf
 build/
+app/dd/

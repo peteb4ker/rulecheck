@@ -7,7 +7,7 @@ struct DocumentOutlineView: View {
     var body: some View {
         if let sections = try? repository.sections(inDocument: doc.id) {
             List(sections) { section in
-                NavigationLink(value: section.id) {
+                NavigationLink(value: Route.section(section.id)) {
                     rowTitle(section)
                         .padding(.leading, section.parentId == nil ? 0 : 16)
                 }

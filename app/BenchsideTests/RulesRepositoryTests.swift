@@ -61,4 +61,22 @@ final class RulesRepositoryTests: XCTestCase {
         let refs = try repo.crossReferences(from: "trh-1")  // any id; just must not throw
         XCTAssertNotNil(refs)
     }
+
+    func testCitableNumberRejectsTitleLikeNumbers() throws {
+        // Rulebook sections carry title text in `number`; only true section
+        // numbers may render as a citation.
+        let titleLike = try XCTUnwrap(repo.section(id: "tcg-3 Card Types"))
+        XCTAssertNil(titleLike.citableNumber)
+        let numbered = try XCTUnwrap(repo.section(id: "pen-5.6.1"))
+        XCTAssertEqual(numbered.citableNumber, "5.6.1")
+    }
+
+    func testStructureDecodesForAuthoredSections() throws {
+        let asleep = try XCTUnwrap(repo.section(id: "tcg-Asleep"))
+        let structure = try XCTUnwrap(asleep.structure)
+        XCTAssertEqual(structure.archetype, .mechanic)
+        XCTAssertFalse(structure.state?.isEmpty ?? true)
+        XCTAssertEqual(structure.branch?.options.count, 2)
+        XCTAssertEqual(structure.orderedEffects.map(\.label), ["Abilities", "Attack", "Retreat"])
+    }
 }

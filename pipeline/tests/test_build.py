@@ -94,3 +94,30 @@ def test_skipped_sections_are_excluded_from_db(fixture_pdf, fixture_source, tmp_
         "SELECT COUNT(*) FROM sections_fts WHERE sections_fts MATCH 'asleep'").fetchone()[0] == 0
     assert con.execute("SELECT COUNT(*) FROM sections").fetchone()[0] == 4
     con.close()
+
+
+def test_structure_column_carries_the_authored_entry(fixture_pdf, fixture_source, tmp_path):
+    import json
+
+    content_dir = tmp_path / "content"
+    content_dir.mkdir()
+    sections = parse_pdf(fixture_pdf, fixture_source)
+    dump_document(fixture_source, sections, content_dir / "fixture-doc.json")
+
+    entry = {"archetype": "mechanic", "tier": "standard", "summary": "Structured.",
+             "state": ["A fact"], "effects": {"Attack": "Blocked"}}
+    rewrites_dir = tmp_path / "rewrites"
+    rewrites_dir.mkdir()
+    (rewrites_dir / "fixture-doc.json").write_text(json.dumps({"fix-3.2": entry}))
+
+    db_path = tmp_path / "benchside.db"
+    build_db(content_dir, db_path, rewrites_dir=rewrites_dir)
+    con = sqlite3.connect(db_path)
+    raw = con.execute("SELECT structure FROM sections WHERE id='fix-3.2'").fetchone()[0]
+    assert json.loads(raw) == entry
+    # sections without an entry carry no structure
+    assert con.execute("SELECT structure FROM sections WHERE id='fix-1.1'").fetchone()[0] is None
+    # the flattened text still drives search
+    assert "Structured." in con.execute(
+        "SELECT body FROM sections WHERE id='fix-3.2'").fetchone()[0]
+    con.close()
