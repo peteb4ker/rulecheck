@@ -11,6 +11,45 @@
     "summary": "Penalties exist to protect tournament integrity and teach, not to punish.",
     "tier": "standard"
   },
+  "pen-1.1": {
+    "archetype": "note",
+    "paragraphs": [
+      "Every participant, competitor or spectator, shares responsibility for following this guide and Play! Pokémon's other tournament rules and conduct standards, since it's published openly for anyone to read.",
+      "Tournament Organizers, Judges, and event staff must read it; competitors are strongly encouraged to as well.",
+      "Spectators and parents carry some obligations too — knowing what's allowed helps them support competitors properly and avoid procedural or conduct issues of their own."
+    ],
+    "summary": "This document is public, and everyone at a tournament, not just staff, is expected to know and follow it.",
+    "tier": "standard"
+  },
+  "pen-1.2": {
+    "archetype": "note",
+    "paragraphs": [
+      "Infractions are inevitable, so this guide lays out philosophy, infractions, penalties, how to apply them, and worked examples for running a smooth tournament, while acknowledging no document can anticipate every possible issue.",
+      "Where a scenario isn't explicitly covered, the included examples and reasoning are meant to help Judges reach sound calls on related issues too.",
+      "The intended process: find the closest base infraction, weigh the specific situation against it, then decide the right response — more detail comes in the application section."
+    ],
+    "summary": "The guide exists to keep infraction handling fair and consistent, not to hunt for reasons to penalize competitors.",
+    "tier": "standard"
+  },
+  "pen-1.3": {
+    "archetype": "note",
+    "paragraphs": [
+      "Earlier versions split penalty guidance by game rather than gathering it in one place.",
+      "Sharing that history is meant to show the guide keeps evolving toward something better, with periodic updates as needed to serve Professors, competitors, and the wider community.",
+      "Centralizing everything here is meant to make the right answer quicker to find when it matters."
+    ],
+    "summary": "This handbook consolidates penalty guidance that used to be scattered across separate game handbooks and the Tournament Rules Handbook.",
+    "tier": "standard"
+  },
+  "pen-1.4": {
+    "archetype": "note",
+    "paragraphs": [
+      "Expect further updates as the Play! Pokémon program keeps evolving; content here can change whenever Play! Pokémon and The Pokémon Company International decide it should, entirely at their own discretion.",
+      "Professors should check back at least quarterly, keep their knowledge of the document current, and walk into every event prepared."
+    ],
+    "summary": "Play! Pokémon can revise this guide at any time, and Professors are responsible for staying current.",
+    "tier": "standard"
+  },
   "pen-2": {
     "archetype": "note",
     "paragraphs": [
@@ -23,6 +62,905 @@
     ],
     "summary": "One consistent philosophy spans every Pokémon game, delivered through trusted Judges from the Professor Program.",
     "tier": "standard"
+  },
+  "pen-2.1": {
+    "archetype": "note",
+    "paragraphs": [
+      "Judges, and Tournament Organizers filling that role, draw on this guide plus the Tournament Rules Handbook, Standards of Conduct, and related documents to size up infractions; a Tournament Organizer acting as Judge follows the same guidance as any other Judge.",
+      "Ruling on a match involving a relative, close friend, teammate, or similar connection is discouraged, but where it can't be avoided the Judge must still stay neutral.",
+      "Judges owe competitors a fun, fast, fair experience: investigate fully before settling on a penalty, explain the infraction and penalty clearly, and when they lack the knowledge to rule confidently, seek it out before using their best judgment.",
+      "Questions or appeals about a ruling have to happen at the event itself; Judges should accommodate requests for more detail when it won't slow the tournament down.",
+      "A competitor unhappy with a ruling can always escalate to the Head Judge, and Judges must honor that request every time.",
+      "Everyone interacting with Judges, competitors, spectators, parents, other Professors, owes them respectful treatment, and disrespect can itself draw discipline."
+    ],
+    "summary": "Judges are neutral event staff who investigate infractions and apply this guide's penalties, and they're expected to recuse where practical when a ruling touches someone close to them.",
+    "tier": "judge"
+  },
+  "pen-2.2": {
+    "archetype": "note",
+    "paragraphs": [
+      "It's whatever problem sets off the investigation, procedural slips like an unsigned match slip or a late arrival, or gameplay errors like a wrong team-list entry or an extra card of a limited type played in a turn.",
+      "These recurring issues are the backbone of the guide: match the situation to its closest base infraction and its recommended starting penalty follows.",
+      "When the fallout for the game state runs bigger than that base infraction typically causes, or the situation doesn't quite match any listed entry, straying from the recommended starting point may be warranted.",
+      "Examples of the recommended penalty and its common deviations are given where possible, but Judges are ultimately trusted to weigh each infraction's effect on the game state and land on the best call themselves."
+    ],
+    "summary": "A base infraction is the specific issue that triggers a Judge's review, and it anchors which starting penalty applies.",
+    "tier": "judge"
+  },
+  "pen-2.3": {
+    "archetype": "note",
+    "paragraphs": [
+      "The base infraction still comes first, but its real weight comes from how it distorts the game state, which can call for sticking with the recommended penalty or moving off it.",
+      "Game state covers both players' full turns, everything in hand or in a competitor's roster, and every choice available to them at that moment.",
+      "Weighing a base infraction means tracing its ripple effect across the board, hands or rosters, and the paths not taken because of it.",
+      "A Judge tries to put the game state back where it belongs; when that damage can't be undone, a Game Loss becomes the fitting call, while a small infraction with a small ripple effect usually calls for a Caution or Warning instead."
+    ],
+    "summary": "Game state is everything live in a turn — board, hands, choices — and how badly an infraction disturbs it decides whether the base infraction's recommended penalty still fits.",
+    "tier": "judge"
+  },
+  "pen-2.4": {
+    "archetype": "note",
+    "paragraphs": [
+      "The types of penalties and how to apply them come later, but the underlying goal is always to teach the competitor about the infraction and head off a repeat.",
+      "Factor in your own comfort restoring the game state: if you're less confident there, lean on how the available penalties educate rather than forcing a full technical reset.",
+      "Aim for proportionality — being unable to fully undo the damage isn't, on its own, a reason to jump straight to the harshest option; weigh whether a lighter call still fits.",
+      "No guide covers every scenario, so use what's here to judge each tournament, game, and turn on its own facts, and always explain your reasoning when you deliver a penalty."
+    ],
+    "see_also": [
+      "pen-4"
+    ],
+    "summary": "Picking the right penalty means weighing the base infraction, its game impact, the competitor's age and skill, their intent, and more, with education as the goal.",
+    "tier": "judge"
+  },
+  "pen-3": {
+    "archetype": "note",
+    "paragraphs": [
+      "An infraction in a video game tournament looks nothing like an extra card drawn in the TCG, but the penalties below scale proportionally to how each kind of infraction disrupts its own game state."
+    ],
+    "summary": "These seven penalties give Play! Pokémon's very different tournament formats one consistent way to respond to infractions.",
+    "tier": "standard"
+  },
+  "pen-3.1": {
+    "archetype": "note",
+    "paragraphs": [
+      "Issuing a Caution just means telling the competitor they made an error; nothing else about the application process changes."
+    ],
+    "see_also": [
+      "pen-4.1.1.1"
+    ],
+    "summary": "A Caution is the lightest penalty: a Judge flags the mistake to the competitor and every other normal procedure still applies.",
+    "tier": "judge"
+  },
+  "pen-3.2": {
+    "archetype": "note",
+    "paragraphs": [
+      "Cautions and Warnings sit at the same minor severity, distinguished mainly by that reporting requirement.",
+      "Anything harsher than a Warning needs a check-in with the Head Judge or Assistant Head Judge first, and every Caution or Warning a Judge hands out should still reach the Head Judge's attention."
+    ],
+    "see_also": [
+      "pen-4.1.1.1"
+    ],
+    "summary": "A Warning is a minor penalty like a Caution, but the Head Judge or Tournament Organizer must report it to Play! Pokémon.",
+    "tier": "judge"
+  },
+  "pen-3.3": {
+    "archetype": "mechanic",
+    "branch": {
+      "options": [
+        {
+          "condition": "the opponent already holds four or more prizes",
+          "outcome": "the opponent wins the game immediately"
+        }
+      ],
+      "when": "the penalty is issued"
+    },
+    "effects": {
+      "Prizes opponent needs to win": "Format total minus two"
+    },
+    "see_also": [
+      "pen-3.4",
+      "pen-4.1.1.2"
+    ],
+    "state": [
+      "Every prize card stays in the prize area for both competitors",
+      "The offending competitor's opponent needs two fewer prizes than the format normally requires to win"
+    ],
+    "summary": "A TCG-only penalty for a mistake that meaningfully disrupts the game state with no clean fix, used when a Warning is too light and a Quadruple Prize Card penalty would be excessive.",
+    "tier": "judge"
+  },
+  "pen-3.4": {
+    "archetype": "mechanic",
+    "branch": {
+      "options": [
+        {
+          "condition": "the opponent already holds two or more prizes",
+          "outcome": "the opponent wins the game immediately"
+        }
+      ],
+      "when": "the penalty is issued"
+    },
+    "effects": {
+      "Prizes opponent needs to win": "Format total minus four"
+    },
+    "see_also": [
+      "pen-3.3",
+      "pen-4.1.1.2"
+    ],
+    "state": [
+      "Every prize card stays in the prize area for both competitors",
+      "The offending competitor's opponent needs four fewer prizes than the format normally requires to win"
+    ],
+    "summary": "A TCG-only penalty one step above Double Prize Card, for severe unresolvable game-state damage where a Game Loss would be excessive.",
+    "tier": "judge"
+  },
+  "pen-3.5": {
+    "archetype": "note",
+    "paragraphs": [
+      "It's the call for a game so broken it can't reasonably proceed, and it also covers other serious procedural breakdowns.",
+      "In rare cases where both competitors caused major problems in the same game, both can receive a Game Loss at once."
+    ],
+    "see_also": [
+      "pen-4.1.1.3"
+    ],
+    "summary": "Game Loss applies when damage to the game state is severe enough that play can't continue, or for other major procedural failures; it's recorded as a loss for the offending competitor.",
+    "tier": "judge"
+  },
+  "pen-3.6": {
+    "archetype": "note",
+    "paragraphs": [
+      "It's recorded as a loss for the offending competitor, and applies at the match level rather than a single game within it."
+    ],
+    "see_also": [
+      "pen-4.1.1.4"
+    ],
+    "summary": "Match Loss ends the whole match immediately when one competitor's conduct compromises its integrity, not just a single game.",
+    "tier": "judge"
+  },
+  "pen-3.7": {
+    "archetype": "note",
+    "paragraphs": [
+      "A disqualified competitor is pulled from the tournament entirely and loses eligibility for any prizes.",
+      "If warranted, they may also be asked to leave the venue."
+    ],
+    "see_also": [
+      "pen-4.1.1.6"
+    ],
+    "summary": "Disqualification is the harshest penalty available, reserved for extreme cases where a competitor's actions, intentional or not, seriously damage the event's integrity or operation.",
+    "tier": "judge"
+  },
+  "pen-4": {
+    "archetype": "note",
+    "paragraphs": [
+      "It walks through how penalties get applied, their timing, and when departing from the standard recommendation is justified."
+    ],
+    "summary": "Once a base infraction is identified and its game-state impact assessed, this section covers how, when, and whether to deviate from the recommended penalty.",
+    "tier": "standard"
+  },
+  "pen-4.1": {
+    "archetype": "procedure",
+    "see_also": [
+      "pen-4.2",
+      "pen-3.7"
+    ],
+    "steps": [
+      {
+        "action": "Review the infraction and how it disrupted the turn, game, or match, hearing from both competitors",
+        "actor": "Judge"
+      },
+      {
+        "action": "Match it to a base infraction and recommended starting penalty in section 5, and apply that penalty if it fits"
+      },
+      {
+        "action": "Deviate from the recommended penalty using section 4.2 and the base infraction's own alternate pathways when the actual disruption doesn't fit"
+      },
+      {
+        "action": "Give every infraction the same thorough review regardless of how routine it looks",
+        "note": "most calls will land on the guide's recommendation, but that's no excuse to skip the review"
+      },
+      {
+        "action": "Get sign-off from the Head Judge or Assistant Head Judge before issuing any penalty above a Warning",
+        "actor": "Judge"
+      },
+      {
+        "action": "Confirm a Disqualification with at least three Judges, including the Head Judge, at Regional Championships, Special Championships, or higher"
+      }
+    ],
+    "summary": "The standard path from noticing an infraction to issuing its penalty, including when extra sign-off is required.",
+    "tier": "judge"
+  },
+  "pen-4.1.1": {
+    "archetype": "note",
+    "paragraphs": [
+      "The subsections below spell out exactly when a penalty lands, whether mid-turn, between games, or between matches, and those defaults apply barring extenuating circumstances.",
+      "In exceptional cases, The Pokémon Company International can override the normal timing, or even a signed match slip, when tournament integrity is genuinely at risk or policy has been seriously disregarded."
+    ],
+    "summary": "Each penalty type has its own timing rule, which holds unless something unusual is going on.",
+    "tier": "judge"
+  },
+  "pen-4.1.1.1": {
+    "archetype": "procedure",
+    "see_also": [
+      "pen-3.1",
+      "pen-3.2"
+    ],
+    "steps": [
+      {
+        "action": "Issue the Caution or Warning as soon as you've settled on it"
+      },
+      {
+        "action": "Log the Warning in the event's penalty report",
+        "note": "Cautions don't get logged"
+      },
+      {
+        "action": "Take no further action unless the competitor commits another infraction"
+      },
+      {
+        "action": "Confirm with the Head Judge or Assistant Head Judge before applying anything above a Warning",
+        "note": "this applies every time, not only for these two penalties"
+      }
+    ],
+    "summary": "Cautions and Warnings land the instant a Judge decides to issue them, with minimal follow-up.",
+    "tier": "judge"
+  },
+  "pen-4.1.1.2": {
+    "archetype": "procedure",
+    "see_also": [
+      "pen-3.3",
+      "pen-3.4"
+    ],
+    "steps": [
+      {
+        "action": "Apply the penalty right when it's decided, during the game already underway"
+      },
+      {
+        "action": "Tell the opponent they now need two fewer prizes (Double) or four fewer (Quadruple) than the format's usual count"
+      },
+      {
+        "action": "End the game immediately in the opponent's favor if they already hold that many prizes"
+      }
+    ],
+    "summary": "Double and Quadruple Prize Card penalties take effect immediately and change how many prizes the opponent still needs to win.",
+    "tier": "judge"
+  },
+  "pen-4.1.1.3": {
+    "archetype": "procedure",
+    "see_also": [
+      "pen-3.5"
+    ],
+    "steps": [
+      {
+        "action": "Record the loss against the offending competitor for the game underway"
+      },
+      {
+        "action": "Set up for the next game right away if the match isn't over"
+      },
+      {
+        "action": "End the match if no games remain"
+      },
+      {
+        "action": "Apply Game Losses to both competitors together in extreme dual-error cases",
+        "note": "a single-game match ended this way is recorded as having no winner, not a tie"
+      },
+      {
+        "action": "Attach a Game Loss issued after a game ends but before the next game or the match result is finalized to the game that just finished"
+      },
+      {
+        "action": "Attach a Game Loss issued between rounds to the competitor's next game"
+      }
+    ],
+    "summary": "How a Game Loss lands depends on whether more games remain in the match and exactly when it's issued.",
+    "tier": "judge"
+  },
+  "pen-4.1.1.4": {
+    "archetype": "procedure",
+    "see_also": [
+      "pen-3.6"
+    ],
+    "steps": [
+      {
+        "action": "Record a loss for both the game in progress and the match, for a Match Loss issued mid-match"
+      },
+      {
+        "action": "Attach a Match Loss issued right after a match ends, before results are finalized, to the match that just concluded"
+      },
+      {
+        "action": "Attach a Match Loss recorded between rounds, once results are finalized, to the competitor's next match instead"
+      }
+    ],
+    "summary": "How a Match Loss lands depends on whether the match is still underway or was just finalized.",
+    "tier": "judge"
+  },
+  "pen-4.1.1.5": {
+    "archetype": "procedure",
+    "steps": [
+      {
+        "action": "In Pokémon GO only, run a single tiebreaker game at the Head Judge's discretion to settle who wins",
+        "note": "only when at least 10 minutes remain before the next round starts"
+      },
+      {
+        "action": "In that same Pokémon GO scenario, advance the higher-seeded competitor as the winner when there's no time for a tiebreaker"
+      },
+      {
+        "action": "Apply a Match Loss to the advancing competitor's next match either way"
+      }
+    ],
+    "summary": "Pokémon GO only: when both competitors' penalties leave a game without a winner, a tiebreaker or seeding decides who advances, and the winner picks up a Match Loss for their next round.",
+    "tier": "judge"
+  },
+  "pen-4.1.1.6": {
+    "archetype": "procedure",
+    "see_also": [
+      "pen-3.7"
+    ],
+    "steps": [
+      {
+        "action": "Add a Match Loss for the unfinished match before applying the Disqualification, if a Swiss-round competitor is mid-match"
+      },
+      {
+        "action": "Apply the Disqualification immediately, with no added match penalty, if the Swiss-round competitor isn't currently playing"
+      },
+      {
+        "action": "Add a Match Loss to the current round for a single-elimination competitor disqualified during their match"
+      },
+      {
+        "action": "Add a Match Loss to the most recently completed round for a single-elimination competitor disqualified between matches, and advance their eligible opponent"
+      },
+      {
+        "action": "Add Game Losses for every game of their most recent match, for a double-elimination competitor",
+        "note": "if that's their first tournament loss, add Game Losses to their next scheduled match too"
+      },
+      {
+        "action": "Apply those Game Losses to the current round, and the following round where it applies, if the double-elimination competitor is disqualified mid-match"
+      },
+      {
+        "action": "Apply the Game Losses to the most recently completed round if disqualified between matches with the next round unpaired, or otherwise to the rounds going forward"
+      },
+      {
+        "action": "Drop a competitor from the tournament instead of disqualifying them if a guardian they need gets removed from the venue",
+        "note": "unless they've separately committed an infraction that itself calls for disqualification"
+      }
+    ],
+    "summary": "Disqualification adds an extra Match Loss or set of Game Losses on top, and which one, and where it lands, depends on the tournament phase.",
+    "tier": "judge"
+  },
+  "pen-4.2": {
+    "archetype": "note",
+    "paragraphs": [
+      "The same infraction can land very differently depending on whether it's fully reversible, changes strategy in a big way, or barely touches the game state, any of that can justify moving up or down from the recommendation.",
+      "Whatever you decide, be ready to state plainly why that penalty, and not another, fits this situation.",
+      "The de-escalate and escalate examples that follow aren't exhaustive; a base infraction missing from either list can still be adjusted up or down, it's just less common."
+    ],
+    "summary": "Judges can move off the recommended starting penalty when their read of the game-state impact calls for it, as long as they can clearly explain why.",
+    "tier": "judge"
+  },
+  "pen-4.2.1": {
+    "archetype": "note",
+    "paragraphs": [
+      "When a mistake can only be partly undone, a penalty may still be needed to offset whatever edge survives the correction: a competitor who plays an extra card of a limited type that draws them cards and forces a discard from the opponent's hand can have the known discarded card restored, but since nobody can verify exactly which new cards they drew, a Judge has to return two random cards to their deck instead, leaving a residual advantage that a Double Prize Card penalty offsets.",
+      "When the action can be fully reversed, say, an erroneous extra card of that type swaps each side's active creature with a benched one, and the Judge can identify and restore the original active creature for both sides, a lighter penalty like a Warning may be all that's needed, along with a note in the tournament's penalty summary.",
+      "When the action can't be reversed at all, for instance an extra card of that type shuffles the competitor's hand back into their deck with no way to reconstruct what was there, no lesser penalty can make up for it, so a Game Loss is the fitting response.",
+      "Catching the error before it's fully carried out also matters: the earlier it's caught, the more room there usually is to walk it back."
+    ],
+    "summary": "Whether an erroneous action can be undone, and how completely, is a major factor in whether to escalate or de-escalate a penalty.",
+    "tier": "judge"
+  },
+  "pen-4.2.2": {
+    "archetype": "note",
+    "paragraphs": [
+      "Penalties are meant to teach and prevent recurrence; when a competitor keeps making the same kind of mistake, escalating the penalty for each new instance can reinforce that tournament rules need to be followed."
+    ],
+    "summary": "Repeat infractions can call for a harsher penalty each time, since simply repeating the lesson clearly isn't sinking in.",
+    "tier": "judge"
+  },
+  "pen-4.2.3": {
+    "archetype": "note",
+    "paragraphs": [
+      "Not every situation calls for this, but Judges should recognize that inexperience or the pressure of competing can lead to genuine mistakes.",
+      "A competitor who commits several different kinds of infractions in one event is often just unfamiliar with the rules; competitive play is intimidating to learn, and many competitors are young, so they deserve room to learn the game and the Play! Pokémon system.",
+      "If you deviate for one competitor based on age and experience, think about how that shapes your calls for similar infractions from others in similar situations later on.",
+      "Two instances of the same base infraction won't always be handled identically once circumstances are considered, but Judges should still weigh the precedent set by an age-and-experience deviation."
+    ],
+    "summary": "A competitor's age, experience, and tournament standing can be a legitimate reason to adjust off the recommended penalty.",
+    "tier": "judge"
+  },
+  "pen-4.3": {
+    "archetype": "procedure",
+    "steps": [
+      {
+        "action": "Explain which of the competitor's actions wasn't allowed"
+      },
+      {
+        "action": "Explain how the penalty affects their tournament"
+      },
+      {
+        "action": "Remind them they can appeal this or any other penalty to the Head Judge"
+      }
+    ],
+    "summary": "Penalties get delivered politely and discreetly, always covering the same three things.",
+    "tier": "judge"
+  },
+  "pen-4.3.1": {
+    "archetype": "note",
+    "paragraphs": [
+      "Word about a penalty often reaches the wider community regardless, so Professors should handle that information with enough sensitivity to spare those involved unnecessary embarrassment, the same courtesy anyone would want extended to themselves.",
+      "Public discussion for training purposes should stay anonymized, a competitor's penalty history should only be shared between Professors when it's actually relevant, and anything shared online belongs on appropriate channels rather than broad audiences where rumor can spread.",
+      "Professors should also hold back from publicly opining on rulings they weren't there for; the many factors behind a penalty are easy to misjudge from outside, and an uninformed take risks undercutting a fellow Professor."
+    ],
+    "summary": "Penalty information tends to travel through the community, so Professors need to handle it discreetly and avoid commenting on rulings they didn't witness.",
+    "tier": "judge"
+  },
+  "pen-4.4": {
+    "archetype": "note",
+    "paragraphs": [
+      "Any extension has to be clearly communicated to both competitors and logged by the Judge right away.",
+      "At Regional Championships and above, total extensions in a round can't exceed 16 minutes, whether that's one long extension or several shorter rulings adding up."
+    ],
+    "summary": "Judges can grant time extensions matching however long an issue took to resolve, but Championship Series rounds cap all extensions combined at 16 minutes.",
+    "tier": "judge"
+  },
+  "pen-5": {
+    "archetype": "note",
+    "paragraphs": [
+      "No document can catalog every infraction a tournament might produce, so this section works as a set of guidelines: match a real situation to the closest listed base infraction and reason from there, even when the fit isn't exact.",
+      "Each infraction category below breaks down by severity tier with its own recommended starting penalty, examples split out by game where the guidance differs, and situations that justify moving up or down from that starting point."
+    ],
+    "see_also": [
+      "pen-4",
+      "pen-5.4"
+    ],
+    "summary": "This nonexhaustive list of infraction types anchors every ruling a Judge makes, organized by severity with recommended starting penalties and possible deviations.",
+    "tier": "judge"
+  },
+  "pen-5.1": {
+    "archetype": "note",
+    "paragraphs": [
+      "A procedural error is any misstep that interferes with a tournament's orderly progress. The fallout can land on the competitor directly involved, on staff working to resolve it, or on the wider group of participants waiting on them."
+    ],
+    "see_also": [
+      "pen-5.1.1"
+    ],
+    "summary": "Procedural errors disrupt the smooth running of a tournament rather than the game itself, and can ripple out to staff and other competitors.",
+    "tier": "judge"
+  },
+  "pen-5.1.1": {
+    "archetype": "penalty",
+    "base_penalty": [
+      {
+        "examples": [
+          "A competitor wanders into a staff-only area by mistake",
+          "A competitor forgets to sign a match slip or confirm the result before leaving the play area, but is called back right away",
+          "In video game and Pokémon GO formats, a competitor doesn't hand their opponent a team sheet during team preview"
+        ],
+        "note": "resolved almost immediately, with no meaningful delay or inconvenience to the event",
+        "penalty": "Caution",
+        "tier": "Minor"
+      },
+      {
+        "examples": [
+          "A competitor forgets to sign a match slip or confirm the result before leaving, and staff have to track them down, delaying the round",
+          "A competitor unplugs or disconnects equipment mid-game or mid-match",
+          "A competitor refuses or fails to follow a staff instruction",
+          "In the TCG, a competitor can't supply the condition markers needed for effects their own deck can trigger",
+          "In the TCG, a competitor is slow returning an opponent's deck list once the open deck list review window closes, even after being asked",
+          "In Pokémon GO, a competitor takes an unreasonably long time picking their team members after team preview"
+        ],
+        "note": "risks delaying the tournament or inconveniencing nearby competitors while it gets sorted out",
+        "penalty": "Warning",
+        "tier": "Major"
+      },
+      {
+        "examples": [
+          "A competitor deliberately damages provided equipment while behaving aggressively",
+          "A competitor forgets to sign a match slip or confirm the result before leaving, and can't be found before the next round starts",
+          "In Pokémon GO, a competitor leaves the table before a Judge has finalized the match result"
+        ],
+        "note": "disrupts the tournament and can hurt the experience of people beyond just the offending competitor",
+        "penalty": "Game Loss",
+        "tier": "Severe"
+      }
+    ],
+    "infraction": "A procedural misstep that interrupts a tournament's smooth running, distinct from an in-game gameplay error",
+    "see_also": [
+      "pen-5.1.2"
+    ],
+    "summary": "Procedural error severity turns on how much delay or inconvenience the misstep causes the event and the people around it.",
+    "tier": "judge"
+  },
+  "pen-5.1.2": {
+    "archetype": "note",
+    "paragraphs": [
+      "De-escalate to Caution: a competitor prompted to hand over a deck list during the open deck list review period does so promptly.",
+      "Escalate to Game Loss: a competitor disconnects a device in a way that delays the tournament."
+    ],
+    "see_also": [
+      "pen-5.1.1"
+    ],
+    "summary": "Two worked examples show a Procedural Error penalty moving off its starting point in either direction.",
+    "tier": "judge"
+  },
+  "pen-5.2": {
+    "archetype": "note",
+    "paragraphs": [
+      "Competitors are responsible for reaching their assigned table on time, including honoring any staff-set call time that differs from the event's usual round start, and for handling personal matters and confirming pairings before their round begins. Unless staff say otherwise, the tardiness clock starts the moment the round starts.",
+      "In team formats such as Pokémon UNITE, a competitor also answers for a late teammate and can be penalized alongside them."
+    ],
+    "see_also": [
+      "pen-5.2.1"
+    ],
+    "summary": "Tardiness penalizes late arrivals because they eat into round time and inconvenience everyone waiting to play.",
+    "tier": "judge"
+  },
+  "pen-5.2.1": {
+    "archetype": "penalty",
+    "base_penalty": [
+      {
+        "examples": [
+          "A competitor arrives under 5 minutes late to their match"
+        ],
+        "note": "disrupts the opponent and nearby competitors without seriously delaying the round",
+        "penalty": "Warning",
+        "tier": "Minor"
+      },
+      {
+        "examples": [
+          "A competitor arrives 5 to 10 minutes late to their match"
+        ],
+        "note": "risks the match finishing on time and can back up the whole round",
+        "penalty": "Game Loss",
+        "tier": "Major"
+      },
+      {
+        "examples": [
+          "A competitor arrives more than 10 minutes late to their match"
+        ],
+        "note": "guarantees the match can't finish on time without major pacing problems for the round; arriving more than 10 minutes late triggers this fixed sequence rather than a single penalty label",
+        "penalty": "Match Loss, drop from the event, and a Match Win recorded for the waiting opponent",
+        "tier": "Severe"
+      }
+    ],
+    "handling": [
+      "A dropped competitor can rejoin the tournament if the next round hasn't been paired yet and they confirm with the Tournament Organizer; once that round is paired, re-entry is closed and their record stands as recorded",
+      "Where a format can't drop a competitor outright, such as double-elimination, they keep collecting Match Losses under this rule until double elimination removes them naturally"
+    ],
+    "infraction": "A competitor arrives late to their match after the round has begun",
+    "see_also": [
+      "pen-5.2.2"
+    ],
+    "summary": "How late a competitor arrives sets the tardiness tier, and the most severe case triggers a fixed sequence of outcomes rather than a single penalty label.",
+    "tier": "judge"
+  },
+  "pen-5.2.2": {
+    "archetype": "note",
+    "paragraphs": [
+      "No de-escalation examples are given for Tardiness in the source guidance.",
+      "No escalation examples are given for Tardiness in the source guidance."
+    ],
+    "see_also": [
+      "pen-5.2.1"
+    ],
+    "summary": "Unlike other infraction categories, the source guidance lists no example situations for adjusting a Tardiness penalty up or down from its starting point.",
+    "tier": "judge"
+  },
+  "pen-5.3": {
+    "archetype": "note",
+    "paragraphs": [
+      "This category reaches inappropriate behavior by competitors or spectators alike; a competitor doesn't need to be mid-match to draw an Unsporting Conduct penalty.",
+      "Competitors and spectators are meant to enjoy themselves, but should stay mindful that their conduct can land badly on the people around them."
+    ],
+    "see_also": [
+      "pen-5.3.1"
+    ],
+    "summary": "Unsporting Conduct covers behavior, on or off the active game, that harms others' tournament experience.",
+    "tier": "judge"
+  },
+  "pen-5.3.1": {
+    "archetype": "penalty",
+    "base_penalty": [
+      {
+        "examples": [
+          "A competitor swears mildly out of annoyance or in casual conversation",
+          "A competitor disrupts a match already in progress",
+          "A competitor leaves trash behind in the play area after their match"
+        ],
+        "note": "a contained lapse in judgment that bothers only a small group",
+        "penalty": "Warning",
+        "tier": "Minor"
+      },
+      {
+        "examples": [
+          "A competitor tries to distract or intimidate an opponent into misplaying",
+          "A competitor unintentionally breaches the inclusion policy in a way that still causes real distress to others",
+          "A competitor won't cooperate with a tournament policy, such as signing a match slip",
+          "A competitor makes legal but pointless plays, or deliberately slow-plays, purely to run down the clock"
+        ],
+        "note": "shows a lack of respect for fair play or for other attendees' enjoyment",
+        "penalty": "Match Loss",
+        "tier": "Major"
+      },
+      {
+        "examples": [
+          "A competitor directs profanity, slurs, physical threats, or insults at another attendee",
+          "A competitor deliberately breaches the inclusion policy intending to provoke or distress someone",
+          "A competitor commits assault, theft, or other criminal conduct",
+          "A competitor lies to tournament staff, including during an investigation",
+          "A competitor bribes or coerces another competitor",
+          "A competitor settles a match outcome by a random or otherwise disallowed method",
+          "A competitor who is the sole entrant in their age division drops as soon as possible in an obvious attempt to still collect prizing"
+        ],
+        "note": "openly disregards the Standards of Conduct and undermines the event's safe, family-friendly environment",
+        "penalty": "Disqualification",
+        "tier": "Severe"
+      }
+    ],
+    "infraction": "Inappropriate behavior by a competitor or spectator that harms other participants' tournament experience",
+    "see_also": [
+      "pen-5.3.2"
+    ],
+    "summary": "Unsporting Conduct severity tracks how broadly the behavior disrespects fair play, safety, or the event's family-friendly tone.",
+    "tier": "judge"
+  },
+  "pen-5.3.2": {
+    "archetype": "note",
+    "paragraphs": [
+      "No de-escalation examples are given for Unsporting Conduct in the source guidance.",
+      "Escalate to Game Loss: a competitor celebrates excessively in a way meant to taunt another participant."
+    ],
+    "see_also": [
+      "pen-5.3.1"
+    ],
+    "summary": "The source guidance lists no de-escalation example for Unsporting Conduct, but flags one escalation.",
+    "tier": "judge"
+  },
+  "pen-5.4": {
+    "archetype": "penalty",
+    "base_penalty": [
+      {
+        "examples": [
+          "All formats: a competitor solicits and acts on outside information about a game already underway",
+          "All formats: a competitor knowingly fills out or verifies a match slip incorrectly to change the recorded result",
+          "TCG: a competitor deliberately draws extra cards, or moves cards from the discard pile into their deck or hand",
+          "TCG: a competitor freely adjusts Special Conditions or damage counters on cards already in play",
+          "TCG: a competitor stacks or under-shuffles their deck to engineer access to a particular card",
+          "VG: a competitor plays on a system running custom firmware",
+          "VG: a competitor shares an account, or plays on the same game download or cartridge as another competitor",
+          "VG: a competitor uses third-party software or another application to see hidden information about a match in progress",
+          "VG: a competitor knowingly misreports their registered team's stats",
+          "VG: a competitor uses more than one team across a tournament",
+          "VG: a competitor registers for an online event under multiple systems or game cartridges",
+          "Pokémon GO: a competitor manipulates their GPS location",
+          "Pokémon GO: a competitor multi-accounts",
+          "Pokémon GO: a competitor uses third-party software or another application to see hidden information about a match in progress",
+          "Pokémon UNITE: a competitor shares an account",
+          "Pokémon UNITE: a competitor multi-accounts",
+          "Pokémon UNITE: a competitor uses third-party software or another application to see hidden information about a match in progress"
+        ],
+        "note": "the sole tier — Cheating carries no escalation or de-escalation path as a base infraction",
+        "penalty": "Disqualification",
+        "tier": "Severe"
+      }
+    ],
+    "infraction": "Knowingly using any means to gain, or try to gain, a competitive advantage over another competitor",
+    "see_also": [
+      "pen-3.7",
+      "pen-5.6.1.1"
+    ],
+    "summary": "Cheating always draws Disqualification with no adjustment either way; the category turns on intent to gain an unfair edge, and examples span every Play! Pokémon format.",
+    "tier": "judge"
+  },
+  "pen-5.5": {
+    "archetype": "note",
+    "paragraphs": [
+      "As a category, gameplay errors arise specifically during play rather than around the edges of it, but the root cause is almost always a mechanic executed incorrectly or skipped altogether.",
+      "For TCG minor and major gameplay errors, a Judge should try as hard as reasonably possible to preserve or restore the game state; see the reversibility discussion in the escalation and de-escalation guidance."
+    ],
+    "see_also": [
+      "pen-4.2.1",
+      "pen-5.5.1"
+    ],
+    "summary": "Gameplay errors happen inside an active game, usually from a missed or bungled game mechanic that threatens game, match, or tournament integrity.",
+    "tier": "judge"
+  },
+  "pen-5.5.1": {
+    "archetype": "penalty",
+    "base_penalty": [
+      {
+        "examples": [
+          "A competitor puts a card into their hand without showing it, when an effect requires revealing it",
+          "A competitor declares an attack without the Energy that attack requires",
+          "A competitor forgets to set up Prize cards at the start of the game",
+          "A competitor's own carelessness about tracking game actions contributes to their opponent's gameplay error"
+        ],
+        "note": "barely affects the game and resets easily; many real mistakes start out minor and only get reclassified major if they go uncaught",
+        "penalty": "Warning",
+        "tier": "Minor"
+      },
+      {
+        "examples": [
+          "A competitor draws one extra card",
+          "A competitor takes a Prize card without a Knock Out, or takes too many Prize cards after one",
+          "A competitor uses and fully resolves an Ability that a card in play was blocking",
+          "A competitor attaches more than one Energy card in a turn with no effect allowing it",
+          "A competitor forgets to set up Prize cards, giving potential access to up to six extra cards across one or two deck searches"
+        ],
+        "note": "leaves some irreversible confusion that can't be fully reset or offset, or hands a competitor illicit access to knowledge or cards needing substantial Judge involvement to fix, or went unnoticed long enough to have affected play",
+        "penalty": "Double Prize Card penalty",
+        "tier": "Major"
+      },
+      {
+        "examples": [
+          "A competitor shuffles their hand, Prize cards, or discard pile into their deck without a card effect that allows it",
+          "A competitor retrieves or puts away cards from a still-open game before the match slip is signed to confirm both sides agree on the result",
+          "A competitor forgets to set up Prize cards, giving potential access to six extra cards across three or more deck searches"
+        ],
+        "note": "leaves the game state broken beyond what a Judge can reasonably restore without unacceptably compromising that game's integrity",
+        "penalty": "Game Loss",
+        "tier": "Severe"
+      }
+    ],
+    "infraction": "A TCG gameplay error — a missed or mishandled game mechanic during an active game",
+    "see_also": [
+      "pen-5.5.1.1",
+      "pen-4.2.1"
+    ],
+    "summary": "TCG gameplay error severity depends on how cleanly the game state can be reset, from a trivial fix up to permanent, unfixable confusion.",
+    "tier": "judge"
+  },
+  "pen-5.5.1.1": {
+    "archetype": "note",
+    "paragraphs": [
+      "De-escalate to Warning: a competitor draws an extra card, but it's caught while the correct card is still identifiable and before they've seen its face, so it can go straight back on top of the deck.",
+      "De-escalate to Warning: a competitor shuffles a small discard pile into their deck without a card effect, early enough in the game, and clearly enough to both players which cards belonged in it, that the pile can be accurately rebuilt.",
+      "Escalate to Double Prize Card, Quadruple Prize Card, or a full Game Loss — the actual pick tracks how much of the mess is still salvageable: a competitor attacks without the Energy that attack needs, that illegal attack lands a Knock Out, and nobody catches it for several more turns, leaving things too tangled to unwind cleanly."
+    ],
+    "see_also": [
+      "pen-5.5.1"
+    ],
+    "summary": "Two worked examples show TCG gameplay-error penalties moving down when the state is cleanly recoverable, and up when it isn't.",
+    "tier": "judge"
+  },
+  "pen-5.5.2": {
+    "archetype": "penalty",
+    "base_penalty": [
+      {
+        "examples": [
+          "A competitor causes a delay through a game freeze that can be fixed",
+          "A competitor delays the start of a match due to a hardware issue or need"
+        ],
+        "note": "a small mistake with very little impact on the game",
+        "penalty": "Warning",
+        "tier": "Minor"
+      },
+      {
+        "examples": [
+          "A competitor removes their game card from their system mid-game",
+          "A competitor's system loses power or its internet connection",
+          "A competitor removes a controller or other peripheral mid-game",
+          "A competitor causes a game freeze that can't be fixed — if both sides suffer an unfixable freeze and fault is unclear, resolve it under the VG handbook's double game freeze rule instead",
+          "A competitor tries to view their opponent's screen to gain an advantage"
+        ],
+        "note": "leaves the game state irretrievably broken",
+        "penalty": "Game Loss",
+        "tier": "Severe"
+      }
+    ],
+    "infraction": "A VG gameplay error — a mistake made during an active video game match",
+    "see_also": [
+      "pen-5.5.2.1"
+    ],
+    "summary": "VG gameplay errors run from small, low-impact mistakes straight to unrecoverable game states, with no defined middle tier.",
+    "tier": "judge"
+  },
+  "pen-5.5.2.1": {
+    "archetype": "note",
+    "paragraphs": [
+      "No de-escalation examples are given for VG gameplay errors in the source guidance.",
+      "Escalate to Disqualification: a competitor tries to view their opponent's screen more than once.",
+      "Escalate to Disqualification: a competitor exploits a fixable game freeze to gain a competitive advantage."
+    ],
+    "see_also": [
+      "pen-5.5.2"
+    ],
+    "summary": "The source guidance lists no VG de-escalation example, but flags two situations that escalate straight to Disqualification.",
+    "tier": "judge"
+  },
+  "pen-5.5.3": {
+    "archetype": "penalty",
+    "base_penalty": [
+      {
+        "examples": [
+          "A competitor delays the start of a match while sourcing a charger or gameplay device",
+          "A competitor delays the start of a match because they can't log into their account"
+        ],
+        "note": "a brief, reversible effect on the game's progress",
+        "penalty": "Warning",
+        "tier": "Minor"
+      },
+      {
+        "examples": [
+          "A competitor closes the app during a game in progress",
+          "A competitor's own behavior directly causes a major technical issue",
+          "A competitor tries to view their opponent's screen to gain an advantage"
+        ],
+        "note": "leaves the game state irretrievably broken",
+        "penalty": "Game Loss",
+        "tier": "Severe"
+      }
+    ],
+    "infraction": "A Pokémon GO gameplay error — a mistake made during an active Pokémon GO match",
+    "see_also": [
+      "pen-5.5.3.1"
+    ],
+    "summary": "Pokémon GO gameplay errors range from brief, reversible hiccups to a game state too damaged to continue.",
+    "tier": "judge"
+  },
+  "pen-5.5.3.1": {
+    "archetype": "note",
+    "paragraphs": [
+      "No de-escalation examples are given for Pokémon GO gameplay errors in the source guidance.",
+      "Escalate to Match Loss: a competitor can't source a working charger or gameplay device, or their device fails and isn't replaced within 10 minutes of the match starting.",
+      "Escalate to Match Loss: a competitor can't log into their account within 10 minutes of the match starting.",
+      "Escalate to Disqualification: a competitor tries to view their opponent's screen more than once."
+    ],
+    "see_also": [
+      "pen-5.5.3"
+    ],
+    "summary": "The source guidance lists no de-escalation example for Pokémon GO gameplay errors, but names three escalation triggers, two of them tied to a fixed time limit.",
+    "tier": "judge"
+  },
+  "pen-5.5.4": {
+    "archetype": "penalty",
+    "base_penalty": [
+      {
+        "examples": [
+          "A competitor delays the start of a match while sourcing a charger, gameplay device, or peripheral"
+        ],
+        "note": "a brief, reversible effect on the game's progress",
+        "penalty": "Warning",
+        "tier": "Minor"
+      },
+      {
+        "examples": [
+          "A competitor closes the app during a game in progress",
+          "A competitor's own behavior directly causes a major technical issue",
+          "A competitor deliberately exploits a bug or system error"
+        ],
+        "note": "leaves the game state irretrievably broken",
+        "penalty": "Disqualification",
+        "tier": "Severe"
+      }
+    ],
+    "infraction": "A Pokémon UNITE gameplay error — a mistake made during an active Pokémon UNITE match",
+    "see_also": [
+      "pen-5.5.4.1"
+    ],
+    "summary": "Pokémon UNITE gameplay errors run from a brief, reversible hiccup straight to Disqualification for a broken game state, with no middle tier.",
+    "tier": "judge"
+  },
+  "pen-5.5.4.1": {
+    "archetype": "note",
+    "paragraphs": [
+      "No de-escalation examples are given for Pokémon UNITE gameplay errors in the source guidance.",
+      "Escalate to Match Loss: a competitor can't source a working charger, gameplay device, or peripheral, or a broken one isn't replaced within 10 minutes of the match starting."
+    ],
+    "see_also": [
+      "pen-5.5.4"
+    ],
+    "summary": "The source guidance lists no de-escalation example for Pokémon UNITE gameplay errors, and names a single escalation trigger.",
+    "tier": "judge"
+  },
+  "pen-5.6": {
+    "archetype": "note",
+    "paragraphs": [
+      "The Tournament Rules Handbook sets a floor of at least 10 percent of competitors checked per game, though Play! Pokémon encourages checking as many as venue size and staffing allow, provided it doesn't hurt event quality or tournament operations.",
+      "Each game's legality check standard is spelled out just ahead of that game's base infractions."
+    ],
+    "see_also": [
+      "pen-5.6.1",
+      "pen-5.6.2",
+      "pen-5.6.3"
+    ],
+    "summary": "Legality checks safeguard tournament integrity by sampling at least a tenth of competitors per game, with a per-game standard defined just ahead of that game's own infraction table.",
+    "tier": "judge"
   },
   "pen-5.6.1": {
     "archetype": "penalty",
@@ -79,5 +1017,281 @@
     "upgrade_conditions": [
       "Evidence of intent to gain advantage moves the matter to a Cheating review"
     ]
+  },
+  "pen-5.6.1.1": {
+    "archetype": "note",
+    "paragraphs": [
+      "No de-escalation examples are given for TCG legality checks in the source guidance.",
+      "Escalate to Disqualification: a competitor is flagged for marked cards more than once across a tournament.",
+      "Escalate to Disqualification: an investigation into a major legality issue turns up clear intent to gain an advantage.",
+      "Escalate to Disqualification as Cheating: a competitor's deck box holds cards that show any combination of visually similar sleeves, outsized importance to how the build performs, or clear signs of having been swapped in for other cards."
+    ],
+    "see_also": [
+      "pen-5.6.1"
+    ],
+    "summary": "For the TCG legality check, the source guidance lists no de-escalation example, but names three situations that escalate to Disqualification.",
+    "tier": "judge"
+  },
+  "pen-5.6.2": {
+    "archetype": "penalty",
+    "base_penalty": [
+      {
+        "examples": [
+          "A team member or its held item doesn't match the team list, but the mismatch confers no plausible advantage — for instance an alternate form is left off the list while another listed detail, such as a form-exclusive move or Ability, still makes the intended form clear, or a listed held item differs from what's actually equipped",
+          "A team member is nicknamed after a different one; if renaming is possible before the next game the competitor should do so, and if it isn't, that team member sits out the rest of the tournament",
+          "The Battle Team matches the team list, but the Rental Team ID on file is wrong — the competitor should supply the correct ID to a Judge before their next match"
+        ],
+        "note": "the mismatch carries no potential competitive advantage for the offending competitor",
+        "penalty": "Warning",
+        "tier": "Minor"
+      },
+      {
+        "examples": [
+          "A team member or held item doesn't match the list and no other listed detail clarifies it, so a real advantage is possible — for instance an alternate form is left off the list with nothing else on the list to clarify it",
+          "The Battle Team, team list, and Rental Team ID disagree with each other — where only one of the three is out of step, correct it to match the other two; where all three disagree, the team member involved sits out the rest of the tournament",
+          "A listed move name doesn't match what the team member actually knows",
+          "A stat is missing or wrong on the team list",
+          "A team member appears on the milder of the two illegal-manipulation lists referenced in the post-event disciplinary section",
+          "A team member's nickname, Original Trainer name, or other detail deliberately references something that runs against the Spirit of the Game"
+        ],
+        "note": "the mismatch could give the offending competitor a real advantage; the offending team member, Tera Type, move, Ability, or held item is barred from play, with an on-the-spot fix offered when the corrected version is available — otherwise it's removed without replacement, and an offending Tera Type or Ability is handled by removing the team member entirely since neither can be swapped out on its own",
+        "penalty": "Game Loss",
+        "tier": "Major"
+      },
+      {
+        "examples": [
+          "Earlier penalties have already dropped a competitor's usable team below the tournament's minimum team size",
+          "A team member appears on the more serious of the two illegal-manipulation lists referenced in the post-event disciplinary section",
+          "An official tool indicates a team member has been illegally manipulated, such as failing an electronic team check"
+        ],
+        "note": "causes extreme disruption to match integrity and calls for immediate Disqualification",
+        "penalty": "Disqualification",
+        "tier": "Severe"
+      }
+    ],
+    "handling": [
+      "Where the team list and the physical Battle Team disagree, the team list controls and the Battle Team gets corrected to match it",
+      "Fix what's immediately fixable in the moment: offer the competitor the chance to correct their team on the spot before falling back to removing the offending element"
+    ],
+    "infraction": "A mismatch between a competitor's in-game Battle Team — its roster, stats, moves, and held items — and their submitted team list, which is the source of truth for VG",
+    "see_also": [
+      "pen-5.6.2.1",
+      "pen-7"
+    ],
+    "summary": "VG team check severity depends on whether the mismatch could hand the competitor a real advantage, and the team list always controls how any fix is made.",
+    "tier": "judge"
+  },
+  "pen-5.6.2.1": {
+    "archetype": "note",
+    "paragraphs": [
+      "No de-escalation examples are given for VG team checks in the source guidance.",
+      "Escalate to Disqualification: removing the offending team members would take a competitor's Battle Team below four usable members, which reclassifies the whole infraction as severe.",
+      "Escalate to Disqualification: a competitor turns out to have more than one copy of their Battle Team available to them, giving easy access to an advantage in certain matches."
+    ],
+    "see_also": [
+      "pen-5.6.2"
+    ],
+    "summary": "For VG team checks, the source guidance lists no de-escalation example, but names two situations that escalate to Disqualification.",
+    "tier": "judge"
+  },
+  "pen-5.6.3": {
+    "archetype": "penalty",
+    "base_penalty": [
+      {
+        "examples": [
+          "A team member is listed without its exact alternate form noted, but another detail on the list, such as a form-exclusive move, still makes the intended form clear"
+        ],
+        "note": "the mismatch gives the competitor no potential advantage",
+        "penalty": "Warning",
+        "tier": "Minor"
+      },
+      {
+        "examples": [
+          "A team member not on the team list is chosen for battle",
+          "A team member's move is listed under a different name on the team list than what it actually knows",
+          "A team member's Combat Power is missing or wrong on the team list",
+          "A team member is listed without its exact alternate form noted, and nothing else on the list clarifies which form is meant"
+        ],
+        "note": "the mismatch is one that could realistically favor the offending competitor; conceding the game right after this kind of error is caught still gets the earned Game Loss logged on the record, but the concession stands rather than the penalty deciding the match — that option disappears the moment a Game Loss has already been handed down",
+        "penalty": "Game Loss",
+        "tier": "Major"
+      },
+      {
+        "examples": [
+          "Earlier penalties have already dropped a competitor to fewer than three usable team members",
+          "A competitor runs a modified client or other third-party application that could affect tournament integrity"
+        ],
+        "note": "an official tool flags illegal manipulation of a team member, or the team has fallen below the minimum usable size to continue",
+        "penalty": "Disqualification",
+        "tier": "Severe"
+      }
+    ],
+    "handling": [
+      "Where the team list and the actual fielded team disagree, always fix it by removing the offending team member from play, never by editing the list",
+      "If the correct team member is available on the spot, let the competitor swap it in; if not, the offending one stays on the roster but can't be used, and the competitor must tell each opponent during team preview that it's unavailable",
+      "Dropping below three usable team members escalates the infraction to severe"
+    ],
+    "infraction": "A mismatch between the team a competitor actually fields in Pokémon GO and their submitted team list, which always controls",
+    "see_also": [
+      "pen-5.6.3.1"
+    ],
+    "summary": "Pokémon GO team check severity depends on whether the mismatch could give the competitor an advantage, and the team list always wins any conflict with the fielded team.",
+    "tier": "judge"
+  },
+  "pen-5.6.3.1": {
+    "archetype": "note",
+    "paragraphs": [
+      "De-escalate to Warning: a competitor lists the wrong HP value for a team member, but HP isn't a field reviewed on the team preview list, so the mismatch doesn't warrant the usual penalty.",
+      "No escalation examples are given for Pokémon GO team checks in the source guidance."
+    ],
+    "see_also": [
+      "pen-5.6.3"
+    ],
+    "summary": "One worked example shows a Pokémon GO team-check penalty de-escalating; the source lists no escalation example.",
+    "tier": "judge"
+  },
+  "pen-5.7": {
+    "archetype": "penalty",
+    "base_penalty": [
+      {
+        "examples": [
+          "A competitor repeatedly re-searches their deck, hand, or discard pile while resolving one card effect",
+          "A competitor counts or searches a deck or discard pile, their own or their opponent's, more than once in a short span",
+          "A competitor takes an unreasonably long time deciding where to attach an Energy card",
+          "A competitor rushes ahead by placing damage before their opponent has announced which attack is being used"
+        ],
+        "note": "an isolated incident, often from slow decision-making or a tense, complicated situation",
+        "penalty": "Warning",
+        "tier": "Minor"
+      },
+      {
+        "examples": [
+          "A competitor is habitually slow choosing targets when receiving or resolving an effect or damage",
+          "A competitor's pace of play stays poor even after an earlier penalty for the same thing"
+        ],
+        "note": "a sustained or repeated slowdown affecting one or more later games",
+        "penalty": "Double Prize Card penalty",
+        "tier": "Severe"
+      }
+    ],
+    "handling": [
+      "Play! Pokémon publishes reasonable time frames for common actions as a guideline, meant to be read alongside the normal flow of the game rather than as a rigid clock: roughly 3 minutes for shuffling and setup at the start of a game, 45 seconds for the first shuffle and deck search, 15 seconds for mid-game shuffling and deck searches, 15 seconds to carry out a card's or attack's effects, 10 seconds to weigh the position before playing a card, and 5 seconds to begin a turn once the opponent announces its end"
+    ],
+    "infraction": "A competitor's actions, or inaction, slow the game enough to put their opponent at a disadvantage",
+    "see_also": [
+      "pen-5.7.1"
+    ],
+    "summary": "Pace of play infractions cover play that drags on beyond reasonable time frames; a Judge can pair the penalty with a time extension to offset the disadvantage it caused.",
+    "tier": "judge"
+  },
+  "pen-5.7.1": {
+    "archetype": "note",
+    "paragraphs": [
+      "No de-escalation examples are given for Pace of Play in the source guidance.",
+      "No escalation examples are given for Pace of Play in the source guidance."
+    ],
+    "see_also": [
+      "pen-5.7"
+    ],
+    "summary": "The source guidance lists no de-escalation or escalation examples for Pace of Play.",
+    "tier": "judge"
+  },
+  "pen-6": {
+    "archetype": "note",
+    "paragraphs": [
+      "That history helps determine whether further disciplinary action is warranted. To support it, event staff must submit the documentation below to Play! Pokémon through its customer support portal once a tournament wraps up."
+    ],
+    "see_also": [
+      "pen-6.1",
+      "pen-6.2"
+    ],
+    "summary": "Play! Pokémon tracks each competitor's penalty history to tell intentional repeat offenses from one-off mistakes, which requires specific paperwork after every tournament.",
+    "tier": "judge"
+  },
+  "pen-6.1": {
+    "archetype": "procedure",
+    "see_also": [
+      "pen-6"
+    ],
+    "steps": [
+      {
+        "action": "Build a spreadsheet in CSV format listing every penalty issued at the tournament, with one row per penalty",
+        "note": "columns cover the tournament ID, round issued, the competitor's player ID, the Judge's player ID, the infraction category, its severity, the penalty given, and any notes"
+      },
+      {
+        "action": "Attach the finished file to a submission through the Play! Pokémon customer support service's Tournament Report tool"
+      },
+      {
+        "action": "Choose \"Penalty Summary\" from the relevant drop-down menu"
+      },
+      {
+        "action": "Title the submission \"Penalty Report:\" followed by the tournament ID"
+      },
+      {
+        "action": "Submit within seven days of the tournament's conclusion"
+      }
+    ],
+    "summary": "Every tournament needs a complete Tournament Penalty Summary submitted through the Play! Pokémon customer support portal within a week of the event ending.",
+    "tier": "judge"
+  },
+  "pen-6.2": {
+    "archetype": "procedure",
+    "see_also": [
+      "pen-6",
+      "pen-3.7"
+    ],
+    "steps": [
+      {
+        "action": "Write up every factor that led to the decision to issue the Disqualification",
+        "actor": "Head Judge"
+      },
+      {
+        "action": "List the names and player ID numbers of every Judge present when the incident occurred"
+      },
+      {
+        "action": "Attach the finished report to a submission through the Play! Pokémon customer support service's Tournament Report tool"
+      },
+      {
+        "action": "Choose \"Disqualification Report\" from the relevant drop-down menu"
+      },
+      {
+        "action": "Submit within seven days of the tournament's conclusion",
+        "note": "mandatory for any Disqualification issued at a Championship Series event"
+      },
+      {
+        "action": "Treat this reporting duty as ongoing",
+        "note": "repeatedly failing to submit a thorough report can itself draw discipline, including loss of eligibility for leadership roles at future events"
+      }
+    ],
+    "summary": "Every Disqualification needs a full incident report from the Head Judge, submitted the same way as a Penalty Summary, and it's mandatory for any Disqualification at a Championship Series event.",
+    "tier": "judge"
+  },
+  "pen-7": {
+    "archetype": "note",
+    "paragraphs": [
+      "This applies when an on-site penalty, such as one for Cheating or a serious inclusion-policy violation, gets escalated for review by an internal team. If that team confirms the case warrants it, the competitor receives notice of the disciplinary action.",
+      "Play! Pokémon reserves the right to discipline any competitor for rules infractions, weighing severity and whether the conduct is repeated; a program suspension is one possible outcome, and a suspended competitor's name and player ID are shared with Organizers so the suspension can be enforced.",
+      "A suspended competitor may not attend a Play! Pokémon event in any capacity — not as a spectator, competitor, or Judge. If they try to participate anyway and won't leave when asked, that gets reported to Play! Pokémon and can extend the suspension.",
+      "An appendix to this section defines two tiers of illegal VG team manipulation that an electronic team check might miss, and those tiers feed directly into the VG team-check penalties: the milder tier covers a team member showing some sign it wasn't obtained through normal play or official promotions but with no real competitive edge from that alone — for example an origin, capture method, or rarity flag inconsistent with legitimate acquisition, or a nickname or trainer name that gives it away. The more serious tier covers any attack, Ability, Nature, stat, or other attribute that gives a real competitive advantage and could not have been obtained through normal play or official promotions. Where event staff disagree on which tier applies, the Head Judge has final say.",
+      "A team member caught under the milder tier is removed from the Battle Team without replacement; if that removal alone drops the competitor below the tournament's minimum entry requirement, they must also be disqualified from the event even though the underlying infraction is only the milder tier."
+    ],
+    "see_also": [
+      "pen-5.6.2",
+      "pen-3.7"
+    ],
+    "summary": "Post-event disciplinary action reviews penalties serious enough to question whether a competitor belongs in the Play! Pokémon community, and can lead to a program-wide suspension.",
+    "tier": "judge"
+  },
+  "pen-8": {
+    "archetype": "note",
+    "paragraphs": [
+      "This edition revises the Tardiness section to update its language covering call-time tardiness and team-event tardiness.",
+      "No other section in this changelog lists a recorded change for this edition."
+    ],
+    "see_also": [
+      "pen-5.2"
+    ],
+    "summary": "The May 21, 2026 edition's only recorded content change from the April 7, 2026 edition is updated wording for Tardiness.",
+    "tier": "standard"
   }
 }
