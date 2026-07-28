@@ -32,6 +32,23 @@ test:
 content-status:
     cd pipeline && uv run python -m benchside_pipeline content-status --root ..
 
+# --- decomposition skill validators (buddy scripts) ---
+
+# After authoring: schema, coverage, quotes, overlap, see-also, personas
+check-decomposition: build
+    cd pipeline && uv run python -m benchside_pipeline verify --root ..
+    cd pipeline && uv run python -m benchside_pipeline content-status --root ..
+    cd pipeline && uv run pytest tests/test_personas.py -q
+
+# After review: every shipped entry has a fresh, well-formed verdict
+check-fidelity-review *ARGS:
+    python3 scripts/check_fidelity_review.py --root . {{ARGS}}
+
+# Committed content still reproduces from the source PDFs + manifest
+# (runs inside the pipeline env — it imports the parser it validates)
+check-ingest *ARGS:
+    cd pipeline && uv run python ../scripts/check_ingest.py --root .. {{ARGS}}
+
 # --- iOS app (Plan 2) ---
 
 # Copy the built rules DB into the app bundle resources (runs pipeline build first)
