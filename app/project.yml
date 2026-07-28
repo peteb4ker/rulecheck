@@ -34,6 +34,15 @@ targets:
         # regeneration. Team IDs are not secret (they ship in app metadata).
         DEVELOPMENT_TEAM: T27ZNJQMWN
         CODE_SIGN_STYLE: Automatic
+        # Two words on purpose: "RuleCheck" (one word) is a live, unrelated
+        # App Store app (id6786960142). This key drives every user-visible
+        # surface — home screen, app switcher, Settings.
+        #
+        # CFBundleName stays "RuleCheck": Xcode synthesizes it from
+        # PRODUCT_NAME under GENERATE_INFOPLIST_FILE and ignores
+        # INFOPLIST_KEY_CFBundleName (verified). Forcing it would mean a
+        # "Rule Check.app" product and spaces through TEST_HOST, justfile,
+        # and CI — not worth it for a key CFBundleDisplayName overrides.
         INFOPLIST_KEY_CFBundleDisplayName: "Rule Check"
         GENERATE_INFOPLIST_FILE: YES
         SWIFT_VERSION: "5.10"

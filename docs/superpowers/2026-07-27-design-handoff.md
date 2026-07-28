@@ -4,7 +4,7 @@
 
 For a design-focused Claude session working on the app's look and feel.
 Read this, then CLAUDE.md, then the
-[design spec](specs/2026-07-26-benchside-design.md). This document doesn't
+[design spec](specs/2026-07-26-rulecheck-design.md). This document doesn't
 repeat what those say; it adds the visual-design context and boundaries.
 
 ## What you're styling

@@ -10,7 +10,7 @@
 
 ## Global Constraints
 
-- Spec: `docs/superpowers/specs/2026-07-26-benchside-design.md`
+- Spec: `docs/superpowers/specs/2026-07-26-rulecheck-design.md`
 - Body text is **verbatim** from source documents (rewrite decision deferred to the Research Gate; pipeline is identical either way).
 - Section IDs are stable, human-readable: `<prefix>-<number>` (e.g. `trh-5.2`).
 - Source PDFs are **never committed** (`sources/*.pdf` git-ignored); `sources.yaml` and parsed `content/*.json` **are** committed.

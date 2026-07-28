@@ -1,6 +1,6 @@
 # Benchside — Verbatim Rules Text Copyright Research
 
-Research notes only. Not legal advice; not a substitute for review by a licensed IP attorney before shipping. Prepared per the Research Gate referenced in `docs/superpowers/specs/2026-07-26-benchside-design.md`.
+Research notes only. Not legal advice; not a substitute for review by a licensed IP attorney before shipping. Prepared per the Research Gate referenced in `docs/superpowers/specs/2026-07-26-rulecheck-design.md`.
 
 ## 1. The mechanics/expression line
 
