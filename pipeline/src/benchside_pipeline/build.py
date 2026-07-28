@@ -5,7 +5,7 @@ from pathlib import Path
 
 from benchside_pipeline.flatten import flatten_entry
 from benchside_pipeline.model import load_document
-from benchside_pipeline.rewrites import load_rewrites
+from benchside_pipeline.rewrites import is_skip, load_rewrites
 from benchside_pipeline.xrefs import detect_xrefs
 
 SCHEMA = """
@@ -57,14 +57,21 @@ def build_db(content_dir: Path, out_path: Path, rewrites_dir: Path | None = None
                 (source.id, source.prefix, source.title, source.version,
                  source.published, source.url),
             )
+            # Skipped sections never reach the app at all — not as structure,
+            # and emphatically not as verbatim source text.
+            shipped = [s for s in sections
+                       if not (s.id in rewrites and is_skip(rewrites[s.id]))]
             con.executemany(
                 "INSERT INTO sections VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
                 [(s.id, s.doc_id, s.parent_id, s.number, s.title,
                   flatten_entry(rewrites[s.id]) if s.id in rewrites else s.body,
-                  s.breadcrumb, s.order) for s in sections],
+                  s.breadcrumb, s.order) for s in shipped],
             )
+            shipped_ids = {s.id for s in shipped}
             con.executemany(
-                "INSERT INTO xrefs VALUES (?, ?)", detect_xrefs(sections)
+                "INSERT INTO xrefs VALUES (?, ?)",
+                [(f, t) for f, t in detect_xrefs(sections)
+                 if f in shipped_ids and t in shipped_ids],
             )
         con.execute(
             "INSERT INTO sections_fts(rowid, title, body) "

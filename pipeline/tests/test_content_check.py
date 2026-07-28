@@ -154,3 +154,25 @@ def test_invalid_entry_errors_propagate(tmp_path):
     rewrites = write_rewrites(tmp_path, {
         "fix-1.1": {"archetype": "saga", "tier": "standard"}, "fix-2": entry()})
     assert any("archetype" in m for m in check_rewrites(content, rewrites))
+
+
+def test_skip_satisfies_coverage(tmp_path):
+    content = make_content(tmp_path)
+    rewrites = write_rewrites(tmp_path, {
+        "fix-1.1": entry(), "fix-2": {"skip": "colophon, no rules content"}})
+    assert check_rewrites(content, rewrites, release=True) == []
+
+
+def test_skip_on_missing_section_is_orphan(tmp_path):
+    content = make_content(tmp_path)
+    rewrites = write_rewrites(tmp_path, {
+        "fix-1.1": entry(), "fix-2": entry(), "fix-99": {"skip": "gone"}})
+    assert any("fix-99" in m and "orphan" in m for m in check_rewrites(content, rewrites))
+
+
+def test_see_also_pointing_at_skipped_section_fails(tmp_path):
+    content = make_content(tmp_path)
+    rewrites = write_rewrites(tmp_path, {
+        "fix-1.1": entry(see_also=["fix-2"]),
+        "fix-2": {"skip": "not shipped"}})
+    assert any("fix-2" in m and "skipped" in m for m in check_rewrites(content, rewrites))

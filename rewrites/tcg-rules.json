@@ -502,12 +502,7 @@
     "tier": "standard"
   },
   "tcg-Credits": {
-    "archetype": "note",
-    "paragraphs": [
-      "A closing page naming the studios and staff behind the original release and its English-language adaptation, alongside official website and customer-support contact details and standard trademark and copyright notices."
-    ],
-    "summary": "The rulebook's closing colophon, crediting its production teams and pointing to official support channels.",
-    "tier": "standard"
+    "skip": "Publication colophon: studio credits, support contacts, trademark notices. No rules content; nothing a player or judge searches for."
   },
   "tcg-Deck Building": {
     "archetype": "procedure",
@@ -1021,54 +1016,7 @@
     "tier": "standard"
   },
   "tcg-Parts of a Pokémon Card": {
-    "archetype": "definition",
-    "terms": [
-      {
-        "meaning": "Which Energy type the Pokémon belongs to.",
-        "term": "Pokémon Type"
-      },
-      {
-        "meaning": "The Pokémon's (or Trainer card's) printed title.",
-        "term": "Card Name"
-      },
-      {
-        "meaning": "The total damage the Pokémon can take before being Knocked Out.",
-        "term": "HP"
-      },
-      {
-        "meaning": "Marks whether the card is a Basic Pokémon or which Evolution stage it is.",
-        "term": "Stage"
-      },
-      {
-        "meaning": "Names the Pokémon this card evolves from, printed on Evolution cards.",
-        "term": "Evolves From"
-      },
-      {
-        "meaning": "Identifies the card as a Pokémon, Energy, or Trainer card.",
-        "term": "Card Type"
-      },
-      {
-        "meaning": "Holds a Pokémon's attacks and Abilities, or a Trainer card's effect text.",
-        "term": "Text Box"
-      },
-      {
-        "meaning": "For Trainer cards, shows the subtype — Item, Supporter, Stadium, or Pokémon Tool.",
-        "term": "Trainer Type"
-      },
-      {
-        "meaning": "Reminder text at the bottom of a Trainer card describing how its subtype behaves.",
-        "term": "Trainer Rule"
-      },
-      {
-        "meaning": "Identifies which expansion the card belongs to.",
-        "term": "Expansion Code"
-      },
-      {
-        "meaning": "The card's number within its expansion.",
-        "term": "Collector Card Number"
-      }
-    ],
-    "tier": "standard"
+    "skip": "Diagram callout labels only — no prose in the source, so any entry would be invented rather than authored. Card anatomy is not searchable rules content."
   },
   "tcg-Parts of a Turn": {
     "archetype": "procedure",

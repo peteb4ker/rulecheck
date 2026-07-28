@@ -53,6 +53,24 @@ penalty guidelines are step/penalty shaped (23/68 numbered-step bodies,
 penalty vocabulary in 55/68), the handbook is bullet-policy shaped
 (24/119), the rulebook is mechanic prose plus a 12k-char Glossary.
 
+## Skiplist (added 2026-07-27, issue #44)
+
+Some sections do not belong in a search-first rules app: diagram furniture
+with no prose, colophons, and long reference enumerations better served by
+a pointer to the official source. A rewrite entry may instead be
+`{"skip": "<reason>"}` — a mandatory reason makes every exclusion a
+recorded decision.
+
+**Skip means excluded from the build, never shipped verbatim.** Skipped
+sections are omitted from `sections`, from FTS, from document outlines and
+from xrefs; leaving them as source text would defeat the rewrites layer
+entirely. Verify enforces: skip stands alone (no content fields), names a
+real section, satisfies coverage, and nothing may `see_also` a skipped
+section (it does not exist in the app).
+
+Struggling to paraphrase is a signal to consider skipping — never a
+licence to permute or reorder source text to evade the overlap guard.
+
 ## Storage & pipeline
 
 - New committed layer `rewrites/<doc-id>.json`: `{section_id: entry}`.

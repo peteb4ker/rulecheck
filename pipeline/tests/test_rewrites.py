@@ -98,3 +98,18 @@ def test_penalty_handling_optional():
     entry = valid("penalty")
     entry["handling"] = ["Assess the pattern"]
     assert validate_entry("fix-1", entry) == []
+
+
+def test_skip_entry_validates():
+    assert validate_entry("fix-1", {"skip": "diagram labels only, no rules content"}) == []
+
+
+def test_skip_requires_non_empty_reason():
+    assert any("reason" in e for e in validate_entry("fix-1", {"skip": ""}))
+    assert any("reason" in e for e in validate_entry("fix-1", {"skip": "   "}))
+
+
+def test_skip_cannot_combine_with_content_fields():
+    entry = {"skip": "no rules content", "archetype": "note", "tier": "standard",
+             "summary": "x", "paragraphs": ["y"]}
+    assert any("skip" in e and "alone" in e for e in validate_entry("fix-1", entry))

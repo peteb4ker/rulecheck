@@ -10,7 +10,9 @@ Rules (spec: structured-rulebase design):
      entry's own text (whitespace-normalized);
   6. no undeclared run of >= OVERLAP_TOKENS consecutive tokens shared
      between entry text and the source body (the paraphrase tripwire);
-  7. release only: judge-tier entries must be reviewed.
+  7. release only: judge-tier entries must be reviewed;
+  8. skip entries satisfy coverage but must name a real section, and nothing
+     may see_also a skipped section (it does not exist in the app).
 """
 
 from __future__ import annotations
@@ -19,7 +21,7 @@ import re
 from pathlib import Path
 
 from benchside_pipeline.model import load_document
-from benchside_pipeline.rewrites import load_rewrites, validate_entry
+from benchside_pipeline.rewrites import is_skip, load_rewrites, validate_entry
 
 OVERLAP_TOKENS = 12
 
@@ -72,11 +74,14 @@ def check_rewrites(content_dir: Path, rewrites_dir: Path, release: bool = False)
     needs_entry = {sid for sid, s in sections.items() if _normalize(s["body"])}
 
     entries = load_rewrites(rewrites_dir)
+    skipped = {sid for sid, e in entries.items() if is_skip(e)}
 
     for sid, entry in sorted(entries.items()):
         errors.extend(validate_entry(sid, entry))
         if sid not in sections:
             errors.append(f"{sid}: orphan rewrite entry (no such section in content)")
+            continue
+        if is_skip(entry):
             continue
         if sid not in needs_entry:
             errors.append(f"{sid}: rewrite entry on a section with no body text")
@@ -85,6 +90,8 @@ def check_rewrites(content_dir: Path, rewrites_dir: Path, release: bool = False)
         for target in entry.get("see_also", []):
             if target not in sections:
                 errors.append(f"{sid}: see_also target {target} does not exist")
+            elif target in skipped:
+                errors.append(f"{sid}: see_also target {target} is skipped (absent from the app)")
 
         source_norm = _normalize(sections[sid]["body"])
         source_tokens = _tokens(sections[sid]["body"])

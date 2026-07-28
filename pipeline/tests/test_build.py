@@ -71,3 +71,26 @@ def test_build_substitutes_flattened_rewrite_body(fixture_pdf, fixture_source, t
     con.close()
     assert body == "Structured summary.\nStructured body line."
     assert "prize cards" in other  # untouched verbatim
+
+
+def test_skipped_sections_are_excluded_from_db(fixture_pdf, fixture_source, tmp_path):
+    import json
+
+    content_dir = tmp_path / "content"
+    content_dir.mkdir()
+    sections = parse_pdf(fixture_pdf, fixture_source)
+    dump_document(fixture_source, sections, content_dir / "fixture-doc.json")
+
+    rewrites_dir = tmp_path / "rewrites"
+    rewrites_dir.mkdir()
+    (rewrites_dir / "fixture-doc.json").write_text(json.dumps({
+        "fix-3.2": {"skip": "diagram furniture, never shipped"}}))
+
+    db_path = tmp_path / "benchside.db"
+    build_db(content_dir, db_path, rewrites_dir=rewrites_dir)
+    con = sqlite3.connect(db_path)
+    assert con.execute("SELECT COUNT(*) FROM sections WHERE id='fix-3.2'").fetchone()[0] == 0
+    assert con.execute(
+        "SELECT COUNT(*) FROM sections_fts WHERE sections_fts MATCH 'asleep'").fetchone()[0] == 0
+    assert con.execute("SELECT COUNT(*) FROM sections").fetchone()[0] == 4
+    con.close()

@@ -31,6 +31,16 @@ class RewriteError(Exception):
     pass
 
 
+def is_skip(entry: dict) -> bool:
+    """A skip entry declares a section deliberately excluded from the app.
+
+    Skipped sections are omitted from the built database entirely — they are
+    never shipped as verbatim source text (that would defeat the whole point
+    of the rewrites layer).
+    """
+    return "skip" in entry
+
+
 def _non_empty_list(errors: list[str], sid: str, entry: dict, field: str) -> list:
     value = entry.get(field)
     if field in entry and (not isinstance(value, list) or not value):
@@ -42,6 +52,14 @@ def _non_empty_list(errors: list[str], sid: str, entry: dict, field: str) -> lis
 def validate_entry(section_id: str, entry: dict) -> list[str]:
     errors: list[str] = []
     sid = section_id
+
+    if is_skip(entry):
+        reason = entry["skip"]
+        if not isinstance(reason, str) or not reason.strip():
+            errors.append(f"{sid}: skip needs a non-empty reason")
+        if set(entry) - {"skip"}:
+            errors.append(f"{sid}: skip must stand alone (no content fields)")
+        return errors
 
     archetype = entry.get("archetype")
     if archetype not in ARCHETYPES:

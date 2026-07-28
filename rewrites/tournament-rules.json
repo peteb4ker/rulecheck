@@ -1824,53 +1824,6 @@
     "tier": "standard"
   },
   "trh-Appendix A": {
-    "archetype": "definition",
-    "terms": [
-      {
-        "meaning": "United States and Puerto Rico; both are approved to organize Play! Pokémon events.",
-        "term": "US"
-      },
-      {
-        "meaning": "Canada, its own rating zone. The source table's formatting doesn't make clear whether Canada carries the same organize-events approval as the US zone, so that detail is left unconfirmed here rather than guessed at.",
-        "term": "Canada"
-      },
-      {
-        "meaning": "45 countries and territories across Central America, South America, and the Caribbean; 17 of them, including Mexico, Brazil, and Argentina, are approved to organize Play! Pokémon events. The official Play! Pokémon Rules and Resources page carries the complete, current list.",
-        "term": "Latin America"
-      },
-      {
-        "meaning": "52 countries and territories across Europe; 28 of them, including France, Germany, and the United Kingdom, are approved to organize Play! Pokémon events. The official Play! Pokémon Rules and Resources page carries the complete, current list.",
-        "term": "Europe"
-      },
-      {
-        "meaning": "11 countries and territories across Oceania; only Australia and New Zealand are approved to organize Play! Pokémon events. The official Play! Pokémon Rules and Resources page carries the complete, current list.",
-        "term": "Oceania"
-      },
-      {
-        "meaning": "69 countries and territories across the Middle East and Africa; only South Africa and the United Arab Emirates, among them, are approved to organize Play! Pokémon events. The official Play! Pokémon Rules and Resources page carries the complete, current list.",
-        "term": "Middle East and Africa"
-      },
-      {
-        "meaning": "The Russian Federation, its own rating zone.",
-        "term": "Russia"
-      },
-      {
-        "meaning": "Japan, Taiwan, Hong Kong, Macau, Thailand, Indonesia, Singapore, Malaysia, and the Philippines; their Play! Pokémon equivalent is run by The Pokémon Company directly rather than by The Pokémon Company International or Play! Pokémon. Competitors from these territories can enter Play! Pokémon Championship Series events and earn prizes, but not Championship Points; they can still earn a World Championships invitation by winning a Regional Championship or Special Championship, or by placing in the Top 4 at an International Championship.",
-        "term": "TPC-administered territories"
-      },
-      {
-        "meaning": "The Republic of Korea, administered the same way as the TPC-administered territories: competitors can enter Championship Series events and earn prizes but not Championship Points, with the same World Championships invitation paths.",
-        "term": "PKI-administered territory"
-      },
-      {
-        "meaning": "Mainland China, excluding Hong Kong, Macao, and Taiwan, administered the same way as the TPC-administered territories: competitors can enter Championship Series events and earn prizes but not Championship Points, with the same World Championships invitation paths.",
-        "term": "PSH-administered territory"
-      },
-      {
-        "meaning": "Beyond deciding Championship Point eligibility, a competitor's rating zone also determines which card languages are legal for them to play, per section 2.3 of the Pokémon TCG Tournament Handbook.",
-        "term": "Why rating zones matter"
-      }
-    ],
-    "tier": "judge"
+    "skip": "Rating-zone country enumeration — a long reference table nobody consults mid-event, unparseable from the degraded source, and better served by a pointer to the official Play! Pokémon list."
   }
 }

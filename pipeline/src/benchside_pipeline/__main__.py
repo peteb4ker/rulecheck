@@ -12,7 +12,7 @@ from benchside_pipeline.download import download_doc
 from benchside_pipeline.manifest import load_manifest
 from benchside_pipeline.model import dump_document, load_document
 from benchside_pipeline.parse import parse_pdf
-from benchside_pipeline.rewrites import load_rewrites
+from benchside_pipeline.rewrites import is_skip, load_rewrites
 from benchside_pipeline.verify import verify_db
 
 
@@ -56,11 +56,14 @@ def cmd_content_status(root: Path) -> int:
         source, sections = load_document(path)
         leaves = [s.id for s in sections if s.body.strip()]
         covered = [sid for sid in leaves if sid in entries]
-        archetypes = Counter(entries[sid]["archetype"] for sid in covered)
-        reviewed = sum(1 for sid in covered if entries[sid].get("review") == "reviewed")
+        authored = [sid for sid in covered if not is_skip(entries[sid])]
+        skipped = [sid for sid in covered if is_skip(entries[sid])]
+        archetypes = Counter(entries[sid]["archetype"] for sid in authored)
+        reviewed = sum(1 for sid in authored if entries[sid].get("review") == "reviewed")
         pct = 100 * len(covered) // len(leaves) if leaves else 100
         mix = " ".join(f"{k}={v}" for k, v in sorted(archetypes.items())) or "-"
-        print(f"{source.id}: {len(covered)}/{len(leaves)} leaves ({pct}%) | {mix} | reviewed {reviewed}/{len(covered) or 1}")
+        skip_note = f" | skipped {len(skipped)}" if skipped else ""
+        print(f"{source.id}: {len(covered)}/{len(leaves)} leaves ({pct}%) | {mix}{skip_note} | reviewed {reviewed}/{len(authored) or 1}")
     return 0
 
 
