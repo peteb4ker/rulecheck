@@ -23,6 +23,589 @@
     "summary": "The handbook travels with a family of companion policies, all refreshed quarterly.",
     "tier": "standard"
   },
+  "trh-1.2": {
+    "archetype": "note",
+    "paragraphs": [
+      "Every reader benefits from working through the whole handbook at least once, but Judges and other Professors get the most out of covering the entire document, since their role touches all of it.",
+      "Tournament Organizers and administrators are pointed toward Participation Fundamentals, Event Expectations, Tournament Policies, Tournament Operations & Specifics, and Rules Violations & Penalties.",
+      "Competitors and the parents of competitors are pointed toward Participation Fundamentals, Event Expectations, and Rules Violations & Penalties.",
+      "Spectators and other general attendees need only Participation Fundamentals."
+    ],
+    "summary": "A short reading guide steers each kind of attendee toward the handbook sections that matter most for their role.",
+    "tier": "standard"
+  },
+  "trh-1.3": {
+    "archetype": "note",
+    "paragraphs": [
+      "Simply being present at a Play! Pokémon event, in any participant role, counts as agreeing to everything in this handbook. Reading it closely matters, because every participant shares responsibility for making these events succeed.",
+      "Not following the guidelines can lead to penalties during the tournament itself and to disciplinary steps afterward, scaled to how many issues occurred and how serious they were. Possible outcomes range from being pulled from whatever tournament you're in, to being asked to leave the venue, to disqualification, to a suspension from the Play! Pokémon program — see Rules Violations & Penalties for more.",
+      "Anyone who sees or experiences something that doesn't line up with this handbook or its companion documents should flag it to tournament staff, and filing a ticket with Play! Pokémon customer support is strongly encouraged too. A useful report names everyone involved, states where and at which tournament it happened, and includes any supporting material such as photos, videos, or screenshots — and anyone else who witnessed it or was part of it is welcome to send in their own account."
+    ],
+    "see_also": [
+      "trh-1"
+    ],
+    "summary": "Entering or staying at an event means agreeing to follow this handbook, and reporting problems keeps everyone accountable.",
+    "tier": "standard"
+  },
+  "trh-2": {
+    "archetype": "note",
+    "paragraphs": [
+      "It explains who is allowed to participate in Play! Pokémon events, which behaviors and items aren't permitted, and the roles and expectations that come with attending, organizing, or staffing an event.",
+      "Competitors, spectators, and Professors all need to know this material to be sure they qualify to take part in, run, or work a Play! Pokémon event."
+    ],
+    "summary": "This section sets out who can take part in Play! Pokémon events, what's off-limits, and what's expected of the different roles at a tournament.",
+    "tier": "standard"
+  },
+  "trh-2.1": {
+    "archetype": "note",
+    "paragraphs": [
+      "A number of factors can keep specific people from entering specific kinds of Play! Pokémon tournaments, and eligibility already granted can be revoked for breaking the program's rules and guidelines.",
+      "Minimum age requirements for Play! Pokémon games are set by local regulatory bodies and differ from country to country and region to region. Competing where you don't meet the local minimum age for a given game isn't permitted, so it's on each competitor to check the age ratings and laws that apply where they plan to play before registering.",
+      "The eligibility requirements that follow are worth reading closely to confirm you qualify for an event."
+    ],
+    "summary": "Several factors determine whether someone can take part in a given Play! Pokémon tournament, and that eligibility can also be taken away for rule violations.",
+    "tier": "standard"
+  },
+  "trh-2.1.1": {
+    "archetype": "note",
+    "paragraphs": [
+      "General participation is open to anyone holding a Player ID who is in good standing with the program.",
+      "Three groups are carved out as exceptions: competitors currently under an active suspension per a Notice of Disciplinary Action from Play! Pokémon; that event's own tournament staff, including its Organizer, Judges, Scorekeepers, and any casters; and anyone whose restrictions on location or proximity to children or other individuals would conflict with participating alongside them."
+    ],
+    "summary": "Every Play! Pokémon tournament is open to anyone with a Player ID in good standing, apart from three specific exceptions.",
+    "tier": "judge"
+  },
+  "trh-2.1.2": {
+    "archetype": "note",
+    "paragraphs": [
+      "Beyond everyone excluded under section 2.1.1, Championship Point tournaments are closed to competitors younger than 6.",
+      "Current employees of The Pokémon Company and its subsidiaries are excluded too — that covers The Pokémon Company International and its Ireland and Mexico offices, plus Pokémon Korea, Pokémon Singapore, Pokémon Shanghai, and Millennium Print Group — along with anyone who left one of those companies in the past 60 days.",
+      "The same current-employee and recent-former-employee exclusion applies to GAME FREAK Inc. and Creatures Inc. Separately, current employees of The Pokémon Company and its subsidiaries also have their immediate family and household members excluded.",
+      "Full-time contractors and contingent workers at TPCi who directly support or help implement Play! Pokémon programs, or whose role gives them early access to products the program supports, are excluded as well, along with their immediate family and household members and anyone who left that kind of contractor role in the past 60 days.",
+      "Store owners at the retail locations hosting the tournament round out the list."
+    ],
+    "see_also": [
+      "trh-2.1.1"
+    ],
+    "summary": "Championship Series tournaments carry a longer, more specific list of who can't compete for Championship Points.",
+    "tier": "judge"
+  },
+  "trh-2.1.3": {
+    "archetype": "note",
+    "paragraphs": [
+      "On top of everyone barred under sections 2.1.1 and 2.1.2, Pokémon Video Game Championship tournaments that award Championship Points are closed to current Nintendo employees, and to anyone who left Nintendo in the past 60 days.",
+      "Program members chosen to review a Pokémon video game product before its official US release can't enter these tournaments for 60 days following that release date. If they choose to compete after that window closes, they still can't use a copy of the product obtained before its official release."
+    ],
+    "see_also": [
+      "trh-2.1.1",
+      "trh-2.1.2"
+    ],
+    "summary": "Video Game Championship Series events add exclusions on top of the general and Championship Series lists, tied to Nintendo and pre-release review access.",
+    "tier": "judge"
+  },
+  "trh-2.1.4": {
+    "archetype": "note",
+    "paragraphs": [
+      "Beyond everyone barred under sections 2.1.1 and 2.1.2, Pokémon GO tournaments awarding Championship Points are closed to current employees of Niantic, along with anyone who left Niantic in the past 60 days.",
+      "The same rule applies to Scopely: current employees can't compete, and neither can anyone who left Scopely in the past 60 days."
+    ],
+    "see_also": [
+      "trh-2.1.1",
+      "trh-2.1.2"
+    ],
+    "summary": "Pokémon GO Championship Series events add exclusions tied to Niantic and Scopely on top of the general and Championship Series lists.",
+    "tier": "judge"
+  },
+  "trh-2.1.5": {
+    "archetype": "note",
+    "paragraphs": [
+      "Beyond everyone barred under sections 2.1.1 and 2.1.2, Pokémon UNITE tournaments awarding Championship Points are closed to current employees of TiMi Studio Group, and to anyone who left that company in the past 60 days."
+    ],
+    "see_also": [
+      "trh-2.1.1",
+      "trh-2.1.2"
+    ],
+    "summary": "Pokémon UNITE Championship Series events add one more exclusion, tied to TiMi Studio Group, on top of the general and Championship Series lists.",
+    "tier": "judge"
+  },
+  "trh-2.1.6": {
+    "archetype": "note",
+    "paragraphs": [
+      "At its sole discretion, Play! Pokémon can hold tournaments and other activations covering games and products not already addressed above.",
+      "These events exclude everyone already barred under section 2.1.1, plus employees of The Pokémon Company or its affiliates, contractors working for those entities, and organizations that helped develop, publish, or maintain the products involved. Employees of those entities stay excluded for 60 days past their last day too."
+    ],
+    "see_also": [
+      "trh-2.1.1"
+    ],
+    "summary": "Play! Pokémon can run tournaments and activations for games and products beyond those already listed, with its own eligibility exclusions.",
+    "tier": "judge"
+  },
+  "trh-2.1.7": {
+    "archetype": "note",
+    "paragraphs": [
+      "Anyone with questions about the eligibility rules covering a specific tournament or activation should reach out to Play! Pokémon customer support directly."
+    ],
+    "summary": "Eligibility questions about any tournament or activation go to Play! Pokémon customer support.",
+    "tier": "standard"
+  },
+  "trh-2.2": {
+    "archetype": "procedure",
+    "steps": [
+      {
+        "action": "Create a Pokémon Trainer Central account directly, using true and accurate personal information",
+        "actor": "Competitor 13 or older",
+        "note": "start from Pokemon.com and work through the sign-up flow to a completed profile"
+      },
+      {
+        "action": "Create the account using the guardian's own information rather than the child's, then add the child as a linked profile",
+        "actor": "Guardian of a child under 13",
+        "note": "identity verification is only required the first time a child gets added"
+      },
+      {
+        "action": "Generate a Player ID from the PTC account ahead of time, or let an Organizer generate one on-site",
+        "note": "arriving with a Player ID already on hand is recommended; the same process works for adding a Player ID to an existing child's account that doesn't have one yet"
+      },
+      {
+        "action": "Opt in to the Play! Pokémon program with a true, verifiable address and personal information on file",
+        "note": "a spot on the rankings board and any prizing depend on Play! Pokémon being able to verify that information"
+      }
+    ],
+    "summary": "A Pokémon Trainer Central account tracks Play! Points and Championship Points, and the Player ID it generates is what actually gets you into tournaments.",
+    "tier": "standard"
+  },
+  "trh-2.3": {
+    "archetype": "note",
+    "paragraphs": [
+      "Play! Pokémon reserves the right to publish information from its tournaments — deck lists, team lists, transcripts, audio or video recordings, other recaps, competitor penalties, awards, and more.",
+      "Organizers, Judges, competitors, and spectators can likewise publish details of play or tournament results themselves, but doing so is subject to whatever local, state, and national laws apply, and it's each person's own responsibility to know and follow those laws.",
+      "Simply attending a Play! Pokémon event can mean being photographed or filmed by or for The Pokémon Company International, and entering or staying at an event means granting TPCi, its affiliates, and media partners permission to publish a participant's name, image, likeness, team or deck build, way of playing, and spoken or written statements, as part of any photo, live or recorded video, or other broadcast or reproduction of the event."
+    ],
+    "summary": "Play! Pokémon can publish anything about a tournament, and by showing up, participants agree to appear in that kind of coverage too.",
+    "tier": "standard"
+  },
+  "trh-2.3.1": {
+    "archetype": "note",
+    "paragraphs": [
+      "Once a tournament has started, an Organizer may publish the contents of any competitor's deck or team, but only when doing so is made publicly accessible and is part of something that gives real added value to people attending or watching, like a livestreamed match or a written article about the event.",
+      "Outside of that, deck and team contents are supposed to stay confidential for the rest of the tournament unless stated otherwise. More on deck and team lists appears in Tournament Policies, Tournament Operations & Specifics, and Tournament Rules per Product."
+    ],
+    "see_also": [
+      "trh-2.3"
+    ],
+    "summary": "An Organizer can publish a competitor's deck or team once the event is underway, but only if it's public and adds real value for attendees or viewers — otherwise it stays confidential.",
+    "tier": "judge"
+  },
+  "trh-2.4": {
+    "archetype": "note",
+    "paragraphs": [
+      "Bigger events — Regional Championships, Special Championships, and anything at that scale or above — are badged: entry requires a pass bought ahead of time, and that badge must stay visible for as long as you're taking part in or attending the event and any other badged areas. Tournament staff can ask to see it at any point, and you're required to show it.",
+      "While the event is happening, the badge belongs to Play! Pokémon and The Pokémon Company International; once the event wraps up, ownership passes to the participant.",
+      "Anyone removed from an event has to hand their badge to tournament staff right away, and not doing so can bring additional disciplinary action."
+    ],
+    "summary": "Larger badged events require a purchased pass worn visibly at all times, and the badge stays Play! Pokémon's property until the event ends.",
+    "tier": "judge"
+  },
+  "trh-3": {
+    "archetype": "note",
+    "paragraphs": [
+      "Everyone at a Play! Pokémon event is expected to understand and follow this document, plus whatever other applicable documents cover the role or roles they're filling in that tournament.",
+      "These events are meant to be fun and exciting, but anything that interferes with how the tournament runs or with its integrity is taken seriously and can get a participant removed from the event."
+    ],
+    "summary": "Attending a Play! Pokémon event means following this handbook and any other rules that apply to your role, and disrupting the tournament can get you removed.",
+    "tier": "standard"
+  },
+  "trh-3.1": {
+    "archetype": "note",
+    "paragraphs": [
+      "Everyone attending is expected to meet the event's registration or entry requirements, including buying a pass or badge where one is needed; stay free of mind-altering substances, alcohol included; avoid inappropriate language or inflammatory topics; follow tournament staff's direction; and treat everyone with respect and courtesy.",
+      "Falling short on any of those points can be grounds for immediate removal from a Play! Pokémon event, including any related activations even away from the venue itself. Whether a participant gets to stay is the Tournament Organizer's and tournament staff's call, and a serious enough violation of program standards or guidelines can mean immediate removal from the premises with no path back.",
+      "Everyone is also expected to read the Play! Pokémon Standards of Conduct for a fuller picture of what counts as acceptable behavior at these events."
+    ],
+    "summary": "A short list of baseline expectations applies to every participant, and falling short of any of them can mean immediate removal.",
+    "tier": "judge"
+  },
+  "trh-3.2": {
+    "archetype": "note",
+    "paragraphs": [
+      "Keeping the environment welcoming and comfortable for everyone rules out several things outright: selling or using any mind-altering substance besides alcohol; selling or drinking alcohol anywhere in the play area; wagering or gambling on how a game, part of a game, match, or set of matches turns out; offering or taking any kind of payoff meant to change how a game, part of a game, match, or set of matches comes out — bribery, in other words; and any weapon, mock ones included, that could reasonably be mistaken for the real thing. Anyone caught doing one of these gets removed from the tournament site, and the matter gets reported to Play! Pokémon.",
+      "Attire has its own rules: nothing that runs against the Standards of Conduct or Inclusion Policy or otherwise clashes with a Play! Pokémon tournament setting; nothing that could make someone look like staff when they aren't, such as a Judge shirt or uniform worn by someone not currently on duty; rolling luggage or hard cases bigger than the venue's size allowance; and costumes or cosplay that fully cover the face or head.",
+      "Everyone is also expected to keep a reasonable standard of personal hygiene throughout the event.",
+      "Depending on the attire or hygiene issue, a Tournament Organizer can give a participant the chance to change or clean up and come back; complying means being allowed to keep participating, while refusing means removal from the tournament and venue and surrendering the badge to staff. A gross violation can mean immediate removal from the venue, and refusing to cooperate with staff can also lead to post-event disciplinary action.",
+      "The Play! Pokémon Attire and Cosplay Policy has more detail on attire and hygiene expectations."
+    ],
+    "summary": "A specific set of behaviors, plus certain attire and hygiene lapses, are off-limits at Play! Pokémon events, with consequences ranging from a chance to fix things to removal.",
+    "tier": "judge"
+  },
+  "trh-3.2.1": {
+    "archetype": "note",
+    "paragraphs": [
+      "During an active match, and without explicit permission from tournament staff, competitors can't take in outside information about their own match or anyone else's, and can't take a phone call or otherwise use a cellular device — including using one to record the match, as a calculator, or to stream music or video.",
+      "Ear or headphones aren't allowed either, with one exception: competitors in a Pokémon video game tournament — VGC, Pokémon GO, or Pokémon UNITE — can wear them if they're visibly plugged into their own game system. Headsets that add a microphone stay banned even then, except specifically during Pokémon UNITE tournaments. A competitor who needs sound dampeners for accessibility reasons should work through the Accessibility Policy instead.",
+      "The play surface itself has its own restrictions: no food or drink, though a water bottle can sit on the floor near the competitor, and a medical need for food or water goes through the Accessibility Policy's accommodation process instead. Prewritten material is also barred, physical or digital — a turn sequence, notes carried over from an earlier match, a type chart, and the like.",
+      "One narrow exception exists: a competitor can use a preconstructed outline for taking notes, as long as it's blank when the match starts and holds nothing but lines and simple shapes, no words or symbols. Whether preconstructed outlines are allowed at all is up to the Tournament Organizer, and competitors have to follow whatever instructions come with that decision. Any notepad or loose paper brought to a match has to start free of writing, and a competitor can't refer back to notes from an earlier match during the one they're currently playing."
+    ],
+    "summary": "Once a match is underway, competitors are held to a tighter set of restrictions on outside information, devices, and what can sit on the play surface, unless staff say otherwise.",
+    "tier": "judge"
+  },
+  "trh-3.3": {
+    "archetype": "note",
+    "paragraphs": [
+      "A tournament depends on a handful of key positions coming together to keep things running with integrity and good pacing. Tournament staff matter, but so do competitors — without both sides, there'd be no tournaments for the Pokémon community, and no stage for Trainers to test themselves against players from anywhere in the world.",
+      "What follows lists the specific roles at an event and what's expected of each one. Not following the tournament rules and guidelines can mean removal from the tournament, plus disciplinary action after the fact."
+    ],
+    "summary": "Running a tournament takes several key roles working together, and this section lays out who fills them and what's expected of each.",
+    "tier": "standard"
+  },
+  "trh-3.3.1": {
+    "archetype": "note",
+    "paragraphs": [
+      "A competitor is anyone actively playing in a Play! Pokémon tournament or event. Dropping out voluntarily, or being eliminated, moves a competitor into spectator status — but they keep the competitor badge they were given."
+    ],
+    "summary": "A competitor is anyone actively playing in a Play! Pokémon tournament, and dropping or getting eliminated turns that person into a spectator without taking away their badge.",
+    "tier": "standard"
+  },
+  "trh-3.3.1.1": {
+    "archetype": "procedure",
+    "see_also": [
+      "trh-4.3.1"
+    ],
+    "steps": [
+      {
+        "action": "Understand the tournament format, how table numbers get assigned each match, and how the round timer applies to their specific match",
+        "actor": "Competitor"
+      },
+      {
+        "action": "Show up for their matches on time",
+        "actor": "Competitor"
+      },
+      {
+        "action": "Check their own match record and standings against the pairings posted each round, and flag any discrepancy to the right tournament staff right away",
+        "actor": "Competitor",
+        "note": "confirm any unclear detail with the Tournament Organizer or staff rather than guessing"
+      },
+      {
+        "action": "Bring a valid Player ID to the first round",
+        "actor": "Competitor",
+        "note": "required before the first round unless the tournament's own rules say otherwise"
+      },
+      {
+        "action": "Bring a deck or team that meets the tournament's format restrictions",
+        "actor": "Competitor"
+      },
+      {
+        "action": "Bring a legible, accurate list of the deck's cards or the team's members",
+        "actor": "Competitor",
+        "note": "Regional Championships and above require submitting it through the appropriate web client by the posted deadline; Special Championships follow whatever submission process that event's Organizer sets"
+      },
+      {
+        "action": "Bring whatever's needed to play, track, and record the game — damage counters, Special Condition markers, randomizers, a video game system in proper working order with only original hardware and software, a genuine Game Card or digital copy that's in good working order and carries no third-party modifications or content, their own device for a mobile app tournament where the Organizer doesn't supply one, or any personal device needed to authenticate and log into an Organizer-provided device",
+        "actor": "Competitor"
+      }
+    ],
+    "summary": "Competitors answer for knowing the tournament's mechanics and showing up ready, and for arriving at their first round with a legal deck or team, a valid Player ID, and everything they need to play.",
+    "tier": "judge"
+  },
+  "trh-3.3.2": {
+    "archetype": "note",
+    "paragraphs": [
+      "Spectators are anyone present at a Play! Pokémon event who isn't actively taking part in one of the main competitive events, including competitors who have dropped out or been eliminated from theirs."
+    ],
+    "summary": "A spectator is anyone at an event who isn't actively competing, including competitors who have dropped or been eliminated.",
+    "tier": "standard"
+  },
+  "trh-3.3.2.1": {
+    "archetype": "note",
+    "paragraphs": [
+      "Every spectator has to keep a reasonable distance from matches in progress so as not to distract competitors or get in the way of Judges and other staff, has to avoid discussing an ongoing match within earshot of its table, and has to steer clear of interfering with a match in any way.",
+      "A spectator who disrupts the tournament or causes integrity problems can face penalties up to and including removal from the venue and a Play! Pokémon suspension.",
+      "When a competitor needs a spectator — a parent, guardian, or chaperone — with them, and that person becomes unavailable, say because they were removed for disruption or integrity issues, the competitor gets dropped from the tournament without penalty."
+    ],
+    "summary": "Spectators have to keep their distance from active matches and stay out of them entirely, or risk penalties up to removal and suspension; a competitor can be dropped without penalty if a required spectator becomes unavailable.",
+    "tier": "judge"
+  },
+  "trh-3.3.3": {
+    "archetype": "procedure",
+    "steps": [
+      {
+        "action": "Sanction the tournament as the Professor holding the right certification",
+        "note": "an Organizer can be a single Professor, such as a League Owner running a League Event, or effectively a larger group running a Regional Championship, Special Championship, or bigger"
+      },
+      {
+        "action": "Run the tournament according to Play! Pokémon's rules and regulations",
+        "note": "falling short on tournament integrity can get the tournament or event invalidated"
+      },
+      {
+        "action": "Tell competitors the tournament type, such as Swiss or Swiss with a single-elimination top cut",
+        "actor": "Organizer"
+      },
+      {
+        "action": "Tell competitors the tournament format, such as Standard or Expanded",
+        "actor": "Organizer"
+      },
+      {
+        "action": "Tell competitors the number of rounds and minutes per round",
+        "actor": "Organizer"
+      },
+      {
+        "action": "Tell competitors the match format — single game or best of three",
+        "actor": "Organizer"
+      },
+      {
+        "action": "Tell competitors the tournament's start time and any delay that affects it",
+        "actor": "Organizer"
+      },
+      {
+        "action": "Tell competitors, for a two-phase tournament, how rounds are split across days or structured across phases",
+        "actor": "Organizer"
+      },
+      {
+        "action": "Announce the tournament format and type early enough for competitors to prepare before arriving",
+        "actor": "Organizer"
+      },
+      {
+        "action": "Announce the round count, minutes per round, top cut, staffing, and breaks before the first round starts",
+        "actor": "Organizer"
+      }
+    ],
+    "summary": "The Organizer is the certified Professor who sanctions a tournament, answers for running it by the rules, and has to tell competitors key logistics before the event gets underway.",
+    "tier": "judge"
+  },
+  "trh-3.3.4": {
+    "archetype": "note",
+    "paragraphs": [
+      "Judges are expected to hand down impartial rulings and help the Tournament Organizer and Head Judge keep a tournament fun, fast, and fair. Play! Pokémon stands behind a Judge's ruling as long as it was made impartially and in the Spirit of the Game's best interest."
+    ],
+    "summary": "Judges are expected to rule impartially and help run a fun, fast, fair tournament, and Play! Pokémon backs their calls when they do.",
+    "tier": "standard"
+  },
+  "trh-3.3.4.1": {
+    "archetype": "procedure",
+    "steps": [
+      {
+        "action": "Stay free of bias for or against any competitor",
+        "actor": "Judge"
+      },
+      {
+        "action": "Avoid judging a match with a potential conflict of interest, such as one involving family, a close friend, a teammate, or a business partner, whenever that's possible",
+        "actor": "Judge"
+      },
+      {
+        "action": "Model and encourage good sporting behavior",
+        "actor": "Judge"
+      }
+    ],
+    "summary": "Judges have to stay unbiased, sidestep conflicts of interest where they can, and model good sportsmanship.",
+    "tier": "judge"
+  },
+  "trh-3.3.4.2": {
+    "archetype": "procedure",
+    "see_also": [
+      "trh-3.3.4.1"
+    ],
+    "steps": [
+      {
+        "action": "Serve as the final word on every ruling and rules interpretation for the tournament, on top of holding a Judge's ordinary responsibilities",
+        "actor": "Head Judge",
+        "note": "ultimately answers for making sure everyone follows this handbook"
+      },
+      {
+        "action": "Keep the Judges active and on task",
+        "actor": "Head Judge"
+      },
+      {
+        "action": "Complete and submit the tournament's Penalty Summary form",
+        "actor": "Head Judge"
+      },
+      {
+        "action": "Complete and submit a Disqualification Report for each disqualification",
+        "actor": "Head Judge",
+        "note": "not required for no-shows"
+      },
+      {
+        "action": "Fill the Head Judge role themself when a tournament has only a Tournament Organizer and no other staff",
+        "actor": "Tournament Organizer",
+        "note": "where a tournament does have Judge staff, the Organizer instead has to designate someone as Head Judge"
+      }
+    ],
+    "summary": "Beyond a Judge's usual duties, the Head Judge has final say on every ruling, has to keep the Judge team on task, and owns the tournament's penalty and disqualification paperwork.",
+    "tier": "judge"
+  },
+  "trh-3.3.5": {
+    "archetype": "note",
+    "paragraphs": [
+      "The Scorekeeper is a tournament staff member responsible for accurately recording match results and generating pairings as the tournament moves forward, acting on the Organizer's behalf. A Professor, a Judge, the Tournament Organizer, or anyone else specifically assigned the role can serve as Scorekeeper, but whoever it is needs the certification required to run the tournament software."
+    ],
+    "summary": "The Scorekeeper is the certified staff member who records match results and generates pairings for the Organizer as a tournament runs.",
+    "tier": "standard"
+  },
+  "trh-3.3.5.1": {
+    "archetype": "procedure",
+    "steps": [
+      {
+        "action": "Generate correct pairings for every round and enter accurate results for each of them, to protect tournament integrity",
+        "actor": "Scorekeeper"
+      },
+      {
+        "action": "Work with the Organizer to resolve any scorekeeping problems that come up",
+        "actor": "Scorekeeper",
+        "note": "the Organizer has final say on how to fix them"
+      },
+      {
+        "action": "Generate standings once Swiss rounds finish, and for any earlier round the Head Judge or Organizer asks for",
+        "actor": "Scorekeeper"
+      },
+      {
+        "action": "Make sure the tournament file is accurate and ready for the Organizer to upload once every match is complete",
+        "actor": "Scorekeeper"
+      }
+    ],
+    "summary": "Scorekeepers keep pairings and results accurate each round, work with the Organizer on any scorekeeping problems, generate standings, and finalize the tournament file.",
+    "tier": "judge"
+  },
+  "trh-3.3.6": {
+    "archetype": "note",
+    "paragraphs": [
+      "Confirming that competitors and staff at a tournament are eligible to participate — and, for staff, that they hold whatever certification their role requires — falls to the Tournament Organizer."
+    ],
+    "summary": "The Tournament Organizer has to confirm that competitors and staff at their events are actually eligible to take part, and that staff hold the right certifications.",
+    "tier": "standard"
+  },
+  "trh-3.3.6.1": {
+    "archetype": "note",
+    "paragraphs": [
+      "An Organizer can find competitor eligibility information in the Organizer Information tab of their Pokémon Trainer Central account. Letting an ineligible competitor take part can disrupt events, invalidate tournaments, and lead to disciplinary action, so it's worth checking that information often to keep events running with integrity."
+    ],
+    "summary": "Competitor eligibility details live in the Organizer Information tab of an Organizer's Pokémon Trainer Central account, and checking it regularly protects tournament integrity.",
+    "tier": "judge"
+  },
+  "trh-3.3.6.2": {
+    "archetype": "note",
+    "paragraphs": [
+      "Professor eligibility information lives in the Player Information tab of your Pokémon Trainer Central account. Letting an ineligible Professor staff an event can cause disruptions, invalidate tournaments, and bring disciplinary action, so check that information often to keep your events running with integrity."
+    ],
+    "summary": "Professor eligibility details live in the Player Information tab of a Professor's Pokémon Trainer Central account, and checking it regularly protects tournament integrity.",
+    "tier": "judge"
+  },
+  "trh-4": {
+    "archetype": "note",
+    "paragraphs": [
+      "It covers where a tournament can be held, including scheduling rules and restrictions, and how an Organizer has to report results once the tournament wraps up."
+    ],
+    "summary": "This section lays out the standards Play! Pokémon expects Organizers to follow when scheduling and reporting a tournament.",
+    "tier": "standard"
+  },
+  "trh-4.1.1": {
+    "archetype": "procedure",
+    "steps": [
+      {
+        "action": "Hold Play! Pokémon League events only at that League's own approved venue"
+      },
+      {
+        "action": "File an alternate venue request form to hold a League Challenge or League Cup in a larger space, when a bigger venue is needed",
+        "actor": "League",
+        "note": "an approved League hosted at a game store is the preferred venue overall; other public spaces such as community centers, libraries, or rented halls are allowed when a League venue isn't available"
+      },
+      {
+        "action": "Confirm any non-League venue, or venue used under an alternate venue request, stays clean, safe, and open to the public for the whole tournament",
+        "actor": "Organizer"
+      },
+      {
+        "action": "Confirm that venue welcomes participants of any background, belief, or personal circumstance",
+        "actor": "Organizer"
+      },
+      {
+        "action": "Confirm that venue satisfies whatever local laws apply",
+        "actor": "Organizer"
+      },
+      {
+        "action": "Confirm that venue isn't a convention, fair, or similar venue type",
+        "actor": "Organizer"
+      },
+      {
+        "action": "Remember that this checklist doesn't bind Play! Pokémon itself",
+        "note": "Play! Pokémon and The Pokémon Company International can still choose, at their own sole discretion, to hold sanctioned events or activations at venues this checklist would otherwise rule out, conventions included"
+      }
+    ],
+    "summary": "League events stay at their approved venue; non-League and alternate venues have to clear a short checklist before an Organizer can use them, though Play! Pokémon itself can still sanction events at excluded venue types like conventions at its own discretion.",
+    "tier": "judge"
+  },
+  "trh-4.1.2": {
+    "archetype": "note",
+    "paragraphs": [
+      "A tournament created in Play! Tools counts as \"sanctioned.\" Any event run with Play! Tools and the Play! Pokémon Tournament Operations Manager is a sanctioned event and has to follow this handbook plus whichever game-specific handbook applies — TCG, VG, GO, or UNITE.",
+      "The largest events on the calendar — Regionals, Special Championships, Internationals, and Worlds — can be run and managed through third-party programs instead. They're no less sanctioned for it, and they still owe the tournament the same guidelines as everything else."
+    ],
+    "summary": "Sanctioning covers everything from local League tournaments run in Play! Tools up to major Championship Series events run through third-party tournament software, all under the same guidelines.",
+    "tier": "standard"
+  },
+  "trh-4.1.2.1": {
+    "archetype": "note",
+    "paragraphs": [
+      "Local Leagues can run Friendly Tournaments as part of a League session, reported through Play! Tools; participants in a session-time Friendly Tournament can be added to that League's roster for the reporting season.",
+      "Leagues that meet certain criteria also unlock League Challenges, League Cups, and Prereleases. League Challenges and League Cups award Championship Points that count toward a World Championships invitation, and both are treated as Championship Series events.",
+      "See the Play! Pokémon League Handbook for a fuller picture of League events. The Play! Pokémon League Challenges, Cups, and Prerelease Guide goes deeper on Challenges, Cups, and Prereleases specifically."
+    ],
+    "summary": "Local Leagues run a tier of tournaments from casual Friendly Tournaments up to Championship-Point-earning League Challenges and Cups.",
+    "tier": "standard"
+  },
+  "trh-4.1.2.2": {
+    "archetype": "note",
+    "paragraphs": [
+      "A Championship Series event is a sanctioned Play! Pokémon tournament that's part of the Play! Pokémon Championship Series and pays out Championship Points to competitors who finish high enough in the final standings.",
+      "These events can't be sanctioned without a specific tool Organizers need to be granted access to first; sanctioning one without it will likely get the tournament invalidated.",
+      "Organizers should also watch for whatever supplementary guidelines come with becoming eligible to run each particular type of Championship Series event, on top of what's in this document."
+    ],
+    "summary": "Championship Series events are the Championship-Point-paying tier of sanctioned tournaments, and running one requires a specific sanctioning tool or the tournament risks invalidation.",
+    "tier": "judge"
+  },
+  "trh-4.1.2.3": {
+    "archetype": "procedure",
+    "steps": [
+      {
+        "action": "Sanction each Championship Series event at least 14 days before the date it's scheduled to run",
+        "actor": "Professor",
+        "note": "gives competitors a real chance to find the tournament through the Event Locator tool"
+      },
+      {
+        "action": "Sanction League-sanctioned tournaments that aren't Championship Series events, such as Friendly Tournaments and Prerelease events, as early as possible",
+        "actor": "Professor",
+        "note": "strongly encouraged so competitors get a chance to join, but the 14-day-out requirement doesn't apply to these; see section 5.1 of the Play! Pokémon League Handbook and the League Challenges, Cups, and Prerelease Guide for more"
+      },
+      {
+        "action": "Never sanction a tournament after it has already concluded",
+        "note": "retroactive sanctioning undermines tournament integrity; missing these timelines can get a tournament invalidated"
+      }
+    ],
+    "summary": "Championship Series events need sanctioning at least 14 days ahead of time; other League tournaments don't carry that requirement but should still be sanctioned early, and no tournament can be sanctioned after it's already over.",
+    "tier": "judge"
+  },
+  "trh-4.2": {
+    "archetype": "note",
+    "paragraphs": [
+      "Play! Pokémon tournaments are meant to stay open to anyone who clears the program's participation eligibility requirements, though Organizers get two specific outs.",
+      "An Organizer can offer prioritized registration to competitors who regularly show up to that League's sessions; where a preregistration system prioritizes those regulars, communicating that prioritization to competitors as early as possible is highly recommended.",
+      "An Organizer can also turn away a competitor they consider a threat to others' safety or enjoyment, or whose presence has previously hurt the event location for some other reason. If that competitor's past behavior hasn't already been reported to the Play! Pokémon program, submitting a report on it is highly recommended."
+    ],
+    "summary": "Tournaments stay open to eligible competitors by default, but Organizers can prioritize regular League attendees and can turn away competitors who threaten safety or have caused problems before.",
+    "tier": "judge"
+  },
+  "trh-4.2.1": {
+    "archetype": "note",
+    "paragraphs": [
+      "Organizers can charge a fee to enter a tournament. Play! Pokémon doesn't recommend any particular amount or approach, beyond requiring Organizers to follow whatever local legal requirements apply to entry fees.",
+      "Understanding and following those laws is entirely the Organizer's own responsibility."
+    ],
+    "summary": "Organizers can set an entry fee however they like, provided they follow local law on charging one, and that legal compliance is entirely on them.",
+    "tier": "judge"
+  },
+  "trh-4.3": {
+    "archetype": "note",
+    "paragraphs": [
+      "Championship Series events need to run at the highest standard, with every reasonable step taken to keep tournament integrity out of harm's way. Every sanctioned Play! Pokémon tournament is encouraged to consider what follows, but for Championship Series events specifically, it isn't optional — the rest of this section is compulsory for them."
+    ],
+    "summary": "Tournament integrity practices are recommended for every sanctioned event, but mandatory specifically for Championship Series events.",
+    "tier": "judge"
+  },
   "trh-4.3.1": {
     "archetype": "procedure",
     "see_also": [
@@ -45,6 +628,1249 @@
       }
     ],
     "summary": "Deck and team lists are gathered at every Championship Series event, and legality checking can happen whenever staff choose.",
+    "tier": "judge"
+  },
+  "trh-4.3.2.1": {
+    "archetype": "procedure",
+    "steps": [
+      {
+        "action": "Be present at the tournament for the entire time it's running",
+        "actor": "Organizer",
+        "note": "ultimate responsibility for the tournament following this and the other core rules documentation sits with the Organizer"
+      },
+      {
+        "action": "Submit a request through Play! Pokémon customer support to pass tournament responsibility to a different Organizer, when exceptional circumstances call for it",
+        "actor": "Organizer",
+        "note": "Play! Pokémon reviews each request individually, case by case"
+      }
+    ],
+    "summary": "The Organizer has to be on-site for the whole tournament, though responsibility can be handed to another Organizer in exceptional, individually-reviewed circumstances.",
+    "tier": "judge"
+  },
+  "trh-4.3.2.2": {
+    "archetype": "note",
+    "paragraphs": [
+      "Play! Pokémon strongly recommends staffing every tournament — Championship Series events especially — with Professors holding a relevant certification. A Judge presence gets ruling questions resolved efficiently, and having more than one Judge keeps competitors from waiting too long for help.",
+      "Judge support also makes running legality checks easier."
+    ],
+    "summary": "Certified Judge staffing is strongly recommended at every tournament, and more so for Championship Series events, since it speeds up rulings and legality checks.",
+    "tier": "standard"
+  },
+  "trh-4.3.2.3": {
+    "archetype": "note",
+    "paragraphs": [
+      "Play! Pokémon doesn't make a recommendation on how tournament staff get paid, beyond reminding Organizers to follow whatever local legal requirements apply, and beyond expecting that Judges and other volunteers, who add real value to the event, are made to feel appreciated.",
+      "Professors who staff events earn Professor Points, redeemable at the Pokémon Professor store. Play! Pokémon Store Staff earn staff promos for supporting events too, with distribution directions sent to Play! Pokémon Store Owners."
+    ],
+    "summary": "Staff pay is left to local law and the Organizer's judgment, but Professors and Store Staff both earn program rewards for working events.",
+    "tier": "standard"
+  },
+  "trh-4.3.3": {
+    "archetype": "procedure",
+    "steps": [
+      {
+        "action": "Wait until the initial ruling has been given in full before appealing it",
+        "actor": "Competitor",
+        "note": "an appeal can't be raised before that point"
+      },
+      {
+        "action": "Appeal a ruling they're dissatisfied with to the Head Judge",
+        "actor": "Competitor",
+        "note": "competitors can't request that a specific Judge hear the appeal; large Championship Series events, such as Regionals, Internationals, or Worlds, may staff additional Assistant Head Judges who can also hear appeals"
+      },
+      {
+        "action": "Treat the outcome as final",
+        "note": "a Head Judge's ruling is always final, and so is an Assistant Head Judge's ruling made after hearing an appeal"
+      },
+      {
+        "action": "Contact Play! Pokémon customer support once the event has concluded, if still dissatisfied after the appeal",
+        "actor": "Competitor",
+        "note": "no further appeal path exists on-site"
+      }
+    ],
+    "summary": "A competitor can appeal a ruling up to the Head Judge (or an Assistant Head Judge at large events) once it's been fully given, and that decision is final on-site — any further recourse goes through customer support after the event ends.",
+    "tier": "judge"
+  },
+  "trh-4.3.4": {
+    "archetype": "procedure",
+    "steps": [
+      {
+        "action": "Allow paper records — standings, pairings, match slips — to stay on hand up through the end of the tournament",
+        "note": "retaining them is optional, not required; it's there only to help resolve any discrepancy that comes up"
+      },
+      {
+        "action": "Destroy those records immediately once the tournament ends"
+      }
+    ],
+    "summary": "Paper standings, pairings, and match slips may stay on hand through the tournament's end to help settle discrepancies, then get destroyed right away.",
+    "tier": "judge"
+  },
+  "trh-4.3.4.1": {
+    "archetype": "procedure",
+    "see_also": [
+      "trh-4.3.4.2"
+    ],
+    "steps": [
+      {
+        "action": "Use paper match slips — the written record of a single match's result — at Pokémon TCG and video-game Championship Series events, and at Pokémon GO League Challenges and League Cups",
+        "note": "required in these formats"
+      },
+      {
+        "action": "Record the match result on the slip at the end of the match, then both initial it to confirm agreement",
+        "actor": "Competitors"
+      },
+      {
+        "action": "Treat the result as final once the slip is signed",
+        "note": "turning the slip in, as the Organizer directs, is then the winning competitor's responsibility"
+      },
+      {
+        "action": "Supersede a signed match slip",
+        "actor": "The Pokémon Company International",
+        "note": "reserved for exceedingly rare situations where tournament integrity is at risk or there's been a severe disregard for tournament policy"
+      }
+    ],
+    "summary": "Paper match slips are mandatory in TCG and video-game Championship Series play and in Pokémon GO League Challenges and Cups; once both competitors sign, the result is final except in rare integrity-risk cases.",
+    "tier": "judge"
+  },
+  "trh-4.3.4.2": {
+    "archetype": "procedure",
+    "see_also": [
+      "trh-4.3.4.1"
+    ],
+    "steps": [
+      {
+        "action": "Use digital match slips at Regional Championships and above, and at any other tournaments held during those Championship events",
+        "note": "digital slips serve the same purpose as paper ones — a record of one match's result"
+      },
+      {
+        "action": "Submit the digital slip through the online client",
+        "note": "only one competitor from the match needs to submit it; the winner is the suggested submitter"
+      },
+      {
+        "action": "Treat the result as final once the slip is submitted",
+        "note": "except as covered in section 4.3.4.1"
+      },
+      {
+        "action": "Find a member of tournament staff to help if a discrepancy comes up for any reason",
+        "actor": "Competitors"
+      }
+    ],
+    "summary": "Digital match slips cover Regional Championships and above, submitted once by either competitor through the online client, with results final except for the rare paper-slip override case.",
+    "tier": "judge"
+  },
+  "trh-4.3.4.3": {
+    "archetype": "procedure",
+    "steps": [
+      {
+        "action": "Post standings for competitors to review at the end of each tournament phase",
+        "actor": "Tournament Organizer or Scorekeeper",
+        "note": "for example, when Swiss rounds finish and top cut begins, or when phase one gives way to phase two"
+      },
+      {
+        "action": "Post final standings at the tournament's conclusion",
+        "note": "applies to tournaments that only run Swiss rounds, with no separate cut"
+      }
+    ],
+    "summary": "Standings get posted at the end of every tournament phase, and Swiss-only tournaments post their standings once, at the very end.",
+    "tier": "judge"
+  },
+  "trh-4.4": {
+    "archetype": "note",
+    "paragraphs": [
+      "Submitting a tournament's results online, at the official Pokémon website, within seven days of the tournament's conclusion is the Tournament Organizer's responsibility.",
+      "A tournament with no results submitted inside that window counts as delinquent, and that can put the Organizer's eligibility to host future Championship Series events at risk."
+    ],
+    "summary": "Organizers have seven days after a tournament ends to submit results online, or the tournament is treated as delinquent and their future Championship Series hosting eligibility can suffer.",
+    "tier": "judge"
+  },
+  "trh-4.4.1": {
+    "archetype": "procedure",
+    "steps": [
+      {
+        "action": "Reach out to that tournament's Organizer on discovering their Player ID was recorded incorrectly",
+        "actor": "Competitor"
+      },
+      {
+        "action": "Report the issue to Play! Pokémon customer support for assistance",
+        "actor": "Organizer",
+        "note": "applies once the discrepancy is discovered after the tournament has already finished"
+      }
+    ],
+    "summary": "A competitor with a misrecorded Player ID goes to the tournament's Organizer, who escalates to Play! Pokémon customer support if the problem surfaces only after the event ends.",
+    "tier": "standard"
+  },
+  "trh-4.5": {
+    "archetype": "note",
+    "paragraphs": [
+      "Some competitors at a Play! Pokémon tournament may be told to play a match that gets featured, projected, or broadcast live to a big audience or to online viewers, and competitors have to follow the Organizer's direction on where that match takes place.",
+      "These matches can also call for extra equipment or considerations — new card sleeves, playmats, particular apparel, or noise-cancelling headphones — and competitors are expected to go along with whatever's asked."
+    ],
+    "summary": "Competitors chosen for a streamed match must follow the Organizer's directions on where it's played and comply with whatever extra gear or considerations the broadcast requires.",
+    "tier": "judge"
+  },
+  "trh-4.5.1": {
+    "archetype": "note",
+    "paragraphs": [
+      "Featured matches play out in designated areas of the Tournament Zone, marked with signage and TV screens showing the match to the audience. Like streamed matches, competitors can be told to play in the Featured Match area.",
+      "Some featured matches also end up streamed live to a big audience or online viewers, but that's never guaranteed just because a match is featured.",
+      "Unlike other matches in the Tournament Zone, featured matches can be filmed by spectators, per section 2.3 of the Standards of Conduct."
+    ],
+    "summary": "Featured matches happen in marked Tournament Zone areas, aren't necessarily streamed, and — unusually — spectators are allowed to film them.",
+    "tier": "judge"
+  },
+  "trh-4.5.2": {
+    "archetype": "note",
+    "paragraphs": [
+      "Entering or staying at a sanctioned Play! Pokémon event means agreeing to the Publishing Tournament Information section (2.3) of this document, and competitors can't voluntarily decline to take part in a streamed match.",
+      "In exceptional circumstances, an Organizer can decide, at their own discretion, that a chosen match shouldn't be streamed after all — but that's reserved for truly uncommon situations where playing on stream would seriously hurt a competitor's ability to play the match at all.",
+      "A competitor whose individual circumstances would make appearing on stream prohibitively difficult should make every effort to tell the Organizer before the day of the event."
+    ],
+    "see_also": [
+      "trh-2.3"
+    ],
+    "summary": "Competitors can't opt out of a streamed match on their own, though an Organizer can exempt one in truly exceptional cases, and competitors with real concerns should flag them to the Organizer ahead of the event.",
+    "tier": "judge"
+  },
+  "trh-4.5.3": {
+    "archetype": "note",
+    "paragraphs": [
+      "A rules infraction during a streamed match that isn't caught and addressed in the moment can still be identified and penalized later, after tournament staff review the match footage.",
+      "Certain penalties — especially ones tied to unacceptable behavior or language — can also be escalated specifically because the infraction happened during a streamed match."
+    ],
+    "summary": "Streamed-match infractions missed in real time can still be penalized after a footage review, and behavior- or language-related penalties can be escalated for happening on stream.",
+    "tier": "judge"
+  },
+  "trh-4.5.4": {
+    "archetype": "procedure",
+    "steps": [
+      {
+        "action": "Take up to five minutes of personal time between streamed matches",
+        "actor": "Competitor",
+        "note": "covers both the gap between finishing a match on the show floor and moving to stream, and the gap between two matches broadcast back-to-back on the main stage"
+      },
+      {
+        "action": "Alert tournament staff immediately if more than five minutes is needed",
+        "actor": "Competitor",
+        "note": "staff decide whether that extra accommodation can be granted"
+      },
+      {
+        "action": "Be camera ready by the end of personal time, or be ready to play a waived match uninterrupted",
+        "actor": "Competitor",
+        "note": "camera ready means having already used the restroom, having any logos cleared before going on stage, and having every material the match needs on hand"
+      },
+      {
+        "action": "Expect the appropriate penalty for any delay or tournament-integrity issue that comes out of personal time",
+        "note": "examples: running past the five-minute window without asking staff for more time; interrupting a match to leave the stage for any reason; and using personal time to seek outside information or resources for the next match"
+      }
+    ],
+    "summary": "Competitors get a five-minute personal-time window between streamed matches, have to be camera ready or request more time from staff, and face penalties for delays or integrity problems that come out of that time.",
+    "tier": "judge"
+  },
+  "trh-4.5.5": {
+    "archetype": "procedure",
+    "steps": [
+      {
+        "action": "Request approval to wear, use, or otherwise promote a sponsor's logo at a Play! Pokémon event through the Sponsorship Release Form, available via customer support",
+        "actor": "Competitor or team"
+      },
+      {
+        "action": "Submit that request so it meets the sponsorship requirements and arrives at least three weeks before the event where the logo would appear"
+      },
+      {
+        "action": "Check the Premier Events Sponsorship Policy for the full requirements",
+        "note": "every approval is at The Pokémon Company International's sole discretion, and it can refuse any request"
+      }
+    ],
+    "summary": "Wearing or promoting a sponsor's logo at a Play! Pokémon event requires an approved Sponsorship Release Form, submitted at least three weeks out, with TPCi holding final say.",
+    "tier": "judge"
+  },
+  "trh-4.6": {
+    "archetype": "note",
+    "paragraphs": [
+      "Prizes provided for a specific Play! Pokémon tournament have to be used as stipulated, wherever that's possible.",
+      "Unless told otherwise, Organizers are always free to add their own supplemental prize support on top of what Play! Pokémon provides. Play! Pokémon doesn't recommend any particular approach to that supplemental prizing, beyond requiring Organizers to follow whatever local legal requirements apply."
+    ],
+    "summary": "Provided prizes have to be used as directed where possible, and Organizers can supplement prizing freely as long as they stay within local law.",
+    "tier": "judge"
+  },
+  "trh-4.6.1": {
+    "archetype": "procedure",
+    "steps": [
+      {
+        "action": "Opt in to participate in Play! Pokémon through the Play! Pokémon Settings option in their Pokémon Trainer Central account",
+        "actor": "Competitor",
+        "note": "found in the left-hand navigation bar under My Profile; opting in means accepting every condition of participation set out in this handbook"
+      },
+      {
+        "action": "Understand that skipping this opt-in makes a competitor ineligible for prizes",
+        "note": "includes Championship Points, event invitations, and awards for travel"
+      }
+    ],
+    "summary": "Prize eligibility, including Championship Points and travel awards, requires opting in to Play! Pokémon participation through a competitor's Trainer Central account settings.",
+    "tier": "standard"
+  },
+  "trh-4.6.2": {
+    "archetype": "mechanic",
+    "branch": {
+      "options": [
+        {
+          "condition": "a competitor only becomes eligible for prizing after the event has already concluded",
+          "outcome": "no physical prizes are provided to them"
+        },
+        {
+          "condition": "a competitor's standing changes after they already received physical prizes",
+          "outcome": "no additional physical prizes are awarded to them"
+        },
+        {
+          "condition": "either of the above competitors",
+          "outcome": "nonphysical prizes, such as Championship Points or travel awards, can still apply to them"
+        }
+      ],
+      "when": "a disqualification changes the tournament standings"
+    },
+    "see_also": [
+      "trh-4.6.1"
+    ],
+    "state": [
+      "A disqualified competitor is ineligible for any prize from the event they were disqualified from.",
+      "A disqualification doesn't change tournament standings except under extraordinary circumstances.",
+      "Competitors are alerted whenever a disqualification does change the standings."
+    ],
+    "summary": "Disqualification removes a competitor from that event's prize pool, and even a rare standings change afterward can't unlock extra physical prizing — only nonphysical prizes stay reachable.",
+    "tier": "judge"
+  },
+  "trh-4.6.3": {
+    "archetype": "procedure",
+    "steps": [
+      {
+        "action": "Distribute promotional product exactly as directed, wherever that's possible",
+        "note": "covers material meant for Play! Pokémon events, League program material included"
+      },
+      {
+        "action": "Wait at least 30 days after the event, or the final League session, the material was meant for",
+        "actor": "Organizer",
+        "note": "from that 30th day on, leftover promotional product can be used at the Organizer's discretion for other Play! Pokémon events, or otherwise has to be destroyed"
+      },
+      {
+        "action": "Never sell promotional material, in any capacity",
+        "actor": "Organizer"
+      }
+    ],
+    "summary": "Promotional product goes out as directed, and only after a 30-day wait can leftovers be reused at other events or otherwise must be destroyed — never sold.",
+    "tier": "judge"
+  },
+  "trh-4.6.4": {
+    "archetype": "note",
+    "paragraphs": [
+      "Promotional product or other prizing still unclaimed once a tournament ends counts as forfeited by the competitor it belonged to.",
+      "A competitor who isn't present at the tournament to collect a prize shouldn't expect to stay entitled to it."
+    ],
+    "summary": "Prizes left unclaimed at the end of a tournament are forfeited, and being absent when prizes are handed out doesn't preserve a claim to them.",
+    "tier": "judge"
+  },
+  "trh-4.6.5": {
+    "archetype": "note",
+    "paragraphs": [
+      "Play! Pokémon tracks Play! Points as a tiebreaking tool, usable in exceptional circumstances to break a tie in Championship Points — for example, when Play! Pokémon is deciding Travel Awards.",
+      "More detail lives on the Play! Points page."
+    ],
+    "summary": "Play! Points exist as a backup tiebreaker for Championship Point ties, used in exceptional cases such as Travel Award decisions.",
+    "tier": "judge"
+  },
+  "trh-5": {
+    "archetype": "note",
+    "paragraphs": [
+      "This part of the handbook gets into the mechanics of actually running a tournament: the baseline rules every sanctioned event follows, the tournament structures on offer, how competitors get paired and ranked, and how a final placement gets calculated."
+    ],
+    "summary": "This section works through the operational mechanics of a tournament — its baseline rules, its structural options, and how pairing, ranking, and final placement all get calculated.",
+    "tier": "standard"
+  },
+  "trh-5.1.1": {
+    "archetype": "note",
+    "paragraphs": [
+      "A match is one game, or a series of games, played against a single opponent within a tournament. Most matches run as best-of-three (or any larger odd number of games), though a match can also be just a single game.",
+      "Wherever best-of-three or longer matches will occur at some point in a tournament, the Organizer should announce when that happens before the first round begins."
+    ],
+    "summary": "A match is one game or an odd-numbered series of games against one opponent, and an Organizer using best-of-three or longer matches anywhere in the tournament should say so before round one.",
+    "tier": "judge"
+  },
+  "trh-5.1.2": {
+    "archetype": "note",
+    "paragraphs": [
+      "A round is the full group of matches being played across the tournament at the same time. How many rounds a tournament runs depends on both the number of competitors attending and which tournament style is in use."
+    ],
+    "summary": "A round is the set of matches happening at once across the tournament, and its total count depends on attendance and tournament style.",
+    "tier": "standard"
+  },
+  "trh-5.1.3": {
+    "archetype": "mechanic",
+    "effects": {
+      "Junior Division (2026 season)": "competitors born in 2014 or later",
+      "Masters Division (2026 season)": "competitors born in 2009 or earlier",
+      "Senior Division (2026 season)": "competitors born between 2010 and 2013, inclusive"
+    },
+    "state": [
+      "Age divisions apply wherever Play! Pokémon separates competitors by age: Junior, Senior, and Masters.",
+      "A competitor's age division is set at the start of the tournament season, based on year of birth, and holds for that entire season.",
+      "The tournament season turns over every year at 00:00 UTC on September 1, which is also when age divisions shift."
+    ],
+    "summary": "Age division is fixed for the whole competitive season by a competitor's birth year, keeping them matched against the same pool of peers all season.",
+    "tier": "judge"
+  },
+  "trh-5.2": {
+    "archetype": "mechanic",
+    "branch": {
+      "options": [
+        {
+          "condition": "enough competitors drop that a remaining competitor can't be given a valid opponent before round three finishes",
+          "outcome": "the tournament is invalid"
+        },
+        {
+          "condition": "any of the sanctioning criteria go unmet",
+          "outcome": "the Organizer should report the tournament as Cancelled"
+        }
+      ],
+      "when": "the tournament can't meet the minimum-competitor, three-round, or valid-opponent requirements"
+    },
+    "state": [
+      "A sanctioned Play! Pokémon tournament needs at least four competitors.",
+      "Every competitor has to complete three full rounds.",
+      "A valid opponent is anyone a competitor hasn't already faced by the time the third round finishes.",
+      "A random bye, or a bye assigned under other Play! Pokémon procedures, counts as having played a valid opponent.",
+      "A bye assigned for any other reason damages tournament integrity and can invalidate the tournament."
+    ],
+    "summary": "A sanctioned tournament needs a minimum turnout and a genuine round of competition for every entrant, or it doesn't count.",
+    "tier": "judge"
+  },
+  "trh-5.2.1": {
+    "archetype": "mechanic",
+    "branch": {
+      "options": [
+        {
+          "condition": "Juniors number fewer than six",
+          "outcome": "Juniors are combined with Seniors for Swiss pairing"
+        },
+        {
+          "condition": "combined Juniors and Seniors still number fewer than six",
+          "outcome": "Juniors and Seniors are combined with Masters as well"
+        },
+        {
+          "condition": "Juniors reach six or more but Seniors number fewer than six",
+          "outcome": "Seniors are combined with Masters"
+        },
+        {
+          "condition": "only the Masters division falls below six",
+          "outcome": "Masters is combined with Seniors"
+        }
+      ],
+      "when": "an age division has fewer than six competitors, triggering age-combined (age-modified) Swiss play"
+    },
+    "state": [
+      "Combined-age-division pods only share Swiss-round pairings; single-elimination play, where the tournament has it, stays separated by age division.",
+      "Each age division keeps its own standings and, if applicable, its own single-elimination cut.",
+      "A tournament can still run with as few as four competitors overall, even though six is the threshold for an age-separated pod."
+    ],
+    "summary": "Age-combined Swiss pairs Juniors, Seniors, and Masters together when a division falls short of six competitors, but each division still gets its own standings and cut.",
+    "tier": "judge"
+  },
+  "trh-5.2.2": {
+    "archetype": "mechanic",
+    "branch": {
+      "options": [
+        {
+          "condition": "the Organizer judges that adding the late competitor threatens the event's integrity",
+          "outcome": "the Organizer may refuse them entry"
+        },
+        {
+          "condition": "the Organizer allows the late competitor in",
+          "outcome": "the competitor is added and paired starting the following round, taking a loss for the current round and any round already completed"
+        }
+      ],
+      "when": "a competitor tries to register after the tournament has already begun"
+    },
+    "state": [
+      "Adding a late competitor after the third round has completed is discouraged.",
+      "A competitor added after the first round has already been paired doesn't count toward that tournament's total round count."
+    ],
+    "summary": "A late-arriving competitor can be turned away if the Organizer sees an integrity risk; otherwise they join, take losses for rounds they missed, and don't add to the tournament's round count if they join after round one is paired.",
+    "tier": "judge"
+  },
+  "trh-5.2.2.1": {
+    "archetype": "note",
+    "paragraphs": [
+      "At Championship Series events specifically, competitors shouldn't be added once the third round has completed."
+    ],
+    "see_also": [
+      "trh-5.2.2"
+    ],
+    "summary": "Championship Series events hold firm on the general guidance: no adding competitors after round three completes.",
+    "tier": "judge"
+  },
+  "trh-5.3.1": {
+    "archetype": "note",
+    "paragraphs": [
+      "A competitor's match record tracks how many matches they've won, lost, and tied in the tournament, shown as a W/L/T ratio — a competitor with four wins, three losses, and one tie has a record of 4/3/1.",
+      "Match records print on the pairings and match slips next to each competitor's name every round, and competitors should check them for accuracy as soon as they're posted."
+    ],
+    "summary": "A match record is a competitor's win/loss/tie ratio for the tournament so far, posted each round for competitors to verify.",
+    "tier": "standard"
+  },
+  "trh-5.3.1.1": {
+    "archetype": "mechanic",
+    "branch": {
+      "options": [
+        {
+          "condition": "the Organizer chooses to correct it and re-pair",
+          "outcome": "re-pairing that round is at the Organizer's discretion, fixable either before the round starts (re-pairing the minimum competitors needed for a valid pairing) or after the round has already started; either way, the competitor's next-round pairing comes out correct"
+        },
+        {
+          "condition": "the fix happens before the second round after the mistake gets paired — for example, a round-one error caught before round three is paired",
+          "outcome": "the match record can still be corrected"
+        },
+        {
+          "condition": "the second round after the mistake has already been paired — for example, round three already paired for a round-one error",
+          "outcome": "the match record can no longer be altered"
+        }
+      ],
+      "when": "a competitor's match record turns out to be wrong"
+    },
+    "state": [
+      "A record fixed one round late behaves like an ordinary random pair-up or pair-down; a fix many rounds late can swing the tournament much harder, since the competitor may have been facing weaker opponents until the correction pushes them into the top standings.",
+      "Pokémon GO adds its own twist at the higher levels: once a new set of matches gets underway at Regional Championships or above, its pairings are locked in, so it falls to each Pokémon GO competitor to double-check their bracket standing before that next match begins."
+    ],
+    "summary": "An Organizer can fix a wrong match record before or after a round starts, but only within a short window, and Pokémon GO adds its own pre-match check at the higher levels.",
+    "tier": "judge"
+  },
+  "trh-5.3.2": {
+    "archetype": "mechanic",
+    "effects": {
+      "Loss": "0 match points",
+      "Tie": "1 match point",
+      "Win": "3 match points"
+    },
+    "state": [
+      "A competitor's total match points follow from their match record: a 4/3/1 record is worth the same 13 match points as a 3/1/4 record.",
+      "Match points print each round on the pairings and match slips next to a competitor's match record, shown in parentheses — 13 points would print as \"(13)\"."
+    ],
+    "summary": "Match points convert a competitor's win/loss/tie record into a single running score, tallied the same way regardless of the order wins and losses happened in.",
+    "tier": "standard"
+  },
+  "trh-5.3.3": {
+    "archetype": "note",
+    "paragraphs": [
+      "A competitor's opponents' win percentage — shown as \"Op Win %\" on tournament paperwork — averages together the win percentages of every opponent that competitor has faced across the rounds being counted."
+    ],
+    "summary": "Opponents' win percentage (Op Win %) averages a competitor's opponents' own win percentages.",
+    "tier": "standard"
+  },
+  "trh-5.3.3.1": {
+    "archetype": "mechanic",
+    "branch": {
+      "options": [
+        {
+          "condition": "the opponent completed the tournament",
+          "outcome": "win percentage is wins divided by the tournament's total round count, floored at 25% and capped at 100%"
+        },
+        {
+          "condition": "the opponent dropped before the tournament finished",
+          "outcome": "win percentage is wins divided by the rounds they actually played, floored at 25% and capped at 75%"
+        }
+      ],
+      "when": "calculating one opponent's own win percentage, before it's averaged into someone else's Op Win %"
+    },
+    "state": [
+      "A bye a competitor received doesn't count as a win of theirs when someone else's Op Win % is being calculated.",
+      "Once every opponent's individual win percentage is worked out, they're averaged together to produce the final Op Win % figure."
+    ],
+    "summary": "An individual opponent's win percentage is wins over rounds played, floored at 25% and capped depending on whether they finished the tournament or dropped early; those percentages then average into Op Win %.",
+    "tier": "judge"
+  },
+  "trh-5.4": {
+    "archetype": "procedure",
+    "steps": [
+      {
+        "action": "Decide the outcome of a match through gameplay alone",
+        "actor": "Competitor",
+        "note": "prearranging a result informally, or offering or accepting prizing or money to change how a game, match, or set of matches comes out, counts as match-fixing and can draw a penalty under section 7"
+      },
+      {
+        "action": "Concede to their opponent, for any reason, at any point",
+        "actor": "Competitor",
+        "note": "Play! Pokémon and tournament staff don't enforce or recognize any private agreement behind a concession — a competitor who concedes accepts the outcome"
+      },
+      {
+        "action": "Offer their opponent a single draw during the game",
+        "actor": "Competitor",
+        "note": "Pokémon TCG tournaments only; not available in other game formats"
+      },
+      {
+        "action": "Treat a match result as final once it's recorded on a signed match slip",
+        "note": "changes after that point are barred except in the exceedingly rare case, per section 4.3.4.1, where The Pokémon Company International supersedes a signed slip over a tournament-integrity concern"
+      },
+      {
+        "action": "Avoid asking an opponent to concede, asking again for a draw once they've declined, or bribing, coercing, or pressuring an opponent toward any result",
+        "actor": "Competitor",
+        "note": "prohibited regardless of format"
+      },
+      {
+        "action": "Avoid deciding to concede or draw based on tournament standings or on waiting to see how other matches resolve",
+        "actor": "Competitor",
+        "note": "prohibited"
+      },
+      {
+        "action": "Avoid using information from outside the current game or match — including via an illegal game action — to decide a match's result",
+        "actor": "Competitor",
+        "note": "prohibited"
+      },
+      {
+        "action": "Avoid settling a match's result by a coin flip, dice roll, or any other random or arbitrary method",
+        "actor": "Competitor",
+        "note": "prohibited"
+      }
+    ],
+    "summary": "Match outcomes have to come from gameplay, not side deals — competitors can concede freely or (Pokémon TCG only) offer a single draw, but arranging, forcing, or gaming a result any other way is match-fixing and draws a penalty.",
+    "tier": "judge"
+  },
+  "trh-5.5": {
+    "archetype": "note",
+    "paragraphs": [
+      "Sanctioned Pokémon TCG and video-game tournaments can run as Swiss, single-elimination, or Swiss followed by a single-elimination cut.",
+      "Sanctioned Pokémon GO tournaments run Swiss followed by single-elimination; Pokémon GO Regional Championships, International Championships, and World Championships instead run double-elimination, and depending on turnout may add an earlier group-stage phase ahead of a finals bracket.",
+      "Any other tournament style needs Play! Pokémon's express written permission first, and has to be spelled out clearly to competitors when they register."
+    ],
+    "summary": "TCG and video-game events choose from Swiss, single-elimination, or Swiss-plus-cut; Pokémon GO defaults to Swiss-plus-cut but runs double-elimination (with an optional group stage) at Regionals and above; anything else needs written sign-off.",
+    "tier": "judge"
+  },
+  "trh-5.5.1": {
+    "archetype": "mechanic",
+    "branch": {
+      "options": [
+        {
+          "condition": "round one",
+          "outcome": "competitors are paired at random; an odd turnout leaves one competitor unpaired, and they receive a bye that counts as a win but doesn't factor into tiebreakers"
+        },
+        {
+          "condition": "round two",
+          "outcome": "competitors in the 1-0 bracket are randomly paired against each other, and competitors in the 0-1 bracket are randomly paired against each other; an odd number in a bracket pairs one of its competitors down (or up) into the neighboring bracket, provided they haven't already played, and a resulting odd 0-1 bracket assigns a bye as in round one"
+        },
+        {
+          "condition": "every round after that",
+          "outcome": "competitors keep pairing randomly by match record; an odd turnout pairs down from the highest bracket to the lowest and assigns a bye randomly within the lowest bracket"
+        }
+      ],
+      "when": "running a Swiss round"
+    },
+    "ends_when": [
+      "the tournament's specified number of Swiss rounds have concluded, at which point the competitor at the top of the standings is the champion"
+    ],
+    "state": [
+      "Most Championship Series events use Swiss, either on its own or ahead of single-elimination rounds.",
+      "Every competitor plays every round under Swiss, no matter their record."
+    ],
+    "summary": "Swiss pairing lets every competitor play every round regardless of record, narrowing the field round by round toward a single undefeated winner.",
+    "tier": "judge"
+  },
+  "trh-5.5.1.1": {
+    "archetype": "mechanic",
+    "branch": {
+      "options": [
+        {
+          "condition": "first tiebreaker",
+          "outcome": "rank tied competitors by Opponents' Win Percentage, highest to lowest"
+        },
+        {
+          "condition": "second tiebreaker, if still tied",
+          "outcome": "rank by Opponents' Opponents' Win Percentage, highest to lowest — the average of a competitor's own opponents' Op Win %"
+        },
+        {
+          "condition": "final tiebreaker, exactly two competitors still tied and they played each other in the tournament",
+          "outcome": "the winner of that head-to-head match ranks higher"
+        },
+        {
+          "condition": "final tiebreaker, exactly two competitors still tied and they never played each other, or more than two competitors remain tied",
+          "outcome": "their order is decided at random"
+        }
+      ],
+      "when": "match points alone leave two or more competitors tied"
+    },
+    "state": [
+      "The competitor with the most match points and best tiebreakers after the final Swiss round wins the tournament; everyone else is ranked by their final record.",
+      "Once a tiebreaker resolves a tie, no further tiebreaker gets applied to that group."
+    ],
+    "summary": "Once Swiss ends, the highest-ranked competitor wins, and everyone else's placement runs through win percentage, then their opponents' win percentage, then head-to-head, stopping as soon as a tiebreaker actually separates two competitors.",
+    "tier": "judge"
+  },
+  "trh-5.5.2": {
+    "archetype": "mechanic",
+    "branch": {
+      "options": [
+        {
+          "condition": "round one",
+          "outcome": "competitors get random seeds and are paired on standard single-elimination brackets; winners advance, losers are eliminated"
+        },
+        {
+          "condition": "every round after that",
+          "outcome": "competitors keep following the bracket, with winners advancing and losers eliminated"
+        }
+      ],
+      "when": "running a single-elimination round"
+    },
+    "state": [
+      "Each round's competitor count is roughly half the previous round's, aside from a possible exception in round one.",
+      "The tournament ends, and its winner is decided, once only one undefeated competitor remains — the final round leaves exactly two competitors, and the winner of that match takes the tournament."
+    ],
+    "summary": "Single elimination cuts the field in half each round — one loss and a competitor is out — until only the tournament winner remains.",
+    "tier": "judge"
+  },
+  "trh-5.5.2.1": {
+    "archetype": "mechanic",
+    "state": [
+      "Byes go to the highest-seeded competitors whenever attendance isn't a power of two (8, 16, 32, 64, 128, 256, and so on).",
+      "The number of byes equals the gap between actual attendance and the next power of two above it — for example, 53 competitors sit 11 short of 64, so the top 11 seeds (randomly seeded) get first-round byes."
+    ],
+    "summary": "When attendance isn't an exact power of two, the top-seeded competitors get first-round byes to square off the bracket.",
+    "tier": "judge"
+  },
+  "trh-5.5.2.2": {
+    "archetype": "mechanic",
+    "state": [
+      "The sole remaining competitor after the final round wins the tournament.",
+      "Every eliminated competitor is ranked according to how far the opponent who eliminated them advanced — for example, a competitor eliminated in round one by the eventual champion outranks any other competitor eliminated in round one."
+    ],
+    "summary": "The last competitor standing wins; everyone else is ranked by how far their eliminator went, so a first-round loss to the eventual champion outranks a first-round loss to anyone else.",
+    "tier": "judge"
+  },
+  "trh-5.5.2.3": {
+    "archetype": "procedure",
+    "steps": [
+      {
+        "action": "Decide, in place of using tiebreakers, to have the two competitors eliminated in the Top 4 play a match to determine 3rd and 4th place",
+        "actor": "Organizer"
+      },
+      {
+        "action": "Announce that choice at the start of the tournament",
+        "actor": "Organizer",
+        "note": "required whenever a placement playoff will be used instead of tiebreakers"
+      }
+    ],
+    "summary": "An Organizer can swap the usual tiebreaker math for an actual 3rd/4th-place playoff between the two Top 4 losers, as long as they say so up front.",
+    "tier": "judge"
+  },
+  "trh-5.5.3": {
+    "archetype": "note",
+    "paragraphs": [
+      "This format runs a number of Swiss rounds scaled to attendance, then seeds the top-ranked finishers into single-elimination brackets that play down to one remaining competitor, the tournament winner.",
+      "Most Pokémon TCG and video-game Championship Series events use a variant of this format, and so do some Pokémon GO events; the sections that follow spell out which variant applies to which event and how they differ.",
+      "Play! Pokémon can approve changes to an event's tournament format at any time, for any reason, and a competitor added to a tournament after round one has already been paired doesn't count toward that tournament's total round count."
+    ],
+    "see_also": [
+      "trh-5.2.2"
+    ],
+    "summary": "Swiss-plus-cut scales its Swiss rounds to turnout, then seeds the top finishers into a single-elimination bracket down to one winner; most Pokémon TCG and video-game Championship Series events, and some Pokémon GO events, run some variant of it.",
+    "tier": "judge"
+  },
+  "trh-5.5.4": {
+    "archetype": "definition",
+    "terms": [
+      {
+        "meaning": "Used for Pokémon video-game (VGC) League Challenges and League Cups, run as a single-day Premier Event in the Tournament Operations Manager.",
+        "term": "Variant #1 — VG Single Day"
+      },
+      {
+        "meaning": "Used for Pokémon TCG League Challenges: Swiss rounds only, with no single-elimination cut.",
+        "term": "Variant #2 — TCG Rounds (Swiss Only)"
+      },
+      {
+        "meaning": "Used for Pokémon TCG League Cups: a single day combining Swiss rounds with a single-elimination cut.",
+        "term": "Variant #3 — TCG Single Day"
+      },
+      {
+        "meaning": "Used for Pokémon GO League Challenges and League Cups.",
+        "term": "Variant #4 — GO Single Day"
+      },
+      {
+        "meaning": "Used for Pokémon video-game and Pokémon TCG Regional Championships and International Championships, run in the Tournament Operations Manager as two-phase Championship events.",
+        "term": "Variant #5 — Two-Phase Championship Format"
+      },
+      {
+        "meaning": "Structure varies by event — double elimination, Variant #4, or Variant #5 — and whichever applies is announced at registration.",
+        "term": "Pokémon GO Regional and International Championships"
+      }
+    ],
+    "tier": "judge"
+  },
+  "trh-5.5.4.1": {
+    "archetype": "mechanic",
+    "effects": {
+      "Variant #1 (VG Single Day), 129–226 competitors per age division": "8 Swiss round(s), 3 single-elimination round(s), 11 round(s) total",
+      "Variant #1 (VG Single Day), 17–32 competitors per age division": "5 Swiss round(s), 3 single-elimination round(s), 8 round(s) total",
+      "Variant #1 (VG Single Day), 227–256 competitors per age division": "8 Swiss round(s), 4 single-elimination round(s), 12 round(s) total",
+      "Variant #1 (VG Single Day), 257–409 competitors per age division": "9 Swiss round(s), 4 single-elimination round(s), 13 round(s) total",
+      "Variant #1 (VG Single Day), 33–64 competitors per age division": "6 Swiss round(s), 3 single-elimination round(s), 9 round(s) total",
+      "Variant #1 (VG Single Day), 410–512 competitors per age division": "9 Swiss round(s), 5 single-elimination round(s), 14 round(s) total",
+      "Variant #1 (VG Single Day), 4–7 competitors per age division": "3 Swiss round(s), 0 single-elimination round(s), 3 round(s) total",
+      "Variant #1 (VG Single Day), 513+ competitors per age division": "10 Swiss round(s), 5 single-elimination round(s), 15 round(s) total",
+      "Variant #1 (VG Single Day), 65–128 competitors per age division": "7 Swiss round(s), 3 single-elimination round(s), 10 round(s) total",
+      "Variant #1 (VG Single Day), 8 competitors per age division": "3 Swiss round(s), 1 single-elimination round(s), 4 round(s) total",
+      "Variant #1 (VG Single Day), 9–16 competitors per age division": "4 Swiss round(s), 2 single-elimination round(s), 6 round(s) total",
+      "Variant #2 (TCG Swiss Rounds Only), 129–256 competitors per age division": "8 Swiss round(s), 0 single-elimination round(s), 8 round(s) total",
+      "Variant #2 (TCG Swiss Rounds Only), 17–32 competitors per age division": "5 Swiss round(s), 0 single-elimination round(s), 5 round(s) total",
+      "Variant #2 (TCG Swiss Rounds Only), 257–512 competitors per age division": "9 Swiss round(s), 0 single-elimination round(s), 9 round(s) total",
+      "Variant #2 (TCG Swiss Rounds Only), 33–64 competitors per age division": "6 Swiss round(s), 0 single-elimination round(s), 6 round(s) total",
+      "Variant #2 (TCG Swiss Rounds Only), 4–8 competitors per age division": "3 Swiss round(s), 0 single-elimination round(s), 3 round(s) total",
+      "Variant #2 (TCG Swiss Rounds Only), 513+ competitors per age division": "10 Swiss round(s), 0 single-elimination round(s), 10 round(s) total",
+      "Variant #2 (TCG Swiss Rounds Only), 65–128 competitors per age division": "7 Swiss round(s), 0 single-elimination round(s), 7 round(s) total",
+      "Variant #2 (TCG Swiss Rounds Only), 9–16 competitors per age division": "4 Swiss round(s), 0 single-elimination round(s), 4 round(s) total",
+      "Variant #3 (TCG Single Day), 129–226 competitors per age division": "8 Swiss round(s), 3 single-elimination round(s), 11 round(s) total",
+      "Variant #3 (TCG Single Day), 13–20 competitors per age division": "5 Swiss round(s), 2 single-elimination round(s), 7 round(s) total",
+      "Variant #3 (TCG Single Day), 21–32 competitors per age division": "5 Swiss round(s), 3 single-elimination round(s), 8 round(s) total",
+      "Variant #3 (TCG Single Day), 227–409 competitors per age division": "9 Swiss round(s), 3 single-elimination round(s), 12 round(s) total",
+      "Variant #3 (TCG Single Day), 33–64 competitors per age division": "6 Swiss round(s), 3 single-elimination round(s), 9 round(s) total",
+      "Variant #3 (TCG Single Day), 410+ competitors per age division": "10 Swiss round(s), 3 single-elimination round(s), 13 round(s) total",
+      "Variant #3 (TCG Single Day), 4–8 competitors per age division": "3 Swiss round(s), 0 single-elimination round(s), 3 round(s) total",
+      "Variant #3 (TCG Single Day), 65–128 competitors per age division": "7 Swiss round(s), 3 single-elimination round(s), 10 round(s) total",
+      "Variant #3 (TCG Single Day), 9–12 competitors per age division": "4 Swiss round(s), 2 single-elimination round(s), 6 round(s) total",
+      "Variant #4 (GO Single Day), 129–226 competitors per age division": "8 Swiss round(s), 3 single-elimination round(s), 11 round(s) total",
+      "Variant #4 (GO Single Day), 17–32 competitors per age division": "5 Swiss round(s), 3 single-elimination round(s), 8 round(s) total",
+      "Variant #4 (GO Single Day), 227–256 competitors per age division": "8 Swiss round(s), 4 single-elimination round(s), 12 round(s) total",
+      "Variant #4 (GO Single Day), 257–409 competitors per age division": "9 Swiss round(s), 4 single-elimination round(s), 13 round(s) total",
+      "Variant #4 (GO Single Day), 33–64 competitors per age division": "6 Swiss round(s), 3 single-elimination round(s), 9 round(s) total",
+      "Variant #4 (GO Single Day), 410–512 competitors per age division": "9 Swiss round(s), 5 single-elimination round(s), 14 round(s) total",
+      "Variant #4 (GO Single Day), 4–7 competitors per age division": "3 Swiss round(s), 0 single-elimination round(s), 3 round(s) total",
+      "Variant #4 (GO Single Day), 513+ competitors per age division": "10 Swiss round(s), 5 single-elimination round(s), 15 round(s) total",
+      "Variant #4 (GO Single Day), 65–128 competitors per age division": "7 Swiss round(s), 3 single-elimination round(s), 10 round(s) total",
+      "Variant #4 (GO Single Day), 8 competitors per age division": "3 Swiss round(s), 1 single-elimination round(s), 4 round(s) total",
+      "Variant #4 (GO Single Day), 9–16 competitors per age division": "4 Swiss round(s), 2 single-elimination round(s), 6 round(s) total"
+    },
+    "summary": "Attendance per age division sets how many Swiss rounds, single-elimination rounds, and total rounds a single-day event runs, on separate scales for Pokémon video-game, Pokémon TCG Swiss-only, Pokémon TCG single-day, and Pokémon GO single-day events.",
+    "tier": "judge"
+  },
+  "trh-5.5.4.2": {
+    "archetype": "mechanic",
+    "effects": {
+      "Variant #5, 1,025–2,048 competitors per age division": "13 Swiss round(s) total (8 in Phase One), Phase Two match-point threshold 16, 5 Phase Two Swiss round(s), top cut Top 8 (Asymmetrical Natural Swiss +2)",
+      "Variant #5, 129–256 competitors per age division": "10 Swiss round(s) total (8 in Phase One), Phase Two match-point threshold 16, 2 Phase Two Swiss round(s), top cut Top 8 (Asymmetrical Natural Swiss +2)",
+      "Variant #5, 17–32 competitors per age division": "6 Swiss round(s) total (6 in Phase One), Phase Two match-point threshold N/A, 0 Phase Two Swiss round(s), top cut Top 4 (Asymmetrical Natural Swiss +1)",
+      "Variant #5, 2,049–4,096 competitors per age division": "14 Swiss round(s) total (8 in Phase One), Phase Two match-point threshold 16, 6 Phase Two Swiss round(s), top cut Top 8 (Asymmetrical Natural Swiss +2)",
+      "Variant #5, 257–512 competitors per age division": "11 Swiss round(s) total (8 in Phase One), Phase Two match-point threshold 16, 3 Phase Two Swiss round(s), top cut Top 8 (Asymmetrical Natural Swiss +2)",
+      "Variant #5, 33–64 competitors per age division": "7 Swiss round(s) total (7 in Phase One), Phase Two match-point threshold N/A, 0 Phase Two Swiss round(s), top cut Top 6 (Asymmetrical Natural Swiss +1)",
+      "Variant #5, 4,097–8,192 competitors per age division": "15 Swiss round(s) total (9 in Phase One), Phase Two match-point threshold 19, 6 Phase Two Swiss round(s), top cut Top 8 (Asymmetrical Natural Swiss +2)",
+      "Variant #5, 4–8 competitors per age division": "3 Swiss round(s) total (3 in Phase One), Phase Two match-point threshold N/A, 0 Phase Two Swiss round(s), top cut N/A (Natural Swiss)",
+      "Variant #5, 513–1,024 competitors per age division": "12 Swiss round(s) total (8 in Phase One), Phase Two match-point threshold 16, 4 Phase Two Swiss round(s), top cut Top 8 (Asymmetrical Natural Swiss +2)",
+      "Variant #5, 65–128 competitors per age division": "9 Swiss round(s) total (7 in Phase One), Phase Two match-point threshold 13, 2 Phase Two Swiss round(s), top cut Top 8 (Asymmetrical Natural Swiss +2)",
+      "Variant #5, 9–16 competitors per age division": "4 Swiss round(s) total (4 in Phase One), Phase Two match-point threshold N/A, 0 Phase Two Swiss round(s), top cut Top 2 (Asymmetrical Natural Swiss)"
+    },
+    "state": [
+      "An asymmetrical top cut never seeds more than 16 competitors, no matter how large the event."
+    ],
+    "summary": "Two-phase Championship events scale total Swiss rounds, the Phase Two qualifying threshold, and top-cut size to attendance per age division, up to a 16-competitor cap on any asymmetrical top cut.",
+    "tier": "judge"
+  },
+  "trh-5.5.5": {
+    "archetype": "mechanic",
+    "branch": {
+      "options": [
+        {
+          "condition": "the winners-bracket champion beats the losers-bracket champion",
+          "outcome": "the winners-bracket champion wins the tournament immediately"
+        },
+        {
+          "condition": "the losers-bracket champion beats the winners-bracket champion",
+          "outcome": "a bracket reset occurs and play continues until either competitor takes their second loss of the tournament, at which point the competitor with only one loss wins"
+        }
+      ],
+      "when": "the Grand Final is played"
+    },
+    "ends_when": [
+      "a competitor in the Grand Final takes their second tournament loss"
+    ],
+    "state": [
+      "Some Pokémon GO events, including those at Regional Championships and above, use double elimination.",
+      "The format runs two brackets in parallel: a winners bracket for undefeated competitors and a losers bracket for competitors with exactly one loss.",
+      "A competitor is eliminated once they've taken two losses.",
+      "Both brackets play to completion, and their two champions then meet in a Grand Final."
+    ],
+    "summary": "Pokémon GO's double-elimination format keeps a competitor alive through one loss, tracking them into a losers bracket, until the winners- and losers-bracket champions meet in a Grand Final that can reset if the underdog wins it.",
+    "tier": "judge"
+  },
+  "trh-5.5.5.1": {
+    "archetype": "mechanic",
+    "effects": {
+      "129–256 competitors": "8 pools; 16 competitors advance to the final phase",
+      "1–32 competitors": "1 pool; no final phase",
+      "257–512 competitors": "16 pools; 32 competitors advance to the final phase",
+      "33–64 competitors": "2 pools; 4 competitors advance to the final phase",
+      "65–128 competitors": "4 pools; 8 competitors advance to the final phase"
+    },
+    "state": [
+      "A pools phase groups competitors so each pool plays only within itself.",
+      "The top two competitors from each pool advance to a single final phase, where the tournament's winner is ultimately decided."
+    ],
+    "summary": "High-turnout Pokémon GO double-elimination events open with a pools phase, splitting competitors into same-size groups whose top two each advance to a single final phase.",
+    "tier": "judge"
+  },
+  "trh-5.5.5.2": {
+    "archetype": "note",
+    "paragraphs": [
+      "An Organizer can choose to seed brackets, but that seeding needs explicit sign-off from The Pokémon Company International before it's used in a tournament.",
+      "Where seeding is used, it always runs on quantitative competitor performance data, never subjective judgment; the current methodology draws on Pokémon GO Championship Series performance data from the 2025 and 2026 seasons."
+    ],
+    "summary": "Bracket seeding is optional, requires TPCi's explicit approval, and when used runs strictly on quantitative Pokémon GO performance data from the two most recent seasons.",
+    "tier": "judge"
+  },
+  "trh-5.5.5.3": {
+    "archetype": "mechanic",
+    "state": [
+      "Round-robin play is available for Pokémon GO tournaments at the level of Regional Championships and above.",
+      "It's usable only at the Organizer's discretion, and only when the tournament has six or fewer competitors.",
+      "Every competitor plays every other competitor once, continuing until no unplayed pairing remains."
+    ],
+    "summary": "Round-robin is a small-field option for Pokémon GO Regional Championships and above, run only at the Organizer's discretion when six or fewer competitors are entered.",
+    "tier": "judge"
+  },
+  "trh-5.5.6": {
+    "archetype": "mechanic",
+    "effects": {
+      "Best-of-three minimum round time": "50 minutes",
+      "Single-game minimum round time": "30 minutes"
+    },
+    "state": [
+      "Championship Series Swiss rounds may be single-game or best-of-three, at the Organizer's discretion.",
+      "Best-of-three is strongly recommended at Regional Championships and above, and strongly suggested for all Pokémon GO events regardless of level.",
+      "Single-elimination rounds run under the Swiss-plus-single-elimination structure at Championship Series events must be best-of-three.",
+      "Round time remaining counts as public knowledge for every competitor, and Play! Pokémon recommends displaying it publicly at Championship Series events.",
+      "A competitor can ask a Judge for a time check, accurate to the nearest minute based on the Judge's best available information."
+    ],
+    "summary": "Swiss rounds can run single-game or best-of-three at the Organizer's discretion, though best-of-three is recommended (and expected for Pokémon GO); single-elimination rounds inside a Swiss-plus-cut event must be best-of-three, and each format carries its own minimum round-time floor.",
+    "tier": "judge"
+  },
+  "trh-5.5.7": {
+    "archetype": "mechanic",
+    "state": [
+      "After Swiss rounds finish, competitors rank by their performance and Swiss tiebreakers, and enough of the top finishers are seeded into single-elimination brackets to fill the available slots.",
+      "Single-elimination play then proceeds normally: winners advance, losers are eliminated, until one competitor remains as tournament winner.",
+      "Final placement inside the single-elimination portion is decided purely by each competitor's final Swiss ranking, not by additional tiebreakers.",
+      "After each single-elimination round, eliminated competitors are ranked by that same final Swiss ranking — the highest Swiss seed among them takes the best available rank for that bracket, then the next-highest, and so on."
+    ],
+    "summary": "The top Swiss finishers get seeded into the single-elimination cut by their Swiss ranking, and anyone eliminated there is placed using that same Swiss ranking rather than fresh tiebreakers.",
+    "tier": "judge"
+  },
+  "trh-5.6": {
+    "archetype": "procedure",
+    "see_also": [
+      "trh-5.3.1.1"
+    ],
+    "steps": [
+      {
+        "action": "Pair the next round and post the pairings once the current round completes",
+        "actor": "Organizer"
+      },
+      {
+        "action": "Use the time before the round starts to report any pairing or standings error and find their seat",
+        "actor": "Competitor"
+      },
+      {
+        "action": "Start the round in the Tournament Operations Manager (TOM) once competitors have had a reasonable amount of time to do so",
+        "actor": "Scorekeeper",
+        "note": "once the round starts, no pairing can be changed"
+      },
+      {
+        "action": "Check their own bracket before their next match begins, in Pokémon GO tournaments at Regional Championships and above",
+        "actor": "Competitor",
+        "note": "Pokémon GO doesn't run through TOM at that level, so this self-check takes the place of the usual pre-round window; see section 5.3.1.1"
+      }
+    ],
+    "summary": "Each round gets paired and posted, competitors get a window to flag standings errors and find their seats, and once the round starts, its pairings are locked — with Pokémon GO's own self-check rule where it doesn't run through TOM.",
+    "tier": "judge"
+  },
+  "trh-5.6.1": {
+    "archetype": "mechanic",
+    "state": [
+      "A bye is assigned whenever the tournament has an odd number of competitors in a round.",
+      "A bye counts as a win for a competitor's match record, but it doesn't count as a round played when their win percentage is calculated.",
+      "Byes go to the competitor with the worst match record wherever that's possible.",
+      "No competitor receives more than one bye across an entire tournament."
+    ],
+    "summary": "A bye covers an odd competitor count, counts as a win on the record but not as a played round for win-percentage math, and goes to the weakest record available without ever repeating for the same competitor.",
+    "tier": "judge"
+  },
+  "trh-5.7": {
+    "archetype": "procedure",
+    "steps": [
+      {
+        "action": "Drop from the tournament, if they no longer wish to keep playing",
+        "actor": "Competitor",
+        "note": "dropping is allowed for any reason"
+      },
+      {
+        "action": "Concede or complete their current match before dropping",
+        "actor": "Competitor",
+        "note": "a competitor can't drop out of a match that's still in progress without doing one or the other first"
+      },
+      {
+        "action": "Set the tournament's own drop process — a form or slip to confirm the drop, or a report to a specific staff member",
+        "actor": "Organizer",
+        "note": "the process can vary event to event, but the drop rules that follow apply at every Play! Pokémon tournament regardless"
+      }
+    ],
+    "summary": "A competitor who wants out of a tournament in progress has to drop, can't walk away from a match mid-game without conceding or finishing it, and follows whatever drop process the Organizer sets.",
+    "tier": "judge"
+  },
+  "trh-5.7.1": {
+    "archetype": "mechanic",
+    "branch": {
+      "options": [
+        {
+          "condition": "their current match isn't complete yet",
+          "outcome": "they receive a loss for every game in that match still unresolved"
+        },
+        {
+          "condition": "they finish the match and have its result recorded first",
+          "outcome": "they avoid those losses before dropping"
+        }
+      ],
+      "when": "a competitor drops from the tournament"
+    },
+    "state": [
+      "A dropped competitor leaves the tournament, and stops being paired, once the current round is complete."
+    ],
+    "summary": "Dropping mid-match costs a loss for every unresolved game in it; finishing and recording the match first avoids those losses, and a drop takes effect only once the current round wraps up.",
+    "tier": "judge"
+  },
+  "trh-5.7.2": {
+    "archetype": "mechanic",
+    "state": [
+      "A competitor who drops before the tournament finishes is still recorded in the final standings.",
+      "In Pokémon GO tournaments at Regional Championships and above, a competitor who drops from the bracket receives Match Losses until they've lost two rounds, at which point they're eliminated from the bracket like any other double-elimination loss."
+    ],
+    "summary": "Competitors who drop before a tournament ends still show up in the final standings, and Pokémon GO adds its own bracket-specific drop handling at Regionals and above.",
+    "tier": "judge"
+  },
+  "trh-5.7.3": {
+    "archetype": "note",
+    "paragraphs": [
+      "A disqualified competitor is removed from the standings entirely, not just marked with a loss, and becomes ineligible for any prize their match record would otherwise have earned them."
+    ],
+    "summary": "Disqualification erases a competitor from the standings outright and forfeits any prize their record would have earned.",
+    "tier": "judge"
+  },
+  "trh-6": {
+    "archetype": "note",
+    "paragraphs": [
+      "Because each Play! Pokémon product plays so differently, the specific rules and formats for each one live in their own separate guides: Pokémon Trading Card Game, the video games (VGC), Pokémon GO, and Pokémon UNITE.",
+      "Each of those documents gets reviewed quarterly too, so competitors entering a given format are encouraged to check the relevant guide each quarter for policy and guideline updates."
+    ],
+    "summary": "Detailed per-product rules for Pokémon TCG, VGC, Pokémon GO, and Pokémon UNITE live in their own separate, quarterly-reviewed guides.",
+    "tier": "standard"
+  },
+  "trh-7": {
+    "archetype": "note",
+    "paragraphs": [
+      "Errors and infractions happen at tournaments, deliberately or not, and protecting the integrity of every game, match, and event is everyone's shared job; that can mean tournament staff — Judges and Organizers — taking corrective action over a base infraction and how it's affected the game state.",
+      "Because Play! Pokémon's products and tournaments vary so much, the full detail on rules violations and penalties lives in the Play! Pokémon Penalty Guidelines, which takes precedence over anything summarized below; Professors and competitors alike should read that document closely.",
+      "What follows is a short overview of the core concepts and the underlying penalty philosophy."
+    ],
+    "summary": "Rules infractions get corrected under a philosophy this section only summarizes — the Play! Pokémon Penalty Guidelines has the full, controlling detail.",
+    "tier": "standard"
+  },
+  "trh-7.1": {
+    "archetype": "note",
+    "paragraphs": [
+      "Two ideas anchor how Play! Pokémon thinks about penalties: base infractions and game state.",
+      "A base infraction is one of the recurring issues seen at tournaments — a procedural slip, arriving late to a match, unsportsmanlike conduct — and it serves as the reference point for what penalty fits.",
+      "Game state covers everything currently live in the game: competitors' hands, what's in play, a team's current members with their moves and held items, and so on.",
+      "A Judge weighs both the infraction itself and its total effect on the game state before landing on the right penalty."
+    ],
+    "summary": "Penalty decisions rest on two ideas: which base infraction occurred, and how much it disturbed the game state.",
+    "tier": "standard"
+  },
+  "trh-7.2": {
+    "archetype": "definition",
+    "terms": [
+      {
+        "meaning": "The lightest penalty available: verbal only, and not reported to Play! Pokémon.",
+        "term": "Caution"
+      },
+      {
+        "meaning": "A minor penalty similar to a Caution, but one that gets reported to Play! Pokémon.",
+        "term": "Warning"
+      },
+      {
+        "meaning": "Pokémon TCG only: the offending competitor's opponent needs two fewer Prize cards to win the game.",
+        "term": "Double Prize Card Penalty"
+      },
+      {
+        "meaning": "Pokémon TCG only: the offending competitor's opponent needs four fewer Prize cards to win the game.",
+        "term": "Quadruple Prize Card Penalty"
+      },
+      {
+        "meaning": "Applied when a mistake severely damages the integrity of the game state; the offending competitor's tally shows that game as a loss. In extreme cases where both competitors have made major errors in the same game, both can be handed a Game Loss at once.",
+        "term": "Game Loss"
+      },
+      {
+        "meaning": "More severe than a Game Loss: applied when an action compromises the integrity of the whole match. Play stops right away, and the offending competitor's tally shows the whole match as a loss; in extreme cases, both competitors can be handed a Match Loss at once.",
+        "term": "Match Loss"
+      },
+      {
+        "meaning": "The most severe penalty, for a competitor whose actions seriously and negatively affect the integrity of the whole event. Their match ends immediately, they're removed from the tournament standings, and they become ineligible for prizes; this can extend to removal from the event.",
+        "term": "Disqualification"
+      }
+    ],
+    "tier": "judge"
+  },
+  "trh-7.3": {
+    "archetype": "note",
+    "paragraphs": [
+      "After identifying the base infraction and weighing its effect on the game state, a Judge decides whether, and how, to apply a penalty — often starting from a recommended penalty, the typical response for that infraction and its usual game-state impact.",
+      "A Judge can move off that recommended starting point when the actual effect on the game state runs more or less severe than what's typical for the infraction.",
+      "Depending on timing, a penalty can end the game or match immediately.",
+      "Some infractions and their game-state effects are reversible — the state can be restored to before the infraction happened — which can soften the penalty from its standard form, though a reversible infraction doesn't automatically mean no penalty at all.",
+      "Other factors, such as a repeated infraction, or the competitor's age or experience level, can also justify deviating from the standard penalty."
+    ],
+    "summary": "A Judge starts from the recommended penalty for a base infraction, then adjusts up or down based on the actual game-state damage, whether it's reversible, and factors like repetition, age, or experience.",
+    "tier": "judge"
+  },
+  "trh-7.3.1": {
+    "archetype": "procedure",
+    "steps": [
+      {
+        "action": "Explain how the competitor's actions weren't allowed",
+        "actor": "Judge"
+      },
+      {
+        "action": "Explain the base infraction and its severity, citing the specific section or category it falls under",
+        "actor": "Judge"
+      },
+      {
+        "action": "Explain how the penalty will affect the competitor's tournament",
+        "actor": "Judge"
+      },
+      {
+        "action": "Remind the competitor that they can appeal this or any penalty to the Head Judge",
+        "actor": "Judge"
+      },
+      {
+        "action": "Handle penalty information with sensitivity to avoid embarrassing the competitors involved",
+        "actor": "Judge"
+      },
+      {
+        "action": "Avoid commenting publicly on a penalty they weren't directly involved in",
+        "actor": "Judge",
+        "note": "Judges may not have the full picture on penalties handled by someone else"
+      },
+      {
+        "action": "Sufficiently anonymize any specific case used for training purposes",
+        "actor": "Judge"
+      }
+    ],
+    "summary": "Delivering a penalty means explaining the rule broken, the infraction, its tournament impact, and the appeal right — handled with enough discretion to avoid embarrassing anyone.",
+    "tier": "judge"
+  },
+  "trh-7.4": {
+    "archetype": "note",
+    "paragraphs": [
+      "Base infractions and their game-state effects get complicated fast, so the full detail on base infractions, their standard penalties, and any deviations from standard lives in the Play! Pokémon Penalty Guidelines."
+    ],
+    "see_also": [
+      "pen-2.2"
+    ],
+    "summary": "Full detail on base infractions, their standard penalties, and deviations lives in the Play! Pokémon Penalty Guidelines, not here.",
+    "tier": "standard"
+  },
+  "trh-7.5": {
+    "archetype": "procedure",
+    "steps": [
+      {
+        "action": "Track each competitor's penalty history",
+        "actor": "Play! Pokémon",
+        "note": "used to tell an intentional repeat infraction apart from an unintentional one, and to decide whether disciplinary action is warranted"
+      },
+      {
+        "action": "Submit the tournament's Penalty Summary to Play! Pokémon within seven days of the event's conclusion",
+        "actor": "Organizer",
+        "note": "an example of this document appears at the end of the Play! Pokémon Penalty Guidelines"
+      },
+      {
+        "action": "Submit a Disqualification Report for every disqualification, within seven days of the event's conclusion",
+        "actor": "Head Judge",
+        "note": "submitted by selecting Disqualification Report from the relevant drop-down in the Play! Pokémon customer support portal"
+      }
+    ],
+    "summary": "Organizers file a Penalty Summary and Head Judges file a Disqualification Report within seven days of an event ending, feeding the penalty history Play! Pokémon tracks per competitor.",
+    "tier": "judge"
+  },
+  "trh-7.6": {
+    "archetype": "note",
+    "paragraphs": [
+      "Post-event disciplinary action comes into play when an in-event penalty raises a real question about whether a competitor belongs in the Play! Pokémon community — cheating or a gross violation of the inclusion policy, for example — and an internal team reviews those penalties to decide.",
+      "Where that review confirms disciplinary action is warranted, the competitor receives a formal notice of disciplinary action.",
+      "Play! Pokémon can take disciplinary action against any competitor over a rules infraction, scaled to severity and whether it's a repeat occurrence, up to and including a program suspension; a suspended competitor is named to Organizers along with their Player ID.",
+      "A suspended competitor can't take part in or attend any Play! Pokémon event in any capacity — competitor, spectator, Judge, or otherwise. A suspended competitor who disrupts an event by trying to participate anyway, and refuses to leave, should be reported to Play! Pokémon, which can extend the existing suspension."
+    ],
+    "summary": "A penalty serious enough to question a competitor's fitness for the community triggers internal review and, where warranted, a formal disciplinary notice up to a program-wide suspension that bars them from events in any capacity.",
+    "tier": "judge"
+  },
+  "trh-8": {
+    "archetype": "note",
+    "paragraphs": [
+      "This revision is dated May 21, 2026, replacing the previous edition from April 7, 2026.",
+      "Section 2.2 (Pokémon Trainer Central Accounts & Player IDs) updated its instructions to match new Pokémon Trainer Central workflows.",
+      "Section 3.2.1 (During Tournament Play) updated its language on note-taking.",
+      "Section 4.1.1 (Allowable Venues) fixed a broken link.",
+      "Section 5.1.3 (Age Divisions) added clarification on when the competitive season begins each year.",
+      "No changes were logged for the Using This Handbook, Tournament Rules per Product, or Rules Violations & Penalties sections in this revision."
+    ],
+    "summary": "The May 21, 2026 revision logs four section-level changes since the April 7, 2026 edition: Pokémon Trainer Central instructions, note-taking language, a broken-link fix, and a season-start clarification.",
+    "tier": "standard"
+  },
+  "trh-Appendix A": {
+    "archetype": "definition",
+    "terms": [
+      {
+        "meaning": "United States and Puerto Rico; both are approved to organize Play! Pokémon events.",
+        "term": "US"
+      },
+      {
+        "meaning": "Canada, its own rating zone. The source table's formatting doesn't make clear whether Canada carries the same organize-events approval as the US zone, so that detail is left unconfirmed here rather than guessed at.",
+        "term": "Canada"
+      },
+      {
+        "meaning": "45 countries and territories across Central America, South America, and the Caribbean; 17 of them, including Mexico, Brazil, and Argentina, are approved to organize Play! Pokémon events. The official Play! Pokémon Rules and Resources page carries the complete, current list.",
+        "term": "Latin America"
+      },
+      {
+        "meaning": "52 countries and territories across Europe; 28 of them, including France, Germany, and the United Kingdom, are approved to organize Play! Pokémon events. The official Play! Pokémon Rules and Resources page carries the complete, current list.",
+        "term": "Europe"
+      },
+      {
+        "meaning": "11 countries and territories across Oceania; only Australia and New Zealand are approved to organize Play! Pokémon events. The official Play! Pokémon Rules and Resources page carries the complete, current list.",
+        "term": "Oceania"
+      },
+      {
+        "meaning": "69 countries and territories across the Middle East and Africa; only South Africa and the United Arab Emirates, among them, are approved to organize Play! Pokémon events. The official Play! Pokémon Rules and Resources page carries the complete, current list.",
+        "term": "Middle East and Africa"
+      },
+      {
+        "meaning": "The Russian Federation, its own rating zone.",
+        "term": "Russia"
+      },
+      {
+        "meaning": "Japan, Taiwan, Hong Kong, Macau, Thailand, Indonesia, Singapore, Malaysia, and the Philippines; their Play! Pokémon equivalent is run by The Pokémon Company directly rather than by The Pokémon Company International or Play! Pokémon. Competitors from these territories can enter Play! Pokémon Championship Series events and earn prizes, but not Championship Points; they can still earn a World Championships invitation by winning a Regional Championship or Special Championship, or by placing in the Top 4 at an International Championship.",
+        "term": "TPC-administered territories"
+      },
+      {
+        "meaning": "The Republic of Korea, administered the same way as the TPC-administered territories: competitors can enter Championship Series events and earn prizes but not Championship Points, with the same World Championships invitation paths.",
+        "term": "PKI-administered territory"
+      },
+      {
+        "meaning": "Mainland China, excluding Hong Kong, Macao, and Taiwan, administered the same way as the TPC-administered territories: competitors can enter Championship Series events and earn prizes but not Championship Points, with the same World Championships invitation paths.",
+        "term": "PSH-administered territory"
+      },
+      {
+        "meaning": "Beyond deciding Championship Point eligibility, a competitor's rating zone also determines which card languages are legal for them to play, per section 2.3 of the Pokémon TCG Tournament Handbook.",
+        "term": "Why rating zones matter"
+      }
+    ],
     "tier": "judge"
   }
 }
