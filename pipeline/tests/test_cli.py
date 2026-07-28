@@ -74,3 +74,18 @@ def test_release_verify_and_content_status(tmp_path, fixture_pdf):
     assert main(["verify", "--root", str(root)]) == 0          # warnings only
     assert main(["verify", "--release", "--root", str(root)]) == 1
     assert main(["content-status", "--root", str(root)]) == 0
+
+
+def test_parse_reports_missing_pdfs_without_traceback(tmp_path, fixture_pdf, capsys):
+    # Fresh clone (or post-WAF incident): sources.yaml is committed, the PDFs
+    # are not. That must read as an instruction, not a pdfplumber traceback.
+    root = make_repo(tmp_path, fixture_pdf)
+    (root / "sources" / "fixture.pdf").unlink()
+
+    assert main(["parse", "--root", str(root)]) == 1
+
+    err = capsys.readouterr().err
+    assert "fixture-doc" in err
+    assert "sources/fixture.pdf" in err
+    assert "just download" in err
+    assert "Traceback" not in err

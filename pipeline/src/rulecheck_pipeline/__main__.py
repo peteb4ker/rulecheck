@@ -19,7 +19,22 @@ from rulecheck_pipeline.verify import verify_db
 def cmd_parse(root: Path) -> int:
     content_dir = root / "content"
     content_dir.mkdir(exist_ok=True)
-    for source in load_manifest(root / "sources" / "sources.yaml"):
+    sources = load_manifest(root / "sources" / "sources.yaml")
+
+    # PDFs are git-ignored, so a fresh clone has the manifest and none of the
+    # documents. Check every one up front: a reader should see instructions,
+    # not a pdfplumber traceback from whichever file happened to be first.
+    missing = [s for s in sources if not (root / "sources" / s.file).is_file()]
+    if missing:
+        for source in missing:
+            print(
+                f"ERROR: {source.id}: sources/{source.file} not found — "
+                f"run 'just download' first (or download manually; see README)",
+                file=sys.stderr,
+            )
+        return 1
+
+    for source in sources:
         pdf_path = root / "sources" / source.file
         sections = parse_pdf(pdf_path, source)
         out = content_dir / f"{source.id}.json"
