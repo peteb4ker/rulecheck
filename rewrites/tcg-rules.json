@@ -1,4 +1,401 @@
 {
+  "tcg-3 Card Types": {
+    "archetype": "definition",
+    "terms": [
+      {
+        "meaning": "The fighters themselves — mostly Basic Pokémon plus Stage 1 and Stage 2 Evolution cards; the corner of the card shows its stage and, for Evolutions, what it evolves from.",
+        "term": "Pokémon cards"
+      },
+      {
+        "meaning": "Fuel most attacks need; a printed cost symbol must be matched by the right Energy type, except for costs that accept any type.",
+        "term": "Energy cards"
+      },
+      {
+        "meaning": "Items, Supporters, Stadiums, and Pokémon Tools; the corner names the specific subtype, with any special rule for that subtype printed at the bottom.",
+        "term": "Trainer cards"
+      }
+    ],
+    "tier": "standard"
+  },
+  "tcg-Appendix 10: Pokémon V-UNION": {
+    "archetype": "mechanic",
+    "effects": {
+      "Knock Out": "opponent takes 3 Prize cards"
+    },
+    "see_also": [
+      "tcg-Appendix 12: Pokémon V"
+    ],
+    "state": [
+      "All four pieces share one card name, so the deck-building copy cap counts them together as that one name rather than four separate names",
+      "Every copy of the same Pokémon V-UNION name in a deck must come from the same set and share the same illustrator",
+      "All four pieces must be played to the Bench in a single motion, straight from the discard pile — playing only part of the set isn't allowed",
+      "Occupies just one Bench spot and can hold only a single Pokémon Tool at a time",
+      "Each distinct Pokémon V-UNION name can be played at most once per game, though a different V-UNION name may still be played afterward",
+      "Is not a Basic Pokémon, so it cannot start the game as the Active Pokémon or a Benched Pokémon during setup",
+      "A deck built only from Pokémon V-UNION still needs at least one ordinary Basic Pokémon",
+      "Is not an Evolution card and instead occupies its own unique stage",
+      "Card effects keyed to \"Basic,\" \"Stage 1,\" \"Stage 2,\" or \"Evolution\" skip over it entirely, while effects keyed to \"unevolved Pokémon\" do apply to it",
+      "While in play, the four pieces are treated as one combined card; anywhere else — hand, deck, discard pile, or Prizes — each of the four is its own separate card",
+      "A deck-searching or similar effect touching individual pieces outside of play can only move one of those separate pieces at a time",
+      "Off the combined card, only its type, its Pokémon category, and its card name can be checked on an individual piece — traits like an attack, an Ability, HP, Retreat Cost, Weakness, or Resistance can't be checked on a lone piece",
+      "While assembled and in play, still counts as both a Pokémon V and a Pokémon with a Rule Box, so a Stadium that strips Abilities from Rule Box Pokémon reaches it too",
+      "An individual piece sitting outside of play — in hand, in the deck, or in the discard pile — is not considered a Pokémon with a Rule Box, so effects that search for or target a non-Rule-Box Pokémon can still find it there"
+    ],
+    "summary": "A Pokémon V-UNION is assembled from four same-named pieces that must enter play together from the discard pile as a single giant card, but count as four separate cards everywhere else and carry their own tight web of exceptions.",
+    "tier": "standard"
+  },
+  "tcg-Appendix 11: Battle Styles": {
+    "archetype": "definition",
+    "terms": [
+      {
+        "meaning": "A Battle Style label for cards built around forceful, hard-hitting attacks.",
+        "term": "Single Strike"
+      },
+      {
+        "meaning": "A Battle Style label for cards built around quick, technical attacks.",
+        "term": "Rapid Strike"
+      },
+      {
+        "meaning": "A Battle Style label for cards that blend the Single Strike and Rapid Strike approaches through teamwork.",
+        "term": "Fusion Strike"
+      },
+      {
+        "meaning": "Trainer cards and Energy cards can also carry a Battle Style label, typically supporting Pokémon that share that same style.",
+        "term": "Battle Style tag on Trainer and Energy cards"
+      }
+    ],
+    "tier": "standard"
+  },
+  "tcg-Appendix 12: Pokémon V": {
+    "archetype": "mechanic",
+    "effects": {
+      "Knock Out": "opponent takes 2 Prize cards"
+    },
+    "see_also": [
+      "tcg-Appendix 9: Pokémon VSTAR",
+      "tcg-Appendix 13: Pokémon VMAX"
+    ],
+    "state": [
+      "Always printed as a Basic Pokémon"
+    ],
+    "summary": "Pokémon V are Basic Pokémon built around large HP totals and hard-hitting attacks, balanced by a bigger payout for the opponent if one falls.",
+    "tier": "standard"
+  },
+  "tcg-Appendix 13: Pokémon VMAX": {
+    "archetype": "mechanic",
+    "effects": {
+      "Knock Out": "opponent takes 3 Prize cards"
+    },
+    "see_also": [
+      "tcg-Appendix 12: Pokémon V"
+    ],
+    "state": [
+      "Is a new Evolution stage and follows the ordinary rules for evolving",
+      "Evolves only from the matching-named Pokémon V beneath it, not from a plain Pokémon of that name",
+      "Still counts as a Pokémon V for any effect that references Pokémon V"
+    ],
+    "summary": "Pokémon VMAX push a Pokémon V to an even larger scale — commonly 300 or more HP — which makes the opponent's payoff for a Knock Out steeper in turn.",
+    "tier": "standard"
+  },
+  "tcg-Appendix 14: Regional Variants": {
+    "archetype": "mechanic",
+    "state": [
+      "The region word (such as a Paldean, Hisuian, Galarian, or Alolan tag) is part of the card's name, not a separate marker",
+      "Evolves only from a lower stage sharing that same regional tag, never from the plain version or from a different region's version",
+      "Because the names differ, a deck can hold a full legal count of both the regional and the original version of the same species"
+    ],
+    "summary": "A regional variant carries its region as part of its card name, which both keeps it distinct from the original Pokémon for deck-building and narrows down exactly which lower stage it can evolve from.",
+    "tier": "standard"
+  },
+  "tcg-Appendix 15: TAG TEAM Supporter Cards": {
+    "archetype": "mechanic",
+    "see_also": [
+      "tcg-Appendix 16: TAG TEAM"
+    ],
+    "state": [
+      "Discarding additional cards when the card is played unlocks a further bonus effect beyond its printed base effect",
+      "Each TAG TEAM Supporter's effect and bonus are unique to that card"
+    ],
+    "summary": "A TAG TEAM Supporter pairs two Trainers on a single Supporter card and rewards discarding extra cards on play with an added bonus effect layered on top of its own unique base effect.",
+    "tier": "standard"
+  },
+  "tcg-Appendix 16: TAG TEAM": {
+    "archetype": "mechanic",
+    "effects": {
+      "Knock Out": "opponent takes 3 Prize cards"
+    },
+    "see_also": [
+      "tcg-Appendix 19: Pokémon-GX",
+      "tcg-Appendix 15: TAG TEAM Supporter Cards"
+    ],
+    "state": [
+      "Its GX attack can gain a bonus when a printed requirement is met, such as attaching extra Energy or playing a particular Trainer card"
+    ],
+    "summary": "A TAG TEAM is a Basic Pokémon-GX built from multiple Pokémon joining together, trading a heavier Knock-Out payout for large HP and a GX attack that grows under the right conditions.",
+    "tier": "standard"
+  },
+  "tcg-Appendix 17: Prism Star Cards": {
+    "archetype": "mechanic",
+    "see_also": [
+      "tcg-Appendix 3: ACE SPEC Cards",
+      "tcg-Appendix 7: Lost Zone"
+    ],
+    "state": [
+      "Limited to a single copy of any given Prism Star name, though different Prism Star names may each appear once in the same deck",
+      "A Prism Star card that would be discarded is sent to the Lost Zone instead"
+    ],
+    "summary": "Prism Star cards, marked with their own symbol, cap each distinctly-named Prism Star card at one copy, but that limit is per name rather than per deck, so several different Prism Star names can sit in the same deck together.",
+    "tier": "standard"
+  },
+  "tcg-Appendix 18: Rare Fossil, Unidentified Fossil,": {
+    "archetype": "mechanic",
+    "state": [
+      "Rare Fossil and Unidentified Fossil are Item cards playable as a Basic Pokémon",
+      "Each can evolve into any printed Fossil Pokémon whose card text names that same Rare Fossil or Unidentified Fossil as its origin",
+      "A Fossil card with \"Antique\" in its name instead evolves only into the one specific Pokémon its own printed text identifies"
+    ],
+    "summary": "Rare Fossil and Unidentified Fossil are Item cards that can be played as Basic Pokémon and later evolve into any matching Fossil Pokémon, while an Antique Fossil card evolves into whichever single Pokémon its own text names.",
+    "tier": "standard"
+  },
+  "tcg-Appendix 19: Pokémon-GX": {
+    "archetype": "mechanic",
+    "see_also": [
+      "tcg-Special rules for Pokémon-GX"
+    ],
+    "state": [
+      "A GX attack can be used at most once per game, pooled across every Pokémon-GX a player controls",
+      "The GX marker is turned face down once that one-time attack has been used, to record the allowance as spent"
+    ],
+    "summary": "Pokémon-GX combine extra HP and stronger attacks with a single powerful GX attack that can be unleashed only once across an entire game, however many Pokémon-GX a player has in play.",
+    "tier": "standard"
+  },
+  "tcg-Appendix 1: Mega Evolution Pokémon ex": {
+    "archetype": "mechanic",
+    "effects": {
+      "Deck building": "no dedicated cap beyond the usual name-based copy limit",
+      "Knock Out": "opponent takes 3 Prize cards"
+    },
+    "see_also": [
+      "tcg-Appendix 5: Pokémon ex",
+      "tcg-Appendix 26: Mega Evolution Pokémon-EX"
+    ],
+    "state": [
+      "Treated as a Pokémon ex for any card effect that references Pokémon ex",
+      "Can be printed as a Basic, a Stage 1, or a Stage 2 card",
+      "A few skip a stage entirely — entering play directly as a Basic, or evolving straight from the pre-Mega line's Stage 1 rather than its Stage 2",
+      "Only evolves from the exact stage its own card specifies, never from an unrelated stage of the same-named line"
+    ],
+    "summary": "Mega Evolution Pokémon ex push Pokémon ex even further with higher HP and stronger attacks, at the cost of surrendering 3 Prize cards on a Knock Out; beyond that steeper cost, they follow ordinary deck-building and Evolution rules.",
+    "tier": "standard"
+  },
+  "tcg-Appendix 20: Ultra Beasts": {
+    "archetype": "mechanic",
+    "see_also": [
+      "tcg-Appendix 19: Pokémon-GX"
+    ],
+    "state": [
+      "Marked with a small bar in the card's upper-right corner when another card's effect interacts specifically with Ultra Beasts",
+      "Every Ultra Beast has at least one attack tied to Prize cards"
+    ],
+    "summary": "Ultra Beasts show up as Pokémon-GX with a crimson color scheme instead of the usual GX blue, and every one of them packs an attack that interacts with Prize cards in some way.",
+    "tier": "standard"
+  },
+  "tcg-Appendix 21: Dual-Type Pokémon": {
+    "archetype": "mechanic",
+    "state": [
+      "Affected by card effects tied to either of its two types",
+      "When it attacks or is attacked, damage is adjusted for Weakness or Resistance from either type as applicable",
+      "If one of its types carries a Weakness and the other a Resistance, Weakness is applied first and Resistance second"
+    ],
+    "summary": "A dual-type Pokémon holds two types at once, so any card effect keyed to either type reaches it, and both types' Weakness and Resistance come into play when it fights.",
+    "tier": "standard"
+  },
+  "tcg-Appendix 22: BREAK Evolution": {
+    "archetype": "mechanic",
+    "see_also": [
+      "tcg-Special rules for Pokémon BREAK"
+    ],
+    "state": [
+      "Keeps every attack and Ability the stage beneath it had",
+      "Keeps that same stage's Weakness, Resistance, and Retreat Cost",
+      "May add further attacks or Abilities, change its HP, and even change type on top of what it inherited"
+    ],
+    "summary": "A Pokémon BREAK folds forward everything its prior stage could do, then piles extra capability on top of it.",
+    "tier": "standard"
+  },
+  "tcg-Appendix 23: Ancient Traits": {
+    "archetype": "mechanic",
+    "state": [
+      "Printed directly under the Pokémon's name rather than in the attack or Ability text box",
+      "Neither an attack nor an Ability, so card effects that block or remove attacks or Abilities don't reach it"
+    ],
+    "summary": "An Ancient Trait is a special power printed just beneath a Pokémon's name that sits outside both the attack and Ability categories, so effects that shut down attacks or Abilities leave it untouched.",
+    "tier": "standard"
+  },
+  "tcg-Appendix 24: Team Flare Hyper Gear": {
+    "archetype": "mechanic",
+    "state": [
+      "Are Pokémon Tool cards attached to an opponent's Pokémon-EX",
+      "Produce a negative effect on the Pokémon they're attached to",
+      "If removed from that Pokémon for any reason, go to the discard pile belonging to whichever player originally played the card, not the Pokémon's owner"
+    ],
+    "summary": "Team Flare Hyper Gear cards are Pokémon Tools meant to be attached to an opponent's Pokémon-EX to work against it, and they land back in whoever played them's discard pile if they're ever removed.",
+    "tier": "standard"
+  },
+  "tcg-Appendix 25: Pokémon-EX": {
+    "archetype": "mechanic",
+    "see_also": [
+      "tcg-Special rules for Pokémon-EX"
+    ],
+    "summary": "Pokémon-EX push HP and attack strength above an ordinary Pokémon's, trading that power for extra risk when one falls in battle.",
+    "tier": "standard"
+  },
+  "tcg-Appendix 26: Mega Evolution Pokémon-EX": {
+    "archetype": "mechanic",
+    "see_also": [
+      "tcg-Special rules for Mega Evolution Pokémon-EX"
+    ],
+    "summary": "A Mega Evolution Pokémon-EX takes a Pokémon-EX to a further, more powerful peak, so timing when to bring one into play matters as much as the card itself.",
+    "tier": "standard"
+  },
+  "tcg-Appendix 27: Team Plasma Cards": {
+    "archetype": "mechanic",
+    "state": [
+      "Recognizable by a shared visual treatment across Pokémon, Trainer, and Energy cards carrying the label",
+      "For a Pokémon card, the Team Plasma label is not part of the card's name, so it counts toward the same name-based copy limit as the non-Team-Plasma version",
+      "Evolves the same way an ordinary Pokémon of that line would"
+    ],
+    "summary": "Team Plasma cards are identifiable by a distinctive look, but unlike other named variants the Team Plasma label is not part of a Pokémon's card name, so it shares its copy limit with the plain version rather than getting its own.",
+    "tier": "standard"
+  },
+  "tcg-Appendix 28: Restored Pokémon": {
+    "archetype": "mechanic",
+    "see_also": [
+      "tcg-Key Restored Pokémon Notes"
+    ],
+    "state": [
+      "Enters the Bench only through the effect of its own printed matching Fossil Item card, not by being played from hand directly",
+      "Once in play, a further stage evolves from it the same way any Stage 1 would evolve from its Basic"
+    ],
+    "summary": "Certain Fossil Pokémon occupy their own unique stage, Restored Pokémon, and only reach the Bench through the effect of their own matching Fossil Item card; once there, later stages evolve from them as usual.",
+    "tier": "standard"
+  },
+  "tcg-Appendix 2: Trainer’s Pokémon": {
+    "archetype": "mechanic",
+    "state": [
+      "The Trainer's name is part of the card's own name, not a separate label",
+      "Because the name differs, it evolves only from a lower stage carrying the same Trainer's name — never from the plain, unowned Pokémon"
+    ],
+    "summary": "A Trainer's Pokémon folds a Trainer's name into its own card name, making it a separate name from the unowned version and confining its Evolution line to cards that share that same ownership.",
+    "tier": "standard"
+  },
+  "tcg-Appendix 3: ACE SPEC Cards": {
+    "archetype": "mechanic",
+    "effects": {
+      "Deck cap": "1 ACE SPEC card total per deck, combined across every name"
+    },
+    "see_also": [
+      "tcg-Appendix 8: Radiant Pokémon",
+      "tcg-Appendix 17: Prism Star Cards"
+    ],
+    "state": [
+      "The cap counts every ACE SPEC card together, regardless of which one it is"
+    ],
+    "summary": "ACE SPEC cards hit hard enough that a deck is limited to a single ACE SPEC card overall, not a single copy of every ACE SPEC name it contains.",
+    "tier": "standard"
+  },
+  "tcg-Appendix 4: Ancient and Future": {
+    "archetype": "definition",
+    "terms": [
+      {
+        "meaning": "A card label introduced alongside the Paradox Rift era, marking a leaning toward blunt, heavy-hitting attacks.",
+        "term": "Ancient"
+      },
+      {
+        "meaning": "A card label from the same era as Ancient, marking a leaning toward precise, technical attacks.",
+        "term": "Future"
+      }
+    ],
+    "tier": "standard"
+  },
+  "tcg-Appendix 5: Pokémon ex": {
+    "archetype": "mechanic",
+    "effects": {
+      "Knock Out": "opponent takes 2 Prize cards"
+    },
+    "see_also": [
+      "tcg-Appendix 1: Mega Evolution Pokémon ex",
+      "tcg-Appendix 6: Tera Pokémon ex",
+      "tcg-Appendix 25: Pokémon-EX"
+    ],
+    "state": [
+      "\"ex\" is part of the card's name, separate from the non-ex version and from the differently-suffixed Pokémon-EX line",
+      "Because all three names differ, a deck can carry a full legal count of each one side by side"
+    ],
+    "summary": "Pokémon ex trade a Knock-Out risk for bigger HP and stronger attacks than an ordinary Pokémon of the same name, and the ex suffix keeps its name distinct from both the plain version and from Pokémon-EX.",
+    "tier": "standard"
+  },
+  "tcg-Appendix 6: Tera Pokémon ex": {
+    "archetype": "mechanic",
+    "effects": {
+      "Knock Out": "opponent takes 2 Prize cards"
+    },
+    "see_also": [
+      "tcg-Appendix 5: Pokémon ex"
+    ],
+    "state": [
+      "Immune to attack damage while on the Bench, from either player's attacks"
+    ],
+    "summary": "Tera Pokémon ex shrug off attack damage entirely while parked on the Bench, a protection that holds against both players' attacks; otherwise they carry the same 2-Prize Knock-Out risk as any Pokémon ex.",
+    "tier": "standard"
+  },
+  "tcg-Appendix 7: Lost Zone": {
+    "archetype": "mechanic",
+    "see_also": [
+      "tcg-Appendix 17: Prism Star Cards"
+    ],
+    "state": [
+      "Reachable through attack effects, Ability effects, or Trainer card effects",
+      "Unlike the discard pile, cards placed here are permanently unplayable for the remainder of the game"
+    ],
+    "summary": "The Lost Zone holds cards that have left the game entirely; attacks, Abilities, and Trainer cards can all route cards there, and nothing that lands in it can come back or be played again for the rest of that game.",
+    "tier": "standard"
+  },
+  "tcg-Appendix 8: Radiant Pokémon": {
+    "archetype": "mechanic",
+    "effects": {
+      "Deck cap": "1 Radiant Pokémon total per deck"
+    },
+    "see_also": [
+      "tcg-Appendix 3: ACE SPEC Cards"
+    ],
+    "state": [
+      "\"Radiant\" is part of the card's name, so it's counted separately from a same-species non-Radiant card for deck-building purposes",
+      "Always printed as a Basic Pokémon card",
+      "Never evolves into anything and is never itself an evolution",
+      "Counts as a Pokémon with a Rule Box"
+    ],
+    "summary": "Radiant Pokémon show off Shiny coloring and a built-in rule capping a deck at a single Radiant Pokémon; each one is always a standalone Basic that neither evolves nor is evolved from.",
+    "tier": "standard"
+  },
+  "tcg-Appendix 9: Pokémon VSTAR": {
+    "archetype": "mechanic",
+    "effects": {
+      "Knock Out": "opponent takes 2 Prize cards"
+    },
+    "see_also": [
+      "tcg-Appendix 12: Pokémon V"
+    ],
+    "state": [
+      "A VSTAR Power is usable at most once across the entire game, pooled across every Pokémon VSTAR a player controls",
+      "Flip the VSTAR marker face down after the power is used, to record that the allowance is gone",
+      "Is a new Evolution stage in its own right and follows the ordinary rules for evolving",
+      "Evolves only from the matching-named Pokémon V beneath it, not from a plain Pokémon of that name",
+      "Still counts as a Pokémon V for any effect that references Pokémon V"
+    ],
+    "summary": "Pokémon VSTAR add a single game-changing VSTAR Power — an Ability or an attack — that can fire only once per game no matter how many Pokémon VSTAR are in play, tracked by flipping a marker once it's spent.",
+    "tier": "standard"
+  },
   "tcg-Asleep": {
     "archetype": "mechanic",
     "branch": {
@@ -31,6 +428,16 @@
       "No retreating"
     ],
     "summary": "A sleeping Pokémon is rotated counterclockwise and skips both attacking and retreating until a coin flip wakes it.",
+    "tier": "standard"
+  },
+  "tcg-Become a Pokémon Master!": {
+    "archetype": "note",
+    "paragraphs": [
+      "This rulebook covers everything needed to play the Pokémon Trading Card Game, where a 60-card deck stands in for a trainer's Pokémon and the gear that supports them.",
+      "It's a strategy game built on collectible cards, so no two decks play quite alike. A preconstructed deck bundled with a strategy sheet is an easy on-ramp for a first game.",
+      "From there, growing a collection through booster packs, trading for favorites, and assembling a personal 60-card deck is the path to making the game your own."
+    ],
+    "summary": "A framing introduction: this rulebook teaches the Pokémon TCG, from a first preconstructed deck through building and trading for a personal 60-card collection.",
     "tier": "standard"
   },
   "tcg-Burned": {
@@ -92,6 +499,151 @@
       "Rotated with the card top facing its owner"
     ],
     "summary": "A confused Pokémon is rotated top-toward-you and must win a coin flip to attack; failing hurts it instead.",
+    "tier": "standard"
+  },
+  "tcg-Credits": {
+    "archetype": "note",
+    "paragraphs": [
+      "A closing page naming the studios and staff behind the original release and its English-language adaptation, alongside official website and customer-support contact details and standard trademark and copyright notices."
+    ],
+    "summary": "The rulebook's closing colophon, crediting its production teams and pointing to official support channels.",
+    "tier": "standard"
+  },
+  "tcg-Deck Building": {
+    "archetype": "procedure",
+    "see_also": [
+      "tcg-What does and doesn’t count for a Pokémon’s name?"
+    ],
+    "steps": [
+      {
+        "action": "Build to exactly 60 cards.",
+        "note": "not 59, not 61"
+      },
+      {
+        "action": "Cap any single card name at 4 copies.",
+        "note": "Basic Energy cards are exempt from this cap"
+      },
+      {
+        "action": "Include at least one Basic Pokémon."
+      },
+      {
+        "action": "Settle on one or two Energy types for the deck.",
+        "note": "most Pokémon can use any Energy type to attack, so a narrow Energy base still fits a wide range of Pokémon"
+      },
+      {
+        "action": "Budget roughly 12 to 15 Energy cards."
+      },
+      {
+        "action": "Budget roughly 20 to 25 Trainer cards.",
+        "note": "cards that search or draw help find exactly what's needed"
+      },
+      {
+        "action": "Fill the rest with Pokémon.",
+        "note": "aiming for 4 copies of favorites, and 4 of each stage in their Evolution line, keeps them showing up reliably"
+      }
+    ],
+    "summary": "Every deck must land on exactly 60 cards, cap any one card name at 4 copies (Basic Energy excepted), and carry at least one Basic Pokémon; from there, a starter split of one or two Energy types, 12-15 Energy, 20-25 Trainers, and Pokémon filling the rest is a reasonable template to adjust from.",
+    "tier": "standard"
+  },
+  "tcg-Energy Types": {
+    "archetype": "definition",
+    "terms": [
+      {
+        "meaning": "Leans toward attacks that heal the user or Poison the opponent.",
+        "term": "Grass"
+      },
+      {
+        "meaning": "Hits hard, can inflict Burned, but its big attacks often need a turn to recharge.",
+        "term": "Fire"
+      },
+      {
+        "meaning": "Good at manipulating Energy and shuffling Pokémon between the Active Spot and Bench.",
+        "term": "Water"
+      },
+      {
+        "meaning": "Can recover used Energy back out of the discard pile and can inflict Paralyzed.",
+        "term": "Lightning"
+      },
+      {
+        "meaning": "Specializes in unusual powers, and tends to inflict Asleep, Confused, or Poisoned on opponents.",
+        "term": "Psychic"
+      },
+      {
+        "meaning": "Trades risk for reward — extra damage, and some attacks flip coins for bonus hits.",
+        "term": "Fighting"
+      },
+      {
+        "meaning": "Sneaky attacks that often force the opponent to discard cards, and can inflict Poisoned.",
+        "term": "Darkness"
+      },
+      {
+        "meaning": "Built to resist incoming attacks longer than most other types.",
+        "term": "Metal"
+      },
+      {
+        "meaning": "Dulls the effectiveness of an opponent's attacks; since Sword & Shield, cards that were once this type now print as Psychic instead.",
+        "term": "Fairy"
+      },
+      {
+        "meaning": "Very strong attacks that usually demand two different Energy types to pay for.",
+        "term": "Dragon"
+      },
+      {
+        "meaning": "Broad movesets that fit into almost any deck, of any type.",
+        "term": "Colorless"
+      }
+    ],
+    "tier": "standard"
+  },
+  "tcg-Full details of attacking": {
+    "archetype": "procedure",
+    "see_also": [
+      "tcg-What counts as an attack?",
+      "tcg-Confused"
+    ],
+    "steps": [
+      {
+        "action": "Confirm the right Energy is attached for the attack you're choosing, then announce it."
+      },
+      {
+        "action": "Check for any standing effect that could alter or cancel the attack.",
+        "note": "for example, a lingering effect from an attack used against you last turn; such effects vanish the moment the affected Pokémon leaves the Active Spot for the Bench, so a Pokémon swapped in since then is unaffected"
+      },
+      {
+        "action": "If the attacking Pokémon is Confused, resolve that coin flip now before anything else."
+      },
+      {
+        "action": "Make any choice the attack requires, such as picking a target."
+      },
+      {
+        "action": "Carry out anything the attack demands to be used, such as a required coin flip."
+      },
+      {
+        "action": "Resolve any effects timed to happen before damage, deal the damage, then resolve every remaining effect."
+      },
+      {
+        "action": "Start from the attack's printed base damage.",
+        "note": "a ×, +, or – symbol next to that number means the attack text spells out the adjustment; if the attack instead instructs placing damage counters directly, stop here and place them — counters placed that way skip Weakness, Resistance, and every other damage modifier"
+      },
+      {
+        "action": "Add in any damage bonus the attacking Pokémon is carrying from an earlier effect.",
+        "note": "skip this and every remaining damage step if the base damage is 0 or the attack deals no damage at all"
+      },
+      {
+        "action": "Multiply for Weakness if the target has Weakness to the attacker's type."
+      },
+      {
+        "action": "Subtract for Resistance if the target has Resistance to the attacker's type."
+      },
+      {
+        "action": "Apply any remaining damage-changing effect on the target from a Trainer card, Energy card, or similar source."
+      },
+      {
+        "action": "Convert the final total into damage counters, one per 10 points.",
+        "note": "a final total of 0 or less places no damage counters"
+      }
+    ],
+    "summary": "Most attacks are simple in practice, but the full sequence runs from announcing the attack through standing effects, Confusion, required choices, and a fixed damage-math order ending in placed damage counters.",
     "tier": "standard"
   },
   "tcg-Full details of taking a mulligan": {
@@ -408,6 +960,44 @@
     "summary": "Three roads to victory: collect all your Prizes, empty the opponent's board, or leave them unable to draw.",
     "tier": "standard"
   },
+  "tcg-How to Win the Game": {
+    "archetype": "mechanic",
+    "state": [
+      "Claiming your final Prize card wins the game outright.",
+      "Clearing every one of your opponent's Pokémon from play wins the game outright.",
+      "An opponent unable to draw a card at the start of their own turn loses the game."
+    ],
+    "summary": "Three routes to victory: collect every Prize card, wipe out the opponent's Pokémon in play, or leave them stuck with an empty deck on their draw step.",
+    "tier": "standard"
+  },
+  "tcg-Key Restored Pokémon Notes": {
+    "archetype": "mechanic",
+    "see_also": [
+      "tcg-Appendix 28: Restored Pokémon"
+    ],
+    "state": [
+      "Cannot be moved from hand to the Bench except through an Item card whose effect specifically allows it",
+      "Is not a Basic Pokémon, so it cannot be the starting Active or Benched Pokémon during setup",
+      "A deck made up only of Restored Pokémon still needs at least one ordinary Basic Pokémon",
+      "Is not an Evolution card in its own right",
+      "Card effects keyed to \"Basic,\" \"Stage 1,\" \"Stage 2,\" or \"Evolution\" skip over it, though effects that simply reference \"a Pokémon\" or \"unevolved Pokémon\" still reach it",
+      "Which further stage it can evolve into is governed entirely by the \"Evolves from\" or \"put this card into play\" text printed on the cards actually in play, so an older or newer printing of the same Fossil family can still link up across stages as long as that printed text matches"
+    ],
+    "summary": "Restored Pokémon carry a cluster of exceptions: they reach the Bench only through their matching Item card, don't count as Basic or Evolution cards for other effects, and evolve according to whatever \"Evolves from\" text is printed on the specific cards in play.",
+    "tier": "standard"
+  },
+  "tcg-Other Effects": {
+    "archetype": "mechanic",
+    "see_also": [
+      "tcg-Turn Actions"
+    ],
+    "state": [
+      "An Ability or Trainer card effect written to happen 'during Pokémon Checkup' or 'between turns' resolves at that step.",
+      "The player about to take the next turn decides where that effect falls relative to the Special Conditions, but the Special Conditions themselves always resolve back-to-back as one uninterrupted block — an effect can go before the block, after it, or both, never inserted partway through."
+    ],
+    "summary": "Any Ability or Trainer effect that names Pokémon Checkup (or 'between turns') as its trigger — for instance, one that heals a small amount of damage each turn — resolves during that step, bookending the Special Conditions block rather than splitting it.",
+    "tier": "standard"
+  },
   "tcg-Paralyzed": {
     "archetype": "mechanic",
     "effects": {
@@ -428,6 +1018,93 @@
       "No retreating"
     ],
     "summary": "A paralyzed Pokémon is rotated clockwise and frozen out of attacking and retreating for one round.",
+    "tier": "standard"
+  },
+  "tcg-Parts of a Pokémon Card": {
+    "archetype": "definition",
+    "terms": [
+      {
+        "meaning": "Which Energy type the Pokémon belongs to.",
+        "term": "Pokémon Type"
+      },
+      {
+        "meaning": "The Pokémon's (or Trainer card's) printed title.",
+        "term": "Card Name"
+      },
+      {
+        "meaning": "The total damage the Pokémon can take before being Knocked Out.",
+        "term": "HP"
+      },
+      {
+        "meaning": "Marks whether the card is a Basic Pokémon or which Evolution stage it is.",
+        "term": "Stage"
+      },
+      {
+        "meaning": "Names the Pokémon this card evolves from, printed on Evolution cards.",
+        "term": "Evolves From"
+      },
+      {
+        "meaning": "Identifies the card as a Pokémon, Energy, or Trainer card.",
+        "term": "Card Type"
+      },
+      {
+        "meaning": "Holds a Pokémon's attacks and Abilities, or a Trainer card's effect text.",
+        "term": "Text Box"
+      },
+      {
+        "meaning": "For Trainer cards, shows the subtype — Item, Supporter, Stadium, or Pokémon Tool.",
+        "term": "Trainer Type"
+      },
+      {
+        "meaning": "Reminder text at the bottom of a Trainer card describing how its subtype behaves.",
+        "term": "Trainer Rule"
+      },
+      {
+        "meaning": "Identifies which expansion the card belongs to.",
+        "term": "Expansion Code"
+      },
+      {
+        "meaning": "The card's number within its expansion.",
+        "term": "Collector Card Number"
+      }
+    ],
+    "tier": "standard"
+  },
+  "tcg-Parts of a Turn": {
+    "archetype": "procedure",
+    "see_also": [
+      "tcg-Turn Actions"
+    ],
+    "steps": [
+      {
+        "action": "Draw a card."
+      },
+      {
+        "action": "Take any of the following actions in whatever order you like, repeating any of them as often as their own limit allows",
+        "note": "benching Basic Pokémon and evolving have no turn limit; attaching Energy and retreating are capped at once each; Trainer cards are unlimited except for one Supporter and one Stadium per turn; Abilities have no turn limit"
+      },
+      {
+        "action": "Attack, which immediately ends your turn."
+      }
+    ],
+    "summary": "A turn breaks into three parts: draw a card, take any mix of the turn's optional actions, then attack to close it out.",
+    "tier": "standard"
+  },
+  "tcg-Play! Pokémon Stores and League Battle Decks": {
+    "archetype": "note",
+    "paragraphs": [
+      "This covers everything needed to start playing. For more hands-on help, a local hobby store can point to a League Battle Deck — a preconstructed deck bundled with gameplay advice, ready to play out of the box.",
+      "Official Play! Pokémon stores also run organized play: a chance to learn the game, battle other players, and earn prizes along the way. Any hobby store can say whether it holds that status."
+    ],
+    "summary": "Closing pointer: a local hobby store's League Battle Deck and Play! Pokémon organized-play program are the next steps after this rulebook.",
+    "tier": "standard"
+  },
+  "tcg-Playing the Game": {
+    "archetype": "note",
+    "paragraphs": [
+      "The Pokémon TCG plays fast — this section is the quick-start summary for getting a game going right away."
+    ],
+    "summary": "A one-line framing note introducing the quick-start summary that follows.",
     "tier": "standard"
   },
   "tcg-Poisoned": {
@@ -522,6 +1199,242 @@
       "Evolving removes every Special Condition"
     ],
     "summary": "Five Special Conditions can afflict the Active Pokémon: Asleep, Burned, Confused, Paralyzed, and Poisoned.",
+    "tier": "standard"
+  },
+  "tcg-Special rules for Mega Evolution Pokémon-EX": {
+    "archetype": "mechanic",
+    "effects": {
+      "Knock Out": "opponent takes 2 Prize cards"
+    },
+    "see_also": [
+      "tcg-Appendix 26: Mega Evolution Pokémon-EX"
+    ],
+    "state": [
+      "The Mega marker is part of the card's name, separate from the base Pokémon-EX, so a deck can carry a full legal count of both",
+      "Evolves only from the matching-named Pokémon-EX, never from the plain, unevolved Pokémon",
+      "Occupies its own new stage and counts as an Evolution card, following the ordinary rules for evolving",
+      "Turning one of your Pokémon into a Mega Evolution Pokémon-EX ends your turn immediately, so any other actions need to happen first",
+      "A Primal Reversion Pokémon-EX is governed by this same set of rules"
+    ],
+    "summary": "A Mega Evolution Pokémon-EX's name carries its own Mega marker, it can only evolve from the matching Pokémon-EX beneath it, it still counts as a Pokémon-EX for the Knock-Out payout, and putting one into play immediately ends the turn.",
+    "tier": "standard"
+  },
+  "tcg-Special rules for Pokémon BREAK": {
+    "archetype": "mechanic",
+    "see_also": [
+      "tcg-Appendix 22: BREAK Evolution"
+    ],
+    "state": [
+      "\"BREAK\" is part of the card's name, separate from the pre-BREAK version, so a deck can carry a full legal count of both",
+      "Occupies its own new stage, counts as an Evolution card, and follows the ordinary rules for evolving"
+    ],
+    "summary": "BREAK is folded into a Pokémon BREAK's own card name, and BREAK forms its own Evolution stage that plays by the standard Evolution rules.",
+    "tier": "standard"
+  },
+  "tcg-Special rules for Pokémon-EX": {
+    "archetype": "mechanic",
+    "effects": {
+      "Knock Out": "opponent takes 2 Prize cards"
+    },
+    "see_also": [
+      "tcg-Appendix 25: Pokémon-EX"
+    ],
+    "state": [
+      "\"EX\" is part of the card's name, separate from the non-EX version, so a deck can carry a full legal count of both",
+      "Otherwise handled exactly like any other Pokémon card during play",
+      "Can be printed as either a regular card or a full-art rare Ultra version"
+    ],
+    "summary": "The EX suffix keeps a Pokémon-EX's name distinct from its plain counterpart, it plays exactly like any other Pokémon card apart from that, and it comes with a steeper Knock-Out cost.",
+    "tier": "standard"
+  },
+  "tcg-Special rules for Pokémon-GX": {
+    "archetype": "mechanic",
+    "effects": {
+      "Knock Out": "opponent takes 2 Prize cards"
+    },
+    "see_also": [
+      "tcg-Appendix 19: Pokémon-GX"
+    ],
+    "state": [
+      "\"GX\" is part of the card's name, separate from the non-GX version, so a deck can carry a full legal count of both",
+      "When evolving from a shared lower stage, the player may choose either the non-GX or the GX result",
+      "Follows the same Evolution stages and rules as an ordinary Pokémon, including being playable as a starting Active Pokémon when it's a Basic"
+    ],
+    "summary": "The GX suffix keeps a Pokémon-GX's name distinct from its non-GX counterpart, either can be chosen when evolving from the shared lower stage, and losing one gives the opponent a bigger Prize payout than an ordinary Pokémon.",
+    "tier": "standard"
+  },
+  "tcg-Turn Actions": {
+    "archetype": "procedure",
+    "see_also": [
+      "tcg-Parts of a Turn",
+      "tcg-Full details of attacking",
+      "tcg-What counts as an attack?"
+    ],
+    "steps": [
+      {
+        "action": "Draw a card from the top of your deck to open your turn.",
+        "note": "an empty deck when your turn begins means you lose immediately"
+      },
+      {
+        "action": "Move Basic Pokémon from your hand onto your Bench, face up.",
+        "note": "as many as you want, up to a 5-Pokémon Bench"
+      },
+      {
+        "action": "Evolve Pokémon already in play by placing the next stage on top of them.",
+        "note": "as many as you want; the Pokémon keeps its attachments and damage counters but sheds Special Conditions and attack effects; a Pokémon can't evolve on the very turn it enters play — that rules out evolving a Basic the same turn it's benched, on any turn of the game, and it also rules out evolving the same Pokémon twice in one turn, since evolving counts as entering play again; separately, neither player may evolve anything at all on their own first turn of the game unless a card overrides that"
+      },
+      {
+        "action": "Attach one Energy card from your hand to a Pokémon of your choice.",
+        "note": "limited to a single attachment per turn"
+      },
+      {
+        "action": "Play Trainer cards and resolve their printed rule.",
+        "note": "Items and Pokémon Tools have no turn limit; only one Supporter and one Stadium may be played per turn; a newly played Stadium replaces and discards whichever one was already in play, and a same-named Stadium can't be played over itself; the player taking the game's first turn may not play a Supporter that turn"
+      },
+      {
+        "action": "Retreat your Active Pokémon, discarding Energy equal to its Retreat Cost, and bring up a Benched Pokémon in its place.",
+        "note": "once per turn; damage counters and attachments travel with each Pokémon; blocked while the Active Pokémon is Asleep or Paralyzed; attacking afterward with the new Active Pokémon is still allowed"
+      },
+      {
+        "action": "Use any Abilities you want, on Pokémon Active or Benched.",
+        "note": "using an Ability isn't an attack, so it doesn't cost you your attack for the turn"
+      },
+      {
+        "action": "Choose whether to attack with your Active Pokémon.",
+        "note": "ending the turn either way; the player going first skips this on the game's opening turn"
+      },
+      {
+        "action": "Resolve Pokémon Checkup before the next player's turn begins.",
+        "note": "Special Conditions are always applied in a fixed order — Poisoned, then Burned, then Asleep, then Paralyzed — and once that block starts it runs straight through with nothing inserted partway; the player about to take the next turn chooses where any Ability or Trainer effect timed to this step falls relative to that block (before it, after it, or bookending both sides), just never in the middle of it; any Pokémon left with no HP is Knocked Out and replaced before play continues"
+      }
+    ],
+    "summary": "The full turn-action menu: draw, then freely mix benching, evolving, one Energy attachment, Trainer plays, one retreat, and Abilities, then attack and hand off through Pokémon Checkup.",
+    "tier": "standard"
+  },
+  "tcg-What counts as an attack?": {
+    "archetype": "mechanic",
+    "state": [
+      "A move counts as an attack if it carries a cost and a name, whether or not it deals damage.",
+      "Anything printed as an Ability, or labeled some other way, is not an attack even if it produces a similar effect.",
+      "Effects that specifically key off 'attacks' apply only to genuine attacks, never to Abilities or other non-attack effects."
+    ],
+    "summary": "Any move with a printed cost and name is an attack, damage or not — everything else, such as an Ability, is not, even when it does something similar.",
+    "tier": "standard"
+  },
+  "tcg-What does and doesn’t count for a Pokémon’s name?": {
+    "archetype": "mechanic",
+    "effects": {
+      "A Delta Species marking": "Not part of the name — shares its name with the non-Delta version",
+      "A Level marking on a Pokémon card": "Not part of the name — every Level of that Pokémon shares one name",
+      "A trailing symbol on a Pokémon card": "Part of the name — a card with the symbol has a different name from the plain version",
+      "An owner's name or a regional/form label": "Part of the name — distinct from the unlabeled version"
+    },
+    "see_also": [
+      "tcg-Deck Building"
+    ],
+    "state": [
+      "A deck may hold only 4 cards sharing one full name, Basic Energy cards excepted; names that differ under these rules each get their own 4-card allowance.",
+      "Evolving requires the printed 'Evolves from' name to match the in-play Pokémon's exact name — a Level difference doesn't block the match, but an owner or form label does."
+    ],
+    "summary": "Levels and Delta Species markings don't change a Pokémon's name, but trailing symbols and owner or form labels do — and that distinction drives both the 4-copy deck limit and whether a card evolves from a given Pokémon.",
+    "tier": "standard"
+  },
+  "tcg-What if both players win at the same time?": {
+    "archetype": "mechanic",
+    "branch": {
+      "options": [
+        {
+          "condition": "One player satisfies both win conditions while the other satisfies only one",
+          "outcome": "The player meeting both conditions wins outright"
+        },
+        {
+          "condition": "Neither player has the edge described above",
+          "detail": "See the tiebreaker game rules",
+          "outcome": "Play a tiebreaker game"
+        }
+      ],
+      "when": "Both players satisfy a win condition simultaneously"
+    },
+    "see_also": [
+      "tcg-What’s a tiebreaker game?",
+      "tcg-How to Win the Game"
+    ],
+    "state": [
+      "Taking your last Prize card wins the game.",
+      "An opponent left with an empty Bench when their Active Pokémon is Knocked Out or otherwise removed also wins the game for you.",
+      "Both conditions can be true for both players in the same moment."
+    ],
+    "summary": "A shared win moment is possible; whoever satisfies more of the win conditions takes it outright, and a genuine tie goes to a tiebreaker game.",
+    "tier": "standard"
+  },
+  "tcg-What if you should draw more cards than you have?": {
+    "archetype": "mechanic",
+    "state": [
+      "Told to draw or look at more cards than remain in your deck, draw or look at whatever is left and continue play normally.",
+      "Losing for failing to draw only applies to the mandatory draw at the start of your turn — not to a shortfall caused by a card effect asking you to draw or look at cards."
+    ],
+    "summary": "A card effect asking for more cards than are left in the deck just draws or reveals whatever remains; only an empty deck at the start of your own turn costs you the game.",
+    "tier": "standard"
+  },
+  "tcg-What’s a tiebreaker game?": {
+    "archetype": "procedure",
+    "see_also": [
+      "tcg-What if both players win at the same time?"
+    ],
+    "steps": [
+      {
+        "action": "Set up exactly as for a normal game, including 6 Prize cards for each player."
+      },
+      {
+        "action": "Flip a coin to decide who takes the first turn."
+      },
+      {
+        "action": "Play until one player takes a Prize card, or otherwise ends up with fewer Prizes remaining than their opponent.",
+        "note": "that player wins; every other normal win condition still applies during a tiebreaker"
+      }
+    ],
+    "summary": "A tiebreaker is a fresh full game where the first player to claim a Prize card — or otherwise pull ahead on Prizes remaining — wins the race.",
+    "tier": "standard"
+  },
+  "tcg-What’s the difference between “up to” and “any amount”?": {
+    "archetype": "mechanic",
+    "effects": {
+      "Attack effect phrased 'up to X'": "Choose any number from 0 to X",
+      "Effect phrased 'any amount' or 'any number'": "Choose any number from 0 up to the maximum",
+      "Non-attack effect phrased 'up to X' (Trainer card or Ability)": "Choose any number from 1 to X",
+      "Unrestricted deck or discard-pile search, any effect type": "Must choose at least 1 card regardless of the phrasing above"
+    },
+    "summary": "'Up to X' allows zero on an attack effect but requires at least one on a non-attack effect, with an unrestricted deck/discard search always requiring at least one either way; 'any amount' or 'any number' always allows choosing zero.",
+    "tier": "standard"
+  },
+  "tcg-Zones of the Pokémon TCG": {
+    "archetype": "definition",
+    "terms": [
+      {
+        "meaning": "Each player's own 60-card pile. Both players can see how many cards remain in either deck, but neither may look at or reorder either deck unless a card permits it.",
+        "term": "Deck"
+      },
+      {
+        "meaning": "Cards drawn stay hidden here; a game starts with 7. Opponents may not look at each other's hand unless a card says otherwise.",
+        "term": "Hand"
+      },
+      {
+        "meaning": "6 cards each player sets face down from the top of their own deck during setup. Knocking out an opposing Pokémon lets you claim one into your hand; being first to claim your last one wins the game.",
+        "term": "Prize cards"
+      },
+      {
+        "meaning": "The single slot each player must always fill with exactly one Pokémon — the only one that can attack. An opponent with none left to put here loses.",
+        "term": "Active Spot"
+      },
+      {
+        "meaning": "Holds every other in-play Pokémon, up to 5 at a time; anything in play besides the Active Pokémon has to sit here.",
+        "term": "Bench"
+      },
+      {
+        "meaning": "Each player's own face-up pile of cards taken out of play, open for either player to inspect at any time; a Knocked Out Pokémon and everything attached to it lands in its owner's pile unless a card says otherwise.",
+        "term": "Discard pile"
+      }
+    ],
     "tier": "standard"
   }
 }
