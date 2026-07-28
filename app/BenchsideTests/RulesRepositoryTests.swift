@@ -79,4 +79,17 @@ final class RulesRepositoryTests: XCTestCase {
         XCTAssertEqual(structure.branch?.options.count, 2)
         XCTAssertEqual(structure.orderedEffects.map(\.label), ["Abilities", "Attack", "Retreat"])
     }
+
+    func testStartupPathTiming() throws {
+        // Startup does: open DB -> documents() -> sectionCounts().
+        // If this is fast, a slow launch is not the data layer.
+        let clock = ContinuousClock()
+        let open = try clock.measure { _ = try RulesRepository.bundled() }
+        let r = try RulesRepository.bundled()
+        let search = try clock.measure { _ = try r.search("asleep", scope: .all) }
+        _ = try clock.measure { _ = try r.documents() }
+        _ = try clock.measure { _ = try r.sectionCounts() }
+        XCTAssertLessThan(open, .seconds(1))
+        XCTAssertLessThan(search, .seconds(1))
+    }
 }

@@ -32,6 +32,14 @@ test:
 content-status:
     cd pipeline && uv run python -m benchside_pipeline content-status --root ..
 
+# Release build for a physical device. Debug builds are unoptimized and
+# launch far slower on real hardware than in the simulator — use this for
+# anything you actually carry to a tournament.
+app-device: app-db
+    cd app && xcodebuild build -project Benchside.xcodeproj -scheme Benchside \
+      -configuration Release -destination 'generic/platform=iOS' -quiet
+    @echo "Built Release. In Xcode: Product > Scheme > Edit Scheme > Run > Build Configuration = Release, then Run to your phone."
+
 # --- decomposition skill validators (buddy scripts) ---
 
 # After authoring: schema, coverage, quotes, overlap, see-also, personas
