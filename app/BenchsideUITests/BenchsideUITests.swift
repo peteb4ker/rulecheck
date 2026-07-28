@@ -9,6 +9,21 @@ final class BenchsideUITests: XCTestCase {
         XCTAssertTrue(app.buttons["Tournament"].waitForExistence(timeout: 5))
     }
 
+    /// #22: the field is focused at launch, so typing works with no tap.
+    /// iOS 17 has no API to focus a `.searchable` field — no autofocus there.
+    func testSearchIsFocusedAtLaunch() throws {
+        guard #available(iOS 18.0, *) else {
+            throw XCTSkip("searchFocused requires iOS 18")
+        }
+        let app = XCUIApplication()
+        app.launch()
+        XCTAssertTrue(app.searchFields.firstMatch.waitForExistence(timeout: 10))
+        XCTAssertTrue(app.keyboards.firstMatch.waitForExistence(timeout: 5),
+                      "keyboard must be up at launch — no tap required")
+        app.typeText("asleep")
+        XCTAssertEqual(app.searchFields.firstMatch.value as? String, "asleep")
+    }
+
     func testTypingLandsInSearchField() {
         let app = XCUIApplication()
         app.launch()
@@ -42,8 +57,14 @@ final class BenchsideUITests: XCTestCase {
     func testAboutShowsDisclaimer() {
         let app = XCUIApplication()
         app.launch()
-        let cancel = app.buttons["Cancel"].firstMatch
-        if cancel.waitForExistence(timeout: 3) { cancel.tap() }
+        // Search is focused at launch (#22), and while it is active iOS
+        // swaps the nav bar's trailing item for the search dismiss button.
+        // Leave search before reaching for About.
+        XCTAssertTrue(app.searchFields.firstMatch.waitForExistence(timeout: 10))
+        for label in ["Close", "Cancel"] {
+            let button = app.buttons[label].firstMatch
+            if button.exists { button.tap(); break }
+        }
         let about = app.buttons["About"].firstMatch
         XCTAssertTrue(about.waitForExistence(timeout: 5))
         about.tap()

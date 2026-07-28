@@ -66,9 +66,14 @@ struct RuleStructure: Decodable, Hashable {
     let terms: [Term]?
     let paragraphs: [String]?
 
+    /// Load-bearing official phrasing the author declared and the pipeline
+    /// verified appears verbatim in the source. The only verbatim text the
+    /// research gate allows the app to surface.
+    let quotes: [String]?
+
     enum CodingKeys: String, CodingKey {
         case archetype, summary, state, branch, effects, steps, infraction
-        case handling, examples, terms, paragraphs
+        case handling, examples, terms, paragraphs, quotes
         case endsWhen = "ends_when"
         case basePenalty = "base_penalty"
         case upgradeConditions = "upgrade_conditions"

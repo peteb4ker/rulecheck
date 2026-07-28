@@ -42,12 +42,30 @@ struct SectionView: View {
                             .frame(minHeight: 44 / 2)
                     }
                 }
+                if let quotes = section.structure?.quotes, !quotes.isEmpty {
+                    Divider().overlay(Palette.hairline)
+                    Text("Official wording").sectionLabelStyle()
+                    ForEach(Array(quotes.enumerated()), id: \.offset) { _, quote in
+                        Text(quote)
+                            .font(.callout)
+                            .italic()
+                            .foregroundStyle(Palette.body)
+                            .lineSpacing(3)
+                            .padding(.leading, 12)
+                            .overlay(alignment: .leading) {
+                                Palette.accent.frame(width: 2)
+                            }
+                            .textSelection(.enabled)
+                    }
+                }
                 if let doc {
                     Divider().overlay(Palette.hairline)
-                    Text("\(doc.title) — version \(doc.version), \(doc.published)")
+                    // The judge's citation: what to look up, and where.
+                    Text(Self.citation(for: section, in: doc))
                         .citationStyle()
                         .foregroundStyle(Palette.secondary)
                         .padding(.top, 12)
+                        .textSelection(.enabled)
                 }
             }
             .padding(18)
@@ -66,6 +84,14 @@ struct SectionView: View {
             }
         }
         .tint(Palette.accent)
+    }
+
+    /// A citation a judge can read aloud or copy: document, version, date,
+    /// and the section number when the section has a citable one.
+    static func citation(for section: RuleSection, in doc: DocumentInfo) -> String {
+        let base = "\(doc.title) — version \(doc.version), \(doc.published)"
+        guard let n = section.citableNumber else { return base }
+        return "\(base) · § \(n)"
     }
 
     /// Title with the § number in accent monospaced — the citable part is

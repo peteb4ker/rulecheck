@@ -107,7 +107,12 @@ struct SearchView: View {
             .searchable(text: $model.query,
                         placement: .navigationBarDrawer(displayMode: .always),
                         prompt: "Search the rules")
+            .searchAutofocus()
             .navigationTitle("Benchwise")
+            // The large title never draws once the search drawer is pinned
+            // (displayMode: .always) — it reserved its row and left it blank.
+            // Inline renders, and a search-first app wants the vertical space.
+            .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     NavigationLink { AboutView(documents: model.documents) } label: {
