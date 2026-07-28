@@ -32,17 +32,25 @@ final class RulesRepositoryTests: XCTestCase {
         XCTAssertTrue(try repo.search("\"asleep AND (", scope: .all).count >= 0)
         XCTAssertEqual(try repo.search("   ", scope: .all).count, 0)
     }
+    // Section counts are content, not contract: they move whenever a document
+    // is revised or a section is skiplisted. Assert the invariants instead.
     func testDocumentOutlineIsOrdered() throws {
         let sections = try repo.sections(inDocument: "tournament-rules")
-        XCTAssertEqual(sections.count, 119)
+        XCTAssertGreaterThan(sections.count, 50, "outline should be substantial")
         XCTAssertEqual(sections.map(\.sortOrder), sections.map(\.sortOrder).sorted())
     }
     func testSectionCountsMatchOutlines() throws {
         let counts = try repo.sectionCounts()
-        XCTAssertEqual(counts["tournament-rules"], 119)
         for doc in try repo.documents() {
             XCTAssertEqual(counts[doc.id], try repo.sections(inDocument: doc.id).count,
                            "count for \(doc.id) must match its outline")
+        }
+    }
+    func testSkippedSectionsAreAbsent() throws {
+        // The skiplist must remove sections from the app entirely — never
+        // leave them shipping verbatim source text.
+        for skipped in ["tcg-Parts of a Pokémon Card", "tcg-Credits", "trh-Appendix A"] {
+            XCTAssertNil(try repo.section(id: skipped), "\(skipped) must not ship")
         }
     }
     func testSectionNeighborsAndXrefs() throws {
