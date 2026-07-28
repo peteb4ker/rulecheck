@@ -276,6 +276,10 @@
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					B550C8C0DE82B5ED99CF29A5 = {
+						DevelopmentTeam = T27ZNJQMWN;
+						ProvisioningStyle = Automatic;
+					};
 					E3CA3924CE1F1C9F983D59C7 = {
 						TestTargetID = B550C8C0DE82B5ED99CF29A5;
 					};
@@ -384,6 +388,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T27ZNJQMWN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Benchside/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Benchwise;
@@ -483,6 +489,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T27ZNJQMWN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Benchside/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Benchwise;

@@ -30,6 +30,10 @@ targets:
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.skyetrail.benchwise
+        # Signing team lives here so `just app-gen` stops wiping it on every
+        # regeneration. Team IDs are not secret (they ship in app metadata).
+        DEVELOPMENT_TEAM: T27ZNJQMWN
+        CODE_SIGN_STYLE: Automatic
         INFOPLIST_KEY_CFBundleDisplayName: Benchwise
         GENERATE_INFOPLIST_FILE: YES
         SWIFT_VERSION: "5.10"
