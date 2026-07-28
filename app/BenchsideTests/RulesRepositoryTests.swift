@@ -37,6 +37,14 @@ final class RulesRepositoryTests: XCTestCase {
         XCTAssertEqual(sections.count, 119)
         XCTAssertEqual(sections.map(\.sortOrder), sections.map(\.sortOrder).sorted())
     }
+    func testSectionCountsMatchOutlines() throws {
+        let counts = try repo.sectionCounts()
+        XCTAssertEqual(counts["tournament-rules"], 119)
+        for doc in try repo.documents() {
+            XCTAssertEqual(counts[doc.id], try repo.sections(inDocument: doc.id).count,
+                           "count for \(doc.id) must match its outline")
+        }
+    }
     func testSectionNeighborsAndXrefs() throws {
         let sec = try XCTUnwrap(repo.section(id: "pen-5.6.1"))
         XCTAssertEqual(sec.docId, "penalty-guidelines")

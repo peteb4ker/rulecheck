@@ -76,6 +76,16 @@ final class RulesRepository {
         }
     }
 
+    func sectionCounts() throws -> [String: Int] {
+        try dbQueue.read { db in
+            var counts: [String: Int] = [:]
+            for row in try Row.fetchAll(db, sql: "SELECT doc_id, COUNT(*) AS n FROM sections GROUP BY doc_id") {
+                counts[row["doc_id"]] = row["n"]
+            }
+            return counts
+        }
+    }
+
     func documentInfo(id: String) throws -> DocumentInfo? {
         try dbQueue.read { db in
             try Row.fetchOne(db, sql: "SELECT id, prefix, title, version, published FROM documents WHERE id = ?",

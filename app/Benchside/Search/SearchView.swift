@@ -16,13 +16,31 @@ struct SearchView: View {
                     Section {
                         ForEach(model.documents.filter { model.scope.docIds?.contains($0.id) ?? true }) { doc in
                             NavigationLink(value: doc) {
-                                VStack(alignment: .leading) {
-                                    Text(doc.title)
-                                        .foregroundStyle(Palette.ink)
-                                    Text("version \(doc.version) · \(doc.published)")
-                                        .font(.caption).foregroundStyle(Palette.secondary)
+                                HStack(spacing: 14) {
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .fill(doc.hue)
+                                        .frame(width: 34, height: 34)
+                                    VStack(alignment: .leading, spacing: 3) {
+                                        Text(doc.title)
+                                            .font(.headline)
+                                            .foregroundStyle(Palette.ink)
+                                        (Text("\(model.sectionCounts[doc.id] ?? 0) sections · ")
+                                            + Text(doc.published).monospaced())
+                                            .font(.caption)
+                                            .foregroundStyle(Palette.secondary)
+                                    }
                                 }
+                                .padding(.vertical, 2)
                             }
+                            .listRowSeparator(.hidden)
+                            .listRowInsets(EdgeInsets(top: 4, leading: 36, bottom: 4, trailing: 36))
+                            .listRowBackground(
+                                RoundedRectangle(cornerRadius: 16)
+                                    .fill(Palette.surface)
+                                    .shadow(color: Palette.ink.opacity(0.07), radius: 2, x: 0, y: 1)
+                                    .padding(.horizontal, 20)
+                                    .padding(.vertical, 4)
+                            )
                         }
                     } header: {
                         Text("Documents").sectionLabelStyle()

@@ -8,6 +8,7 @@ final class SearchViewModel {
     var scope: SearchScope = .all
     private(set) var groups: [(doc: DocumentInfo, hits: [SearchHit])] = []
     private(set) var documents: [DocumentInfo] = []
+    private(set) var sectionCounts: [String: Int] = [:]
     private(set) var errorMessage: String?
 
     init(repository: RulesRepository) {
@@ -18,6 +19,7 @@ final class SearchViewModel {
     func refresh() {
         do {
             documents = try repository.documents()
+            sectionCounts = try repository.sectionCounts()
             let trimmed = query.trimmingCharacters(in: .whitespaces)
             guard !trimmed.isEmpty else { groups = []; return }
             let hits = try repository.search(trimmed, scope: scope)
