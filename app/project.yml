@@ -19,12 +19,19 @@ targets:
     dependencies:
       - package: GRDB
         product: GRDB
+    # Launch screen is a solid `canvas` token so launch -> search feels
+    # continuous in both temperatures (Info.plist merges with the
+    # generated one; the file's UILaunchScreen wins).
+    info:
+      path: Benchside/Info.plist
+      properties:
+        UILaunchScreen:
+          UIColorName: canvas
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.skyetrail.benchwise
         INFOPLIST_KEY_CFBundleDisplayName: Benchwise
         GENERATE_INFOPLIST_FILE: YES
-        INFOPLIST_KEY_UILaunchScreen_Generation: YES
         SWIFT_VERSION: "5.10"
   BenchsideTests:
     type: bundle.unit-test

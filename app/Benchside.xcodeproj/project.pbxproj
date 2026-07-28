@@ -53,6 +53,7 @@
 
 /* Begin PBXFileReference section */
 		08DFB5F59DD1751AEC13D0C8 /* Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Palette.swift; sourceTree = "<group>"; };
+		0AFBBADF25C55040A140B844 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		2A647F92511974FC66C729A8 /* BenchsideTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = BenchsideTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D1E0B261D8D1DB7D0E2FB73 /* RulesRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesRepositoryTests.swift; sourceTree = "<group>"; };
 		4062F421B8E424C0702B7FAD /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
@@ -181,6 +182,7 @@
 				F992BC508775F6DA75A2F22A /* Assets.xcassets */,
 				85281EA92AFFA9E2CA5C9E7F /* BenchsideApp.swift */,
 				4062F421B8E424C0702B7FAD /* ErrorView.swift */,
+				0AFBBADF25C55040A140B844 /* Info.plist */,
 				41606A8F67FE88521401983D /* Data */,
 				68EA2BFE7F43F5129F49ABCA /* Design */,
 				A1AEA043F5FC5993542005CE /* Reader */,
@@ -375,8 +377,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Benchside/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Benchwise;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -474,8 +476,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Benchside/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Benchwise;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
