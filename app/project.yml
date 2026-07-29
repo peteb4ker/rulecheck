@@ -29,6 +29,10 @@ targets:
     info:
       path: RuleCheck/Info.plist
       properties:
+        # No network code, no CryptoKit, no CommonCrypto — nothing to declare.
+        # Without this key App Store Connect asks the export-compliance
+        # question on every upload and holds the build until it is answered.
+        ITSAppUsesNonExemptEncryption: false
         UILaunchScreen:
           UIColorName: canvas
     settings:
