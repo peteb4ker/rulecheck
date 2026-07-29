@@ -1,6 +1,10 @@
 name: RuleCheck
 options:
-  bundleIdPrefix: com.skyetrail
+  # Reverse-DNS of rulecheck.app. Deliberately not a Skyetrail
+  # namespace: this is not a Skyetrail app. Bundle IDs are permanent
+  # once submitted to the App Store, so this was settled before the
+  # first submission rather than after.
+  bundleIdPrefix: app.rulecheck
   deploymentTarget:
     iOS: "17.0"
 packages:
@@ -29,7 +33,7 @@ targets:
           UIColorName: canvas
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.skyetrail.rulecheck
+        PRODUCT_BUNDLE_IDENTIFIER: app.rulecheck.RuleCheck
         # Signing team lives here so `just app-gen` stops wiping it on every
         # regeneration. Team IDs are not secret (they ship in app metadata).
         DEVELOPMENT_TEAM: T27ZNJQMWN

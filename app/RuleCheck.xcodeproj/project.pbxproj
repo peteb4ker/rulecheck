@@ -457,7 +457,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.skyetrail.RuleCheckTests;
+				PRODUCT_BUNDLE_IDENTIFIER = app.rulecheck.RuleCheckTests;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RuleCheck.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RuleCheck";
@@ -478,7 +478,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.skyetrail.rulecheck;
+				PRODUCT_BUNDLE_IDENTIFIER = app.rulecheck.RuleCheck;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.10;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -499,7 +499,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.skyetrail.rulecheck;
+				PRODUCT_BUNDLE_IDENTIFIER = app.rulecheck.RuleCheck;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.10;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -579,7 +579,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.skyetrail.RuleCheckTests;
+				PRODUCT_BUNDLE_IDENTIFIER = app.rulecheck.RuleCheckTests;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RuleCheck.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RuleCheck";
@@ -596,7 +596,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.skyetrail.RuleCheckUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = app.rulecheck.RuleCheckUITests;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = RuleCheck;
@@ -613,7 +613,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.skyetrail.RuleCheckUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = app.rulecheck.RuleCheckUITests;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = RuleCheck;
