@@ -32,6 +32,13 @@ final class BundleIdentityTests: XCTestCase {
         XCTAssertNotNil(UIImage(named: files[0]), "icon \(files[0]) is not loadable")
     }
 
+    /// Without this key every upload stalls on the export-compliance
+    /// question. False is correct here and provable: the app has no network
+    /// code and no cryptography beyond what the OS does for itself.
+    func testExportComplianceIsDeclared() {
+        XCTAssertEqual(appInfo["ITSAppUsesNonExemptEncryption"] as? Bool, false)
+    }
+
     func testVersionKeysArePresentAndWellFormed() throws {
         let short = try XCTUnwrap(appInfo["CFBundleShortVersionString"] as? String,
                                   "CFBundleShortVersionString missing — App Store Connect rejects this")
