@@ -1,0 +1,51 @@
+name: CodeQL
+
+# Static analysis for the two things CodeQL can scan here for free on Linux:
+# the Python pipeline and the Actions workflows themselves.
+#
+# Swift (app/) is deliberately not analysed. CodeQL's Swift extractor needs a
+# real `xcodebuild`, which means a macOS runner — the 10x-billing resource that
+# CLAUDE.md gates tightly and that #63 just trimmed. Tracked separately so the
+# cost/value call gets made on its own merits rather than smuggled in here.
+on:
+  pull_request:
+  push:
+    branches: [main]
+  schedule:
+    # Weekly re-scan so new queries reach main without waiting for a PR.
+    # Offset from ci.yml's daily 06:17 run.
+    - cron: '23 4 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: codeql-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  analyze:
+    name: Analyze (${{ matrix.language }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      security-events: write # upload SARIF to the Security tab
+      contents: read
+      actions: read
+    strategy:
+      fail-fast: false
+      matrix:
+        language: [actions, python]
+    steps:
+      - uses: actions/checkout@v7
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v4
+        with:
+          languages: ${{ matrix.language }}
+          # Neither language is compiled, so CodeQL reads the source directly.
+          build-mode: none
+      - name: Perform CodeQL analysis
+        uses: github/codeql-action/analyze@v4
+        with:
+          category: /language:${{ matrix.language }}
