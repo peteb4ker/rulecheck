@@ -1,4 +1,7 @@
+import hashlib
 import shutil
+import socket
+import urllib.request
 
 from rulecheck_pipeline.__main__ import main
 
@@ -66,6 +69,73 @@ def test_download_new_then_changed(tmp_path, fixture_pdf):
     yaml_path.write_text(yaml_path.read_text().replace(
         'file: "fixture.pdf"', 'file: "fixture.pdf"\n    sha256: "' + "0" * 64 + '"'))
     assert main(["download", "--root", str(root)]) == 1  # hash mismatch -> "changed"
+
+
+def _record_hash(root, digest):
+    yaml_path = root / "sources" / "sources.yaml"
+    yaml_path.write_text(yaml_path.read_text().replace(
+        'file: "fixture.pdf"', f'file: "fixture.pdf"\n    sha256: "{digest}"'))
+
+
+def test_check_sources_passes_on_matching_local_pdf(tmp_path, fixture_pdf, capsys):
+    # The manual-fallback path: PDFs put in sources/ by hand, authenticated
+    # against the manifest with no network in sight.
+    root = make_repo(tmp_path, fixture_pdf)
+    digest = hashlib.sha256((root / "sources" / "fixture.pdf").read_bytes()).hexdigest()
+    _record_hash(root, digest)
+
+    assert main(["check-sources", "--root", str(root)]) == 0
+
+    out = capsys.readouterr().out
+    assert "fixture-doc: ok" in out
+    assert digest[:12] in out
+
+
+def test_check_sources_fails_on_tampered_local_pdf(tmp_path, fixture_pdf, capsys):
+    root = make_repo(tmp_path, fixture_pdf)
+    _record_hash(root, "0" * 64)
+
+    assert main(["check-sources", "--root", str(root)]) == 1
+
+    err = capsys.readouterr().err
+    assert "MISMATCH" in err
+    assert "0" * 64 in err  # says what was expected
+
+
+def test_check_sources_fails_when_pdf_missing(tmp_path, fixture_pdf, capsys):
+    root = make_repo(tmp_path, fixture_pdf)
+    _record_hash(root, "0" * 64)
+    (root / "sources" / "fixture.pdf").unlink()
+
+    assert main(["check-sources", "--root", str(root)]) == 1
+
+    captured = capsys.readouterr()
+    assert "MISSING" in captured.err
+    assert "sources/fixture.pdf" in captured.err
+    assert "Traceback" not in captured.err
+
+
+def test_check_sources_warns_but_passes_without_a_recorded_hash(tmp_path, fixture_pdf, capsys):
+    root = make_repo(tmp_path, fixture_pdf)  # manifest carries no sha256
+
+    assert main(["check-sources", "--root", str(root)]) == 0
+
+    captured = capsys.readouterr()
+    digest = hashlib.sha256((root / "sources" / "fixture.pdf").read_bytes()).hexdigest()
+    assert f'sha256: "{digest}"' in captured.out  # paste-ready for sources.yaml
+
+
+def test_check_sources_makes_no_network_calls(tmp_path, fixture_pdf, monkeypatch):
+    root = make_repo(tmp_path, fixture_pdf)
+    _record_hash(root, hashlib.sha256((root / "sources" / "fixture.pdf").read_bytes()).hexdigest())
+
+    def explode(*args, **kwargs):
+        raise AssertionError("check-sources attempted a network call")
+
+    monkeypatch.setattr(socket.socket, "connect", explode)
+    monkeypatch.setattr(urllib.request, "urlopen", explode)
+
+    assert main(["check-sources", "--root", str(root)]) == 0
 
 
 def test_release_verify_and_content_status(tmp_path, fixture_pdf):

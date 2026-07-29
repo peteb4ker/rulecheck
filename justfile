@@ -12,6 +12,11 @@ setup:
 download:
     cd pipeline && uv run python -m rulecheck_pipeline download --root ..
 
+# Authenticate the PDFs already in sources/ against sources.yaml (no network).
+# Use after downloading them by hand when the upstream WAF blocks `just download`.
+check-sources:
+    cd pipeline && uv run python -m rulecheck_pipeline check-sources --root ..
+
 parse:
     cd pipeline && uv run python -m rulecheck_pipeline parse --root ..
 
