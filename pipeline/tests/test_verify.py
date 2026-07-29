@@ -1,5 +1,7 @@
 import sqlite3
 
+import pytest
+
 from rulecheck_pipeline.build import build_db
 from rulecheck_pipeline.model import dump_document
 from rulecheck_pipeline.parse import parse_pdf
@@ -46,6 +48,18 @@ def test_fts_count_mismatch_fails(fixture_pdf, fixture_source, tmp_path):
     con.commit(); con.close()
     errors = verify_db(db_path)
     assert any("fts" in e.lower() for e in errors)
+
+
+def test_unrelated_db_error_is_not_reported_as_fts_desync(fixture_pdf, fixture_source, tmp_path):
+    """The integrity-check probe reports a desynced index as SQLITE_CORRUPT_VTAB.
+    A missing table is a different failure — a file that is not our artifact —
+    and must not be dressed up as a content problem verify can report on."""
+    db_path = make_db(fixture_pdf, fixture_source, tmp_path)
+    con = sqlite3.connect(db_path)
+    con.execute("DROP TABLE sections_fts")
+    con.commit(); con.close()
+    with pytest.raises(sqlite3.OperationalError, match="sections_fts"):
+        verify_db(db_path)
 
 
 def test_orphan_parent_fails(fixture_pdf, fixture_source, tmp_path):
