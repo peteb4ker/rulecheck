@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  Rule Check privacy manifest.
+
+  The app makes zero network calls and collects nothing — that is a shipped
+  promise, not a default (see CLAUDE.md). The empty arrays below are therefore
+  provably empty rather than aspirational: there is no analytics SDK, no
+  telemetry, no crash reporting and no remote config anywhere in the target.
+
+  The one declared API is UserDefaults, reached through `@AppStorage` in
+  SearchView, which persists the selected search scope. Reason CA92.1 covers
+  reading and writing values the app itself wrote, which is exactly what a
+  remembered picker selection is.
+-->
+<plist version="1.0">
+<dict>
+    <key>NSPrivacyTracking</key>
+    <false/>
+    <key>NSPrivacyTrackingDomains</key>
+    <array/>
+    <key>NSPrivacyCollectedDataTypes</key>
+    <array/>
+    <key>NSPrivacyAccessedAPITypes</key>
+    <array>
+        <dict>
+            <key>NSPrivacyAccessedAPIType</key>
+            <string>NSPrivacyAccessedAPICategoryUserDefaults</string>
+            <key>NSPrivacyAccessedAPITypeReasons</key>
+            <array>
+                <string>CA92.1</string>
+            </array>
+        </dict>
+    </array>
+</dict>
+</plist>
