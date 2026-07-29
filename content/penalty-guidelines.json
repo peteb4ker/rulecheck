@@ -1,0 +1,704 @@
+{
+  "document": {
+    "file": "penalty-guidelines.pdf",
+    "heading_rules": [
+      "^([1-8]):?\\s+(?!.*\\.{2,})(?=.*[A-Za-z])([^a-z].*)$",
+      "^([1-8]\\.\\d+):?\\s+(?!.*\\.{2,})(?=.*[A-Za-z])([^a-z].*)$",
+      "^([1-8]\\.\\d+\\.\\d+):?\\s+(?!.*\\.{2,})(?=.*[A-Za-z])([^a-z].*)$",
+      "^([1-8]\\.\\d+\\.\\d+\\.\\d+):?\\s+(?!.*\\.{2,})(?=.*[A-Za-z])([^a-z].*)$"
+    ],
+    "id": "penalty-guidelines",
+    "layout": false,
+    "prefix": "pen",
+    "published": "2026-05-21",
+    "sha256": "729b4e1317ff5889a195d61b559276550c2c9af59ce85b35f172f6d4c4640cc5",
+    "strip_lines": [
+      "^\\d{1,3}$"
+    ],
+    "title": "Play! Pokémon Penalty Guidelines",
+    "url": "https://www.pokemon.com/static-assets/content-assets/cms2/pdf/play-pokemon/rules/play-pokemon-penalty-guidelines-en.pdf",
+    "version": "Pokémon TCG, VG, GO, and UNITE — English Version, Last Revision: May 21, 2026"
+  },
+  "sections": [
+    {
+      "body_chars": 695,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-1",
+      "number": "1",
+      "order": 0,
+      "parent_id": null,
+      "title": "Introduction"
+    },
+    {
+      "body_chars": 1054,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines › Introduction",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-1.1",
+      "number": "1.1",
+      "order": 1,
+      "parent_id": "pen-1",
+      "title": "Who Is This For?"
+    },
+    {
+      "body_chars": 1102,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines › Introduction",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-1.2",
+      "number": "1.2",
+      "order": 2,
+      "parent_id": "pen-1",
+      "title": "Using This Guide"
+    },
+    {
+      "body_chars": 729,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines › Introduction",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-1.3",
+      "number": "1.3",
+      "order": 3,
+      "parent_id": "pen-1",
+      "title": "Why Create This Document?"
+    },
+    {
+      "body_chars": 681,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines › Introduction",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-1.4",
+      "number": "1.4",
+      "order": 4,
+      "parent_id": "pen-1",
+      "title": "Notice of Potential Changes"
+    },
+    {
+      "body_chars": 986,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-2",
+      "number": "2",
+      "order": 5,
+      "parent_id": null,
+      "title": "Philosophy"
+    },
+    {
+      "body_chars": 2282,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines › Philosophy",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-2.1",
+      "number": "2.1",
+      "order": 6,
+      "parent_id": "pen-2",
+      "title": "Judges"
+    },
+    {
+      "body_chars": 1447,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines › Philosophy",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-2.2",
+      "number": "2.2",
+      "order": 7,
+      "parent_id": "pen-2",
+      "title": "Base Infraction"
+    },
+    {
+      "body_chars": 1313,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines › Philosophy",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-2.3",
+      "number": "2.3",
+      "order": 8,
+      "parent_id": "pen-2",
+      "title": "Game State"
+    },
+    {
+      "body_chars": 1553,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines › Philosophy",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-2.4",
+      "number": "2.4",
+      "order": 9,
+      "parent_id": "pen-2",
+      "title": "Applying the Most Appropriate Penalty"
+    },
+    {
+      "body_chars": 441,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-3",
+      "number": "3",
+      "order": 10,
+      "parent_id": null,
+      "title": "Penalties"
+    },
+    {
+      "body_chars": 189,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines › Penalties",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-3.1",
+      "number": "3.1",
+      "order": 11,
+      "parent_id": "pen-3",
+      "title": "Caution"
+    },
+    {
+      "body_chars": 513,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines › Penalties",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-3.2",
+      "number": "3.2",
+      "order": 12,
+      "parent_id": "pen-3",
+      "title": "Warning"
+    },
+    {
+      "body_chars": 718,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines › Penalties",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-3.3",
+      "number": "3.3",
+      "order": 13,
+      "parent_id": "pen-3",
+      "title": "Double Prize Card Penalty (Pokémon TCG Only)"
+    },
+    {
+      "body_chars": 480,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines › Penalties",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-3.4",
+      "number": "3.4",
+      "order": 14,
+      "parent_id": "pen-3",
+      "title": "Quadruple Prize Card Penalty (Pokémon TCG Only)"
+    },
+    {
+      "body_chars": 490,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines › Penalties",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-3.5",
+      "number": "3.5",
+      "order": 15,
+      "parent_id": "pen-3",
+      "title": "Game Loss"
+    },
+    {
+      "body_chars": 242,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines › Penalties",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-3.6",
+      "number": "3.6",
+      "order": 16,
+      "parent_id": "pen-3",
+      "title": "Match Loss"
+    },
+    {
+      "body_chars": 526,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines › Penalties",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-3.7",
+      "number": "3.7",
+      "order": 17,
+      "parent_id": "pen-3",
+      "title": "Disqualification"
+    },
+    {
+      "body_chars": 325,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-4",
+      "number": "4",
+      "order": 18,
+      "parent_id": null,
+      "title": "Application"
+    },
+    {
+      "body_chars": 1656,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines › Application",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-4.1",
+      "number": "4.1",
+      "order": 19,
+      "parent_id": "pen-4",
+      "title": "Standard Applications"
+    },
+    {
+      "body_chars": 528,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines › Application › Standard Applications",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-4.1.1",
+      "number": "4.1.1",
+      "order": 20,
+      "parent_id": "pen-4.1",
+      "title": "Timing of Penalty Application"
+    },
+    {
+      "body_chars": 472,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines › Application › Standard Applications › Timing of Penalty Application",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-4.1.1.1",
+      "number": "4.1.1.1",
+      "order": 21,
+      "parent_id": "pen-4.1.1",
+      "title": "Cautions and Warnings"
+    },
+    {
+      "body_chars": 541,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines › Application › Standard Applications › Timing of Penalty Application",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-4.1.1.2",
+      "number": "4.1.1.2",
+      "order": 22,
+      "parent_id": "pen-4.1.1",
+      "title": "Prize Card Penalties (Pokémon TCG Only)"
+    },
+    {
+      "body_chars": 831,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines › Application › Standard Applications › Timing of Penalty Application",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-4.1.1.3",
+      "number": "4.1.1.3",
+      "order": 23,
+      "parent_id": "pen-4.1.1",
+      "title": "Game Loss"
+    },
+    {
+      "body_chars": 536,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines › Application › Standard Applications › Timing of Penalty Application",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-4.1.1.4",
+      "number": "4.1.1.4",
+      "order": 24,
+      "parent_id": "pen-4.1.1",
+      "title": "Match Loss"
+    },
+    {
+      "body_chars": 560,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines › Application › Standard Applications › Timing of Penalty Application",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-4.1.1.5",
+      "number": "4.1.1.5",
+      "order": 25,
+      "parent_id": "pen-4.1.1",
+      "title": "Coincidental Penalties (Pokémon GO)"
+    },
+    {
+      "body_chars": 2017,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines › Application › Standard Applications › Timing of Penalty Application",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-4.1.1.6",
+      "number": "4.1.1.6",
+      "order": 26,
+      "parent_id": "pen-4.1.1",
+      "title": "Disqualification"
+    },
+    {
+      "body_chars": 1882,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines › Application",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-4.2",
+      "number": "4.2",
+      "order": 27,
+      "parent_id": "pen-4",
+      "title": "Deviations from Recommended Starting Penalties"
+    },
+    {
+      "body_chars": 3178,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines › Application › Deviations from Recommended Starting Penalties",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-4.2.1",
+      "number": "4.2.1",
+      "order": 28,
+      "parent_id": "pen-4.2",
+      "title": "Reversibility"
+    },
+    {
+      "body_chars": 384,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines › Application › Deviations from Recommended Starting Penalties",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-4.2.2",
+      "number": "4.2.2",
+      "order": 29,
+      "parent_id": "pen-4.2",
+      "title": "Repeated Infractions"
+    },
+    {
+      "body_chars": 1171,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines › Application › Deviations from Recommended Starting Penalties",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-4.2.3",
+      "number": "4.2.3",
+      "order": 30,
+      "parent_id": "pen-4.2",
+      "title": "Age and Experience"
+    },
+    {
+      "body_chars": 523,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines › Application",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-4.3",
+      "number": "4.3",
+      "order": 31,
+      "parent_id": "pen-4",
+      "title": "Delivering Penalties"
+    },
+    {
+      "body_chars": 1120,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines › Application › Delivering Penalties",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-4.3.1",
+      "number": "4.3.1",
+      "order": 32,
+      "parent_id": "pen-4.3",
+      "title": "Discussing Penalties"
+    },
+    {
+      "body_chars": 527,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines › Application",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-4.4",
+      "number": "4.4",
+      "order": 33,
+      "parent_id": "pen-4",
+      "title": "Time Extensions"
+    },
+    {
+      "body_chars": 990,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-5",
+      "number": "5",
+      "order": 34,
+      "parent_id": null,
+      "title": "Base Infractions, Recommended Starting Penalties, and"
+    },
+    {
+      "body_chars": 208,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines › Base Infractions, Recommended Starting Penalties, and",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-5.1",
+      "number": "5.1",
+      "order": 35,
+      "parent_id": "pen-5",
+      "title": "Procedural Error"
+    },
+    {
+      "body_chars": 2102,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines › Base Infractions, Recommended Starting Penalties, and › Procedural Error",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-5.1.1",
+      "number": "5.1.1",
+      "order": 36,
+      "parent_id": "pen-5.1",
+      "title": "Recommended Starting Penalties and Examples"
+    },
+    {
+      "body_chars": 399,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines › Base Infractions, Recommended Starting Penalties, and › Procedural Error",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-5.1.2",
+      "number": "5.1.2",
+      "order": 37,
+      "parent_id": "pen-5.1",
+      "title": "Deviations from Recommended Starting Penalties and Examples"
+    },
+    {
+      "body_chars": 898,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines › Base Infractions, Recommended Starting Penalties, and",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-5.2",
+      "number": "5.2",
+      "order": 38,
+      "parent_id": "pen-5",
+      "title": "Tardiness"
+    },
+    {
+      "body_chars": 1669,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines › Base Infractions, Recommended Starting Penalties, and › Tardiness",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-5.2.1",
+      "number": "5.2.1",
+      "order": 39,
+      "parent_id": "pen-5.2",
+      "title": "Recommended Starting Penalties and Examples"
+    },
+    {
+      "body_chars": 192,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines › Base Infractions, Recommended Starting Penalties, and › Tardiness",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-5.2.2",
+      "number": "5.2.2",
+      "order": 40,
+      "parent_id": "pen-5.2",
+      "title": "Deviations from Recommended Starting Penalties and Examples"
+    },
+    {
+      "body_chars": 357,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines › Base Infractions, Recommended Starting Penalties, and",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-5.3",
+      "number": "5.3",
+      "order": 41,
+      "parent_id": "pen-5",
+      "title": "Unsporting Conduct"
+    },
+    {
+      "body_chars": 2117,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines › Base Infractions, Recommended Starting Penalties, and › Unsporting Conduct",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-5.3.1",
+      "number": "5.3.1",
+      "order": 42,
+      "parent_id": "pen-5.3",
+      "title": "Recommended Starting Penalties and Examples"
+    },
+    {
+      "body_chars": 296,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines › Base Infractions, Recommended Starting Penalties, and › Unsporting Conduct",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-5.3.2",
+      "number": "5.3.2",
+      "order": 43,
+      "parent_id": "pen-5.3",
+      "title": "Deviations from Recommended Starting Penalties and Examples"
+    },
+    {
+      "body_chars": 2058,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines › Base Infractions, Recommended Starting Penalties, and",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-5.4",
+      "number": "5.4",
+      "order": 44,
+      "parent_id": "pen-5",
+      "title": "Cheating"
+    },
+    {
+      "body_chars": 412,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines › Base Infractions, Recommended Starting Penalties, and",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-5.5",
+      "number": "5.5",
+      "order": 45,
+      "parent_id": "pen-5",
+      "title": "Gameplay Error"
+    },
+    {
+      "body_chars": 2527,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines › Base Infractions, Recommended Starting Penalties, and › Gameplay Error",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-5.5.1",
+      "number": "5.5.1",
+      "order": 46,
+      "parent_id": "pen-5.5",
+      "title": "Pokémon TCG Recommended Starting Penalties and Examples"
+    },
+    {
+      "body_chars": 1281,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines › Base Infractions, Recommended Starting Penalties, and › Gameplay Error › Pokémon TCG Recommended Starting Penalties and Examples",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-5.5.1.1",
+      "number": "5.5.1.1",
+      "order": 47,
+      "parent_id": "pen-5.5.1",
+      "title": "Deviations from Recommended Starting Penalties and Examples"
+    },
+    {
+      "body_chars": 1027,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines › Base Infractions, Recommended Starting Penalties, and › Gameplay Error",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-5.5.2",
+      "number": "5.5.2",
+      "order": 48,
+      "parent_id": "pen-5.5",
+      "title": "VG"
+    },
+    {
+      "body_chars": 380,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines › Base Infractions, Recommended Starting Penalties, and › Gameplay Error › VG",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-5.5.2.1",
+      "number": "5.5.2.1",
+      "order": 49,
+      "parent_id": "pen-5.5.2",
+      "title": "Deviations from Recommended Starting Penalties and Examples"
+    },
+    {
+      "body_chars": 750,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines › Base Infractions, Recommended Starting Penalties, and › Gameplay Error",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-5.5.3",
+      "number": "5.5.3",
+      "order": 50,
+      "parent_id": "pen-5.5",
+      "title": "Pokémon GO"
+    },
+    {
+      "body_chars": 602,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines › Base Infractions, Recommended Starting Penalties, and › Gameplay Error › Pokémon GO",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-5.5.3.1",
+      "number": "5.5.3.1",
+      "order": 51,
+      "parent_id": "pen-5.5.3",
+      "title": "Deviations from Recommended Starting Penalties and Examples"
+    },
+    {
+      "body_chars": 650,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines › Base Infractions, Recommended Starting Penalties, and › Gameplay Error",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-5.5.4",
+      "number": "5.5.4",
+      "order": 52,
+      "parent_id": "pen-5.5",
+      "title": "Pokémon UNITE"
+    },
+    {
+      "body_chars": 366,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines › Base Infractions, Recommended Starting Penalties, and › Gameplay Error › Pokémon UNITE",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-5.5.4.1",
+      "number": "5.5.4.1",
+      "order": 53,
+      "parent_id": "pen-5.5.4",
+      "title": "Deviations from Recommended Starting Penalties and Examples"
+    },
+    {
+      "body_chars": 509,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines › Base Infractions, Recommended Starting Penalties, and",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-5.6",
+      "number": "5.6",
+      "order": 54,
+      "parent_id": "pen-5",
+      "title": "Legality Checks"
+    },
+    {
+      "body_chars": 5088,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines › Base Infractions, Recommended Starting Penalties, and › Legality Checks",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-5.6.1",
+      "number": "5.6.1",
+      "order": 55,
+      "parent_id": "pen-5.6",
+      "title": "Pokémon TCG Deck Legality"
+    },
+    {
+      "body_chars": 592,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines › Base Infractions, Recommended Starting Penalties, and › Legality Checks › Pokémon TCG Deck Legality",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-5.6.1.1",
+      "number": "5.6.1.1",
+      "order": 56,
+      "parent_id": "pen-5.6.1",
+      "title": "Deviations from Recommended Starting Penalties and Examples"
+    },
+    {
+      "body_chars": 5248,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines › Base Infractions, Recommended Starting Penalties, and › Legality Checks",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-5.6.2",
+      "number": "5.6.2",
+      "order": 57,
+      "parent_id": "pen-5.6",
+      "title": "VG Team Check"
+    },
+    {
+      "body_chars": 599,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines › Base Infractions, Recommended Starting Penalties, and › Legality Checks › VG Team Check",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-5.6.2.1",
+      "number": "5.6.2.1",
+      "order": 58,
+      "parent_id": "pen-5.6.2",
+      "title": "Deviations from Recommended Starting Penalties and Examples"
+    },
+    {
+      "body_chars": 3194,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines › Base Infractions, Recommended Starting Penalties, and › Legality Checks",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-5.6.3",
+      "number": "5.6.3",
+      "order": 59,
+      "parent_id": "pen-5.6",
+      "title": "Pokémon GO Team Check"
+    },
+    {
+      "body_chars": 380,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines › Base Infractions, Recommended Starting Penalties, and › Legality Checks › Pokémon GO Team Check",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-5.6.3.1",
+      "number": "5.6.3.1",
+      "order": 60,
+      "parent_id": "pen-5.6.3",
+      "title": "Deviations from Recommended Starting Penalties and Examples"
+    },
+    {
+      "body_chars": 2039,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines › Base Infractions, Recommended Starting Penalties, and",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-5.7",
+      "number": "5.7",
+      "order": 61,
+      "parent_id": "pen-5",
+      "title": "Pace of Play"
+    },
+    {
+      "body_chars": 192,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines › Base Infractions, Recommended Starting Penalties, and › Pace of Play",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-5.7.1",
+      "number": "5.7.1",
+      "order": 62,
+      "parent_id": "pen-5.7",
+      "title": "Deviations from Recommended Starting Penalties and Examples"
+    },
+    {
+      "body_chars": 359,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-6",
+      "number": "6",
+      "order": 63,
+      "parent_id": null,
+      "title": "Reporting"
+    },
+    {
+      "body_chars": 773,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines › Reporting",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-6.1",
+      "number": "6.1",
+      "order": 64,
+      "parent_id": "pen-6",
+      "title": "Tournament Penalty Summaries"
+    },
+    {
+      "body_chars": 841,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines › Reporting",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-6.2",
+      "number": "6.2",
+      "order": 65,
+      "parent_id": "pen-6",
+      "title": "Disqualification Reports"
+    },
+    {
+      "body_chars": 3358,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-7",
+      "number": "7",
+      "order": 66,
+      "parent_id": null,
+      "title": "Post-Event Disciplinary Action"
+    },
+    {
+      "body_chars": 464,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-8",
+      "number": "8",
+      "order": 67,
+      "parent_id": null,
+      "title": "Summary of Changes"
+    }
+  ]
+}

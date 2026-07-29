@@ -1,0 +1,684 @@
+{
+  "document": {
+    "file": "tcg-rules.pdf",
+    "heading_rules": [
+      "^((Appendix \\d+:(?!.*\\.{2,}).*|Become\\ a\\ Pokémon\\ Master!|Pokémon\\ TCG\\ Basic\\ Concepts|Playing\\ the\\ Game|Play!\\ Pokémon\\ Stores\\ and\\ League\\ Battle\\ Decks|Advanced\\ Rules|Deck\\ Building|Glossary|Credits))$",
+      "^((How\\ to\\ Win|Energy\\ Types|Parts\\ of\\ a\\ Pokémon\\ Card|3\\ Card\\ Types|Zones\\ of\\ the\\ Pokémon\\ TCG|How\\ to\\ Win\\ the\\ Game|Setting\\ Up\\ to\\ Play|Parts\\ of\\ a\\ Turn|Turn\\ Actions|Special\\ Conditions|Full\\ details\\ of\\ taking\\ a\\ mulligan|What\\ counts\\ as\\ an\\ attack\\?|Full\\ details\\ of\\ attacking|What’s\\ the\\ difference\\ between\\ “up\\ to”\\ and\\ “any\\ amount”\\?|What\\ if\\ you\\ should\\ draw\\ more\\ cards\\ than\\ you\\ have\\?|What\\ if\\ both\\ players\\ win\\ at\\ the\\ same\\ time\\?|What’s\\ a\\ tiebreaker\\ game\\?|What\\ does\\ and\\ doesn’t\\ count\\ for\\ a\\ Pokémon’s\\ name\\?|Special\\ rules\\ for\\ Pokémon\\-GX|Special\\ rules\\ for\\ Pokémon\\ BREAK|Special\\ rules\\ for\\ Pokémon\\-EX|Special\\ rules\\ for\\ Mega\\ Evolution\\ Pokémon\\-EX|Key\\ Restored\\ Pokémon\\ Notes))$",
+      "^((Asleep|Burned|Confused|Paralyzed|Poisoned|Removing\\ Special\\ Conditions|Other\\ Effects))$"
+    ],
+    "id": "tcg-rules",
+    "layout": true,
+    "prefix": "tcg",
+    "published": "2026-07-16",
+    "sha256": "60ba9297524f40303a97dc19d3f2219a384a6298486f3d252e70ca2940c9b02a",
+    "strip_lines": [
+      "^THE POKÉMON TRADING CARD GAME:\\s+WEB RULEBOOK\\s+\\|\\s+2026\\s+\\d+$",
+      "^Appendix 18: Rare Fossil, Unidentified Fossil, and$"
+    ],
+    "title": "Pokémon Trading Card Game Rules",
+    "url": "https://www.pokemon.com/static-assets/content-assets/cms2/pdf/trading-card-game/rulebook/pbl_rulebook_en.pdf",
+    "version": "Web Rulebook, Last Updated: July 2026"
+  },
+  "sections": [
+    {
+      "body_chars": 761,
+      "breadcrumb": "Pokémon Trading Card Game Rules",
+      "doc_id": "tcg-rules",
+      "id": "tcg-Become a Pokémon Master!",
+      "number": "Become a Pokémon Master!",
+      "order": 0,
+      "parent_id": null,
+      "title": "Become a Pokémon Master!"
+    },
+    {
+      "body_chars": 0,
+      "breadcrumb": "Pokémon Trading Card Game Rules",
+      "doc_id": "tcg-rules",
+      "id": "tcg-Pokémon TCG Basic Concepts",
+      "number": "Pokémon TCG Basic Concepts",
+      "order": 1,
+      "parent_id": null,
+      "title": "Pokémon TCG Basic Concepts"
+    },
+    {
+      "body_chars": 247,
+      "breadcrumb": "Pokémon Trading Card Game Rules › Pokémon TCG Basic Concepts",
+      "doc_id": "tcg-rules",
+      "id": "tcg-How to Win",
+      "number": "How to Win",
+      "order": 2,
+      "parent_id": "tcg-Pokémon TCG Basic Concepts",
+      "title": "How to Win"
+    },
+    {
+      "body_chars": 1766,
+      "breadcrumb": "Pokémon Trading Card Game Rules › Pokémon TCG Basic Concepts",
+      "doc_id": "tcg-rules",
+      "id": "tcg-Energy Types",
+      "number": "Energy Types",
+      "order": 3,
+      "parent_id": "tcg-Pokémon TCG Basic Concepts",
+      "title": "Energy Types"
+    },
+    {
+      "body_chars": 144,
+      "breadcrumb": "Pokémon Trading Card Game Rules › Pokémon TCG Basic Concepts",
+      "doc_id": "tcg-rules",
+      "id": "tcg-Parts of a Pokémon Card",
+      "number": "Parts of a Pokémon Card",
+      "order": 4,
+      "parent_id": "tcg-Pokémon TCG Basic Concepts",
+      "title": "Parts of a Pokémon Card"
+    },
+    {
+      "body_chars": 815,
+      "breadcrumb": "Pokémon Trading Card Game Rules › Pokémon TCG Basic Concepts",
+      "doc_id": "tcg-rules",
+      "id": "tcg-3 Card Types",
+      "number": "3 Card Types",
+      "order": 5,
+      "parent_id": "tcg-Pokémon TCG Basic Concepts",
+      "title": "3 Card Types"
+    },
+    {
+      "body_chars": 1748,
+      "breadcrumb": "Pokémon Trading Card Game Rules › Pokémon TCG Basic Concepts",
+      "doc_id": "tcg-rules",
+      "id": "tcg-Zones of the Pokémon TCG",
+      "number": "Zones of the Pokémon TCG",
+      "order": 6,
+      "parent_id": "tcg-Pokémon TCG Basic Concepts",
+      "title": "Zones of the Pokémon TCG"
+    },
+    {
+      "body_chars": 78,
+      "breadcrumb": "Pokémon Trading Card Game Rules",
+      "doc_id": "tcg-rules",
+      "id": "tcg-Playing the Game",
+      "number": "Playing the Game",
+      "order": 7,
+      "parent_id": null,
+      "title": "Playing the Game"
+    },
+    {
+      "body_chars": 196,
+      "breadcrumb": "Pokémon Trading Card Game Rules › Playing the Game",
+      "doc_id": "tcg-rules",
+      "id": "tcg-How to Win the Game",
+      "number": "How to Win the Game",
+      "order": 8,
+      "parent_id": "tcg-Playing the Game",
+      "title": "How to Win the Game"
+    },
+    {
+      "body_chars": 984,
+      "breadcrumb": "Pokémon Trading Card Game Rules › Playing the Game",
+      "doc_id": "tcg-rules",
+      "id": "tcg-Setting Up to Play",
+      "number": "Setting Up to Play",
+      "order": 9,
+      "parent_id": "tcg-Playing the Game",
+      "title": "Setting Up to Play"
+    },
+    {
+      "body_chars": 547,
+      "breadcrumb": "Pokémon Trading Card Game Rules › Playing the Game",
+      "doc_id": "tcg-rules",
+      "id": "tcg-Parts of a Turn",
+      "number": "Parts of a Turn",
+      "order": 10,
+      "parent_id": "tcg-Playing the Game",
+      "title": "Parts of a Turn"
+    },
+    {
+      "body_chars": 8913,
+      "breadcrumb": "Pokémon Trading Card Game Rules › Playing the Game",
+      "doc_id": "tcg-rules",
+      "id": "tcg-Turn Actions",
+      "number": "Turn Actions",
+      "order": 11,
+      "parent_id": "tcg-Playing the Game",
+      "title": "Turn Actions"
+    },
+    {
+      "body_chars": 280,
+      "breadcrumb": "Pokémon Trading Card Game Rules › Playing the Game",
+      "doc_id": "tcg-rules",
+      "id": "tcg-Special Conditions",
+      "number": "Special Conditions",
+      "order": 12,
+      "parent_id": "tcg-Playing the Game",
+      "title": "Special Conditions"
+    },
+    {
+      "body_chars": 261,
+      "breadcrumb": "Pokémon Trading Card Game Rules › Playing the Game › Special Conditions",
+      "doc_id": "tcg-rules",
+      "id": "tcg-Asleep",
+      "number": "Asleep",
+      "order": 13,
+      "parent_id": "tcg-Special Conditions",
+      "title": "Asleep"
+    },
+    {
+      "body_chars": 404,
+      "breadcrumb": "Pokémon Trading Card Game Rules › Playing the Game › Special Conditions",
+      "doc_id": "tcg-rules",
+      "id": "tcg-Burned",
+      "number": "Burned",
+      "order": 14,
+      "parent_id": "tcg-Special Conditions",
+      "title": "Burned"
+    },
+    {
+      "body_chars": 304,
+      "breadcrumb": "Pokémon Trading Card Game Rules › Playing the Game › Special Conditions",
+      "doc_id": "tcg-rules",
+      "id": "tcg-Confused",
+      "number": "Confused",
+      "order": 15,
+      "parent_id": "tcg-Special Conditions",
+      "title": "Confused"
+    },
+    {
+      "body_chars": 215,
+      "breadcrumb": "Pokémon Trading Card Game Rules › Playing the Game › Special Conditions",
+      "doc_id": "tcg-rules",
+      "id": "tcg-Paralyzed",
+      "number": "Paralyzed",
+      "order": 16,
+      "parent_id": "tcg-Special Conditions",
+      "title": "Paralyzed"
+    },
+    {
+      "body_chars": 342,
+      "breadcrumb": "Pokémon Trading Card Game Rules › Playing the Game › Special Conditions",
+      "doc_id": "tcg-rules",
+      "id": "tcg-Poisoned",
+      "number": "Poisoned",
+      "order": 17,
+      "parent_id": "tcg-Special Conditions",
+      "title": "Poisoned"
+    },
+    {
+      "body_chars": 498,
+      "breadcrumb": "Pokémon Trading Card Game Rules › Playing the Game › Special Conditions",
+      "doc_id": "tcg-rules",
+      "id": "tcg-Removing Special Conditions",
+      "number": "Removing Special Conditions",
+      "order": 18,
+      "parent_id": "tcg-Special Conditions",
+      "title": "Removing Special Conditions"
+    },
+    {
+      "body_chars": 262,
+      "breadcrumb": "Pokémon Trading Card Game Rules › Playing the Game › Special Conditions",
+      "doc_id": "tcg-rules",
+      "id": "tcg-Other Effects",
+      "number": "Other Effects",
+      "order": 19,
+      "parent_id": "tcg-Special Conditions",
+      "title": "Other Effects"
+    },
+    {
+      "body_chars": 402,
+      "breadcrumb": "Pokémon Trading Card Game Rules",
+      "doc_id": "tcg-rules",
+      "id": "tcg-Play! Pokémon Stores and League Battle Decks",
+      "number": "Play! Pokémon Stores and League Battle Decks",
+      "order": 20,
+      "parent_id": null,
+      "title": "Play! Pokémon Stores and League Battle Decks"
+    },
+    {
+      "body_chars": 0,
+      "breadcrumb": "Pokémon Trading Card Game Rules",
+      "doc_id": "tcg-rules",
+      "id": "tcg-Advanced Rules",
+      "number": "Advanced Rules",
+      "order": 21,
+      "parent_id": null,
+      "title": "Advanced Rules"
+    },
+    {
+      "body_chars": 1017,
+      "breadcrumb": "Pokémon Trading Card Game Rules › Advanced Rules",
+      "doc_id": "tcg-rules",
+      "id": "tcg-Full details of taking a mulligan",
+      "number": "Full details of taking a mulligan",
+      "order": 22,
+      "parent_id": "tcg-Advanced Rules",
+      "title": "Full details of taking a mulligan"
+    },
+    {
+      "body_chars": 511,
+      "breadcrumb": "Pokémon Trading Card Game Rules › Advanced Rules",
+      "doc_id": "tcg-rules",
+      "id": "tcg-What counts as an attack?",
+      "number": "What counts as an attack?",
+      "order": 23,
+      "parent_id": "tcg-Advanced Rules",
+      "title": "What counts as an attack?"
+    },
+    {
+      "body_chars": 2990,
+      "breadcrumb": "Pokémon Trading Card Game Rules › Advanced Rules",
+      "doc_id": "tcg-rules",
+      "id": "tcg-Full details of attacking",
+      "number": "Full details of attacking",
+      "order": 24,
+      "parent_id": "tcg-Advanced Rules",
+      "title": "Full details of attacking"
+    },
+    {
+      "body_chars": 544,
+      "breadcrumb": "Pokémon Trading Card Game Rules › Advanced Rules",
+      "doc_id": "tcg-rules",
+      "id": "tcg-What’s the difference between “up to” and “any amount”?",
+      "number": "What’s the difference between “up to” and “any amount”?",
+      "order": 25,
+      "parent_id": "tcg-Advanced Rules",
+      "title": "What’s the difference between “up to” and “any amount”?"
+    },
+    {
+      "body_chars": 430,
+      "breadcrumb": "Pokémon Trading Card Game Rules › Advanced Rules",
+      "doc_id": "tcg-rules",
+      "id": "tcg-What if you should draw more cards than you have?",
+      "number": "What if you should draw more cards than you have?",
+      "order": 26,
+      "parent_id": "tcg-Advanced Rules",
+      "title": "What if you should draw more cards than you have?"
+    },
+    {
+      "body_chars": 369,
+      "breadcrumb": "Pokémon Trading Card Game Rules › Advanced Rules",
+      "doc_id": "tcg-rules",
+      "id": "tcg-What if both players win at the same time?",
+      "number": "What if both players win at the same time?",
+      "order": 27,
+      "parent_id": "tcg-Advanced Rules",
+      "title": "What if both players win at the same time?"
+    },
+    {
+      "body_chars": 358,
+      "breadcrumb": "Pokémon Trading Card Game Rules › Advanced Rules",
+      "doc_id": "tcg-rules",
+      "id": "tcg-What’s a tiebreaker game?",
+      "number": "What’s a tiebreaker game?",
+      "order": 28,
+      "parent_id": "tcg-Advanced Rules",
+      "title": "What’s a tiebreaker game?"
+    },
+    {
+      "body_chars": 1192,
+      "breadcrumb": "Pokémon Trading Card Game Rules › Advanced Rules",
+      "doc_id": "tcg-rules",
+      "id": "tcg-What does and doesn’t count for a Pokémon’s name?",
+      "number": "What does and doesn’t count for a Pokémon’s name?",
+      "order": 29,
+      "parent_id": "tcg-Advanced Rules",
+      "title": "What does and doesn’t count for a Pokémon’s name?"
+    },
+    {
+      "body_chars": 1677,
+      "breadcrumb": "Pokémon Trading Card Game Rules",
+      "doc_id": "tcg-rules",
+      "id": "tcg-Deck Building",
+      "number": "Deck Building",
+      "order": 30,
+      "parent_id": null,
+      "title": "Deck Building"
+    },
+    {
+      "body_chars": 1145,
+      "breadcrumb": "Pokémon Trading Card Game Rules",
+      "doc_id": "tcg-rules",
+      "id": "tcg-Appendix 1: Mega Evolution Pokémon ex",
+      "number": "Appendix 1: Mega Evolution Pokémon ex",
+      "order": 31,
+      "parent_id": null,
+      "title": "Appendix 1: Mega Evolution Pokémon ex"
+    },
+    {
+      "body_chars": 368,
+      "breadcrumb": "Pokémon Trading Card Game Rules",
+      "doc_id": "tcg-rules",
+      "id": "tcg-Appendix 2: Trainer’s Pokémon",
+      "number": "Appendix 2: Trainer’s Pokémon",
+      "order": 32,
+      "parent_id": null,
+      "title": "Appendix 2: Trainer’s Pokémon"
+    },
+    {
+      "body_chars": 302,
+      "breadcrumb": "Pokémon Trading Card Game Rules",
+      "doc_id": "tcg-rules",
+      "id": "tcg-Appendix 3: ACE SPEC Cards",
+      "number": "Appendix 3: ACE SPEC Cards",
+      "order": 33,
+      "parent_id": null,
+      "title": "Appendix 3: ACE SPEC Cards"
+    },
+    {
+      "body_chars": 311,
+      "breadcrumb": "Pokémon Trading Card Game Rules",
+      "doc_id": "tcg-rules",
+      "id": "tcg-Appendix 4: Ancient and Future",
+      "number": "Appendix 4: Ancient and Future",
+      "order": 34,
+      "parent_id": null,
+      "title": "Appendix 4: Ancient and Future"
+    },
+    {
+      "body_chars": 539,
+      "breadcrumb": "Pokémon Trading Card Game Rules",
+      "doc_id": "tcg-rules",
+      "id": "tcg-Appendix 5: Pokémon ex",
+      "number": "Appendix 5: Pokémon ex",
+      "order": 35,
+      "parent_id": null,
+      "title": "Appendix 5: Pokémon ex"
+    },
+    {
+      "body_chars": 301,
+      "breadcrumb": "Pokémon Trading Card Game Rules",
+      "doc_id": "tcg-rules",
+      "id": "tcg-Appendix 6: Tera Pokémon ex",
+      "number": "Appendix 6: Tera Pokémon ex",
+      "order": 36,
+      "parent_id": null,
+      "title": "Appendix 6: Tera Pokémon ex"
+    },
+    {
+      "body_chars": 301,
+      "breadcrumb": "Pokémon Trading Card Game Rules",
+      "doc_id": "tcg-rules",
+      "id": "tcg-Appendix 7: Lost Zone",
+      "number": "Appendix 7: Lost Zone",
+      "order": 37,
+      "parent_id": null,
+      "title": "Appendix 7: Lost Zone"
+    },
+    {
+      "body_chars": 425,
+      "breadcrumb": "Pokémon Trading Card Game Rules",
+      "doc_id": "tcg-rules",
+      "id": "tcg-Appendix 8: Radiant Pokémon",
+      "number": "Appendix 8: Radiant Pokémon",
+      "order": 38,
+      "parent_id": null,
+      "title": "Appendix 8: Radiant Pokémon"
+    },
+    {
+      "body_chars": 1015,
+      "breadcrumb": "Pokémon Trading Card Game Rules",
+      "doc_id": "tcg-rules",
+      "id": "tcg-Appendix 9: Pokémon VSTAR",
+      "number": "Appendix 9: Pokémon VSTAR",
+      "order": 39,
+      "parent_id": null,
+      "title": "Appendix 9: Pokémon VSTAR"
+    },
+    {
+      "body_chars": 3005,
+      "breadcrumb": "Pokémon Trading Card Game Rules",
+      "doc_id": "tcg-rules",
+      "id": "tcg-Appendix 10: Pokémon V-UNION",
+      "number": "Appendix 10: Pokémon V-UNION",
+      "order": 40,
+      "parent_id": null,
+      "title": "Appendix 10: Pokémon V-UNION"
+    },
+    {
+      "body_chars": 786,
+      "breadcrumb": "Pokémon Trading Card Game Rules",
+      "doc_id": "tcg-rules",
+      "id": "tcg-Appendix 11: Battle Styles",
+      "number": "Appendix 11: Battle Styles",
+      "order": 41,
+      "parent_id": null,
+      "title": "Appendix 11: Battle Styles"
+    },
+    {
+      "body_chars": 226,
+      "breadcrumb": "Pokémon Trading Card Game Rules",
+      "doc_id": "tcg-rules",
+      "id": "tcg-Appendix 12: Pokémon V",
+      "number": "Appendix 12: Pokémon V",
+      "order": 42,
+      "parent_id": null,
+      "title": "Appendix 12: Pokémon V"
+    },
+    {
+      "body_chars": 773,
+      "breadcrumb": "Pokémon Trading Card Game Rules",
+      "doc_id": "tcg-rules",
+      "id": "tcg-Appendix 13: Pokémon VMAX",
+      "number": "Appendix 13: Pokémon VMAX",
+      "order": 43,
+      "parent_id": null,
+      "title": "Appendix 13: Pokémon VMAX"
+    },
+    {
+      "body_chars": 522,
+      "breadcrumb": "Pokémon Trading Card Game Rules",
+      "doc_id": "tcg-rules",
+      "id": "tcg-Appendix 14: Regional Variants",
+      "number": "Appendix 14: Regional Variants",
+      "order": 44,
+      "parent_id": null,
+      "title": "Appendix 14: Regional Variants"
+    },
+    {
+      "body_chars": 399,
+      "breadcrumb": "Pokémon Trading Card Game Rules",
+      "doc_id": "tcg-rules",
+      "id": "tcg-Appendix 15: TAG TEAM Supporter Cards",
+      "number": "Appendix 15: TAG TEAM Supporter Cards",
+      "order": 45,
+      "parent_id": null,
+      "title": "Appendix 15: TAG TEAM Supporter Cards"
+    },
+    {
+      "body_chars": 419,
+      "breadcrumb": "Pokémon Trading Card Game Rules",
+      "doc_id": "tcg-rules",
+      "id": "tcg-Appendix 16: TAG TEAM",
+      "number": "Appendix 16: TAG TEAM",
+      "order": 46,
+      "parent_id": null,
+      "title": "Appendix 16: TAG TEAM"
+    },
+    {
+      "body_chars": 522,
+      "breadcrumb": "Pokémon Trading Card Game Rules",
+      "doc_id": "tcg-rules",
+      "id": "tcg-Appendix 17: Prism Star Cards",
+      "number": "Appendix 17: Prism Star Cards",
+      "order": 47,
+      "parent_id": null,
+      "title": "Appendix 17: Prism Star Cards"
+    },
+    {
+      "body_chars": 417,
+      "breadcrumb": "Pokémon Trading Card Game Rules",
+      "doc_id": "tcg-rules",
+      "id": "tcg-Appendix 18: Rare Fossil, Unidentified Fossil,",
+      "number": "Appendix 18: Rare Fossil, Unidentified Fossil,",
+      "order": 48,
+      "parent_id": null,
+      "title": "Appendix 18: Rare Fossil, Unidentified Fossil, and Antique Fossil Cards"
+    },
+    {
+      "body_chars": 455,
+      "breadcrumb": "Pokémon Trading Card Game Rules",
+      "doc_id": "tcg-rules",
+      "id": "tcg-Appendix 19: Pokémon-GX",
+      "number": "Appendix 19: Pokémon-GX",
+      "order": 49,
+      "parent_id": null,
+      "title": "Appendix 19: Pokémon-GX"
+    },
+    {
+      "body_chars": 600,
+      "breadcrumb": "Pokémon Trading Card Game Rules › Appendix 19: Pokémon-GX",
+      "doc_id": "tcg-rules",
+      "id": "tcg-Special rules for Pokémon-GX",
+      "number": "Special rules for Pokémon-GX",
+      "order": 50,
+      "parent_id": "tcg-Appendix 19: Pokémon-GX",
+      "title": "Special rules for Pokémon-GX"
+    },
+    {
+      "body_chars": 438,
+      "breadcrumb": "Pokémon Trading Card Game Rules",
+      "doc_id": "tcg-rules",
+      "id": "tcg-Appendix 20: Ultra Beasts",
+      "number": "Appendix 20: Ultra Beasts",
+      "order": 51,
+      "parent_id": null,
+      "title": "Appendix 20: Ultra Beasts"
+    },
+    {
+      "body_chars": 481,
+      "breadcrumb": "Pokémon Trading Card Game Rules",
+      "doc_id": "tcg-rules",
+      "id": "tcg-Appendix 21: Dual-Type Pokémon",
+      "number": "Appendix 21: Dual-Type Pokémon",
+      "order": 52,
+      "parent_id": null,
+      "title": "Appendix 21: Dual-Type Pokémon"
+    },
+    {
+      "body_chars": 264,
+      "breadcrumb": "Pokémon Trading Card Game Rules",
+      "doc_id": "tcg-rules",
+      "id": "tcg-Appendix 22: BREAK Evolution",
+      "number": "Appendix 22: BREAK Evolution",
+      "order": 53,
+      "parent_id": null,
+      "title": "Appendix 22: BREAK Evolution"
+    },
+    {
+      "body_chars": 304,
+      "breadcrumb": "Pokémon Trading Card Game Rules › Appendix 22: BREAK Evolution",
+      "doc_id": "tcg-rules",
+      "id": "tcg-Special rules for Pokémon BREAK",
+      "number": "Special rules for Pokémon BREAK",
+      "order": 54,
+      "parent_id": "tcg-Appendix 22: BREAK Evolution",
+      "title": "Special rules for Pokémon BREAK"
+    },
+    {
+      "body_chars": 301,
+      "breadcrumb": "Pokémon Trading Card Game Rules",
+      "doc_id": "tcg-rules",
+      "id": "tcg-Appendix 23: Ancient Traits",
+      "number": "Appendix 23: Ancient Traits",
+      "order": 55,
+      "parent_id": null,
+      "title": "Appendix 23: Ancient Traits"
+    },
+    {
+      "body_chars": 402,
+      "breadcrumb": "Pokémon Trading Card Game Rules",
+      "doc_id": "tcg-rules",
+      "id": "tcg-Appendix 24: Team Flare Hyper Gear",
+      "number": "Appendix 24: Team Flare Hyper Gear",
+      "order": 56,
+      "parent_id": null,
+      "title": "Appendix 24: Team Flare Hyper Gear"
+    },
+    {
+      "body_chars": 168,
+      "breadcrumb": "Pokémon Trading Card Game Rules",
+      "doc_id": "tcg-rules",
+      "id": "tcg-Appendix 25: Pokémon-EX",
+      "number": "Appendix 25: Pokémon-EX",
+      "order": 57,
+      "parent_id": null,
+      "title": "Appendix 25: Pokémon-EX"
+    },
+    {
+      "body_chars": 363,
+      "breadcrumb": "Pokémon Trading Card Game Rules › Appendix 25: Pokémon-EX",
+      "doc_id": "tcg-rules",
+      "id": "tcg-Special rules for Pokémon-EX",
+      "number": "Special rules for Pokémon-EX",
+      "order": 58,
+      "parent_id": "tcg-Appendix 25: Pokémon-EX",
+      "title": "Special rules for Pokémon-EX"
+    },
+    {
+      "body_chars": 227,
+      "breadcrumb": "Pokémon Trading Card Game Rules",
+      "doc_id": "tcg-rules",
+      "id": "tcg-Appendix 26: Mega Evolution Pokémon-EX",
+      "number": "Appendix 26: Mega Evolution Pokémon-EX",
+      "order": 59,
+      "parent_id": null,
+      "title": "Appendix 26: Mega Evolution Pokémon-EX"
+    },
+    {
+      "body_chars": 971,
+      "breadcrumb": "Pokémon Trading Card Game Rules › Appendix 26: Mega Evolution Pokémon-EX",
+      "doc_id": "tcg-rules",
+      "id": "tcg-Special rules for Mega Evolution Pokémon-EX",
+      "number": "Special rules for Mega Evolution Pokémon-EX",
+      "order": 60,
+      "parent_id": "tcg-Appendix 26: Mega Evolution Pokémon-EX",
+      "title": "Special rules for Mega Evolution Pokémon-EX"
+    },
+    {
+      "body_chars": 563,
+      "breadcrumb": "Pokémon Trading Card Game Rules",
+      "doc_id": "tcg-rules",
+      "id": "tcg-Appendix 27: Team Plasma Cards",
+      "number": "Appendix 27: Team Plasma Cards",
+      "order": 61,
+      "parent_id": null,
+      "title": "Appendix 27: Team Plasma Cards"
+    },
+    {
+      "body_chars": 557,
+      "breadcrumb": "Pokémon Trading Card Game Rules",
+      "doc_id": "tcg-rules",
+      "id": "tcg-Appendix 28: Restored Pokémon",
+      "number": "Appendix 28: Restored Pokémon",
+      "order": 62,
+      "parent_id": null,
+      "title": "Appendix 28: Restored Pokémon"
+    },
+    {
+      "body_chars": 1296,
+      "breadcrumb": "Pokémon Trading Card Game Rules › Appendix 28: Restored Pokémon",
+      "doc_id": "tcg-rules",
+      "id": "tcg-Key Restored Pokémon Notes",
+      "number": "Key Restored Pokémon Notes",
+      "order": 63,
+      "parent_id": "tcg-Appendix 28: Restored Pokémon",
+      "title": "Key Restored Pokémon Notes"
+    },
+    {
+      "body_chars": 11823,
+      "breadcrumb": "Pokémon Trading Card Game Rules",
+      "doc_id": "tcg-rules",
+      "id": "tcg-Glossary",
+      "number": "Glossary",
+      "order": 64,
+      "parent_id": null,
+      "title": "Glossary"
+    },
+    {
+      "body_chars": 2669,
+      "breadcrumb": "Pokémon Trading Card Game Rules",
+      "doc_id": "tcg-rules",
+      "id": "tcg-Credits",
+      "number": "Credits",
+      "order": 65,
+      "parent_id": null,
+      "title": "Credits"
+    }
+  ]
+}

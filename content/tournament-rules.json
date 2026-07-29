@@ -1,0 +1,1214 @@
+{
+  "document": {
+    "file": "tournament-rules.pdf",
+    "heading_rules": [
+      "^(Appendix [A-Z]|[1-8]):?\\s+(?!.*\\.{2,})(?=.*[A-Za-z])([^a-z].*)$",
+      "^([1-8]\\.\\d+):?\\s+(?!.*\\.{2,})(?=.*[A-Za-z])([^a-z].*)$",
+      "^([1-8]\\.\\d+\\.\\d+):?\\s+(?!.*\\.{2,})(?=.*[A-Za-z])([^a-z].*)$",
+      "^([1-8]\\.\\d+\\.\\d+\\.\\d+):?\\s+(?!.*\\.{2,})(?=.*[A-Za-z])([^a-z].*)$"
+    ],
+    "id": "tournament-rules",
+    "layout": false,
+    "prefix": "trh",
+    "published": "2026-05-21",
+    "sha256": "b29517f9361e19f70ab8624d8a58a3678b8fcf951129bd702f9a1646e5fced13",
+    "strip_lines": [
+      "^\\d{1,3}$"
+    ],
+    "title": "Play! Pokémon Tournament Rules Handbook",
+    "url": "https://www.pokemon.com/static-assets/content-assets/cms2/pdf/play-pokemon/rules/play-pokemon-tournament-rules-handbook-en.pdf",
+    "version": "English Version, Last Revision: May 21, 2026"
+  },
+  "sections": [
+    {
+      "body_chars": 516,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook",
+      "doc_id": "tournament-rules",
+      "id": "trh-1",
+      "number": "1",
+      "order": 0,
+      "parent_id": null,
+      "title": "Introduction & Using This Handbook"
+    },
+    {
+      "body_chars": 683,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Introduction & Using This Handbook",
+      "doc_id": "tournament-rules",
+      "id": "trh-1.1",
+      "number": "1.1",
+      "order": 1,
+      "parent_id": "trh-1",
+      "title": "Supporting Materials"
+    },
+    {
+      "body_chars": 546,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Introduction & Using This Handbook",
+      "doc_id": "tournament-rules",
+      "id": "trh-1.2",
+      "number": "1.2",
+      "order": 2,
+      "parent_id": "trh-1",
+      "title": "Recommended Sections & Audiences"
+    },
+    {
+      "body_chars": 1464,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Introduction & Using This Handbook",
+      "doc_id": "tournament-rules",
+      "id": "trh-1.3",
+      "number": "1.3",
+      "order": 3,
+      "parent_id": "trh-1",
+      "title": "Participant Responsibility"
+    },
+    {
+      "body_chars": 383,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook",
+      "doc_id": "tournament-rules",
+      "id": "trh-2",
+      "number": "2",
+      "order": 4,
+      "parent_id": null,
+      "title": "Participation Fundamentals"
+    },
+    {
+      "body_chars": 886,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Participation Fundamentals",
+      "doc_id": "tournament-rules",
+      "id": "trh-2.1",
+      "number": "2.1",
+      "order": 5,
+      "parent_id": "trh-2",
+      "title": "Event Eligibility"
+    },
+    {
+      "body_chars": 542,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Participation Fundamentals › Event Eligibility",
+      "doc_id": "tournament-rules",
+      "id": "trh-2.1.1",
+      "number": "2.1.1",
+      "order": 6,
+      "parent_id": "trh-2.1",
+      "title": "All Play! Pokémon Tournaments"
+    },
+    {
+      "body_chars": 1436,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Participation Fundamentals › Event Eligibility",
+      "doc_id": "tournament-rules",
+      "id": "trh-2.1.2",
+      "number": "2.1.2",
+      "order": 7,
+      "parent_id": "trh-2.1",
+      "title": "Championship Series Events (All Levels)"
+    },
+    {
+      "body_chars": 727,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Participation Fundamentals › Event Eligibility",
+      "doc_id": "tournament-rules",
+      "id": "trh-2.1.3",
+      "number": "2.1.3",
+      "order": 8,
+      "parent_id": "trh-2.1",
+      "title": "Video Game Championship Series Events"
+    },
+    {
+      "body_chars": 401,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Participation Fundamentals › Event Eligibility",
+      "doc_id": "tournament-rules",
+      "id": "trh-2.1.4",
+      "number": "2.1.4",
+      "order": 9,
+      "parent_id": "trh-2.1",
+      "title": "Pokémon GO Championship Series Events"
+    },
+    {
+      "body_chars": 301,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Participation Fundamentals › Event Eligibility",
+      "doc_id": "tournament-rules",
+      "id": "trh-2.1.5",
+      "number": "2.1.5",
+      "order": 10,
+      "parent_id": "trh-2.1",
+      "title": "Pokémon UNITE Championship Series Events"
+    },
+    {
+      "body_chars": 590,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Participation Fundamentals › Event Eligibility",
+      "doc_id": "tournament-rules",
+      "id": "trh-2.1.6",
+      "number": "2.1.6",
+      "order": 11,
+      "parent_id": "trh-2.1",
+      "title": "Other Tournaments and Activations"
+    },
+    {
+      "body_chars": 166,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Participation Fundamentals › Event Eligibility",
+      "doc_id": "tournament-rules",
+      "id": "trh-2.1.7",
+      "number": "2.1.7",
+      "order": 12,
+      "parent_id": "trh-2.1",
+      "title": "Questions on Tournament and Activation Eligibility"
+    },
+    {
+      "body_chars": 2824,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Participation Fundamentals",
+      "doc_id": "tournament-rules",
+      "id": "trh-2.2",
+      "number": "2.2",
+      "order": 13,
+      "parent_id": "trh-2",
+      "title": "Pokémon Trainer Central Accounts & Player IDs"
+    },
+    {
+      "body_chars": 1068,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Participation Fundamentals",
+      "doc_id": "tournament-rules",
+      "id": "trh-2.3",
+      "number": "2.3",
+      "order": 14,
+      "parent_id": "trh-2",
+      "title": "Publishing Tournament Information"
+    },
+    {
+      "body_chars": 630,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Participation Fundamentals › Publishing Tournament Information",
+      "doc_id": "tournament-rules",
+      "id": "trh-2.3.1",
+      "number": "2.3.1",
+      "order": 15,
+      "parent_id": "trh-2.3",
+      "title": "Publishing Deck/Team Lists"
+    },
+    {
+      "body_chars": 820,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Participation Fundamentals",
+      "doc_id": "tournament-rules",
+      "id": "trh-2.4",
+      "number": "2.4",
+      "order": 16,
+      "parent_id": "trh-2",
+      "title": "Badged Events"
+    },
+    {
+      "body_chars": 438,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook",
+      "doc_id": "tournament-rules",
+      "id": "trh-3",
+      "number": "3",
+      "order": 17,
+      "parent_id": null,
+      "title": "Event Expectations"
+    },
+    {
+      "body_chars": 1082,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Event Expectations",
+      "doc_id": "tournament-rules",
+      "id": "trh-3.1",
+      "number": "3.1",
+      "order": 18,
+      "parent_id": "trh-3",
+      "title": "General Expectations for Play! Pokémon Events"
+    },
+    {
+      "body_chars": 2403,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Event Expectations",
+      "doc_id": "tournament-rules",
+      "id": "trh-3.2",
+      "number": "3.2",
+      "order": 19,
+      "parent_id": "trh-3",
+      "title": "Prohibitions"
+    },
+    {
+      "body_chars": 1853,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Event Expectations › Prohibitions",
+      "doc_id": "tournament-rules",
+      "id": "trh-3.2.1",
+      "number": "3.2.1",
+      "order": 20,
+      "parent_id": "trh-3.2",
+      "title": "During Tournament Play"
+    },
+    {
+      "body_chars": 658,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Event Expectations",
+      "doc_id": "tournament-rules",
+      "id": "trh-3.3",
+      "number": "3.3",
+      "order": 21,
+      "parent_id": "trh-3",
+      "title": "Roles & Responsibilities"
+    },
+    {
+      "body_chars": 256,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Event Expectations › Roles & Responsibilities",
+      "doc_id": "tournament-rules",
+      "id": "trh-3.3.1",
+      "number": "3.3.1",
+      "order": 22,
+      "parent_id": "trh-3.3",
+      "title": "Competitors"
+    },
+    {
+      "body_chars": 2009,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Event Expectations › Roles & Responsibilities › Competitors",
+      "doc_id": "tournament-rules",
+      "id": "trh-3.3.1.1",
+      "number": "3.3.1.1",
+      "order": 23,
+      "parent_id": "trh-3.3.1",
+      "title": "Competitor Responsibilities"
+    },
+    {
+      "body_chars": 236,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Event Expectations › Roles & Responsibilities",
+      "doc_id": "tournament-rules",
+      "id": "trh-3.3.2",
+      "number": "3.3.2",
+      "order": 24,
+      "parent_id": "trh-3.3",
+      "title": "Spectators"
+    },
+    {
+      "body_chars": 819,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Event Expectations › Roles & Responsibilities › Spectators",
+      "doc_id": "tournament-rules",
+      "id": "trh-3.3.2.1",
+      "number": "3.3.2.1",
+      "order": 25,
+      "parent_id": "trh-3.3.2",
+      "title": "Spectator Responsibilities"
+    },
+    {
+      "body_chars": 1417,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Event Expectations › Roles & Responsibilities",
+      "doc_id": "tournament-rules",
+      "id": "trh-3.3.3",
+      "number": "3.3.3",
+      "order": 26,
+      "parent_id": "trh-3.3",
+      "title": "Organizers"
+    },
+    {
+      "body_chars": 294,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Event Expectations › Roles & Responsibilities",
+      "doc_id": "tournament-rules",
+      "id": "trh-3.3.4",
+      "number": "3.3.4",
+      "order": 27,
+      "parent_id": "trh-3.3",
+      "title": "Judges"
+    },
+    {
+      "body_chars": 308,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Event Expectations › Roles & Responsibilities › Judges",
+      "doc_id": "tournament-rules",
+      "id": "trh-3.3.4.1",
+      "number": "3.3.4.1",
+      "order": 28,
+      "parent_id": "trh-3.3.4",
+      "title": "Judge Responsibilities"
+    },
+    {
+      "body_chars": 817,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Event Expectations › Roles & Responsibilities › Judges",
+      "doc_id": "tournament-rules",
+      "id": "trh-3.3.4.2",
+      "number": "3.3.4.2",
+      "order": 29,
+      "parent_id": "trh-3.3.4",
+      "title": "Head Judge Responsibilities"
+    },
+    {
+      "body_chars": 436,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Event Expectations › Roles & Responsibilities",
+      "doc_id": "tournament-rules",
+      "id": "trh-3.3.5",
+      "number": "3.3.5",
+      "order": 30,
+      "parent_id": "trh-3.3",
+      "title": "Scorekeepers"
+    },
+    {
+      "body_chars": 638,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Event Expectations › Roles & Responsibilities › Scorekeepers",
+      "doc_id": "tournament-rules",
+      "id": "trh-3.3.5.1",
+      "number": "3.3.5.1",
+      "order": 31,
+      "parent_id": "trh-3.3.5",
+      "title": "Scorekeeper Responsibilities"
+    },
+    {
+      "body_chars": 265,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Event Expectations › Roles & Responsibilities",
+      "doc_id": "tournament-rules",
+      "id": "trh-3.3.6",
+      "number": "3.3.6",
+      "order": 32,
+      "parent_id": "trh-3.3",
+      "title": "Competitor & Professor Eligibility"
+    },
+    {
+      "body_chars": 405,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Event Expectations › Roles & Responsibilities › Competitor & Professor Eligibility",
+      "doc_id": "tournament-rules",
+      "id": "trh-3.3.6.1",
+      "number": "3.3.6.1",
+      "order": 33,
+      "parent_id": "trh-3.3.6",
+      "title": "Competitor Eligibility"
+    },
+    {
+      "body_chars": 343,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Event Expectations › Roles & Responsibilities › Competitor & Professor Eligibility",
+      "doc_id": "tournament-rules",
+      "id": "trh-3.3.6.2",
+      "number": "3.3.6.2",
+      "order": 34,
+      "parent_id": "trh-3.3.6",
+      "title": "Professor Eligibility"
+    },
+    {
+      "body_chars": 357,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook",
+      "doc_id": "tournament-rules",
+      "id": "trh-4",
+      "number": "4",
+      "order": 35,
+      "parent_id": null,
+      "title": "Tournament Policies"
+    },
+    {
+      "body_chars": 0,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Policies",
+      "doc_id": "tournament-rules",
+      "id": "trh-4.1",
+      "number": "4.1",
+      "order": 36,
+      "parent_id": "trh-4",
+      "title": "Tournament Scheduling"
+    },
+    {
+      "body_chars": 1263,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Policies › Tournament Scheduling",
+      "doc_id": "tournament-rules",
+      "id": "trh-4.1.1",
+      "number": "4.1.1",
+      "order": 37,
+      "parent_id": "trh-4.1",
+      "title": "Allowable Venues"
+    },
+    {
+      "body_chars": 999,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Policies › Tournament Scheduling",
+      "doc_id": "tournament-rules",
+      "id": "trh-4.1.2",
+      "number": "4.1.2",
+      "order": 38,
+      "parent_id": "trh-4.1",
+      "title": "Sanctioning"
+    },
+    {
+      "body_chars": 830,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Policies › Tournament Scheduling › Sanctioning",
+      "doc_id": "tournament-rules",
+      "id": "trh-4.1.2.1",
+      "number": "4.1.2.1",
+      "order": 39,
+      "parent_id": "trh-4.1.2",
+      "title": "Leagues"
+    },
+    {
+      "body_chars": 666,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Policies › Tournament Scheduling › Sanctioning",
+      "doc_id": "tournament-rules",
+      "id": "trh-4.1.2.2",
+      "number": "4.1.2.2",
+      "order": 40,
+      "parent_id": "trh-4.1.2",
+      "title": "Championship Series Events"
+    },
+    {
+      "body_chars": 1059,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Policies › Tournament Scheduling › Sanctioning",
+      "doc_id": "tournament-rules",
+      "id": "trh-4.1.2.3",
+      "number": "4.1.2.3",
+      "order": 41,
+      "parent_id": "trh-4.1.2",
+      "title": "Sanctioning Timelines"
+    },
+    {
+      "body_chars": 1056,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Policies",
+      "doc_id": "tournament-rules",
+      "id": "trh-4.2",
+      "number": "4.2",
+      "order": 42,
+      "parent_id": "trh-4",
+      "title": "Tournament Entry"
+    },
+    {
+      "body_chars": 339,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Policies › Tournament Entry",
+      "doc_id": "tournament-rules",
+      "id": "trh-4.2.1",
+      "number": "4.2.1",
+      "order": 43,
+      "parent_id": "trh-4.2",
+      "title": "Entry Fees"
+    },
+    {
+      "body_chars": 355,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Policies",
+      "doc_id": "tournament-rules",
+      "id": "trh-4.3",
+      "number": "4.3",
+      "order": 44,
+      "parent_id": "trh-4",
+      "title": "Tournament Integrity"
+    },
+    {
+      "body_chars": 415,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Policies › Tournament Integrity",
+      "doc_id": "tournament-rules",
+      "id": "trh-4.3.1",
+      "number": "4.3.1",
+      "order": 45,
+      "parent_id": "trh-4.3",
+      "title": "Legality Checks"
+    },
+    {
+      "body_chars": 0,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Policies › Tournament Integrity",
+      "doc_id": "tournament-rules",
+      "id": "trh-4.3.2",
+      "number": "4.3.2",
+      "order": 46,
+      "parent_id": "trh-4.3",
+      "title": "Staffing"
+    },
+    {
+      "body_chars": 596,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Policies › Tournament Integrity › Staffing",
+      "doc_id": "tournament-rules",
+      "id": "trh-4.3.2.1",
+      "number": "4.3.2.1",
+      "order": 47,
+      "parent_id": "trh-4.3.2",
+      "title": "Organizer Presence"
+    },
+    {
+      "body_chars": 495,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Policies › Tournament Integrity › Staffing",
+      "doc_id": "tournament-rules",
+      "id": "trh-4.3.2.2",
+      "number": "4.3.2.2",
+      "order": 48,
+      "parent_id": "trh-4.3.2",
+      "title": "Judges"
+    },
+    {
+      "body_chars": 644,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Policies › Tournament Integrity › Staffing",
+      "doc_id": "tournament-rules",
+      "id": "trh-4.3.2.3",
+      "number": "4.3.2.3",
+      "order": 49,
+      "parent_id": "trh-4.3.2",
+      "title": "Remuneration of Staff"
+    },
+    {
+      "body_chars": 812,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Policies › Tournament Integrity",
+      "doc_id": "tournament-rules",
+      "id": "trh-4.3.3",
+      "number": "4.3.3",
+      "order": 50,
+      "parent_id": "trh-4.3",
+      "title": "Appeals to the Head Judge"
+    },
+    {
+      "body_chars": 213,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Policies › Tournament Integrity",
+      "doc_id": "tournament-rules",
+      "id": "trh-4.3.4",
+      "number": "4.3.4",
+      "order": 51,
+      "parent_id": "trh-4.3",
+      "title": "Paper Records"
+    },
+    {
+      "body_chars": 796,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Policies › Tournament Integrity › Paper Records",
+      "doc_id": "tournament-rules",
+      "id": "trh-4.3.4.1",
+      "number": "4.3.4.1",
+      "order": 52,
+      "parent_id": "trh-4.3.4",
+      "title": "Paper Match Slips"
+    },
+    {
+      "body_chars": 885,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Policies › Tournament Integrity › Paper Records",
+      "doc_id": "tournament-rules",
+      "id": "trh-4.3.4.2",
+      "number": "4.3.4.2",
+      "order": 53,
+      "parent_id": "trh-4.3.4",
+      "title": "Digital Match Slips"
+    },
+    {
+      "body_chars": 346,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Policies › Tournament Integrity › Paper Records",
+      "doc_id": "tournament-rules",
+      "id": "trh-4.3.4.3",
+      "number": "4.3.4.3",
+      "order": 54,
+      "parent_id": "trh-4.3.4",
+      "title": "Standings"
+    },
+    {
+      "body_chars": 394,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Policies",
+      "doc_id": "tournament-rules",
+      "id": "trh-4.4",
+      "number": "4.4",
+      "order": 55,
+      "parent_id": "trh-4",
+      "title": "Reporting Tournament Results"
+    },
+    {
+      "body_chars": 295,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Policies › Reporting Tournament Results",
+      "doc_id": "tournament-rules",
+      "id": "trh-4.4.1",
+      "number": "4.4.1",
+      "order": 56,
+      "parent_id": "trh-4.4",
+      "title": "Player ID Discrepancies"
+    },
+    {
+      "body_chars": 522,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Policies",
+      "doc_id": "tournament-rules",
+      "id": "trh-4.5",
+      "number": "4.5",
+      "order": 57,
+      "parent_id": "trh-4",
+      "title": "Streamed Matches"
+    },
+    {
+      "body_chars": 609,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Policies › Streamed Matches",
+      "doc_id": "tournament-rules",
+      "id": "trh-4.5.1",
+      "number": "4.5.1",
+      "order": 58,
+      "parent_id": "trh-4.5",
+      "title": "Featured Events"
+    },
+    {
+      "body_chars": 887,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Policies › Streamed Matches",
+      "doc_id": "tournament-rules",
+      "id": "trh-4.5.2",
+      "number": "4.5.2",
+      "order": 59,
+      "parent_id": "trh-4.5",
+      "title": "Participating in Streamed Matches"
+    },
+    {
+      "body_chars": 333,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Policies › Streamed Matches",
+      "doc_id": "tournament-rules",
+      "id": "trh-4.5.3",
+      "number": "4.5.3",
+      "order": 60,
+      "parent_id": "trh-4.5",
+      "title": "Rules Infractions in Streamed Matches"
+    },
+    {
+      "body_chars": 1572,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Policies › Streamed Matches",
+      "doc_id": "tournament-rules",
+      "id": "trh-4.5.4",
+      "number": "4.5.4",
+      "order": 61,
+      "parent_id": "trh-4.5",
+      "title": "Personal Time Between Streamed Matches"
+    },
+    {
+      "body_chars": 647,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Policies › Streamed Matches",
+      "doc_id": "tournament-rules",
+      "id": "trh-4.5.5",
+      "number": "4.5.5",
+      "order": 62,
+      "parent_id": "trh-4.5",
+      "title": "Sponsorship & Logo Appearances"
+    },
+    {
+      "body_chars": 395,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Policies",
+      "doc_id": "tournament-rules",
+      "id": "trh-4.6",
+      "number": "4.6",
+      "order": 63,
+      "parent_id": "trh-4",
+      "title": "Prizing"
+    },
+    {
+      "body_chars": 574,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Policies › Prizing",
+      "doc_id": "tournament-rules",
+      "id": "trh-4.6.1",
+      "number": "4.6.1",
+      "order": 64,
+      "parent_id": "trh-4.6",
+      "title": "Earning Prizes"
+    },
+    {
+      "body_chars": 728,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Policies › Prizing",
+      "doc_id": "tournament-rules",
+      "id": "trh-4.6.2",
+      "number": "4.6.2",
+      "order": 65,
+      "parent_id": "trh-4.6",
+      "title": "Effects of Competitor Disqualification on Prize Distribution"
+    },
+    {
+      "body_chars": 606,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Policies › Prizing",
+      "doc_id": "tournament-rules",
+      "id": "trh-4.6.3",
+      "number": "4.6.3",
+      "order": 66,
+      "parent_id": "trh-4.6",
+      "title": "Promotional Product"
+    },
+    {
+      "body_chars": 276,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Policies › Prizing",
+      "doc_id": "tournament-rules",
+      "id": "trh-4.6.4",
+      "number": "4.6.4",
+      "order": 67,
+      "parent_id": "trh-4.6",
+      "title": "Unclaimed Prizes"
+    },
+    {
+      "body_chars": 287,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Policies › Prizing",
+      "doc_id": "tournament-rules",
+      "id": "trh-4.6.5",
+      "number": "4.6.5",
+      "order": 68,
+      "parent_id": "trh-4.6",
+      "title": "Play! Points"
+    },
+    {
+      "body_chars": 319,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook",
+      "doc_id": "tournament-rules",
+      "id": "trh-5",
+      "number": "5",
+      "order": 69,
+      "parent_id": null,
+      "title": "Tournament Operations & Specifics"
+    },
+    {
+      "body_chars": 0,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Operations & Specifics",
+      "doc_id": "tournament-rules",
+      "id": "trh-5.1",
+      "number": "5.1",
+      "order": 70,
+      "parent_id": "trh-5",
+      "title": "Definitions"
+    },
+    {
+      "body_chars": 402,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Operations & Specifics › Definitions",
+      "doc_id": "tournament-rules",
+      "id": "trh-5.1.1",
+      "number": "5.1.1",
+      "order": 71,
+      "parent_id": "trh-5.1",
+      "title": "Match"
+    },
+    {
+      "body_chars": 242,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Operations & Specifics › Definitions",
+      "doc_id": "tournament-rules",
+      "id": "trh-5.1.2",
+      "number": "5.1.2",
+      "order": 72,
+      "parent_id": "trh-5.1",
+      "title": "Round"
+    },
+    {
+      "body_chars": 736,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Operations & Specifics › Definitions",
+      "doc_id": "tournament-rules",
+      "id": "trh-5.1.3",
+      "number": "5.1.3",
+      "order": 73,
+      "parent_id": "trh-5.1",
+      "title": "Age Divisions"
+    },
+    {
+      "body_chars": 898,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Operations & Specifics",
+      "doc_id": "tournament-rules",
+      "id": "trh-5.2",
+      "number": "5.2",
+      "order": 74,
+      "parent_id": "trh-5",
+      "title": "Tournament Requirements"
+    },
+    {
+      "body_chars": 929,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Operations & Specifics › Tournament Requirements",
+      "doc_id": "tournament-rules",
+      "id": "trh-5.2.1",
+      "number": "5.2.1",
+      "order": 75,
+      "parent_id": "trh-5.2",
+      "title": "Age-Combined Play"
+    },
+    {
+      "body_chars": 625,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Operations & Specifics › Tournament Requirements",
+      "doc_id": "tournament-rules",
+      "id": "trh-5.2.2",
+      "number": "5.2.2",
+      "order": 76,
+      "parent_id": "trh-5.2",
+      "title": "Late Arrivals"
+    },
+    {
+      "body_chars": 97,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Operations & Specifics › Tournament Requirements › Late Arrivals",
+      "doc_id": "tournament-rules",
+      "id": "trh-5.2.2.1",
+      "number": "5.2.2.1",
+      "order": 77,
+      "parent_id": "trh-5.2.2",
+      "title": "Late Arrivals at Championship Series Events"
+    },
+    {
+      "body_chars": 0,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Operations & Specifics",
+      "doc_id": "tournament-rules",
+      "id": "trh-5.3",
+      "number": "5.3",
+      "order": 78,
+      "parent_id": "trh-5",
+      "title": "Match Records & Ranking"
+    },
+    {
+      "body_chars": 499,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Operations & Specifics › Match Records & Ranking",
+      "doc_id": "tournament-rules",
+      "id": "trh-5.3.1",
+      "number": "5.3.1",
+      "order": 79,
+      "parent_id": "trh-5.3",
+      "title": "Match Record"
+    },
+    {
+      "body_chars": 1209,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Operations & Specifics › Match Records & Ranking › Match Record",
+      "doc_id": "tournament-rules",
+      "id": "trh-5.3.1.1",
+      "number": "5.3.1.1",
+      "order": 80,
+      "parent_id": "trh-5.3.1",
+      "title": "Match Record Errors"
+    },
+    {
+      "body_chars": 702,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Operations & Specifics › Match Records & Ranking",
+      "doc_id": "tournament-rules",
+      "id": "trh-5.3.2",
+      "number": "5.3.2",
+      "order": 81,
+      "parent_id": "trh-5.3",
+      "title": "Match Points"
+    },
+    {
+      "body_chars": 186,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Operations & Specifics › Match Records & Ranking",
+      "doc_id": "tournament-rules",
+      "id": "trh-5.3.3",
+      "number": "5.3.3",
+      "order": 82,
+      "parent_id": "trh-5.3",
+      "title": "(Opponents’) Win Percentage"
+    },
+    {
+      "body_chars": 1299,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Operations & Specifics › Match Records & Ranking › (Opponents’) Win Percentage",
+      "doc_id": "tournament-rules",
+      "id": "trh-5.3.3.1",
+      "number": "5.3.3.1",
+      "order": 83,
+      "parent_id": "trh-5.3.3",
+      "title": "Calculating Win Percentage"
+    },
+    {
+      "body_chars": 2107,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Operations & Specifics",
+      "doc_id": "tournament-rules",
+      "id": "trh-5.4",
+      "number": "5.4",
+      "order": 84,
+      "parent_id": "trh-5",
+      "title": "Concessions & Intentional Draws"
+    },
+    {
+      "body_chars": 646,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Operations & Specifics",
+      "doc_id": "tournament-rules",
+      "id": "trh-5.5",
+      "number": "5.5",
+      "order": 85,
+      "parent_id": "trh-5",
+      "title": "Play! Pokémon Tournament Styles"
+    },
+    {
+      "body_chars": 1736,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Operations & Specifics › Play! Pokémon Tournament Styles",
+      "doc_id": "tournament-rules",
+      "id": "trh-5.5.1",
+      "number": "5.5.1",
+      "order": 86,
+      "parent_id": "trh-5.5",
+      "title": "Swiss"
+    },
+    {
+      "body_chars": 1530,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Operations & Specifics › Play! Pokémon Tournament Styles › Swiss",
+      "doc_id": "tournament-rules",
+      "id": "trh-5.5.1.1",
+      "number": "5.5.1.1",
+      "order": 87,
+      "parent_id": "trh-5.5.1",
+      "title": "Final Placement in Swiss Standings"
+    },
+    {
+      "body_chars": 970,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Operations & Specifics › Play! Pokémon Tournament Styles",
+      "doc_id": "tournament-rules",
+      "id": "trh-5.5.2",
+      "number": "5.5.2",
+      "order": 88,
+      "parent_id": "trh-5.5",
+      "title": "Single Elimination"
+    },
+    {
+      "body_chars": 541,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Operations & Specifics › Play! Pokémon Tournament Styles › Single Elimination",
+      "doc_id": "tournament-rules",
+      "id": "trh-5.5.2.1",
+      "number": "5.5.2.1",
+      "order": 89,
+      "parent_id": "trh-5.5.2",
+      "title": "Single-Elimination Brackets"
+    },
+    {
+      "body_chars": 401,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Operations & Specifics › Play! Pokémon Tournament Styles › Single Elimination",
+      "doc_id": "tournament-rules",
+      "id": "trh-5.5.2.2",
+      "number": "5.5.2.2",
+      "order": 90,
+      "parent_id": "trh-5.5.2",
+      "title": "Final Placement in Single-Elimination Standings"
+    },
+    {
+      "body_chars": 270,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Operations & Specifics › Play! Pokémon Tournament Styles › Single Elimination",
+      "doc_id": "tournament-rules",
+      "id": "trh-5.5.2.3",
+      "number": "5.5.2.3",
+      "order": 91,
+      "parent_id": "trh-5.5.2",
+      "title": "Placement Playoffs"
+    },
+    {
+      "body_chars": 861,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Operations & Specifics › Play! Pokémon Tournament Styles",
+      "doc_id": "tournament-rules",
+      "id": "trh-5.5.3",
+      "number": "5.5.3",
+      "order": 92,
+      "parent_id": "trh-5.5",
+      "title": "Swiss + Single Elimination"
+    },
+    {
+      "body_chars": 857,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Operations & Specifics › Play! Pokémon Tournament Styles",
+      "doc_id": "tournament-rules",
+      "id": "trh-5.5.4",
+      "number": "5.5.4",
+      "order": 93,
+      "parent_id": "trh-5.5",
+      "title": "Championship Series Event Tournament Structures"
+    },
+    {
+      "body_chars": 1160,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Operations & Specifics › Play! Pokémon Tournament Styles › Championship Series Event Tournament Structures",
+      "doc_id": "tournament-rules",
+      "id": "trh-5.5.4.1",
+      "number": "5.5.4.1",
+      "order": 94,
+      "parent_id": "trh-5.5.4",
+      "title": "Single Day Tournament Structures"
+    },
+    {
+      "body_chars": 1270,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Operations & Specifics › Play! Pokémon Tournament Styles › Championship Series Event Tournament Structures",
+      "doc_id": "tournament-rules",
+      "id": "trh-5.5.4.2",
+      "number": "5.5.4.2",
+      "order": 95,
+      "parent_id": "trh-5.5.4",
+      "title": "Two Phase Tournament Structure"
+    },
+    {
+      "body_chars": 1044,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Operations & Specifics › Play! Pokémon Tournament Styles",
+      "doc_id": "tournament-rules",
+      "id": "trh-5.5.5",
+      "number": "5.5.5",
+      "order": 96,
+      "parent_id": "trh-5.5",
+      "title": "Double Elimination"
+    },
+    {
+      "body_chars": 543,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Operations & Specifics › Play! Pokémon Tournament Styles › Double Elimination",
+      "doc_id": "tournament-rules",
+      "id": "trh-5.5.5.1",
+      "number": "5.5.5.1",
+      "order": 97,
+      "parent_id": "trh-5.5.5",
+      "title": "Pools for Pokémon GO Tournaments"
+    },
+    {
+      "body_chars": 404,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Operations & Specifics › Play! Pokémon Tournament Styles › Double Elimination",
+      "doc_id": "tournament-rules",
+      "id": "trh-5.5.5.2",
+      "number": "5.5.5.2",
+      "order": 98,
+      "parent_id": "trh-5.5.5",
+      "title": "Bracket Seeding"
+    },
+    {
+      "body_chars": 324,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Operations & Specifics › Play! Pokémon Tournament Styles › Double Elimination",
+      "doc_id": "tournament-rules",
+      "id": "trh-5.5.5.3",
+      "number": "5.5.5.3",
+      "order": 99,
+      "parent_id": "trh-5.5.5",
+      "title": "Round-Robin"
+    },
+    {
+      "body_chars": 1006,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Operations & Specifics › Play! Pokémon Tournament Styles",
+      "doc_id": "tournament-rules",
+      "id": "trh-5.5.6",
+      "number": "5.5.6",
+      "order": 100,
+      "parent_id": "trh-5.5",
+      "title": "Championship Series Event Round Structure"
+    },
+    {
+      "body_chars": 933,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Operations & Specifics › Play! Pokémon Tournament Styles",
+      "doc_id": "tournament-rules",
+      "id": "trh-5.5.7",
+      "number": "5.5.7",
+      "order": 101,
+      "parent_id": "trh-5.5",
+      "title": "Final Placement in Swiss + Single-Elimination Standings"
+    },
+    {
+      "body_chars": 577,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Operations & Specifics",
+      "doc_id": "tournament-rules",
+      "id": "trh-5.6",
+      "number": "5.6",
+      "order": 102,
+      "parent_id": "trh-5",
+      "title": "Pairings"
+    },
+    {
+      "body_chars": 486,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Operations & Specifics › Pairings",
+      "doc_id": "tournament-rules",
+      "id": "trh-5.6.1",
+      "number": "5.6.1",
+      "order": 103,
+      "parent_id": "trh-5.6",
+      "title": "Random Byes"
+    },
+    {
+      "body_chars": 596,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Operations & Specifics",
+      "doc_id": "tournament-rules",
+      "id": "trh-5.7",
+      "number": "5.7",
+      "order": 104,
+      "parent_id": "trh-5",
+      "title": "Dropping from Tournament Play"
+    },
+    {
+      "body_chars": 468,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Operations & Specifics › Dropping from Tournament Play",
+      "doc_id": "tournament-rules",
+      "id": "trh-5.7.1",
+      "number": "5.7.1",
+      "order": 105,
+      "parent_id": "trh-5.7",
+      "title": "Incomplete Matches"
+    },
+    {
+      "body_chars": 345,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Operations & Specifics › Dropping from Tournament Play",
+      "doc_id": "tournament-rules",
+      "id": "trh-5.7.2",
+      "number": "5.7.2",
+      "order": 106,
+      "parent_id": "trh-5.7",
+      "title": "Dropped Competitors’ Final Standing"
+    },
+    {
+      "body_chars": 194,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Tournament Operations & Specifics › Dropping from Tournament Play",
+      "doc_id": "tournament-rules",
+      "id": "trh-5.7.3",
+      "number": "5.7.3",
+      "order": 107,
+      "parent_id": "trh-5.7",
+      "title": "Disqualified Competitors’ Final Standing"
+    },
+    {
+      "body_chars": 522,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook",
+      "doc_id": "tournament-rules",
+      "id": "trh-6",
+      "number": "6",
+      "order": 108,
+      "parent_id": null,
+      "title": "Tournament Rules per Product"
+    },
+    {
+      "body_chars": 843,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook",
+      "doc_id": "tournament-rules",
+      "id": "trh-7",
+      "number": "7",
+      "order": 109,
+      "parent_id": null,
+      "title": "Rules Violations & Penalties"
+    },
+    {
+      "body_chars": 716,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Rules Violations & Penalties",
+      "doc_id": "tournament-rules",
+      "id": "trh-7.1",
+      "number": "7.1",
+      "order": 110,
+      "parent_id": "trh-7",
+      "title": "Philosophy"
+    },
+    {
+      "body_chars": 1518,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Rules Violations & Penalties",
+      "doc_id": "tournament-rules",
+      "id": "trh-7.2",
+      "number": "7.2",
+      "order": 111,
+      "parent_id": "trh-7",
+      "title": "Penalties"
+    },
+    {
+      "body_chars": 1125,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Rules Violations & Penalties",
+      "doc_id": "tournament-rules",
+      "id": "trh-7.3",
+      "number": "7.3",
+      "order": 112,
+      "parent_id": "trh-7",
+      "title": "Application"
+    },
+    {
+      "body_chars": 926,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Rules Violations & Penalties › Application",
+      "doc_id": "tournament-rules",
+      "id": "trh-7.3.1",
+      "number": "7.3.1",
+      "order": 113,
+      "parent_id": "trh-7.3",
+      "title": "Delivering Penalties"
+    },
+    {
+      "body_chars": 232,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Rules Violations & Penalties",
+      "doc_id": "tournament-rules",
+      "id": "trh-7.4",
+      "number": "7.4",
+      "order": 114,
+      "parent_id": "trh-7",
+      "title": "Base Infractions, Standard Penalties & Deviations"
+    },
+    {
+      "body_chars": 738,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Rules Violations & Penalties",
+      "doc_id": "tournament-rules",
+      "id": "trh-7.5",
+      "number": "7.5",
+      "order": 115,
+      "parent_id": "trh-7",
+      "title": "Reporting"
+    },
+    {
+      "body_chars": 1385,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook › Rules Violations & Penalties",
+      "doc_id": "tournament-rules",
+      "id": "trh-7.6",
+      "number": "7.6",
+      "order": 116,
+      "parent_id": "trh-7",
+      "title": "Post-Event Disciplinary Action"
+    },
+    {
+      "body_chars": 641,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook",
+      "doc_id": "tournament-rules",
+      "id": "trh-8",
+      "number": "8",
+      "order": 117,
+      "parent_id": null,
+      "title": "Summary of Changes"
+    },
+    {
+      "body_chars": 3578,
+      "breadcrumb": "Play! Pokémon Tournament Rules Handbook",
+      "doc_id": "tournament-rules",
+      "id": "trh-Appendix A",
+      "number": "Appendix A",
+      "order": 118,
+      "parent_id": null,
+      "title": "Rating Zones"
+    }
+  ]
+}
