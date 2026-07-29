@@ -34,9 +34,10 @@ just download   # PDFs are git-ignored, so a fresh clone needs this once (networ
 Day to day:
 
 ```bash
-just all        # parse → build → verify (offline; ends "verify OK")
-just test       # pytest suite
-just download   # fetch official PDFs (network; exits 1 if TPCi revised a doc)
+just all           # parse → build → verify (offline; ends "verify OK")
+just test          # pytest suite
+just download      # fetch official PDFs (network; exits 1 if TPCi revised a doc)
+just check-sources # authenticate the PDFs already in sources/ (no network)
 ```
 
 `just` with no arguments lists every recipe. PDFs land in `sources/`
@@ -44,6 +45,26 @@ just download   # fetch official PDFs (network; exits 1 if TPCi revised a doc)
 sha256). Parsed JSON goes to `content/` (committed, reviewable); the app
 database to `build/rulecheck.db` (git-ignored). Re-run `just all` after
 any `sources.yaml` edit or document revision.
+
+### When `just download` fails: download the PDFs by hand
+
+pokemon.com sits behind a WAF that serves a bot-challenge page instead of the
+PDF once it notices repeated automated fetches, so `just download` can fail
+for every document at once (`returned non-PDF content … likely a
+bot-challenge page`). There is no workaround in the tool and we do not attempt
+one — downloading by hand is the sanctioned path:
+
+1. Open each `url` in `sources/sources.yaml` in a browser (three documents).
+2. Save each one into `sources/` under the exact `file` name from the manifest
+   — `tcg-rules.pdf`, `tournament-rules.pdf`, `penalty-guidelines.pdf`.
+3. Run `just check-sources`. It hashes the local files and compares them with
+   the recorded `sha256`, touching the network never. `ok` on all three means
+   you have the same bytes CI does; carry on with `just all`.
+
+`MISMATCH` means the file is wrong, truncated, or a saved challenge page — or
+TPCi has revised the document, in which case re-ingest (see
+`.claude/skills/ingest-document/`) and update the hash in `sources.yaml`.
+`check-sources` exits non-zero if any document is missing or mismatched.
 
 ## Building the app
 

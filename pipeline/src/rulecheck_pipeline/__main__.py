@@ -7,6 +7,7 @@ from pathlib import Path
 from collections import Counter
 
 from rulecheck_pipeline.build import build_db
+from rulecheck_pipeline.check_sources import check_sources
 from rulecheck_pipeline.content_check import check_rewrites
 from rulecheck_pipeline.download import download_doc
 from rulecheck_pipeline.manifest import load_manifest
@@ -126,10 +127,51 @@ def cmd_download(root: Path) -> int:
     return 1 if (changed or failures) else 0
 
 
+def cmd_check_sources(root: Path) -> int:
+    """Authenticate the PDFs already in sources/ against sources.yaml. No
+    network: this is the companion to a manual browser download when the
+    upstream WAF blocks 'just download'."""
+    sources_dir = root / "sources"
+    sources = load_manifest(sources_dir / "sources.yaml")
+    bad = 0
+    for source, result in zip(sources, check_sources(sources, sources_dir)):
+        rel = f"sources/{source.file}"
+        if result.status == "ok":
+            print(f"{source.id}: ok ({rel}, {result.sha256[:12]}…)")
+        elif result.status == "unrecorded":
+            print(f"{source.id}: present, no recorded hash ({rel}). Add to sources.yaml:")
+            print(f'  sha256: "{result.sha256}"')
+        elif result.status == "missing":
+            bad += 1
+            print(
+                f"{source.id}: MISSING {rel} — run 'just download', or "
+                f"download it in a browser from {source.url} and save it as "
+                f"{rel} (see README).",
+                file=sys.stderr,
+            )
+        else:
+            bad += 1
+            print(
+                f"{source.id}: MISMATCH {rel}\n"
+                f"  expected {result.expected}\n"
+                f"  found    {result.sha256}\n"
+                f"  Wrong or truncated file (a WAF challenge page saved as a PDF "
+                f"looks like this), or TPCi revised the document — re-download it.",
+                file=sys.stderr,
+            )
+    if bad:
+        print(f"check-sources FAILED: {bad} document(s) missing or mismatched",
+              file=sys.stderr)
+        return 1
+    print("check-sources OK")
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="rulecheck_pipeline")
     parser.add_argument("command",
-                        choices=["parse", "build", "verify", "download", "content-status", "all"])
+                        choices=["parse", "build", "verify", "download", "check-sources",
+                                 "content-status", "all"])
     parser.add_argument("--root", type=Path, default=Path.cwd().parent,
                         help="repo root (default: parent of CWD, i.e. run from pipeline/)")
     parser.add_argument("--release", action="store_true",
@@ -144,6 +186,8 @@ def main(argv: list[str] | None = None) -> int:
         return cmd_verify(root, release=args.release)
     if args.command == "download":
         return cmd_download(root)
+    if args.command == "check-sources":
+        return cmd_check_sources(root)
     if args.command == "content-status":
         return cmd_content_status(root)
     rc = cmd_parse(root)
