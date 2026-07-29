@@ -1,6 +1,7 @@
 # RuleCheck
 
 [![CI](https://github.com/peteb4ker/rulecheck/actions/workflows/ci.yml/badge.svg)](https://github.com/peteb4ker/rulecheck/actions/workflows/ci.yml)
+[![CodeQL](https://github.com/peteb4ker/rulecheck/actions/workflows/codeql.yml/badge.svg)](https://github.com/peteb4ker/rulecheck/actions/workflows/codeql.yml)
 [![Release](https://img.shields.io/github/v/release/peteb4ker/rulecheck)](https://github.com/peteb4ker/rulecheck/releases)
 
 A free, fully offline iOS app for Pokemon TCG players and professors (judges)
