@@ -80,6 +80,12 @@ the spec wins if this file and the spec ever disagree.
   Checks are advisory (no branch protection on the current GitHub plan) —
   a red check still means stop and fix.
 
+## Working files
+
+Scratch — build artifacts, screenshots, drafts, anything that is working
+material rather than repository content — goes in `.scratch/` at the repo
+root, which is git-ignored. Not the user's Desktop, not `/tmp`.
+
 ## Layout
 
 ```
@@ -90,6 +96,7 @@ content/           # committed index: structure + citations, no prose
 content/fingerprints/  # one-way hashes backing the paraphrase tripwire
 build/content/     # full parsed text, verbatim (git-ignored)
 build/             # rulecheck.db build product (git-ignored)
+.scratch/          # local working files (git-ignored)
 app/               # Xcode project: SwiftUI + GRDB, iOS 17+
 docs/superpowers/  # specs, plans, research notes
 ```
