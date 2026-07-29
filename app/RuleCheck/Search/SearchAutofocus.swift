@@ -9,9 +9,20 @@ import SwiftUI
 private struct SearchAutofocus: ViewModifier {
     @FocusState private var focused: Bool
 
+    /// UI tests that aren't about autofocus opt out. While search is active
+    /// iOS replaces the nav bar's trailing item with its own dismiss button,
+    /// so a test reaching for About otherwise has to find and tap that button
+    /// first — whose label is not ours and varies by iOS version. Opting out
+    /// removes the guesswork instead of racing it.
+    static let disableArgument = "-disableSearchAutofocus"
+
+    private var autofocusDisabled: Bool {
+        ProcessInfo.processInfo.arguments.contains(Self.disableArgument)
+    }
+
     @ViewBuilder
     func body(content: Content) -> some View {
-        if #available(iOS 18.0, *) {
+        if #available(iOS 18.0, *), !autofocusDisabled {
             content
                 .searchFocused($focused)
                 .onAppear { focused = true }

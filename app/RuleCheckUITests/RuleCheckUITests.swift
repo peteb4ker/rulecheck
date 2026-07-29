@@ -56,15 +56,14 @@ final class RuleCheckUITests: XCTestCase {
 
     func testAboutShowsDisclaimer() {
         let app = XCUIApplication()
+        // Opt out of launch autofocus: while search is active iOS owns the
+        // nav bar's trailing item, so About isn't reachable without first
+        // tapping a dismiss button whose label is Apple's and differs across
+        // iOS versions. Probing for it raced on CI and went red on main.
+        // Autofocus itself is covered by testSearchIsFocusedAtLaunch.
+        app.launchArguments += ["-disableSearchAutofocus"]
         app.launch()
-        // Search is focused at launch (#22), and while it is active iOS
-        // swaps the nav bar's trailing item for the search dismiss button.
-        // Leave search before reaching for About.
         XCTAssertTrue(app.searchFields.firstMatch.waitForExistence(timeout: 10))
-        for label in ["Close", "Cancel"] {
-            let button = app.buttons[label].firstMatch
-            if button.exists { button.tap(); break }
-        }
         let about = app.buttons["About"].firstMatch
         XCTAssertTrue(about.waitForExistence(timeout: 5))
         about.tap()
