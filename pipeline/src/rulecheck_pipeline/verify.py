@@ -35,7 +35,17 @@ def verify_db(db_path: Path) -> list[str]:
             con.execute(
                 "INSERT INTO sections_fts(sections_fts, rank) VALUES('integrity-check', 1)"
             )
-        except sqlite3.DatabaseError:
+        except sqlite3.DatabaseError as exc:
+            # An external-content FTS index that has drifted from its content
+            # table reports itself as corruption (SQLITE_CORRUPT_VTAB). Any
+            # other DatabaseError — a missing table, a file that is not our
+            # build artifact — is a different fault, and calling it an FTS
+            # desync would send the reader after the wrong bug. `getattr`
+            # because errors raised by the sqlite3 module itself rather than
+            # by SQLite (ProgrammingError, say) carry no error name at all —
+            # those are not desyncs either, so they re-raise.
+            if not getattr(exc, "sqlite_errorname", "").startswith("SQLITE_CORRUPT"):
+                raise
             errors.append("fts index out of sync with sections")
     finally:
         con.close()

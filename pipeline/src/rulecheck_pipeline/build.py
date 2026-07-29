@@ -68,11 +68,17 @@ def build_db(content_dir: Path, out_path: Path, rewrites_dir: Path | None = None
     out_path.unlink(missing_ok=True)
     con = sqlite3.connect(out_path)
     try:
+        # SQLite ignores declared REFERENCES unless the connection asks for
+        # them, per connection and off by default. Without this the schema's
+        # constraints are documentation; with it a broken tree fails the build
+        # instead of shipping. Must precede any transaction to take effect.
+        con.execute("PRAGMA foreign_keys = ON")
         con.executescript(SCHEMA)
         for json_path in sorted(Path(content_dir).glob("*.json")):
             source, sections = load_document(json_path)
             con.execute(
-                "INSERT INTO documents VALUES (?, ?, ?, ?, ?, ?)",
+                "INSERT INTO documents(id, prefix, title, version, published, url) "
+                "VALUES (?, ?, ?, ?, ?, ?)",
                 (source.id, source.prefix, source.title, source.version,
                  source.published, source.url),
             )
@@ -92,7 +98,9 @@ def build_db(content_dir: Path, out_path: Path, rewrites_dir: Path | None = None
                     f"author them or run `just parse`: {', '.join(sorted(unauthored)[:5])}"
                 )
             con.executemany(
-                "INSERT INTO sections VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
+                "INSERT INTO sections(id, doc_id, parent_id, number, title, body, "
+                "breadcrumb, sort_order, structure) "
+                "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
                 [(s.id, s.doc_id, s.parent_id, s.number, s.title,
                   flatten_entry(rewrites[s.id]) if s.id in rewrites
                   else bodies.get(s.id, s.body),
@@ -102,7 +110,7 @@ def build_db(content_dir: Path, out_path: Path, rewrites_dir: Path | None = None
             )
             shipped_ids = {s.id for s in shipped}
             con.executemany(
-                "INSERT INTO xrefs VALUES (?, ?)",
+                "INSERT INTO xrefs(from_id, to_id) VALUES (?, ?)",
                 [(f, t) for f, t in detect_xrefs(sections)
                  if f in shipped_ids and t in shipped_ids],
             )

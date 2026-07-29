@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import re
 import sys
 from pathlib import Path
 
@@ -14,6 +15,29 @@ KNOWN = set(REQUIRED) | set(OPTIONAL)
 
 class ManifestError(Exception):
     pass
+
+
+def _validate_heading_rules(doc_id: str, rules: object) -> None:
+    """Heading rules are hand-tuned per document, so they get checked here
+    rather than at first use. `classify_line` reads group(1) as the section
+    number and group(2) as its title; a rule that does not compile, or that
+    is short a group, otherwise surfaces mid-tuning as a bare re.error or
+    IndexError against whichever PDF line happened to reach it first.
+    """
+    if not isinstance(rules, list) or not rules:
+        raise ManifestError(f"{doc_id}: heading_rules must be a non-empty list")
+    for i, rule in enumerate(rules):
+        try:
+            compiled = re.compile(rule)
+        except (re.error, TypeError) as exc:
+            raise ManifestError(
+                f"{doc_id}: heading_rules[{i}] is not a valid regex: {rule!r} ({exc})"
+            ) from exc
+        if compiled.groups < 2:
+            raise ManifestError(
+                f"{doc_id}: heading_rules[{i}] needs 2 capture groups "
+                f"(number, title), found {compiled.groups}: {rule!r}"
+            )
 
 
 def load_manifest(path: Path) -> list[SourceDoc]:
@@ -32,6 +56,7 @@ def load_manifest(path: Path) -> list[SourceDoc]:
                 f"warning: {entry['id']}: unknown manifest keys ignored: {', '.join(unknown)}",
                 file=sys.stderr,
             )
+        _validate_heading_rules(entry["id"], entry["heading_rules"])
         fields = {k: entry[k] for k in REQUIRED}
         fields.update({k: entry[k] for k in OPTIONAL if k in entry})
         docs.append(SourceDoc(**fields))

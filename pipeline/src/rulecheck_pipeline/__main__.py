@@ -178,6 +178,23 @@ def main(argv: list[str] | None = None) -> int:
                         help="verify: escalate coverage/review warnings to errors")
     args = parser.parse_args(argv)
     root = args.root.resolve()
+
+    # --root defaults to the parent of the CWD, which is right only when the
+    # command is run from pipeline/. Get it wrong and the commands used to
+    # mkdir content/ and build/ into a stranger's directory before failing on
+    # a FileNotFoundError. The committed manifest is the marker for "this is
+    # the repository", so check it once, up front, for every command.
+    manifest = root / "sources" / "sources.yaml"
+    if not manifest.is_file():
+        print(
+            f"ERROR: --root {root} is not the repository root: "
+            f"sources/sources.yaml not found there.\n"
+            f"  Run from pipeline/ (--root defaults to its parent), "
+            f"or pass --root <path to the repo>.",
+            file=sys.stderr,
+        )
+        return 2
+
     if args.command == "parse":
         return cmd_parse(root)
     if args.command == "build":

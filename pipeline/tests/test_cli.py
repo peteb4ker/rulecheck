@@ -154,6 +154,30 @@ def test_release_verify_and_content_status(tmp_path, fixture_pdf):
     assert main(["content-status", "--root", str(root)]) == 0
 
 
+def test_wrong_root_is_refused_before_anything_is_written(tmp_path, capsys):
+    """`--root` defaults to the parent of the CWD, so running from the wrong
+    directory used to mkdir `content/` somewhere arbitrary and then die on a
+    FileNotFoundError. The manifest is the marker for "this is the repo"."""
+    stray = tmp_path / "not-the-repo"
+    stray.mkdir()
+
+    assert main(["parse", "--root", str(stray)]) == 2
+
+    err = capsys.readouterr().err
+    assert "sources.yaml" in err
+    assert "Traceback" not in err
+    assert not (stray / "content").exists()
+
+
+def test_wrong_root_is_refused_for_every_command(tmp_path, capsys):
+    stray = tmp_path / "not-the-repo"
+    stray.mkdir()
+    for command in ["parse", "build", "verify", "download", "content-status", "all"]:
+        assert main([command, "--root", str(stray)]) == 2, command
+    assert not (stray / "content").exists()
+    assert not (stray / "build").exists()
+
+
 def test_parse_reports_missing_pdfs_without_traceback(tmp_path, fixture_pdf, capsys):
     # Fresh clone (or post-WAF incident): sources.yaml is committed, the PDFs
     # are not. That must read as an instruction, not a pdfplumber traceback.
