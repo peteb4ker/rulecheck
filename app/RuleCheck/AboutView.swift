@@ -24,6 +24,10 @@ struct AboutView: View {
                     Text("Rule Check is an unofficial rules reference. It is not affiliated with, endorsed, sponsored, or specifically approved by The Pokémon Company International, Nintendo, Creatures, or GAME FREAK.")
                     Text("Rule Check makes zero network calls. Everything works offline; nothing is tracked.")
                     Text("Built with GRDB.swift (MIT License).")
+                    // CC BY 3.0 requires attribution wherever the mark ships.
+                    // The link is rendered, not fetched — the app still makes
+                    // zero network calls; tapping it hands off to Safari.
+                    Text("App icon: whistle by ProSymbols from Noun Project, [CC BY 3.0](https://thenounproject.com/browse/icons/term/whistle/).")
                 }
                 .font(.footnote)
                 .foregroundStyle(Palette.body)

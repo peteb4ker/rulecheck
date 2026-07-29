@@ -1,3 +1,4 @@
+import UIKit
 import XCTest
 @testable import RuleCheck
 
@@ -19,6 +20,16 @@ final class BundleIdentityTests: XCTestCase {
     func testDisplayNameIsTheTwoWordPublicName() {
         // "RuleCheck" (one word) is a live, unrelated App Store app.
         XCTAssertEqual(appInfo["CFBundleDisplayName"] as? String, "Rule Check")
+    }
+
+    /// A build with no app icon is rejected on upload, not at build time.
+    func testAppIconIsCompiledIntoTheBundle() throws {
+        let icons = try XCTUnwrap(appInfo["CFBundleIcons"] as? [String: Any],
+                                  "no CFBundleIcons — the AppIcon set did not compile")
+        let primary = try XCTUnwrap(icons["CFBundlePrimaryIcon"] as? [String: Any])
+        let files = try XCTUnwrap(primary["CFBundleIconFiles"] as? [String])
+        XCTAssertFalse(files.isEmpty, "CFBundleIconFiles is empty")
+        XCTAssertNotNil(UIImage(named: files[0]), "icon \(files[0]) is not loadable")
     }
 
     func testVersionKeysArePresentAndWellFormed() throws {
