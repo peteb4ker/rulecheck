@@ -19,4 +19,9 @@ xcuserdata/
 # Source PDFs and build artifacts
 sources/*.pdf
 build/
-app/dd/
+app/dd*/
+
+# Local scratch: build artifacts, screenshots, drafts — anything that is
+# working material rather than repository content. Keeps this out of the
+# user's Desktop and out of /tmp.
+.scratch/
