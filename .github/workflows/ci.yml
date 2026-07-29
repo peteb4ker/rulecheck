@@ -174,8 +174,41 @@ jobs:
     if: needs.detect.outputs.has-app == 'true' && needs.detect.outputs.app-relevant == 'true'
     runs-on: macos-15
     timeout-minutes: 30
+    env:
+      SIMULATOR_DEVICE: iPhone 16
     steps:
       - uses: actions/checkout@v7
+      # Booting a simulator from cold costs ~165s, and xcodebuild does it
+      # *after* the build — 165s of dead air between the last compile line
+      # and the first app log (issue #19). Kicking the boot off here lets it
+      # run against the DB build, scheme discovery and the compile instead of
+      # after them. simctl boot returns as soon as the request is accepted;
+      # the wait happens in the bootstatus step below.
+      - name: Start simulator boot
+        id: sim
+        run: |
+          udid=$(xcrun simctl list devices available --json \
+            | SIMULATOR_DEVICE="$SIMULATOR_DEVICE" python3 -c '
+          import json, os, sys
+          want = os.environ["SIMULATOR_DEVICE"]
+          runtimes = json.load(sys.stdin)["devices"]
+          found = ""
+          for runtime in sorted(runtimes):
+              if "iOS" not in runtime:
+                  continue
+              for device in runtimes[runtime]:
+                  if device["name"] == want:
+                      found = device["udid"]
+          print(found)
+          ')
+          if [ -z "$udid" ]; then
+            echo "::error::no available '$SIMULATOR_DEVICE' simulator on this runner"
+            xcrun simctl list devices available
+            exit 1
+          fi
+          echo "booting $SIMULATOR_DEVICE ($udid)"
+          xcrun simctl boot "$udid" || true
+          echo "udid=$udid" >> "$GITHUB_OUTPUT"
       - uses: astral-sh/setup-uv@v9.0.0
         with:
           enable-cache: true
@@ -205,10 +238,19 @@ jobs:
           fi
           echo "project=$project" >> "$GITHUB_OUTPUT"
           echo "scheme=$scheme" >> "$GITHUB_OUTPUT"
+      # Collect on the boot started above. By now it has had the uv install,
+      # the DB build and scheme discovery to make progress in; bootstatus
+      # blocks only for whatever is left. It also boots the device itself if
+      # the earlier `simctl boot` failed, so this step is the real gate.
+      - name: Wait for simulator
+        run: xcrun simctl bootstatus '${{ steps.sim.outputs.udid }}' -b
       - name: Unit and UI tests
+        # Target the booted device by UDID, not by name: a name lets
+        # xcodebuild pick some other matching device and boot it from cold,
+        # which is the 165s this change exists to avoid.
         run: |
           xcodebuild test \
             -project '${{ steps.xcode.outputs.project }}' \
             -scheme '${{ steps.xcode.outputs.scheme }}' \
-            -destination 'platform=iOS Simulator,name=iPhone 16' \
+            -destination 'platform=iOS Simulator,id=${{ steps.sim.outputs.udid }}' \
             CODE_SIGNING_ALLOWED=NO
