@@ -39,6 +39,33 @@ final class BundleIdentityTests: XCTestCase {
         XCTAssertEqual(appInfo["ITSAppUsesNonExemptEncryption"] as? Bool, false)
     }
 
+    /// Apple's upload validator rejects a universal build declaring no
+    /// orientations — this is a hard failure at upload, not a warning, and it
+    /// cost us a round trip to discover.
+    func testInterfaceOrientationsAreDeclaredForBothIdioms() throws {
+        // Read the raw plist, not infoDictionary: the OS resolves `~ipad`
+        // suffixed keys by idiom at load time, so on an iPhone the iPad key
+        // is invisible through the normal API even though it is in the file —
+        // and the file is what Apple's upload validator reads.
+        let url = Bundle.main.bundleURL.appendingPathComponent("Info.plist")
+        let data = try Data(contentsOf: url)
+        let raw = try XCTUnwrap(
+            try PropertyListSerialization.propertyList(from: data, format: nil) as? [String: Any])
+
+        let phone = try XCTUnwrap(raw["UISupportedInterfaceOrientations"] as? [String],
+                                  "UISupportedInterfaceOrientations missing — upload will be rejected")
+        XCTAssertTrue(phone.contains("UIInterfaceOrientationPortrait"))
+
+        let pad = try XCTUnwrap(raw["UISupportedInterfaceOrientations~ipad"] as? [String],
+                                "iPad orientations missing — TARGETED_DEVICE_FAMILY includes iPad")
+        XCTAssertEqual(Set(pad), [
+            "UIInterfaceOrientationPortrait",
+            "UIInterfaceOrientationPortraitUpsideDown",
+            "UIInterfaceOrientationLandscapeLeft",
+            "UIInterfaceOrientationLandscapeRight",
+        ], "iPad must support all four orientations for multitasking")
+    }
+
     func testVersionKeysArePresentAndWellFormed() throws {
         let short = try XCTUnwrap(appInfo["CFBundleShortVersionString"] as? String,
                                   "CFBundleShortVersionString missing — App Store Connect rejects this")

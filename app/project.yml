@@ -33,6 +33,20 @@ targets:
         # Without this key App Store Connect asks the export-compliance
         # question on every upload and holds the build until it is answered.
         ITSAppUsesNonExemptEncryption: false
+        # Apple's upload validator REJECTS a universal build that declares no
+        # orientations — it is not a warning. iPad must offer all four so the
+        # app can be a multitasking split-view companion, which is exactly how
+        # a judge would use it beside something else. iPhone omits
+        # upside-down, per platform convention.
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        UISupportedInterfaceOrientations~ipad:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationPortraitUpsideDown
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
         UILaunchScreen:
           UIColorName: canvas
     settings:
