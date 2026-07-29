@@ -69,6 +69,10 @@ the spec wins if this file and the spec ever disagree.
 - **CI enforces the gates.** `.github/workflows/ci.yml` runs the guard
   checks (no PDFs/DBs in git, manifest + content validity), pipeline
   tests, content build+verify, and app tests on app-relevant changes.
+  The macOS app job bills at 10x Linux, so it runs on **pull requests
+  only** — never on pushes to `main`, since squash-merge means the
+  landed tree is the one the PR tested. A daily scheduled run verifies
+  `main`; `gh workflow run ci.yml` forces one on demand.
   Checks are advisory (no branch protection on the current GitHub plan) —
   a red check still means stop and fix.
 

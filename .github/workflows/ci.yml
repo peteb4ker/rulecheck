@@ -5,7 +5,7 @@ on:
   push:
     branches: [main]
   schedule:
-    - cron: '17 6 * * 1' # weekly drift check (Mon 06:17 UTC)
+    - cron: '17 6 * * *' # daily drift check + main verification (06:17 UTC)
   workflow_dispatch:
 
 permissions:
@@ -47,18 +47,21 @@ jobs:
           # ranking, and the DB-level persona gates cover that on Linux in
           # the pipeline job below.
           # Scheduled runs still force it, so a path-filter gap surfaces
-          # weekly rather than never.
+          # daily rather than never.
+          #
+          # Pushes to main never run it. We squash-merge, so the commit that
+          # lands is the tree the PR just tested — re-running it on main was
+          # half the entire CI bill (110 of 216 macOS minutes on 2026-07-28)
+          # and never once caught something the PR had not. The residual risk
+          # is a semantic conflict between two PRs merged close together;
+          # the daily scheduled run is the net for that, and
+          # `gh workflow run ci.yml` forces a check on demand.
           app_relevant=false
           if [ "$EVENT_NAME" = "schedule" ] || [ "$EVENT_NAME" = "workflow_dispatch" ]; then
             app_relevant=true
           fi
-          if [ "$EVENT_NAME" = "pull_request" ] || [ "$EVENT_NAME" = "push" ]; then
-            if [ "$EVENT_NAME" = "pull_request" ]; then
-              base=$(git merge-base "$BASE_SHA" HEAD)
-            else
-              base="${{ github.event.before }}"
-              git cat-file -e "$base^{commit}" 2>/dev/null || base=$(git rev-parse HEAD~1)
-            fi
+          if [ "$EVENT_NAME" = "pull_request" ]; then
+            base=$(git merge-base "$BASE_SHA" HEAD)
             changed=$(git diff --name-only "$base" HEAD)
             printf 'changed files:\n%s\n' "$changed"
             if printf '%s\n' "$changed" | grep -qE '^(app/|pipeline/src/rulecheck_pipeline/build\.py|\.github/workflows/)'; then
