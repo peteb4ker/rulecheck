@@ -47,7 +47,11 @@ Both run as automated tests against the real shipped database.
 | Content updates | Baked in; new app release when TPCi revises a document |
 | Pricing | Free, no ads, no IAP for v1; future tiers possible (nothing structural needed now) |
 | v1 features | Search + read only. No bookmarks, history, or judge tools in v1 |
-| Name | Rule Check on the App Store (Research Gate decision); repo/Xcode project stay "rulecheck" unless renamed later |
+| Name | **Rule Check** on the App Store — two words. "RuleCheck" (one word) is a live, unrelated app (id6786960142), so the one-word form survives only in internal identifiers |
+| App record | App Store Connect Apple ID **6795782451**, created 2026-07-28 (name reserved; no build uploaded yet) |
+| Bundle ID | `app.rulecheck.RuleCheck` — reverse-DNS of rulecheck.app. Permanent once submitted |
+| Seller | Individual Apple Developer account (team T27ZNJQMWN, "PETER BAKER"). Not a Skyetrail app |
+| EU trader status | **Non-trader** while the app is free with no ads or IAP. Per-app and reversible; flipping it publishes an address on the EU product page, so revisit before charging |
 
 ## Architecture
 

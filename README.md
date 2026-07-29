@@ -12,6 +12,9 @@ end — search, reader, browse, and About against the real database, with
 persona acceptance and UI tests green. See the
 [design spec](docs/superpowers/specs/2026-07-26-rulecheck-design.md).
 
+**App Store:** name reserved as **Rule Check** (App Store Connect Apple ID
+`6795782451`, bundle `app.rulecheck.RuleCheck`). No build uploaded yet.
+
 ## Running the pipeline
 
 One-time bootstrap:

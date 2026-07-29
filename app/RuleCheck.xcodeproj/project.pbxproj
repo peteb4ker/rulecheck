@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		19A14D7C4B9BF25016F1FDF2 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87DB0F83126EC4CB0418D8C /* Models.swift */; };
 		2575BE81CC239B637814860C /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08104ED49CC386BA69B5AD49 /* ErrorView.swift */; };
+		28CC50AE0040EB3168ED40F0 /* BundleIdentityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A145EEC839B0461F9E123E8 /* BundleIdentityTests.swift */; };
 		2DE61F22C1B71C3B5B625115 /* CitationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF10B13A88B0F1F89AD55282 /* CitationTests.swift */; };
 		34D197972872C9761E3D93D6 /* SmokeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C523212B98E5791A61D9F8E /* SmokeTests.swift */; };
 		3CB051C3483CD04A14B4EC13 /* RuleCheckApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE000F6A7BA887918C5A692B /* RuleCheckApp.swift */; };
@@ -70,6 +71,7 @@
 		62AE4AFB7A5057A9B79E3468 /* SnippetHighlighter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetHighlighter.swift; sourceTree = "<group>"; };
 		74683F30E9D83A2D17E88C5B /* PaletteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaletteTests.swift; sourceTree = "<group>"; };
 		7964E7CCBCBBC621E98D9F52 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		7A145EEC839B0461F9E123E8 /* BundleIdentityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleIdentityTests.swift; sourceTree = "<group>"; };
 		8273244E776DA8750FC21A02 /* SnippetHighlighterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetHighlighterTests.swift; sourceTree = "<group>"; };
 		84A08C031AD6CDFE3D44B8F2 /* RuleCheckUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = RuleCheckUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C44BD37882760E814F84E5B /* rulecheck.db */ = {isa = PBXFileReference; path = rulecheck.db; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 		0981AEEA54CD1F6A777AC90A /* RuleCheckTests */ = {
 			isa = PBXGroup;
 			children = (
+				7A145EEC839B0461F9E123E8 /* BundleIdentityTests.swift */,
 				BF10B13A88B0F1F89AD55282 /* CitationTests.swift */,
 				74683F30E9D83A2D17E88C5B /* PaletteTests.swift */,
 				278D8DF2000740769CB8075F /* PersonaAcceptanceTests.swift */,
@@ -333,6 +336,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28CC50AE0040EB3168ED40F0 /* BundleIdentityTests.swift in Sources */,
 				2DE61F22C1B71C3B5B625115 /* CitationTests.swift in Sources */,
 				61D8A98E4A1AB72061CEB815 /* PaletteTests.swift in Sources */,
 				EA218A3FF7AD7A18F55EE1F1 /* PersonaAcceptanceTests.swift in Sources */,
@@ -451,12 +455,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = app.rulecheck.RuleCheckTests;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -470,6 +476,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = T27ZNJQMWN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RuleCheck/Info.plist;
@@ -478,6 +485,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = app.rulecheck.RuleCheck;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.10;
@@ -491,6 +499,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = T27ZNJQMWN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RuleCheck/Info.plist;
@@ -499,6 +508,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = app.rulecheck.RuleCheck;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.10;
@@ -573,12 +583,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = app.rulecheck.RuleCheckTests;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -590,12 +602,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = app.rulecheck.RuleCheckUITests;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -607,12 +621,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = app.rulecheck.RuleCheckUITests;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
