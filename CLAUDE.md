@@ -21,8 +21,12 @@ the spec wins if this file and the spec ever disagree.
 
 - **The app makes zero network calls. Ever.** No analytics, no telemetry, no
   "report a bug" upload, no CDN config. This is a shipped promise, not a default.
-- **Source PDFs are never committed** (`sources/*.pdf` is git-ignored).
-  `sources.yaml` and parsed `content/*.json` are committed.
+- **No verbatim source text in the repository.** `sources/*.pdf` is
+  git-ignored and so is the full parse artifact `build/content/`. What is
+  committed is `content/*.json` — structure, citations and body *lengths*,
+  no prose — plus `content/fingerprints/` (one-way hashes that keep the
+  paraphrase tripwire working without the text). A CI guard fails the
+  build if any committed section carries a `body`.
 - **Verbatim rules text is gated on the Research Gate** in the spec. Don't
   ship or publicize content decisions before that research is done.
 - **No Pokemon character/species names anywhere user-facing** (app name,
@@ -82,7 +86,9 @@ the spec wins if this file and the spec ever disagree.
 justfile           # dev commands: just setup / all / test / download …
 pipeline/          # Python: ingest → parse → build → verify
 sources/           # sources.yaml manifest (+ git-ignored PDFs)
-content/           # parsed intermediate JSON (committed, reviewable)
+content/           # committed index: structure + citations, no prose
+content/fingerprints/  # one-way hashes backing the paraphrase tripwire
+build/content/     # full parsed text, verbatim (git-ignored)
 build/             # rulecheck.db build product (git-ignored)
 app/               # Xcode project: SwiftUI + GRDB, iOS 17+
 docs/superpowers/  # specs, plans, research notes

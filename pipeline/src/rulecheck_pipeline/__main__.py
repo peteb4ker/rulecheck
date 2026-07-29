@@ -10,7 +10,8 @@ from rulecheck_pipeline.build import build_db
 from rulecheck_pipeline.content_check import check_rewrites
 from rulecheck_pipeline.download import download_doc
 from rulecheck_pipeline.manifest import load_manifest
-from rulecheck_pipeline.model import dump_document, load_document
+from rulecheck_pipeline import shingles
+from rulecheck_pipeline.model import dump_document, dump_index, load_document
 from rulecheck_pipeline.parse import parse_pdf
 from rulecheck_pipeline.rewrites import is_skip, load_rewrites
 from rulecheck_pipeline.verify import verify_db
@@ -34,18 +35,33 @@ def cmd_parse(root: Path) -> int:
             )
         return 1
 
+    # Three artifacts per document, and the split is deliberate:
+    #   build/content/<id>.json     full verbatim text — git-ignored
+    #   content/<id>.json           structure and citations only — committed
+    #   content/fingerprints/<id>.json  one-way fingerprints — committed
+    # The repository never holds the prose; the checks that need it either run
+    # against the local build artifact or against the fingerprints.
+    full_dir = root / "build" / "content"
     for source in sources:
         pdf_path = root / "sources" / source.file
         sections = parse_pdf(pdf_path, source)
-        out = content_dir / f"{source.id}.json"
-        dump_document(source, sections, out)
-        print(f"parsed {source.id}: {len(sections)} sections -> {out}")
+        dump_document(source, sections, full_dir / f"{source.id}.json")
+        index = content_dir / f"{source.id}.json"
+        dump_index(source, sections, index)
+        shingles.dump(sections, content_dir / "fingerprints" / f"{source.id}.json")
+        print(f"parsed {source.id}: {len(sections)} sections -> {index} (+ fingerprints)")
     return 0
 
 
 def cmd_build(root: Path) -> int:
     db_path = root / "build" / "rulecheck.db"
-    build_db(root / "content", db_path, rewrites_dir=root / "rewrites")
+    try:
+        build_db(root / "content", db_path, rewrites_dir=root / "rewrites",
+                 full_content_dir=root / "build" / "content")
+    except ValueError as exc:
+        # Refusing to ship is a real outcome, not a crash — say so plainly.
+        print(f"ERROR: {exc}", file=sys.stderr)
+        return 1
     print(f"built {db_path}")
     return 0
 
@@ -53,7 +69,8 @@ def cmd_build(root: Path) -> int:
 def cmd_verify(root: Path, release: bool = False) -> int:
     errors = verify_db(root / "build" / "rulecheck.db")
     if (root / "rewrites").is_dir():
-        errors.extend(check_rewrites(root / "content", root / "rewrites", release=release))
+        errors.extend(check_rewrites(root / "content", root / "rewrites", release=release,
+                                     full_content_dir=root / "build" / "content"))
     warnings = [e for e in errors if e.startswith("warning:")]
     errors = [e for e in errors if not e.startswith("warning:")]
     for w in warnings:
@@ -69,7 +86,7 @@ def cmd_content_status(root: Path) -> int:
     entries = load_rewrites(root / "rewrites") if (root / "rewrites").is_dir() else {}
     for path in sorted((root / "content").glob("*.json")):
         source, sections = load_document(path)
-        leaves = [s.id for s in sections if s.body.strip()]
+        leaves = [s.id for s in sections if s.body_chars]
         covered = [sid for sid in leaves if sid in entries]
         authored = [sid for sid in covered if not is_skip(entries[sid])]
         skipped = [sid for sid in covered if is_skip(entries[sid])]

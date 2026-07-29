@@ -97,6 +97,25 @@ jobs:
             printf '%s\n' "$tracked"
             exit 1
           fi
+      - name: No verbatim source text in the committed index
+        run: |
+          python3 - <<'EOF'
+          import glob, json, sys
+          offenders = []
+          for path in sorted(glob.glob('content/*.json')):
+              for section in json.load(open(path))['sections']:
+                  if section.get('body'):
+                      offenders.append(f"{path}:{section['id']}")
+          if offenders:
+              print('::error::Verbatim source text must never be committed. '
+                    'content/ holds structure and citations only; prose belongs '
+                    'in the git-ignored build/content/ artifact. Offenders:')
+              for o in offenders[:20]:
+                  print(f'  {o}')
+              sys.exit(1)
+          print('content/ carries no body text')
+          EOF
+
       - name: sources.yaml parses
         run: |
           if [ -f sources/sources.yaml ]; then

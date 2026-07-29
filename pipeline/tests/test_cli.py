@@ -33,15 +33,23 @@ def test_all_pipeline(tmp_path, fixture_pdf):
     assert (root / "build" / "rulecheck.db").exists()
 
 
-def test_verify_failure_exit_code(tmp_path, fixture_pdf):
+def test_build_refuses_prose_it_has_no_text_for(tmp_path, fixture_pdf, capsys):
+    """A section the index says carries prose, with no rewrite entry and no
+    verbatim text to fall back on, must stop the build rather than ship an
+    empty row. After the purge this is the guarantee that verbatim text
+    cannot re-enter the app by accident."""
     root = make_repo(tmp_path, fixture_pdf)
     assert main(["parse", "--root", str(root)]) == 0
-    # sabotage: blank a leaf body in the content JSON
-    p = root / "content" / "fixture-doc.json"
+    # Blank a leaf body in the parse artifact; the committed index still
+    # records that the section has prose.
+    p = root / "build" / "content" / "fixture-doc.json"
     p.write_text(p.read_text().replace(
         "Flip a coin between turns. If heads, the Pokemon wakes up.", ""))
-    assert main(["build", "--root", str(root)]) == 0
-    assert main(["verify", "--root", str(root)]) == 1
+
+    assert main(["build", "--root", str(root)]) == 1
+    err = capsys.readouterr().err
+    assert "no rewrite entry" in err
+    assert "Traceback" not in err
 
 
 def test_download_new_then_changed(tmp_path, fixture_pdf):

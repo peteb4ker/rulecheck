@@ -20,6 +20,7 @@ from __future__ import annotations
 import re
 from pathlib import Path
 
+from rulecheck_pipeline import shingles
 from rulecheck_pipeline.model import load_document
 from rulecheck_pipeline.rewrites import is_skip, load_rewrites, validate_entry
 
@@ -60,18 +61,48 @@ def _ngrams(tokens: list[str], n: int) -> set[tuple[str, ...]]:
     return {tuple(tokens[i:i + n]) for i in range(len(tokens) - n + 1)}
 
 
-def check_rewrites(content_dir: Path, rewrites_dir: Path, release: bool = False) -> list[str]:
+def check_rewrites(content_dir: Path, rewrites_dir: Path, release: bool = False,
+                   full_content_dir: Path | None = None) -> list[str]:
+    """Validate the rewrite layer.
+
+    Runs in two modes. With the full parse artifact present (local work, and
+    any release) every check runs against real source text. With only the
+    committed index (CI, and any clone without the PDFs) the source text does
+    not exist, so the overlap tripwire runs against one-way fingerprints
+    instead — same question, no prose in the repository.
+    """
     errors: list[str] = []
 
     sections: dict[str, dict] = {}
     for path in sorted(Path(content_dir).glob("*.json")):
         _, secs = load_document(path)
         for sec in secs:
-            sections[sec.id] = {"body": sec.body, "tier_doc": sec.doc_id}
+            sections[sec.id] = {"body": sec.body, "chars": sec.body_chars,
+                                "tier_doc": sec.doc_id}
+    if full_content_dir and Path(full_content_dir).is_dir():
+        for path in sorted(Path(full_content_dir).glob("*.json")):
+            for sec in load_document(path)[1]:
+                if sec.id in sections and sec.body:
+                    sections[sec.id]["body"] = sec.body
+
+    prints: dict[str, set[str]] = {}
+    fingerprint_dir = Path(content_dir) / "fingerprints"
+    if fingerprint_dir.is_dir():
+        for path in sorted(fingerprint_dir.glob("*.json")):
+            prints.update(shingles.load(path))
+
+    have_text = any(s["body"] for s in sections.values())
+    if release and not have_text:
+        errors.append(
+            "release verification needs the full parse artifact (verbatim source "
+            "text) to check declared quotes exactly — run `just parse` first"
+        )
+
     # Coverage follows BODIES, not tree position: containers can carry real
     # prose (e.g. an overview above its child sections) and that text must
-    # not ship verbatim. Empty-bodied sections need no entry.
-    needs_entry = {sid for sid, s in sections.items() if _normalize(s["body"])}
+    # not ship verbatim. Empty-bodied sections need no entry. The index keeps
+    # the length so this still works without the text itself.
+    needs_entry = {sid for sid, s in sections.items() if s["chars"]}
 
     entries = load_rewrites(rewrites_dir)
     skipped = {sid for sid, e in entries.items() if is_skip(e)}
@@ -93,27 +124,42 @@ def check_rewrites(content_dir: Path, rewrites_dir: Path, release: bool = False)
             elif target in skipped:
                 errors.append(f"{sid}: see_also target {target} is skipped (absent from the app)")
 
-        source_norm = _normalize(sections[sid]["body"])
-        source_tokens = _tokens(sections[sid]["body"])
+        body = sections[sid]["body"]
+        source_norm = _normalize(body)
         fields = _text_fields(entry)
         fields_norm = [_normalize(f) for f in fields]
 
-        allowed: set[tuple[str, ...]] = set()
-        for quote in entry.get("quotes", []):
-            quote_norm = _normalize(quote)
-            if quote_norm not in source_norm:
-                errors.append(f'{sid}: quote "{quote}" not found in source text')
-            if not any(quote_norm in f for f in fields_norm):
-                errors.append(f'{sid}: quote "{quote}" unused in entry text')
-            allowed |= _ngrams(_tokens(quote), OVERLAP_TOKENS)
+        # With text: exact n-grams. Without: the committed fingerprints of the
+        # same n-grams. Identical question, one of them just cannot be read.
+        source_marks = (_ngrams(_tokens(body), OVERLAP_TOKENS) if body
+                        else prints.get(sid, set()))
 
-        source_grams = _ngrams(source_tokens, OVERLAP_TOKENS)
+        def marks(text: str) -> set:
+            return (_ngrams(_tokens(text), OVERLAP_TOKENS) if body
+                    else shingles.fingerprints(text))
+
+        allowed = set()
+        for quote in entry.get("quotes", []):
+            if body:
+                if _normalize(quote) not in source_norm:
+                    errors.append(f'{sid}: quote "{quote}" not found in source text')
+            elif len(_tokens(quote)) >= OVERLAP_TOKENS and not (
+                    marks(quote) and marks(quote) <= source_marks):
+                errors.append(
+                    f'{sid}: quote "{quote}" does not match the source fingerprints '
+                    f"(run `just parse` to verify quotes against real text)"
+                )
+            if not any(_normalize(quote) in f for f in fields_norm):
+                errors.append(f'{sid}: quote "{quote}" unused in entry text')
+            allowed |= marks(quote)
+
         for field in fields:
-            for gram in _ngrams(_tokens(field), OVERLAP_TOKENS):
-                if gram in source_grams and gram not in allowed:
+            for gram in marks(field):
+                if gram in source_marks and gram not in allowed:
+                    detail = (f'("{" ".join(gram[:6])} …") ' if body else "")
                     errors.append(
                         f"{sid}: undeclared {OVERLAP_TOKENS}-token overlap with source "
-                        f'("{" ".join(gram[:6])} …") — paraphrase or declare a quote'
+                        f"{detail}— paraphrase or declare a quote"
                     )
                     break  # one report per field is enough
 
