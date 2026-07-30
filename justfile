@@ -69,6 +69,13 @@ check-decomposition: build
 check-fidelity-review *ARGS:
     python3 scripts/check_fidelity_review.py --root . {{ARGS}}
 
+# Does anything in the corpus back a claim up? Searches the source text and
+# our own entries, matching inflections. For a reviewer checking whether an
+# entry invented something or drew it from another section.
+#   just corroborate "discard pile face up"
+corroborate *ARGS:
+    python3 scripts/corroborate.py --root . {{ARGS}}
+
 # Fair-use quantification: quote budgets, overlap distribution, compression.
 # Needs the source PDFs, so this is a local/release check and not a CI gate —
 # CI has no PDFs and fingerprints cannot answer how long the shared runs are.
