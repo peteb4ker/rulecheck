@@ -102,7 +102,7 @@ def cmd_content_status(root: Path) -> int:
     return 0
 
 
-def cmd_lexicon_candidates(root: Path, min_count: int = 5) -> int:
+def cmd_lexicon_candidates(root: Path, min_count: int = 5, max_words: int = 3) -> int:
     """Candidate vocabulary from the authored corpus, deterministically.
 
     The re-derivable half of the lexicon. Same corpus in, same candidates out,
@@ -115,9 +115,10 @@ def cmd_lexicon_candidates(root: Path, min_count: int = 5) -> int:
             if "skip" in entry:
                 continue
             texts.extend(_free_text(entry))
-    for candidate in lexicon.extract(texts, min_count=min_count):
-        forms = "/".join(candidate["forms"][:5])
-        print(f"{candidate['count']:6d}  {candidate['lemma']:22s} {forms}")
+    for candidate in lexicon.extract(texts, min_count=min_count, max_words=max_words):
+        forms = "/".join(candidate["forms"][:4])
+        print(f"{candidate['count']:6d}  {candidate['words']}w  "
+              f"{candidate['lemma']:28s} {forms}")
     return 0
 
 
