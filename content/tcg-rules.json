@@ -8,6 +8,7 @@
     ],
     "id": "tcg-rules",
     "layout": true,
+    "order": 0,
     "prefix": "tcg",
     "published": "2026-07-16",
     "sha256": "60ba9297524f40303a97dc19d3f2219a384a6298486f3d252e70ca2940c9b02a",

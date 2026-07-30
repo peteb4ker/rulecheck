@@ -12,7 +12,7 @@ from rulecheck_pipeline.parse import parse_pdf
 # are pinned here so a change to either is a deliberate edit to this list, made
 # in the same PR as the app-side change (see CLAUDE.md).
 EXPECTED_COLUMNS = {
-    "documents": ["id", "prefix", "title", "version", "published", "url"],
+    "documents": ["id", "prefix", "title", "version", "published", "url", "sort_order"],
     "sections": ["id", "doc_id", "parent_id", "number", "title", "body",
                  "breadcrumb", "sort_order", "structure"],
     "xrefs": ["from_id", "to_id"],

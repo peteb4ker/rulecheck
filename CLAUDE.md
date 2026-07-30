@@ -118,6 +118,10 @@ app/               # Xcode project: SwiftUI + GRDB, iOS 17+
 docs/superpowers/  # specs, plans, research notes
 ```
 
+Document order on the browse screen follows `sources/sources.yaml`, carried
+through as `documents.sort_order`. Players meet the game rules first, then
+tournament rules, then the penalty guidelines.
+
 The SQLite schema in `pipeline/src/rulecheck_pipeline/build.py` is the
 contract between pipeline and app. Schema changes touch both sides in the
 same PR, or ship pipeline-first with backward compatibility.

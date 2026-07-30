@@ -17,7 +17,10 @@ CREATE TABLE documents(
   title TEXT NOT NULL,
   version TEXT NOT NULL,
   published TEXT NOT NULL,
-  url TEXT NOT NULL
+  url TEXT NOT NULL,
+  -- Position in sources.yaml. The browse screen orders by this so a player
+  -- meets the game rules first, not whichever title sorts first.
+  sort_order INTEGER NOT NULL
 );
 CREATE TABLE sections(
   id TEXT PRIMARY KEY,
@@ -78,10 +81,10 @@ def build_db(content_dir: Path, out_path: Path, rewrites_dir: Path | None = None
         for json_path in sorted(Path(content_dir).glob("*.json")):
             source, sections = load_document(json_path)
             con.execute(
-                "INSERT INTO documents(id, prefix, title, version, published, url) "
-                "VALUES (?, ?, ?, ?, ?, ?)",
+                "INSERT INTO documents(id, prefix, title, version, published, url, "
+                "sort_order) VALUES (?, ?, ?, ?, ?, ?, ?)",
                 (source.id, source.prefix, source.title, source.version,
-                 source.published, source.url),
+                 source.published, source.url, source.order),
             )
             # Skipped sections never reach the app at all — not as structure,
             # and emphatically not as verbatim source text.

@@ -5,6 +5,15 @@ final class RulesRepositoryTests: XCTestCase {
     var repo: RulesRepository!
     override func setUpWithError() throws { repo = try RulesRepository.bundled() }
 
+    /// Players open the app mid-game, so the game rules come first. Ordering
+    /// by id put the penalty guidelines at the top, which is the document a
+    /// player is least likely to want.
+    func testDocumentsFollowManifestOrderNotAlphabetical() throws {
+        let ids = try RulesRepository.bundled().documents().map(\.id)
+        XCTAssertEqual(ids, ["tcg-rules", "tournament-rules", "penalty-guidelines"])
+        XCTAssertNotEqual(ids, ids.sorted(), "alphabetical order is the bug, not the fix")
+    }
+
     func testDocumentsListsAllThree() throws {
         let ids = try repo.documents().map(\.id).sorted()
         XCTAssertEqual(ids, ["penalty-guidelines", "tcg-rules", "tournament-rules"])

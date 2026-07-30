@@ -103,3 +103,33 @@ def test_layout_optional_field(tmp_path):
     )
     assert load_manifest(write(tmp_path, with_layout))[0].layout is True
     assert load_manifest(write(tmp_path, VALID))[0].layout is False
+
+
+def test_manifest_position_is_recorded(tmp_path):
+    """Document order on the browse screen follows sources.yaml, so the app
+    shows game rules first for players, then tournament rules, then the
+    penalty guidelines. Ordering by id gave alphabetical instead, which put
+    the most niche document at the top."""
+    path = tmp_path / "sources.yaml"
+    path.write_text("""
+documents:
+  - id: first-doc
+    prefix: one
+    title: First
+    version: "1"
+    published: "2026-01-01"
+    url: "https://example.com/1.pdf"
+    file: "1.pdf"
+    heading_rules: ['^(\\\\d+)\\\\s+(.+)$']
+  - id: second-doc
+    prefix: two
+    title: Second
+    version: "1"
+    published: "2026-01-01"
+    url: "https://example.com/2.pdf"
+    file: "2.pdf"
+    heading_rules: ['^(\\\\d+)\\\\s+(.+)$']
+""")
+    docs = load_manifest(path)
+    assert [d.id for d in docs] == ["first-doc", "second-doc"]
+    assert [d.order for d in docs] == [0, 1], "manifest position must survive into the model"

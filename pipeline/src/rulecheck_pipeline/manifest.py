@@ -46,7 +46,7 @@ def load_manifest(path: Path) -> list[SourceDoc]:
     if not entries:
         raise ManifestError("manifest has no documents")
     docs: list[SourceDoc] = []
-    for entry in entries:
+    for position, entry in enumerate(entries):
         missing = [k for k in REQUIRED if k not in entry]
         if missing:
             raise ManifestError(f"document entry missing fields: {', '.join(missing)}")
@@ -59,7 +59,7 @@ def load_manifest(path: Path) -> list[SourceDoc]:
         _validate_heading_rules(entry["id"], entry["heading_rules"])
         fields = {k: entry[k] for k in REQUIRED}
         fields.update({k: entry[k] for k in OPTIONAL if k in entry})
-        docs.append(SourceDoc(**fields))
+        docs.append(SourceDoc(**fields, order=position))
     for field in ("id", "prefix"):
         values = [getattr(d, field) for d in docs]
         dupes = {v for v in values if values.count(v) > 1}
