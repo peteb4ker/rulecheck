@@ -1,0 +1,393 @@
+{
+  "tcg-3 Card Types": {
+    "entry_sha256": "97a7b6055032c97f9d4940a091d35f608a64a306b8be330552cb19c55438b96a",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "tcg-Appendix 10: Pokémon V-UNION": {
+    "entry_sha256": "ab2db2e07c34e74faa1e859792230dfd27231811f0c90a6550d81c4f83d78949",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "tcg-Appendix 11: Battle Styles": {
+    "entry_sha256": "931286708dfb45b7c8de2822b2e3cc84958bc77783282ad371b8304683e2923f",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "tcg-Appendix 12: Pokémon V": {
+    "entry_sha256": "b8e110010a52ac33a8b27a7375e101b9181471f4630ac7b6c32db30404dfd6cf",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "tcg-Appendix 13: Pokémon VMAX": {
+    "entry_sha256": "d079c0ce05a790f9d18403eb067e76eda3b0a4bce5fc563c63ad5aa8ab71fce8",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "tcg-Appendix 14: Regional Variants": {
+    "entry_sha256": "c6ae26331bedce11aeca61613472849efd4801c152f8f05c2808befe60f07dfc",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "tcg-Appendix 15: TAG TEAM Supporter Cards": {
+    "entry_sha256": "1da9b342f4abc2ea8fc4581edb6fd7b7428560176f8302667c72c6f9849353ad",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "tcg-Appendix 16: TAG TEAM": {
+    "entry_sha256": "3de93ef12e5a8feaa6e19f9c45a82f073e95e45b29d554204a6e7cefaf5048f2",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "tcg-Appendix 17: Prism Star Cards": {
+    "entry_sha256": "0072b6c048e7c07eb59033d8f70bb85c33f91cd9c397c5284db1d3747a903f01",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "tcg-Appendix 18: Rare Fossil, Unidentified Fossil,": {
+    "entry_sha256": "70cb6d3637c0149ce454a81bdaaa1819e6d43e329686b211fff0feca2eeda027",
+    "findings": [
+      {
+        "class": "OMISSION",
+        "note": "the source says Fossil cards with 'Antique' in the name can also be played as Basic Pokemon; the entry states that only for the other two named Item cards, leaving how an Antique Fossil reaches play unstated",
+        "resolved": false,
+        "severity": "low"
+      }
+    ],
+    "verdict": "findings"
+  },
+  "tcg-Appendix 19: Pokémon-GX": {
+    "entry_sha256": "e7a2d8fed7c2a3d2d18ed9ad96e2d20250bdd96b6f82a72e6f7203a820010f9f",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "tcg-Appendix 1: Mega Evolution Pokémon ex": {
+    "entry_sha256": "94f25b5577c8857d17cc86c498fa223c581752fe99a64191a2e45564e1403dfc",
+    "findings": [
+      {
+        "class": "OMISSION",
+        "note": "the source's headline contrast is that, unlike the older Mega Evolution Pokemon-EX, this card type has no special rules for playing it — notably no turn-ending rule. The entry rendered that as a deck-building remark only, so a judge cross-reading the Mega Evolution Pokemon-EX entry could carry the turn-ending rule across in the live format. Fixed: added a state line saying nothing about putting one into play ends your turn",
+        "resolved": true,
+        "severity": "high"
+      },
+      {
+        "class": "INVENTION",
+        "note": "the entry described the off-ladder Evolution examples as evolving from the pre-Mega line's Stage 1; the source never gives those stages, and one of its examples in fact evolves straight from a Basic. Fixed: the line no longer asserts a specific stage",
+        "resolved": true,
+        "severity": "low"
+      }
+    ],
+    "verdict": "findings"
+  },
+  "tcg-Appendix 20: Ultra Beasts": {
+    "entry_sha256": "a48f83cfc1725b13968074b07cb9e9dcb835f9f01be2c74848040fe773e0d18b",
+    "findings": [
+      {
+        "class": "DRIFT",
+        "note": "in the source the corner bar is how an Ultra Beast is identified, full stop; the entry makes the marking conditional on another card's effect interacting with Ultra Beasts, which is not what the source says",
+        "resolved": false,
+        "severity": "low"
+      }
+    ],
+    "verdict": "findings"
+  },
+  "tcg-Appendix 21: Dual-Type Pokémon": {
+    "entry_sha256": "a31a7519c4add0d491377b9834b294092f7ee3b72803d395a6428fc8f02fc7f6",
+    "findings": [
+      {
+        "class": "DRIFT",
+        "note": "the source scopes the rule to the dual-type Pokemon attacking a defender that has Weakness or Resistance to either of its two types; the entry says 'when it attacks or is attacked' and phrases the Weakness-then-Resistance order as though the dual-type itself held both, inverting which side carries them",
+        "resolved": false,
+        "severity": "low"
+      }
+    ],
+    "verdict": "findings"
+  },
+  "tcg-Appendix 22: BREAK Evolution": {
+    "entry_sha256": "d02f0cb273a1db06e55e6a5ec0965cda9556cee8ee204fe054457fad452e0419",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "tcg-Appendix 23: Ancient Traits": {
+    "entry_sha256": "a0da148bf54f0e1431090d41e66b50ec311325aeb0bd2fff012e786b45b17fc2",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "tcg-Appendix 24: Team Flare Hyper Gear": {
+    "entry_sha256": "28d3ed93f46b4636c88aa7ef7337bbe3dff2c66ae53290e4d94769b31c29ac38",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "tcg-Appendix 25: Pokémon-EX": {
+    "entry_sha256": "4db75fb10ae6079165ee5be35177d331f3d6f82423b7ec18d348ba196d41872b",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "tcg-Appendix 26: Mega Evolution Pokémon-EX": {
+    "entry_sha256": "1c5f5e2edd79a95b33942f1f504dd792f96e18566b98607d8c28e4e3884d57a4",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "tcg-Appendix 27: Team Plasma Cards": {
+    "entry_sha256": "721cfedd365d34353d4d83a56ea2f70ec433a069665a22d42ab62a21507f4b0a",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "tcg-Appendix 28: Restored Pokémon": {
+    "entry_sha256": "b5a89f3ba4db242d970adef6fa20532dd78f04ef88769cd7ce19410db3f5ab96",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "tcg-Appendix 2: Trainer’s Pokémon": {
+    "entry_sha256": "50dbbbb3fb23a761a0a4d73171b74e60195666f20fb6a69ff1e3f7cee7525cbb",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "tcg-Appendix 3: ACE SPEC Cards": {
+    "entry_sha256": "6f73470f7abe3059b11c58237dc70fcb0ae64d1a88820f2b1bf7a60510742d45",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "tcg-Appendix 4: Ancient and Future": {
+    "entry_sha256": "984df76485b8e1bca47b16d3b30995dea949d1701f6609909a69b553f41defc1",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "tcg-Appendix 5: Pokémon ex": {
+    "entry_sha256": "c2c0d158cc8c459cb5359fcdf54ba9d9c3cebdb3c3ebab0354c2832ca4d25214",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "tcg-Appendix 6: Tera Pokémon ex": {
+    "entry_sha256": "f4a11278d9bf2c0681aff44fb2d23233e87effd7b28eca161d44b1b6b970e038",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "tcg-Appendix 7: Lost Zone": {
+    "entry_sha256": "05c4169e81d1a23335c74b1d444001399e8071a21954cea8af619686b3b09845",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "tcg-Appendix 8: Radiant Pokémon": {
+    "entry_sha256": "4e979de0a970efa0dc6844845696d1cb93c03282c8aca051e4ce0953955cbd04",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "tcg-Appendix 9: Pokémon VSTAR": {
+    "entry_sha256": "887ac68fa38608bc10e9863513744e61740ee130222c7a4de06c152803ed91be",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "tcg-Asleep": {
+    "entry_sha256": "5595ef623cf33a132917f89f14f23acf20ae25772c41f19ef6d1107765d333f6",
+    "findings": [
+      {
+        "class": "INVENTION",
+        "note": "the entry asserts Abilities remain usable while Asleep; the source section says only that attacking and retreating are blocked and never affirms the Ability case, and the corpus's own glossary states most Poke-Powers switch off under any Special Condition, so the added claim is unsupported and locally contradicted",
+        "resolved": false,
+        "severity": "low"
+      }
+    ],
+    "verdict": "findings"
+  },
+  "tcg-Become a Pokémon Master!": {
+    "entry_sha256": "fa2070a65bebd21f8fd692ed00a0e80cf43570679a7f3e6900088a1fa7330a7b",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "tcg-Burned": {
+    "entry_sha256": "1468ce73fc78fd452de10a767e7634529afe157b34b2545f1ceb1f120dbea05e",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "tcg-Confused": {
+    "entry_sha256": "ac80bb1f00cd5cf1bbeb314812c4c5ae874458f25577c92327fce872ba707292",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "tcg-Deck Building": {
+    "entry_sha256": "9f87404920729e06df7a58c922964b8fa6274d6ae437494fe446445f95186418",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "tcg-Energy Types": {
+    "entry_sha256": "26d815c5dc0a5a882a65dd0c4a24eeef95379bc235fdb547fe0f18a3e93c2110",
+    "findings": [
+      {
+        "class": "OMISSION",
+        "note": "the source notes that the current Mega Evolution Series prints no Fairy-type Pokemon cards even though older expansions do; the entry drops that scope entirely, so a deck builder gets no signal that the type is legacy-only",
+        "resolved": false,
+        "severity": "low"
+      },
+      {
+        "class": "DRIFT",
+        "note": "the source says only some formerly Fairy-type Pokemon now appear as Psychic; the entry states it as a blanket conversion of every card that was once that type",
+        "resolved": false,
+        "severity": "low"
+      }
+    ],
+    "verdict": "findings"
+  },
+  "tcg-Full details of attacking": {
+    "entry_sha256": "ab8eb6f0dba1df1a0560a1c771030a2457824fc7c2cc89e119877f1576e97322",
+    "findings": [
+      {
+        "class": "DRIFT",
+        "note": "the source's second damage step covers damage effects on the attacker from Trainer cards or any other relevant effect, in either direction; the entry narrows it to a damage bonus carried from an earlier effect, dropping both reductions and the Trainer-card source",
+        "resolved": false,
+        "severity": "low"
+      }
+    ],
+    "verdict": "findings"
+  },
+  "tcg-Full details of taking a mulligan": {
+    "entry_sha256": "1a6ac8ab7d069f9e239fd8c50c8bd55a9bd6494030547a6346f083045335e072",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "tcg-Glossary": {
+    "entry_sha256": "41b297fc51fb7a35a053a0ff96d71c4259df4664091c25c661b84be5ba23cdbf",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "tcg-How to Win": {
+    "entry_sha256": "5e67910bcce89040915fb354b68b2387028a217aea5e48e03d0413223ba056c0",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "tcg-How to Win the Game": {
+    "entry_sha256": "c9d27713af30ef3a7e019c8aa9301db9213e46635f38f9dfb523777374aaeb67",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "tcg-Key Restored Pokémon Notes": {
+    "entry_sha256": "37945ed2b53a750e16be41198e83ed98adb98bd19bd78c1f5f3a3b98cc8ec3e1",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "tcg-Other Effects": {
+    "entry_sha256": "ec3115d4f1f2a66346628b980f3de39e11e82dd7a963303f8c74aecb5602a64f",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "tcg-Paralyzed": {
+    "entry_sha256": "aecffe57c0545e0d559ba961069e92b06e91b2c15b87d57b11eaf6b6097e691c",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "tcg-Parts of a Turn": {
+    "entry_sha256": "364bcb90270ea881d674c3c1985fe1be903d3591a5a899cb71ff55d2446460e7",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "tcg-Play! Pokémon Stores and League Battle Decks": {
+    "entry_sha256": "206fc724b538c0af016340d6d5a65e20b88d4cc0c43f435f173443257c7cc4fe",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "tcg-Playing the Game": {
+    "entry_sha256": "67a514eb221f672aa2f5141b82df57a3b5ed7eccfbb35aaa29e1ea4c31aa5e4a",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "tcg-Poisoned": {
+    "entry_sha256": "c20b80abe8592110d4d6177b2fb0dbc549755cba212c29b3c340a8c0feef6ac3",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "tcg-Removing Special Conditions": {
+    "entry_sha256": "07f3ce187dad60066819d175e9fae0ec5fc3d60b02bcb981ad212c1de1412de7",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "tcg-Setting Up to Play": {
+    "entry_sha256": "95a06bcf0093c3935afd055ab5d30f0e7af097feedb6c73732f3cbca5dae103a",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "tcg-Special Conditions": {
+    "entry_sha256": "5f03b87d431f885f9f1febd66e47e5a28845fc08437e321b3e217622c9109df1",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "tcg-Special rules for Mega Evolution Pokémon-EX": {
+    "entry_sha256": "04d6a60a0af83dda2623572b0be127636af24af1c1aae3df803562b33d2c2d02",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "tcg-Special rules for Pokémon BREAK": {
+    "entry_sha256": "d866defb2ad2dd3cfe29fa4b61f78c6b989eba6ecf552ecb5e1c7b65667ac308",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "tcg-Special rules for Pokémon-EX": {
+    "entry_sha256": "0c9185c0d9f2dfec94f3c701e13949275990ff973442b154f8aad7d8f574bc80",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "tcg-Special rules for Pokémon-GX": {
+    "entry_sha256": "e7973ae96b4919145f16b98f99f1d81bab8cb33b23e9aee1bb765d8081c026a3",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "tcg-Turn Actions": {
+    "entry_sha256": "07f033a388886563e21bc0b9ce2070069e671340cfc6961551ea2eb1fa03ea3e",
+    "findings": [
+      {
+        "class": "OMISSION",
+        "note": "the source states that an evolved Pokemon cannot use the attacks or Abilities of the stage beneath it unless a card says otherwise; nothing in the whole authored corpus carried that rule, while the BREAK Evolution entry asserts the opposite behaviour as if it were unremarkable — a player would keep using the pre-evolution's attacks. Fixed: the evolve step now says the evolved Pokemon can no longer reach down for what was printed underneath",
+        "resolved": true,
+        "severity": "high"
+      },
+      {
+        "class": "OMISSION",
+        "note": "the source tells players to announce which Abilities they are using so the opponent can follow along; the entry keeps the Ability step but not that procedural obligation",
+        "resolved": false,
+        "severity": "low"
+      }
+    ],
+    "verdict": "findings"
+  },
+  "tcg-What counts as an attack?": {
+    "entry_sha256": "949638068ab1528551f9470304add99fc3b12ce50118ad4ab9b9d6cad340f32a",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "tcg-What does and doesn’t count for a Pokémon’s name?": {
+    "entry_sha256": "220b93341f572373599b915a049a1c6a3b7f35485215131cfeb29af397c8a500",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "tcg-What if both players win at the same time?": {
+    "entry_sha256": "0eb93ff5f6f7d5e2b5e2bdc7ad246a62d993ba51b5c5901de00a629514ea9428",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "tcg-What if you should draw more cards than you have?": {
+    "entry_sha256": "33af8e8675b0f4efdade8b09893957116624b77a4f65d4c5402edb130283b1e3",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "tcg-What’s a tiebreaker game?": {
+    "entry_sha256": "0e40f925d2c14c27901fb343577631fd9d2706cff27b1f24ce1267a5126667ec",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "tcg-What’s the difference between “up to” and “any amount”?": {
+    "entry_sha256": "cc46c69490c5ac0cf431c66a0b167143909f96540d0baea02421eb28a34b976d",
+    "findings": [
+      {
+        "class": "DRIFT",
+        "note": "the source scopes the must-choose-at-least-one search exception to the 'up to X' rules; the entry generalises it to every phrasing above it, which sweeps in 'any amount' and 'any number' — phrasings the source explicitly says allow zero",
+        "resolved": false,
+        "severity": "low"
+      }
+    ],
+    "verdict": "findings"
+  },
+  "tcg-Zones of the Pokémon TCG": {
+    "entry_sha256": "97676b6d18104aec4c66abfe11df67eedeac7f98416a3a39bb400409159528b2",
+    "findings": [],
+    "verdict": "clean"
+  }
+}

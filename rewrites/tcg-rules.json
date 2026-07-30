@@ -182,7 +182,8 @@
     "state": [
       "Treated as a Pokémon ex for any card effect that references Pokémon ex",
       "Can be printed as a Basic, a Stage 1, or a Stage 2 card",
-      "A few skip a stage entirely — entering play directly as a Basic, or evolving straight from the pre-Mega line's Stage 1 rather than its Stage 2",
+      "Carries none of the extra restrictions the older Mega Evolution Pokémon-EX did — nothing about putting one into play ends your turn",
+      "A few sit off the usual ladder — one enters play as a Basic outright, and others attach a stage or two earlier in their family than their name suggests",
       "Only evolves from the exact stage its own card specifies, never from an unrelated stage of the same-named line"
     ],
     "summary": "Mega Evolution Pokémon ex push Pokémon ex even further with higher HP and stronger attacks, at the cost of surrendering 3 Prize cards on a Knock Out; beyond that steeper cost, they follow ordinary deck-building and Evolution rules.",
@@ -1228,8 +1229,8 @@
         "note": "as many as you want, up to a 5-Pokémon Bench"
       },
       {
-        "action": "Evolve Pokémon already in play by placing the next stage on top of them.",
-        "note": "as many as you want; the Pokémon keeps its attachments and damage counters but sheds Special Conditions and attack effects; a Pokémon can't evolve on the very turn it enters play — that rules out evolving a Basic the same turn it's benched, on any turn of the game, and it also rules out evolving the same Pokémon twice in one turn, since evolving counts as entering play again; separately, neither player may evolve anything at all on their own first turn of the game unless a card overrides that"
+        "action": "Evolve Pokémon already in play by placing the next stage on top of them, Active or Benched alike.",
+        "note": "as many as you want; the Pokémon keeps its attachments and damage counters but sheds Special Conditions and attack effects; once evolved it can no longer reach down for whatever attacks or Abilities were printed on the card underneath, unless something explicitly grants that; a Pokémon can't evolve on the very turn it enters play — that rules out evolving a Basic the same turn it's benched, on any turn of the game, and it also rules out evolving the same Pokémon twice in one turn, since evolving counts as entering play again; separately, neither player may evolve anything at all on their own first turn of the game unless a card overrides that"
       },
       {
         "action": "Attach one Energy card from your hand to a Pokémon of your choice.",
