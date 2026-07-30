@@ -8,15 +8,29 @@ claims to have produced. It answers, deterministically:
   2. Is any verdict STALE — recorded against an older version of the entry?
      (This is the load-bearing check: without it, editing an entry after
      review silently launders unreviewed content through a passing gate.)
-  3. Are there unresolved high-severity findings?
+  3. Are there open high-severity findings nobody has taken?
   4. Are there orphan verdicts for entries that no longer exist?
 
 Skipped entries need no review — they ship nothing.
 
-Usage: check_fidelity_review.py [--root PATH] [--strict]
-       --strict also fails on missing verdicts (release gate); by default
-       missing verdicts are reported as warnings so authoring can proceed
-       document by document.
+A high-severity finding has two ways to clear the review gate, and the
+difference matters. `resolved` means the entry was corrected. `acknowledged`
+with an `owner` means the reviewer is handing the defect to someone else and
+is not going to touch the content.
+
+That second state exists because the first one, alone, quietly destroys the
+independence the review is for. A reviewer who finds a serious problem and
+must show a green gate has only one move left: fix the entry, then sign off
+on its own writing. The reviewer reports; the author fixes. An acknowledged
+finding still blocks a release, because handing a defect over does not make
+it go away.
+
+Usage: check_fidelity_review.py [--root PATH] [--strict] [--doc NAME]
+       --strict fails on missing verdicts and on acknowledged-but-unfixed
+       findings (release gate); by default those are warnings so review can
+       proceed document by document.
+       --doc scopes everything to one rewrites file, so reviewing one
+       document does not print a pending line for every entry in the others.
 """
 
 from __future__ import annotations
@@ -38,22 +52,31 @@ def entry_hash(entry: dict) -> str:
     return hashlib.sha256(canonical.encode("utf-8")).hexdigest()
 
 
-def load_json_dir(path: Path) -> dict[str, dict]:
+def load_json_dir(path: Path, doc: str | None = None) -> dict[str, dict]:
     merged: dict[str, dict] = {}
     if not path.is_dir():
         return merged
     for file in sorted(path.glob("*.json")):
+        if doc is not None and file.stem != doc:
+            continue
         merged.update(json.loads(file.read_text()))
     return merged
 
 
-def check(root: Path, strict: bool = False) -> tuple[list[str], list[str]]:
+def check(root: Path, strict: bool = False,
+          doc: str | None = None) -> tuple[list[str], list[str]]:
     """Returns (errors, warnings)."""
     errors: list[str] = []
     warnings: list[str] = []
 
-    entries = load_json_dir(root / "rewrites")
-    verdicts = load_json_dir(root / "validation")
+    if doc is not None and not (root / "rewrites" / f"{doc}.json").is_file():
+        # Silence is the danger here: an unmatched filter would review an
+        # empty set and report a clean pass over nothing at all.
+        available = sorted(p.stem for p in (root / "rewrites").glob("*.json"))
+        return ([f"no such document {doc!r} — rewrites holds {available}"], [])
+
+    entries = load_json_dir(root / "rewrites", doc)
+    verdicts = load_json_dir(root / "validation", doc)
     shipped = {sid: e for sid, e in entries.items() if "skip" not in e}
 
     for sid in sorted(set(verdicts) - set(entries)):
@@ -101,8 +124,31 @@ def check(root: Path, strict: bool = False) -> tuple[list[str], list[str]]:
                 errors.append(f"{sid}: findings[{i}] severity must be high or low")
             if not str(finding.get("note", "")).strip():
                 errors.append(f"{sid}: findings[{i}] needs a note")
-            if finding.get("severity") == "high" and not finding.get("resolved"):
-                errors.append(f"{sid}: unresolved high-severity finding — {finding.get('note', '')}")
+
+            resolved = bool(finding.get("resolved"))
+            acknowledged = bool(finding.get("acknowledged"))
+            note = finding.get("note", "")
+
+            if resolved and acknowledged:
+                errors.append(
+                    f"{sid}: findings[{i}] is both resolved and acknowledged — "
+                    f"either the entry was corrected or it was handed on, not both")
+            elif acknowledged and not str(finding.get("owner", "")).strip():
+                errors.append(
+                    f"{sid}: findings[{i}] is acknowledged but needs an owner "
+                    f"naming who picks it up")
+            elif finding.get("severity") == "high" and not resolved:
+                if acknowledged:
+                    # Open, owned, and still a defect: fine mid-review, never
+                    # fine to ship.
+                    message = (f"{sid}: high-severity finding awaiting the author "
+                               f"({finding.get('owner')}) — {note}")
+                    (errors if strict else warnings).append(message)
+                else:
+                    errors.append(
+                        f"{sid}: unresolved high-severity finding — {note}. "
+                        f"Fix it and set resolved, or hand it on with "
+                        f"acknowledged and an owner")
 
     return errors, warnings
 
@@ -111,10 +157,14 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="check_fidelity_review")
     parser.add_argument("--root", type=Path, default=Path.cwd())
     parser.add_argument("--strict", action="store_true",
-                        help="fail on missing verdicts (release gate)")
+                        help="fail on missing verdicts and handed-off findings "
+                             "(release gate)")
+    parser.add_argument("--doc", help="scope to one rewrites file, by stem "
+                                      "(e.g. --doc tcg-rules)")
     args = parser.parse_args(argv)
 
-    errors, warnings = check(args.root.resolve(), strict=args.strict)
+    root = args.root.resolve()
+    errors, warnings = check(root, strict=args.strict, doc=args.doc)
     for w in warnings:
         print(f"warning: {w}", file=sys.stderr)
     for e in errors:
@@ -122,11 +172,18 @@ def main(argv: list[str] | None = None) -> int:
 
     if errors:
         return 1
-    entries = load_json_dir(args.root / "rewrites")
-    shipped = sum(1 for e in entries.values() if "skip" not in e)
-    reviewed = shipped - len(warnings)
-    print(f"fidelity review OK ({reviewed}/{shipped} entries reviewed"
-          + (f", {len(warnings)} pending)" if warnings else ")"))
+    # Count what was reviewed directly. Deriving it as shipped minus warnings
+    # was right only while every warning meant a missing verdict; a handed-off
+    # finding is a warning on an entry that *was* reviewed, and would have
+    # silently undercounted progress.
+    entries = load_json_dir(root / "rewrites", args.doc)
+    verdicts = load_json_dir(root / "validation", args.doc)
+    shipped = {sid for sid, e in entries.items() if "skip" not in e}
+    reviewed = len(shipped & set(verdicts))
+    pending = len(shipped) - reviewed
+    scope = f" [{args.doc}]" if args.doc else ""
+    print(f"fidelity review OK{scope} ({reviewed}/{len(shipped)} entries reviewed"
+          + (f", {pending} pending)" if pending else ")"))
     return 0
 
 
