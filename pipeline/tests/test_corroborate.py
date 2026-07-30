@@ -105,3 +105,55 @@ def test_citation_fields_are_not_searched_as_prose(tmp_path):
                                               "see_also": ["tcg-mulligan"]}})
     index, _ = corr.build_index(root)
     assert corr.search(index, ["mulligan"]) == []
+
+
+def test_words_scattered_far_apart_are_not_one_statement(tmp_path):
+    """Both reviewers hit this. A section can run to 100,000 characters, so
+    words a page apart share the section and nothing else, and the tool
+    reported that as a match."""
+    far = "alpha " + ("filler " * 300) + "omega"
+    root = make_root(tmp_path, source={"long": far, "tight": "alpha omega"})
+    index, _ = corr.build_index(root)
+    assert [h["section"] for h in corr.search(index, ["alpha", "omega"])] == ["tight"]
+
+
+def test_a_wide_enough_window_still_finds_the_scattered_case(tmp_path):
+    far = "alpha " + ("filler " * 300) + "omega"
+    root = make_root(tmp_path, source={"long": far})
+    index, _ = corr.build_index(root)
+    assert corr.search(index, ["alpha", "omega"], window=None)
+    assert corr.search(index, ["alpha", "omega"], window=400)
+
+
+def test_the_closest_match_ranks_first(tmp_path):
+    root = make_root(tmp_path, source={
+        "loose": "alpha " + ("filler " * 20) + "omega",
+        "tight": "alpha omega",
+    })
+    index, _ = corr.build_index(root)
+    hits = corr.search(index, ["alpha", "omega"], window=100)
+    assert [h["section"] for h in hits] == ["tight", "loose"]
+
+
+def test_it_quotes_the_text_that_matched(tmp_path):
+    """"This section mentions those words" is not an answer. The reviewer
+    needs the sentence to judge it."""
+    root = make_root(tmp_path, source={
+        "s": "Filler before. A competitor causes their system to lose power. Filler after."})
+    index, _ = corr.build_index(root)
+    hit = corr.search(index, ["competitor", "causes", "power"])[0]
+    assert "causes their system to lose power" in hit["quote"]
+    assert hit["quote_from"] == "source"
+
+
+def test_the_quote_says_which_side_it_came_from(tmp_path):
+    root = make_root(tmp_path, entries={"s": {"summary": "Take a mulligan now."}})
+    index, _ = corr.build_index(root)
+    hit = corr.search(index, ["mulligan"])[0]
+    assert hit["quote_from"] == "authored"
+
+
+def test_tightest_window_finds_the_smallest_span(tmp_path):
+    marks = corr.stems_with_offsets("alpha gap gap omega alpha omega")
+    span, _, _ = corr.tightest_window(marks, {"alpha", "omega"})
+    assert span == 2, "the later, closer pair should win"

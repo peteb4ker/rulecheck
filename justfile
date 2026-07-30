@@ -30,7 +30,11 @@ verify:
 all:
     cd pipeline && uv run python -m rulecheck_pipeline all --root ..
 
-test:
+# Depends on setup: a fresh worktree has no venv (uv puts .venv in pipeline/,
+# which is git-ignored), and the bare failure is "Failed to spawn: pytest",
+# which does not tell you to run setup. Both fidelity reviewers hit this at
+# the end of their work rather than the start.
+test: setup
     cd pipeline && uv run pytest
 
 # Candidate vocabulary from the authored corpus (deterministic, re-runnable)
@@ -72,7 +76,9 @@ check-fidelity-review *ARGS:
 # Does anything in the corpus back a claim up? Searches the source text and
 # our own entries, matching inflections. For a reviewer checking whether an
 # entry invented something or drew it from another section.
-#   just corroborate "discard pile face up"
+#   just corroborate discard pile face up
+# Words, not a quoted string: just re-splits its arguments on whitespace, so
+# quotes never reach the script.
 corroborate *ARGS:
     python3 scripts/corroborate.py --root . {{ARGS}}
 

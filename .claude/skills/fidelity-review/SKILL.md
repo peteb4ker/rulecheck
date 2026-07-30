@@ -61,11 +61,15 @@ Every one of these has produced a real defect. Check them explicitly:
 - **Cross-section synthesis**: if an entry states a fact not in its own
   source section, verify it is genuinely corroborated elsewhere in the
   corpus. Accurate synthesis is sanctioned; unverified assertion is not.
-  Use `just corroborate "the words in question"` rather than grep. It
-  searches the source text and our entries together, and it matches
-  inflections, so a search for "damage counter" also finds "damage
-  counters". A section listed as `ours only` uses a word our entry uses and
-  the rulebook never does, which is where to look first.
+  Use `just corroborate the words in question` rather than grep. Pass the
+  words plainly, without quotes, since `just` re-splits its arguments. It
+  searches the source text and our entries together, matches inflections
+  (so "damage counter" also finds "damage counters"), requires the words to
+  sit within 40 words of each other so a long section cannot match on
+  scattered mentions, and quotes the sentence back to you. A section listed
+  as `ours only` uses a word our entry uses and the rulebook never does,
+  which is where to look first. Widen with `--window 0` to search a whole
+  section when a first attempt finds nothing.
 - **Invention from world knowledge**: when a source section is thin or
   label-only, an author may fill gaps from general knowledge. Judge each
   such statement: supported by the corpus, or invented? (A real review
@@ -80,6 +84,22 @@ Some sources are multi-column extractions with rotated diagram labels
 content: do not report its absence as an omission. **Do** report an entry
 that copied scrambled text in, or a real rule buried in the noise that the
 entry missed.
+
+**Tables are the dangerous case, because a scrambled one still looks
+right.** Multi-column extraction can reorder cells silently, so a penalty
+table can parse as `3) Severe: / 1) Minor: Warning 2) Major: Game Loss /
+Disqualification`, and a results table can parse in a different column order
+from the one its own header implies. A reviewer reading that as written
+confirms the wrong mapping and moves on satisfied. Two separate reviews hit
+this, in different documents.
+
+When an entry turns on a table, re-extract that table from the PDF with
+pdfplumber and `layout=True` rather than adjudicating from
+`build/content/`. Column x-positions settle which cell belongs to which
+heading. Two signals that the parse is misleading you: the numbers do not
+reconcile (a phase total smaller than one of its own phases), and the cell
+order contradicts the header order. Note also that a source document can
+simply be wrong about itself, and that is not the entry's defect to carry.
 
 ## Watch for guard evasion
 
