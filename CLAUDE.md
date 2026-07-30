@@ -110,6 +110,7 @@ pipeline/          # Python: ingest → parse → build → verify
 sources/           # sources.yaml manifest (+ git-ignored PDFs)
 content/           # committed index: structure + citations, no prose
 content/fingerprints/  # one-way hashes backing the paraphrase tripwire
+content/lexicon/   # classified game vocabulary (not a parsed document)
 build/content/     # full parsed text, verbatim (git-ignored)
 build/             # rulecheck.db build product (git-ignored)
 .scratch/          # local working files (git-ignored)
