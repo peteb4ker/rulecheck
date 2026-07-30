@@ -1,0 +1,638 @@
+{
+  "trh-1": {
+    "entry_sha256": "2d624fa81683637ef57d1c8044cdfcb68aebf8c6f041dc9704d47f37f10459b9",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-1.1": {
+    "entry_sha256": "b3c00ea5b0dc2b0e3cb893a053cf16a2720fdca8b11bb0d58e805ce0a406ac49",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-1.2": {
+    "entry_sha256": "7f7941c0ff85c044addfe4f8918badae35fcfd86cec8d4afad29ce6a1eb20809",
+    "findings": [
+      {
+        "class": "DRIFT",
+        "note": "Entry says 'Judges and other Professors get the most out of covering the entire document'. The source chart assigns 'The Entire Document' only to the row 'Pokemon Professors: Judges'; the separate 'Pokemon Professors: Tournament Organizers & Administrators' row is assigned sections 2, 3, 4, 5 and 7 — which the entry's own next paragraph then states, contradicting itself.",
+        "severity": "low"
+      }
+    ],
+    "verdict": "findings"
+  },
+  "trh-1.3": {
+    "entry_sha256": "1ed8462dd8ff3df2e227b5c3dd6a992da784c7c86f33aa15fcd57b9e3b902841",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-2": {
+    "entry_sha256": "69a4c8134a9778f707b386526afc27acd37eb8bbc6837474511998ec2ef87319",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-2.1": {
+    "entry_sha256": "a19bfddfa7650e88ba0f853317122b8d62c863f7dbb0a3b44a178a8005f4bb05",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-2.1.1": {
+    "entry_sha256": "95c3f0d1e1452b0d672747b3dd4e82e2d4c7c0dbced62638a39a97de69861b86",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-2.1.2": {
+    "entry_sha256": "f712a1c9437c51aaebd97df22bb31bc58f20c08bcfc9e6aff64fccf9f3ea7840",
+    "findings": [
+      {
+        "class": "DRIFT",
+        "note": "Source bullet excludes 'Immediate family members and members of the same household of employees of The Pokemon Company and its subsidiary companies' with no 'current' qualifier. The entry narrows it to 'current employees of The Pokemon Company and its subsidiaries', so the household of someone inside the 60-day post-employment exclusion window reads as eligible for Championship Point events.",
+        "severity": "low"
+      }
+    ],
+    "verdict": "findings"
+  },
+  "trh-2.1.3": {
+    "entry_sha256": "7b5aa33a52f54088a0dce51da4f904e601a1f86cad1582727506db6b5c64552d",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-2.1.4": {
+    "entry_sha256": "177c54432a66130df01b01a6a560d41cc15e4462fd4c64f84544fd9407a1da43",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-2.1.5": {
+    "entry_sha256": "d81709ad30ff3e0e842fb61303e9920f7c1fd209732935a47c1a882a72767f0e",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-2.1.6": {
+    "entry_sha256": "dd00a013c601d96bcece474e8da10d4b95abc7c5cff2c7aa0a69d51d128030e7",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-2.1.7": {
+    "entry_sha256": "7a651ce8b1fda610448fa554c4454fadb483f53639ca73428febd06f9aa4de72",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-2.2": {
+    "entry_sha256": "a570602a61024cc642473407fa107238bf205b17a09bfa683ac850febb517517",
+    "findings": [
+      {
+        "class": "OMISSION",
+        "note": "The entry is typed as a procedure but drops the source's actual procedures: the PTC account creation path, the guardian's Add a Child path, and the six-step Player ID generation flow. Load-bearing detail lost with them: a competitor who already holds an Organizer-issued Player ID must select 'I have a Player ID' and supply both the Player ID and a corresponding PIN. A reader following the entry has no way to complete the task it describes.",
+        "severity": "low"
+      }
+    ],
+    "verdict": "findings"
+  },
+  "trh-2.3": {
+    "entry_sha256": "acba1ea3be50bc489f68f915ed075cbfb2a2053648ddc6ac208d9f77826b42ee",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-2.3.1": {
+    "entry_sha256": "6c2e6f4d1d01ca26e7a3df5fab46aa21fc046568bff0e837dba4612effb5658a",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-2.4": {
+    "entry_sha256": "b2f20c4565d95c178c0c7a513ce72d34e8f12ae9cd9241d1d58d77d3937991b0",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-3": {
+    "entry_sha256": "2ecd3087403fe2adaf7f1f814f998eaeb2116b55a3be4604a86ab8a8e0b3e64e",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-3.1": {
+    "entry_sha256": "dab48f05b2a0715a8f79ea0962ad2f5d201dc1173024e4ccce52ba104c9c91e0",
+    "findings": [
+      {
+        "class": "DRIFT",
+        "note": "Source expectation is 'Be free from the influence of mind-altering substances, including alcohol' — a bar on being under the influence. The entry renders it 'stay free of mind-altering substances, alcohol included', which reads as total abstinence and conflicts with section 3.2, where only the sale or use of alcohol *in the play area(s)* is prohibited.",
+        "severity": "low"
+      }
+    ],
+    "verdict": "findings"
+  },
+  "trh-3.2": {
+    "entry_sha256": "78e09fcf68d8124f91f3e04a06fd9205c8c800a2cf4042f8a3ed5b988d35e3be",
+    "findings": [
+      {
+        "class": "DRIFT",
+        "note": "Source: 'Any participant discovered to be in breach of the above should be removed from the tournament site.' The entry states 'Anyone caught doing one of these gets removed from the tournament site', turning a directive to staff into an automatic outcome and removing the staff discretion section 3.1 explicitly grants ('It is the responsibility of the Tournament Organizer and tournament staff to determine whether a participant should be permitted to remain').",
+        "severity": "low"
+      }
+    ],
+    "verdict": "findings"
+  },
+  "trh-3.2.1": {
+    "entry_sha256": "9e5b09722428d7bb80a5fe4ec45225d650bb38676bd963fefb6dbe205739f90d",
+    "findings": [
+      {
+        "class": "DRIFT",
+        "note": "Source scopes the headphone exception to 'a Pokemon video game tournament (such as VGC, Pokemon GO, or Pokemon UNITE)' — an illustrative list. The entry renders it as a closed list ('VGC, Pokemon GO, or Pokemon UNITE'), so a video game tournament outside those three reads as excluded from an exception the source extends to video game tournaments generally.",
+        "severity": "low"
+      }
+    ],
+    "verdict": "findings"
+  },
+  "trh-3.3": {
+    "entry_sha256": "bb8c0524c634da16e52e576952de3da4e524f14017771bfad8e80a213713d298",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-3.3.1": {
+    "entry_sha256": "20bc25c8e096d51e5dbed495194976dcecaa84bb80a60147da9c10537f0d6efd",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-3.3.1.1": {
+    "entry_sha256": "67f5d379ff6c3cdf7c7975312070b62a566a8bade7739a126c88e1866ca1fbb3",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-3.3.2": {
+    "entry_sha256": "a4fb9ed3e9c3fa4bcb1d79f9baf5371ddc44f7ef78feb2dcaeb0efd7bb88a795",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-3.3.2.1": {
+    "entry_sha256": "f2698def5c5fbde20f8dd4030c49f630a0fc297358c68532b4284550c34f6102",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-3.3.3": {
+    "entry_sha256": "54729339f047fa75ec9763857d79ce5eadfdaa7d5e6da6f919343c95c41bda23",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-3.3.4": {
+    "entry_sha256": "98004e1d3f412f52e374876d00c456232f9138df608f4c5749445b7a1deb58d4",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-3.3.4.1": {
+    "entry_sha256": "76cad527a21da0435083c4855e367670055ddcb782540b90351f068d28b3d544",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-3.3.4.2": {
+    "entry_sha256": "c79df3bd423f49e707ca9e7629374f796c105e3056ac808dc3c4e3e16f37190f",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-3.3.5": {
+    "entry_sha256": "8cdaec6196d220c64ff34719ea9b8a7ee4cc3fdffbe5ccfc586f6d5703ac3e03",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-3.3.5.1": {
+    "entry_sha256": "fbebf82fd77b29e11a00db8652204ae792e4cadb1ce3878ce4588ea155b03c34",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-3.3.6": {
+    "entry_sha256": "5a071af8e52efa29bf8335d08696d50a6eef21296e0a343390936196612c67c7",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-3.3.6.1": {
+    "entry_sha256": "ce24a886577dddb75e16570875cb78963f61889bcdac3785166e9aeef61e0161",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-3.3.6.2": {
+    "entry_sha256": "7b38d3f3fa49b295fd0a37abe0d62fb3f8d725509080c08e34e182a3daf96317",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-4": {
+    "entry_sha256": "7b576cf572bea28fb8aef24666ed421b01eac10749b6cd7e897f146a2e3c8a8e",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-4.1.1": {
+    "entry_sha256": "d3bc9ec84b9a4e14c75f38301a3a5960ba3979d8b6b19968400c435b85cf1f94",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-4.1.2": {
+    "entry_sha256": "c47d2cbbffedc8c08333c4deb6abdedae419cc9ed6c632b70f66d1ad17a29375",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-4.1.2.1": {
+    "entry_sha256": "56b321441da36cd2957e303825ca4a218e07903ce86bc3a9e212a7e855ac41f5",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-4.1.2.2": {
+    "entry_sha256": "350fce19aa9fd0532600a0e63374f02c2671684d93a6cf671f0fd782c82ce3ac",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-4.1.2.3": {
+    "entry_sha256": "42bc51a31245c7799d5034993041c713d90b7c306fa42f1f2f9b154a30ccc9da",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-4.2": {
+    "entry_sha256": "abe225e90dc049471ca3eea9de032aa55ab4c2bbfb4208ddea54c0a99b69bd3d",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-4.2.1": {
+    "entry_sha256": "67aacc87ec65c9574bde39cf2b99dc5959e8ade493e1424b22c0d08fe53d03d0",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-4.3": {
+    "entry_sha256": "8fa1b6f6a695965ef2eeaed78a4597730b8e015769f613d77c07b80dc119c091",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-4.3.1": {
+    "entry_sha256": "b9e9cc59dc4da7db7d16ce206329433f7a2b99109f0a0cc6d59ad5571da7d359",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-4.3.2.1": {
+    "entry_sha256": "f66d6aa373936b94c3f37662139042c5a86b5a38a0a1c93b8690aeb9dc788a87",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-4.3.2.2": {
+    "entry_sha256": "bee30f31aa9cd1fbc889b3766587a54221aaa47ebdbb7234783d132ce30f0b89",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-4.3.2.3": {
+    "entry_sha256": "4e601f25bbbb747996120d2f03f5174e21f01575ca2d60bda3c9d3f33122b414",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-4.3.3": {
+    "entry_sha256": "09df62638139d23af41d33156f999dedcf6a6983ea530801b4bd09d77542abca",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-4.3.4": {
+    "entry_sha256": "c6d93c244896772abb49db1bec80cd91ac5f159015e3a22e0a8d1558e2f8b6a2",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-4.3.4.1": {
+    "entry_sha256": "b85fa158b106cdd6fb8b681b8a015541ab36eff0975249590ed0ac7a2afb1930",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-4.3.4.2": {
+    "entry_sha256": "84bdc0b1140eb9922cd28ae4b2d85b5cb5a8047efc5b34f46e36bde14558a6c6",
+    "findings": [
+      {
+        "class": "DRIFT",
+        "note": "Source: 'Digital match slips MAY be used at events at the level of Regional Championships and above.' The entry's first step reads 'Use digital match slips at Regional Championships and above' with no note of optionality — notable because the sibling entry trh-4.3.4 does flag its own 'may' as 'optional, not required'. Combined with trh-4.3.4.1's 'required in these formats' for paper slips, the pair of entries manufactures a contradiction the source does not have: paper is the standing requirement, digital is a permitted substitute.",
+        "severity": "low"
+      }
+    ],
+    "verdict": "findings"
+  },
+  "trh-4.3.4.3": {
+    "entry_sha256": "b33eaa5c97bfbbff507c4315beb7072065a420f8790a456f154a9410871afbd3",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-4.4": {
+    "entry_sha256": "312495a4dc4eccd9b347b7526c2c600e6e226ea378cd9723244c87df015277f8",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-4.4.1": {
+    "entry_sha256": "ee55fe3e1eff7cd5c6edaa3dc28a77a77c5fbf34cc7a09a8a5d512723d770a67",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-4.5": {
+    "entry_sha256": "b9176521723a07ee732a06241a27411cddd568cba01f3f377e2cc0c8cee2a119",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-4.5.1": {
+    "entry_sha256": "ac71f7571ad54a40c3d964080e0ba485abbf16fe87947afa5a12087b00a7b4cc",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-4.5.2": {
+    "entry_sha256": "a5716b14913165b3e24fd3bdb313c6bfaf3369328e8ab2ed0d743afe3f12542f",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-4.5.3": {
+    "entry_sha256": "3789729e9821aa0ade95c5af2fa239a6e7cdf9ee5c94f1a018de8ae04e67b1f3",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-4.5.4": {
+    "entry_sha256": "21359c2d9f233c281f1ab49da3ac0b4c5ba8b538bf00a44fbcb0585afde84bee",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-4.5.5": {
+    "entry_sha256": "354abc441cf6ce55a6f4bc522dd60277dd29d827b3f55585f9bec43d2fb6c9d4",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-4.6": {
+    "entry_sha256": "50a9899a5077be67e8a7ebb48b88acf8be2c1dae7e43a7df00b9d3c3b49971be",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-4.6.1": {
+    "entry_sha256": "ce14067ed5ad9ea74a1cc883d2082a58a897950842c63566de2c1d9c97abd77d",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-4.6.2": {
+    "entry_sha256": "46a0e6c6a6e9c894b8ac784fce21e0f55e7256a55d28be2e919c01ef11ab220b",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-4.6.3": {
+    "entry_sha256": "43ded1b374d8a4a5c0f3f460069d466707fa849c03584fef37249ca90605d4a9",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-4.6.4": {
+    "entry_sha256": "b6ff219b685f74447217cbf31d3ecb7e2c0abb2e88053038087b4b4ffa364567",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-4.6.5": {
+    "entry_sha256": "665717964f23d36a613aa5f1acc1355f15efb38ccf2c2229c512b7b1fe4ddd0a",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-5": {
+    "entry_sha256": "7699274d2fcb4dd0a175dc992e4bceacd913bbd14d361a0b2099fcfafe13a6e9",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-5.1.1": {
+    "entry_sha256": "7335acd29ed577a56238743402b074a21110f18844d54356ba3334403e944f52",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-5.1.2": {
+    "entry_sha256": "9d8d1c9c389855804e6d4f780bed7e1f1688e710f72027026016aabc23dee9b8",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-5.1.3": {
+    "entry_sha256": "603c8f8a7f4805f0c54f391d2b100d73a1245f9d7694ec2154cdde99879cc37a",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-5.2": {
+    "entry_sha256": "bbb639b125762e3380226db723e746134ad3e999c5a3c99a53310ccfbc461940",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-5.2.1": {
+    "entry_sha256": "f5500ffa2b150c589125749210b811c3ec91f500dccd1897d2e28d73de57a20d",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-5.2.2": {
+    "entry_sha256": "8080f908a096e50f424ecc82187daa163f7c887579d9b3c28bfcfca7ee7d7453",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-5.2.2.1": {
+    "entry_sha256": "b30fa0a1cf9fdfab259b5a8ce33f07896af966a57829304ab1811438e649f628",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-5.3.1": {
+    "entry_sha256": "a7b3c39b36a8d67b52c4b6b150483e3fdf9f5233db508f280ae448791bd04b09",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-5.3.1.1": {
+    "entry_sha256": "9c5756500a4c9d0d1a4d471d123ea54e71245e3f503841af77ff68d99f29e6b0",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-5.3.2": {
+    "entry_sha256": "8af8494900b201878b5fd8c7f363cf50f5ba8e1b70d9ff03ddf6ff47663246d3",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-5.3.3": {
+    "entry_sha256": "9fbfd74fe2613b451cb56bedcf7f556f3547609440fcdb2840e7d19513625bc8",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-5.3.3.1": {
+    "entry_sha256": "481a9a8ffc40479c8771157d99ea1a09db0dcffce340fb0cb29d27b2a22391da",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-5.4": {
+    "entry_sha256": "e83b84d6a78c45b1a755bdf4eb219f7e683a1a8dd7b70140230bd7c4a036f770",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-5.5": {
+    "entry_sha256": "ec45abd6c7aa24041bf7a1a014fae42e619b543411443851e17da64ba58cbf4a",
+    "findings": [
+      {
+        "class": "DRIFT",
+        "note": "Source: 'Depending on the number of participants, Pokemon GO events may be run in two phases: a group stage and a finals bracket' — a sentence about Pokemon GO events generally. The entry attaches the two-phase option only to the double-elimination Regionals/Internationals/Worlds clause, so a Pokemon GO Swiss-plus-cut event below that level reads as ineligible for a group stage.",
+        "severity": "low"
+      }
+    ],
+    "verdict": "findings"
+  },
+  "trh-5.5.1": {
+    "entry_sha256": "55b8fdbede8343007f55cd4c204fb667fdb257fc9a45ce99f5c78d3ede1ed33f",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-5.5.1.1": {
+    "entry_sha256": "5e9b7359880076626cdafea4045b77cfe55444f3b9aaffce21449d4128ddf931",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-5.5.2": {
+    "entry_sha256": "c7ce11e69670d37ee7c82fe37820b41911ab825ef51ffba04c2b70f93e805d67",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-5.5.2.1": {
+    "entry_sha256": "a5e59ee018ef82b3da5d7064176be642df47f1feeac78f5d7b4819f16a26bf9f",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-5.5.2.2": {
+    "entry_sha256": "1433e2de38f80e2b7d28b05e08c884c0d99254050f74d6c14b463f78eb4ad9b0",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-5.5.2.3": {
+    "entry_sha256": "0cf3f4ac0c2a06d69fc04d23f8928717bf1a925f5ad5aa0c6d26adc4d336b9dc",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-5.5.3": {
+    "entry_sha256": "b359bf6e6109e1b088076a351cfc64642b5c29d8e37594ff055c6d178028ffb4",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-5.5.4": {
+    "entry_sha256": "4096f225dd3daef30a0f1747ced51ef2364cb97670833a6fb5a1532ec643e7bd",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-5.5.4.1": {
+    "entry_sha256": "1dbd4abab003a4e90d33eb082ba55f6fecc8ad5be174ffec33cc7afa9187a2c6",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-5.5.4.2": {
+    "entry_sha256": "761d8f7b9c2655e69c4cfecf13345b0a5a02c212f4145074fff27f612b33773f",
+    "findings": [
+      {
+        "class": "OMISSION",
+        "note": "The source's opening sentence — 'Larger Championship Series events may run over two or three days, with a portion of the highest-ranking competitors advancing to a second phase of Swiss rounds' — is dropped entirely. Nothing in the entry conveys that a two-phase event spans multiple days, which is the practical fact a competitor planning attendance needs from this section.",
+        "severity": "low"
+      }
+    ],
+    "verdict": "findings"
+  },
+  "trh-5.5.5": {
+    "entry_sha256": "c6fca376c22a6da93ad90e03edf530a77b253af885ce3e83d75d8a387da03674",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-5.5.5.1": {
+    "entry_sha256": "4c11b13baa30dd47b9a00c4e5552cb4ab2af87e94c6d8fbe0e7b1bbe76914049",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-5.5.5.2": {
+    "entry_sha256": "23ef8e2ff07ea05845114e3e271982e792054c8dc62dfb6377b42727ab0c781b",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-5.5.5.3": {
+    "entry_sha256": "7c148ef42349f578c9613f4b977ad55de17a68e364a7e4013d9dce4d305c1446",
+    "findings": [
+      {
+        "class": "DRIFT",
+        "note": "The entry adds a game-scope qualifier the section does not carry: 'Round-robin play is available for Pokemon GO tournaments at the level of Regional Championships and above.' Section 5.5.5.3's own text says only 'at the discretion of the Organizer ... for events at the level of Regional Championships and above'; only the parent heading (5.5.5 Double Elimination) is Pokemon GO specific, and unlike 5.5.5.1 and 5.5.5.2 this section names no game. A TCG or VG Regional Organizer with a division of six or fewer would read round-robin as unavailable to them.",
+        "severity": "low"
+      }
+    ],
+    "verdict": "findings"
+  },
+  "trh-5.5.6": {
+    "entry_sha256": "255dc08d6897ebdbb22190aa1b9ca4d7df16539bb63357edcde763a1d164303c",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-5.5.7": {
+    "entry_sha256": "68b34aaa08803514a1ae7235caa0a9443d2c4b6c410700d0040ad66027a73e51",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-5.6": {
+    "entry_sha256": "e467481c7be8da568dc2fb824b7ab42b0c378eb9813d40bbe7151d7b21e8e8b5",
+    "findings": [
+      {
+        "class": "INVENTION",
+        "note": "The entry's note asserts the Pokemon GO self-check 'takes the place of the usual pre-round window'. The source says only that Pokemon GO competitors are responsible for checking their bracket before the next round because Pokemon GO does not use TOM at Regional level and above; it never says the reasonable-time window for reporting errors does not apply to them.",
+        "severity": "low"
+      }
+    ],
+    "verdict": "findings"
+  },
+  "trh-5.6.1": {
+    "entry_sha256": "fa9e2e22c07b2f02c9f00a4ff8a4797dcef6ed4d1628e661456087452ce9fc88",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-5.7": {
+    "entry_sha256": "c825ccb8691f4d072bcbe98291ed330bc7446fba60eaf0de84dcb6e6515633ac",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-5.7.1": {
+    "entry_sha256": "fefa61fcef5e228b111b6ceaac04fc23ab9574ba51b1a215f20dcc9e922e9038",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-5.7.2": {
+    "entry_sha256": "2e389b7334ef1061cc4c7660a94d7eb52eeffd2aa0532160bcb2541dfb882773",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-5.7.3": {
+    "entry_sha256": "60182e6128c51437cad5af1d296e1582dffc5e0238109401a547caf957d03272",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-6": {
+    "entry_sha256": "bb0f3bce46cbc068161b06c5862b5d125486734e14a59e07092095d3b3ea0a08",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-7": {
+    "entry_sha256": "760600a03bac43bac9d22ba53a8e79572a0d39a0632a8d2ac82f313fba590afb",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-7.1": {
+    "entry_sha256": "f8fe49b5b15d4304b102e7f3d962b890af78462bcc0f570c8531c5a8ef81e570",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-7.2": {
+    "entry_sha256": "040ea54e6f3afca4f7ddc9379e3b2913dcb13f951e8914bde47f153a59daec3b",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-7.3": {
+    "entry_sha256": "1eb9eb704e65ea2f92d99f950405011b7d8017b7f74160bb46aa489d00044718",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-7.3.1": {
+    "entry_sha256": "cc4d5c3f26a185961efcc9e4dc911cf942d39da3f6f13f0b23a2f5ea9b415dca",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-7.4": {
+    "entry_sha256": "642cfb50c19e1c677c65ab9c2d95218d808c89652eba0b2c0031ea60f7ec6594",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-7.5": {
+    "entry_sha256": "80dc14e1a49c825b8f59372b528a1987f2c381147b0bc647978686f1f850b8e2",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-7.6": {
+    "entry_sha256": "b36ae339e9b0ad5e55ec7851dc5c0eda340345cce91951fb55284fa35d264509",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "trh-8": {
+    "entry_sha256": "2e2bd740a850e85159f316deb37fbd8823c44d92bcb482e3e0446e3d7f0281ac",
+    "findings": [],
+    "verdict": "clean"
+  }
+}
