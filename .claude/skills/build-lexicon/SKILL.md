@@ -71,6 +71,39 @@ two of the five special conditions indistinguishable.
 If a term genuinely fits none of these, that is a finding worth reporting
 rather than forcing. Categories may need to grow.
 
+## Words that are two things at once
+
+Some terms are genuinely more than one category. In the game rules "attack" is
+a thing printed on a card about 25 times and something a player does about 8
+times. "retreat" and "damage" behave the same way.
+
+Give the term every category that applies:
+
+```json
+{
+  "term": "attack",
+  "category": ["entity", "action"],
+  "gloss": "A printed attack on a Pokemon card, and the act of using one."
+}
+```
+
+Do not pick one and move on. A single category forces an arbitrary choice, and
+two people classifying different batches will choose differently with nothing
+to catch it. If a term looks like two categories, it usually is.
+
+## Multi-word terms
+
+`just lexicon-candidates` proposes phrases as well as single words, marked `2w`
+or `3w`. Many of the most important entities are phrases: damage counter,
+Special Condition, Pokemon Checkup, Prize card, Retreat Cost, Basic Pokemon.
+
+Classify the phrase as its own term when it means something its parts do not.
+"damage counter" is a specific marker, not any counter that happens to be
+about damage.
+
+The words inside a classified phrase still need their own decision. "damage"
+appears on its own as well, so classifying "damage counter" does not settle it.
+
 ## Entry shape
 
 ```json
@@ -82,6 +115,12 @@ rather than forcing. Categories may need to grow.
   "sections": ["tcg-Evolution"]
 }
 ```
+
+`category` is one value or a list. `variants` are spellings you have actually
+seen; validate rejects any that do not share the term's stem, and any that
+never occur. `sections` are section ids where the term is defined or used
+most clearly, and are optional; they exist so a future reader can find the
+rule behind the word.
 
 The gloss is your own words. It is not a quotation, and the paraphrase tripwire
 applies here as it does everywhere else.
@@ -109,3 +148,8 @@ Declining is a real answer. A lexicon that classifies everything is wrong.
   non-stopword occurrences classified. Quote it.
 - **Work in batches and re-run validate between them.** A batch that drops
   coverage or adds failures is easier to unpick when it is small.
+- **One file per batch, under `content/lexicon/`.** Batches are assigned by
+  frequency band and are disjoint, so two people never edit one file. Name the
+  file after the band.
+- **Stay inside your band.** A term outside it belongs to someone else, and
+  classifying it twice produces a duplicate that only surfaces at merge.

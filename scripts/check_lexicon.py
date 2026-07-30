@@ -30,7 +30,8 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "pipeline" / "src"))
-from rulecheck_pipeline.lexicon import stem, tokenize, validate  # noqa: E402
+from rulecheck_pipeline.lexicon import (  # noqa: E402
+    extract, stem, stem_phrase, tokenize, validate)
 
 # Ordinary English. Not domain vocabulary, so absence from the lexicon is
 # correct rather than an omission.
@@ -110,10 +111,16 @@ def main() -> int:
     for word, n in counts.items():
         by_stem[stem(word)] += n
 
+    # Phrases too. Without this a classified "damage counter" is invisible and
+    # would be reported as a term that appears nowhere.
+    texts = [t for group in corpus.values() for t in group]
+    phrases = {c["stem"]: c["count"]
+               for c in extract(texts, min_count=1, max_words=3) if c["words"] > 1}
+
     # 1. every lexicon term occurs
     for entry in terms:
-        key = stem(entry["term"])
-        if by_stem.get(key, 0) == 0:
+        key = stem_phrase(entry["term"])
+        if (by_stem.get(key, 0) or phrases.get(key, 0)) == 0:
             problems.append(
                 f"{entry['term']}: classified but appears nowhere in the corpus")
         for variant in entry.get("variants", []):
@@ -122,9 +129,9 @@ def main() -> int:
                     f"{entry['term']}: declared variant {variant!r} never occurs")
 
     # 2. every recurring corpus term is classified or declined
-    known = {stem(e["term"]) for e in terms}
+    known = {stem_phrase(e["term"]) for e in terms}
     for entry in terms:
-        known.update(stem(v) for v in entry.get("variants", []))
+        known.update(stem_phrase(v) for v in entry.get("variants", []))
     missing = []
     for key, n in by_stem.most_common():
         if n < args.min_count or key in known or key in declined:
