@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import json
 import sys
 from pathlib import Path
 
@@ -11,7 +12,7 @@ from rulecheck_pipeline.check_sources import check_sources
 from rulecheck_pipeline.content_check import check_rewrites
 from rulecheck_pipeline.download import download_doc
 from rulecheck_pipeline.manifest import load_manifest
-from rulecheck_pipeline import shingles
+from rulecheck_pipeline import lexicon, shingles
 from rulecheck_pipeline.model import dump_document, dump_index, load_document
 from rulecheck_pipeline.parse import parse_pdf
 from rulecheck_pipeline.rewrites import is_skip, load_rewrites
@@ -101,6 +102,43 @@ def cmd_content_status(root: Path) -> int:
     return 0
 
 
+def cmd_lexicon_candidates(root: Path, min_count: int = 5) -> int:
+    """Candidate vocabulary from the authored corpus, deterministically.
+
+    The re-derivable half of the lexicon. Same corpus in, same candidates out,
+    so a source revision produces a delta to classify rather than a job to
+    redo from scratch.
+    """
+    texts: list[str] = []
+    for path in sorted((root / "rewrites").glob("*.json")):
+        for _sid, entry in json.loads(path.read_text()).items():
+            if "skip" in entry:
+                continue
+            texts.extend(_free_text(entry))
+    for candidate in lexicon.extract(texts, min_count=min_count):
+        forms = "/".join(candidate["forms"][:5])
+        print(f"{candidate['count']:6d}  {candidate['lemma']:22s} {forms}")
+    return 0
+
+
+def _free_text(entry: dict) -> list[str]:
+    out: list[str] = []
+
+    def walk(value):
+        if isinstance(value, str):
+            out.append(value)
+        elif isinstance(value, list):
+            for item in value:
+                walk(item)
+        elif isinstance(value, dict):
+            for key, item in value.items():
+                if key not in ("archetype", "tier", "review", "see_also", "quotes"):
+                    walk(item)
+
+    walk(entry)
+    return out
+
+
 def cmd_download(root: Path) -> int:
     dest = root / "sources"
     changed = failures = 0
@@ -172,7 +210,7 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="rulecheck_pipeline")
     parser.add_argument("command",
                         choices=["parse", "build", "verify", "download", "check-sources",
-                                 "content-status", "all"])
+                                 "content-status", "lexicon-candidates", "all"])
     parser.add_argument("--root", type=Path, default=Path.cwd().parent,
                         help="repo root (default: parent of CWD, i.e. run from pipeline/)")
     parser.add_argument("--release", action="store_true",
@@ -208,6 +246,8 @@ def main(argv: list[str] | None = None) -> int:
         return cmd_check_sources(root)
     if args.command == "content-status":
         return cmd_content_status(root)
+    if args.command == "lexicon-candidates":
+        return cmd_lexicon_candidates(root)
     rc = cmd_parse(root)
     if rc == 0:
         rc = cmd_build(root)

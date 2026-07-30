@@ -1,0 +1,44 @@
+{
+  "_comment": "Classified vocabulary. Re-derivable: `just lexicon-candidates` produces the candidates, this file records the judgement, `just check-lexicon` verifies the two agree. See .claude/skills/build-lexicon/SKILL.md.",
+  "terms": [
+    {
+      "term": "evolve",
+      "category": "action",
+      "gloss": "Place an Evolution card onto the Pokemon whose name it lists, keeping damage and attached cards.",
+      "variants": ["evolves", "evolved", "evolving"],
+      "sections": ["tcg-Evolution"]
+    },
+    {
+      "term": "retreat",
+      "category": "action",
+      "gloss": "Swap the Active Pokemon with a Benched one, paying the Retreat Cost in Energy.",
+      "variants": ["retreats", "retreating"],
+      "sections": ["tcg-Retreating"]
+    },
+    {
+      "term": "asleep",
+      "category": "state",
+      "gloss": "A Special Condition that blocks attacking and retreating until a coin flip ends it.",
+      "variants": [],
+      "sections": ["tcg-Asleep"]
+    },
+    {
+      "term": "counterclockwise",
+      "category": "modifier",
+      "gloss": "Direction the card is turned to show Asleep. Distinguishes it from Paralyzed, which turns clockwise.",
+      "variants": [],
+      "sections": ["tcg-Asleep"]
+    },
+    {
+      "term": "bench",
+      "category": "entity",
+      "gloss": "The area holding a player's non-Active Pokemon, capped at five.",
+      "variants": ["benched", "benches", "benching"],
+      "sections": ["tcg-Bench"]
+    }
+  ],
+  "declined": [
+    {"term": "appropriate", "reason": "ordinary English, not a game term"},
+    {"term": "competitor", "reason": "tournament participant; belongs to the tournament documents rather than the game vocabulary"}
+  ]
+}

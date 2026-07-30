@@ -80,6 +80,22 @@ the spec wins if this file and the spec ever disagree.
   Checks are advisory (no branch protection on the current GitHub plan) —
   a red check still means stop and fix.
 
+## The lexicon
+
+The game's vocabulary, classified into entity, action, state, modifier and
+phase. It backs the icon set, search synonyms and eventually a knowledge graph.
+
+The methodology is the asset, not the file. Source documents get revised and
+parsing changes, so the lexicon must be re-derivable rather than hand-curated:
+
+    just lexicon-candidates   # deterministic extraction, no judgement
+    ...classify the delta...  # .claude/skills/build-lexicon/SKILL.md
+    just check-lexicon        # independent validation, reports coverage
+
+Inflections group (evolve, evolves, evolving). Derived words do not, because
+`attacker` is an entity and `attack` is an action. Never hand-edit the lexicon
+into a state you could not reproduce.
+
 ## Working files
 
 Scratch — build artifacts, screenshots, drafts, anything that is working
