@@ -9,6 +9,7 @@
     ],
     "id": "tournament-rules",
     "layout": false,
+    "order": 1,
     "prefix": "trh",
     "published": "2026-05-21",
     "sha256": "b29517f9361e19f70ab8624d8a58a3678b8fcf951129bd702f9a1646e5fced13",

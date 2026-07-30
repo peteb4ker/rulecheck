@@ -75,8 +75,9 @@ def test_document_without_sections_fails(fixture_pdf, fixture_source, tmp_path):
     db_path = make_db(fixture_pdf, fixture_source, tmp_path)
     con = sqlite3.connect(db_path)
     con.execute(
-        "INSERT INTO documents VALUES "
-        "('empty-doc', 'emp', 'Empty Doc', '1.0', '2026-01-01', 'https://example.com/e.pdf')"
+        "INSERT INTO documents(id, prefix, title, version, published, url, sort_order) "
+        "VALUES ('empty-doc', 'emp', 'Empty Doc', '1.0', '2026-01-01', "
+        "'https://example.com/e.pdf', 99)"
     )
     con.commit(); con.close()
     errors = verify_db(db_path)

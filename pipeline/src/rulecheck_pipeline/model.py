@@ -26,6 +26,10 @@ class SourceDoc:
     strip_lines: list[str] = dataclasses.field(default_factory=list)
     sha256: str | None = None
     layout: bool = False
+    # Position in sources.yaml. Drives the order documents appear on the
+    # browse screen, so the manifest decides what a player sees first rather
+    # than the alphabet deciding for us.
+    order: int = 0
 
 
 @dataclass

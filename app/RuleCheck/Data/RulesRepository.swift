@@ -20,7 +20,10 @@ final class RulesRepository {
 
     func documents() throws -> [DocumentInfo] {
         try dbQueue.read { db in
-            try Row.fetchAll(db, sql: "SELECT id, prefix, title, version, published FROM documents ORDER BY id")
+            // Ordered by the manifest, not alphabetically: a player should meet the
+            // game rules first, then tournament rules, then the penalty guidelines.
+            try Row.fetchAll(db, sql: "SELECT id, prefix, title, version, published "
+                                    + "FROM documents ORDER BY sort_order")
                 .map { DocumentInfo(id: $0["id"], prefix: $0["prefix"], title: $0["title"],
                                     version: $0["version"], published: $0["published"]) }
         }
