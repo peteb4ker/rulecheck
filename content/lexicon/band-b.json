@@ -1,0 +1,549 @@
+{
+  "_comment": "Lexicon band B: ranks 61-160 of `just lexicon-candidates` with stopwords removed. Re-derivable: extract produces the candidates, this file records the judgement, `just check-lexicon` verifies the two agree. See .claude/skills/build-lexicon/SKILL.md.",
+  "terms": [
+    {
+      "term": "prize card",
+      "category": "entity",
+      "gloss": "One of the cards set aside face down during setup; a player takes one for each Knock Out and wins by taking them all.",
+      "variants": [
+        "prize cards"
+      ],
+      "sections": [
+        "tcg-Zones of the Pokémon TCG",
+        "tcg-How to Win"
+      ]
+    },
+    {
+      "term": "energy",
+      "category": "entity",
+      "gloss": "The resource an attack costs, supplied by Energy cards attached to a Pokemon; each carries a type that printed costs are matched against.",
+      "variants": [],
+      "sections": [
+        "tcg-3 Card Types",
+        "tcg-Energy Types"
+      ]
+    },
+    {
+      "term": "type",
+      "category": "entity",
+      "gloss": "The elemental kind of a Pokemon or an Energy card, matched against attack costs and read for Weakness and Resistance.",
+      "variants": [
+        "types"
+      ],
+      "sections": [
+        "tcg-Energy Types",
+        "tcg-Appendix 21: Dual-Type Pokémon"
+      ]
+    },
+    {
+      "term": "ability",
+      "category": "entity",
+      "gloss": "A power printed on a Pokemon card that is not an attack; usually optional, once per turn, and switched off while the Pokemon carries a Special Condition.",
+      "variants": [],
+      "sections": [
+        "tcg-Glossary",
+        "tcg-Appendix 23: Ancient Traits"
+      ]
+    },
+    {
+      "term": "evolution",
+      "category": "entity",
+      "gloss": "A card played on top of a Pokemon already in play, and the stage line such cards form.",
+      "variants": [
+        "evolutions"
+      ],
+      "sections": [
+        "tcg-3 Card Types",
+        "tcg-Glossary"
+      ]
+    },
+    {
+      "term": "active",
+      "category": "entity",
+      "gloss": "The in-play spot a Pokemon fights from, and the Pokemon standing in it; only that Pokemon can attack or carry a Special Condition.",
+      "variants": [],
+      "sections": [
+        "tcg-Zones of the Pokémon TCG",
+        "tcg-Special Conditions"
+      ]
+    },
+    {
+      "term": "ex",
+      "category": "entity",
+      "gloss": "A suffix forming part of a card's name that marks a stronger Pokemon giving up extra Prize cards when Knocked Out; the older line spells it -EX.",
+      "variants": [],
+      "sections": [
+        "tcg-Appendix 5: Pokémon ex",
+        "tcg-Appendix 25: Pokémon-EX"
+      ]
+    },
+    {
+      "term": "pokémon ex",
+      "category": "entity",
+      "gloss": "A card variant with higher HP and stronger attacks than the plain version of the same name, worth two Prize cards when Knocked Out.",
+      "variants": [],
+      "sections": [
+        "tcg-Appendix 5: Pokémon ex"
+      ]
+    },
+    {
+      "term": "gx",
+      "category": "entity",
+      "gloss": "A suffix forming part of a card's name that marks a Pokemon-GX, which carries a once-per-game GX attack and a marker to record it as spent.",
+      "variants": [],
+      "sections": [
+        "tcg-Appendix 19: Pokémon-GX",
+        "tcg-Special rules for Pokémon-GX"
+      ]
+    },
+    {
+      "term": "set",
+      "category": "entity",
+      "gloss": "The expansion a card was released in, read together with its collector number when a deck is checked against a deck list.",
+      "variants": [
+        "sets"
+      ],
+      "sections": [
+        "tcg-Appendix 10: Pokémon V-UNION"
+      ]
+    },
+    {
+      "term": "game state",
+      "category": "entity",
+      "gloss": "Everything live in a game at one moment: both boards, both hands, and the choices open to each player.",
+      "variants": [
+        "game states"
+      ],
+      "sections": [
+        "pen-2.3"
+      ]
+    },
+    {
+      "term": "condition",
+      "category": "state",
+      "gloss": "Short for Special Condition: Asleep, Burned, Confused, Paralyzed or Poisoned, carried by the Active Pokemon until something clears it.",
+      "variants": [
+        "conditions"
+      ],
+      "sections": [
+        "tcg-Special Conditions",
+        "tcg-Removing Special Conditions"
+      ]
+    },
+    {
+      "term": "knock",
+      "category": [
+        "action",
+        "state"
+      ],
+      "gloss": "Take a Pokemon out of play once its damage reaches its HP; the Pokemon is Knocked Out and its opponent takes a Prize card.",
+      "variants": [
+        "knocked",
+        "knocking"
+      ],
+      "sections": [
+        "tcg-Glossary"
+      ]
+    },
+    {
+      "term": "draw",
+      "category": "action",
+      "gloss": "Take the top card of your deck into your hand; every turn opens with one, and being unable to draw loses the game.",
+      "variants": [
+        "draws"
+      ],
+      "sections": [
+        "tcg-Parts of a Turn",
+        "tcg-How to Win"
+      ]
+    },
+    {
+      "term": "discard",
+      "category": "action",
+      "gloss": "Put a card from hand or from play into its owner's discard pile.",
+      "variants": [
+        "discards",
+        "discarded",
+        "discarding"
+      ],
+      "sections": [
+        "tcg-Zones of the Pokémon TCG"
+      ]
+    },
+    {
+      "term": "remove",
+      "category": "action",
+      "gloss": "Take something off a Pokemon or out of play, such as a Special Condition, an attached card or a marker.",
+      "variants": [
+        "removed",
+        "removes",
+        "removing"
+      ],
+      "sections": [
+        "tcg-Removing Special Conditions",
+        "tcg-Special Conditions"
+      ]
+    },
+    {
+      "term": "add",
+      "category": "action",
+      "gloss": "Place further damage counters on a Pokemon, as Burned and Confused do, or fold a bonus into damage already being worked out.",
+      "variants": [
+        "added",
+        "adding",
+        "adds"
+      ],
+      "sections": [
+        "tcg-Burned",
+        "tcg-Confused"
+      ]
+    },
+    {
+      "term": "printed",
+      "category": "modifier",
+      "gloss": "Marks a cost, effect or trait as what the card itself shows, rather than what it has become through an effect in play.",
+      "variants": [
+        "print",
+        "printing"
+      ],
+      "sections": [
+        "tcg-3 Card Types",
+        "tcg-Appendix 23: Ancient Traits"
+      ]
+    },
+    {
+      "term": "tiebreaker",
+      "category": "phase",
+      "gloss": "A fresh game played when both players would win at the same moment; the first to take a Prize card takes the match.",
+      "variants": [
+        "tiebreakers"
+      ],
+      "sections": [
+        "tcg-What’s a tiebreaker game?",
+        "tcg-What if both players win at the same time?"
+      ]
+    }
+  ],
+  "declined": [
+    {
+      "term": "series",
+      "reason": "names the Championship Series program; tournament organisation, not game vocabulary"
+    },
+    {
+      "term": "championship series",
+      "reason": "a tier of sanctioned events; tournament organisation, not game vocabulary"
+    },
+    {
+      "term": "championship series events",
+      "reason": "a tier of sanctioned events; tournament organisation, not game vocabulary"
+    },
+    {
+      "term": "series events",
+      "reason": "a tier of sanctioned events; tournament organisation, not game vocabulary"
+    },
+    {
+      "term": "standings",
+      "reason": "the ranked table a tournament produces; tournament administration, not game vocabulary"
+    },
+    {
+      "term": "drop",
+      "reason": "withdrawing from a tournament; tournament administration, not game vocabulary"
+    },
+    {
+      "term": "bracket",
+      "reason": "elimination pairing structure; tournament administration, not game vocabulary"
+    },
+    {
+      "term": "cut",
+      "reason": "the single-elimination stage after Swiss; tournament administration, not game vocabulary"
+    },
+    {
+      "term": "keep",
+      "reason": "ordinary English, not a game term"
+    },
+    {
+      "term": "base",
+      "reason": "ordinary English qualifier, and part of 'base infraction' in the penalty guidelines"
+    },
+    {
+      "term": "base infraction",
+      "reason": "the starting point for choosing a penalty; penalty-guidelines vocabulary, not game vocabulary"
+    },
+    {
+      "term": "escalate",
+      "reason": "moving a penalty up from its recommended starting point; penalty-guidelines vocabulary"
+    },
+    {
+      "term": "escalation",
+      "reason": "moving a penalty up from its recommended starting point; penalty-guidelines vocabulary"
+    },
+    {
+      "term": "penalties",
+      "reason": "the sanctions a Judge issues; penalty-guidelines vocabulary, not game vocabulary"
+    },
+    {
+      "term": "warning",
+      "reason": "a named penalty; penalty-guidelines vocabulary, not game vocabulary"
+    },
+    {
+      "term": "game loss",
+      "reason": "a named penalty; penalty-guidelines vocabulary, not game vocabulary"
+    },
+    {
+      "term": "error",
+      "reason": "names the Procedural Error and gameplay error infraction categories; penalty-guidelines vocabulary"
+    },
+    {
+      "term": "gameplay",
+      "reason": "qualifies the gameplay-error infraction category; penalty-guidelines vocabulary"
+    },
+    {
+      "term": "head judge",
+      "reason": "a tournament staff role, like the already-declined competitor; not game vocabulary"
+    },
+    {
+      "term": "professor",
+      "reason": "a Play! Pokemon program role; tournament organisation, not game vocabulary"
+    },
+    {
+      "term": "member",
+      "reason": "occurs as 'team member', a video-game roster slot; not TCG game vocabulary"
+    },
+    {
+      "term": "team member",
+      "reason": "a video-game roster slot checked against a team list; not TCG game vocabulary"
+    },
+    {
+      "term": "slip",
+      "reason": "occurs as 'match slip', the paper record of a result; tournament administration"
+    },
+    {
+      "term": "sanctioned",
+      "reason": "registering an event with the program; tournament administration, not game vocabulary"
+    },
+    {
+      "term": "venue",
+      "reason": "where a tournament is held; tournament administration, not game vocabulary"
+    },
+    {
+      "term": "regional",
+      "reason": "qualifies a tier of Championships; tournament organisation, not game vocabulary"
+    },
+    {
+      "term": "phase two",
+      "reason": "the second stage of a two-day tournament; tournament administration, not a phase of the game loop"
+    },
+    {
+      "term": "age",
+      "reason": "occurs as 'age division' and as a factor in choosing a penalty; tournament administration"
+    },
+    {
+      "term": "submit",
+      "reason": "filing tournament paperwork; tournament administration, not game vocabulary"
+    },
+    {
+      "term": "report",
+      "reason": "the paperwork filed after a penalty or an incident; tournament administration"
+    },
+    {
+      "term": "handbook",
+      "reason": "refers to the source documents themselves, not to anything in the game"
+    },
+    {
+      "term": "section",
+      "reason": "document structure, not vocabulary of the game or the tournament"
+    },
+    {
+      "term": "guidance",
+      "reason": "refers to the source documents themselves, not to anything in the game"
+    },
+    {
+      "term": "review",
+      "reason": "ordinary English, used for a Judge looking into a situation"
+    },
+    {
+      "term": "recommended",
+      "reason": "ordinary English, qualifying a penalty starting point"
+    },
+    {
+      "term": "integrity",
+      "reason": "ordinary English, describing what penalties exist to protect"
+    },
+    {
+      "term": "video",
+      "reason": "distinguishes video-game events from the TCG; not TCG game vocabulary"
+    },
+    {
+      "term": "tcg",
+      "reason": "the name of the game itself, not a term inside it"
+    },
+    {
+      "term": "move",
+      "reason": "video-game roster vocabulary plus ordinary English movement; the TCG term is 'attack'"
+    },
+    {
+      "term": "format",
+      "reason": "a tournament structure, and the legal card pool, which is out of scope for this app"
+    },
+    {
+      "term": "action",
+      "reason": "ordinary English, used for anything a player or a Judge does"
+    },
+    {
+      "term": "ends",
+      "reason": "ordinary English; the game's own timing terms are turn and Pokemon Checkup"
+    },
+    {
+      "term": "part",
+      "reason": "ordinary English, not a game term"
+    },
+    {
+      "term": "pile",
+      "reason": "occurs only inside 'discard pile', which is the term that carries the meaning"
+    },
+    {
+      "term": "special",
+      "reason": "occurs only inside named terms such as Special Condition and Special Energy, which carry the meaning"
+    },
+    {
+      "term": "support",
+      "reason": "ordinary English; the card type is Supporter, a different word"
+    },
+    {
+      "term": "stay",
+      "reason": "ordinary English, not a game term"
+    },
+    {
+      "term": "hold",
+      "reason": "ordinary English, not a game term"
+    },
+    {
+      "term": "leave",
+      "reason": "ordinary English, not a game term"
+    },
+    {
+      "term": "change",
+      "reason": "ordinary English, not a game term"
+    },
+    {
+      "term": "shared",
+      "reason": "ordinary English, not a game term"
+    },
+    {
+      "term": "show",
+      "reason": "ordinary English, not a game term"
+    },
+    {
+      "term": "comes",
+      "reason": "ordinary English, not a game term"
+    },
+    {
+      "term": "covers",
+      "reason": "ordinary English, not a game term"
+    },
+    {
+      "term": "decide",
+      "reason": "ordinary English, not a game term"
+    },
+    {
+      "term": "apply",
+      "reason": "ordinary English, used for issuing a penalty"
+    },
+    {
+      "term": "applies",
+      "reason": "ordinary English; the stemmer does not group it with 'apply', so it needs its own decision"
+    },
+    {
+      "term": "requires",
+      "reason": "ordinary English, not a game term"
+    },
+    {
+      "term": "including",
+      "reason": "ordinary English, not a game term"
+    },
+    {
+      "term": "issue",
+      "reason": "ordinary English, used both for a problem and for handing out a penalty"
+    },
+    {
+      "term": "result",
+      "reason": "ordinary English, used for the recorded outcome of a match"
+    },
+    {
+      "term": "fix",
+      "reason": "ordinary English, not a game term"
+    },
+    {
+      "term": "source",
+      "reason": "ordinary English, used to point at the source guidance"
+    },
+    {
+      "term": "information",
+      "reason": "ordinary English, not a game term"
+    },
+    {
+      "term": "specific",
+      "reason": "ordinary English, not a game term"
+    },
+    {
+      "term": "extra",
+      "reason": "ordinary English quantity word, not a game term"
+    },
+    {
+      "term": "full",
+      "reason": "ordinary English, not a game term"
+    },
+    {
+      "term": "used",
+      "reason": "ordinary English; the stemmer does not group it with 'use', so it needs its own decision"
+    },
+    {
+      "term": "allowed",
+      "reason": "ordinary English, not a game term"
+    },
+    {
+      "term": "means",
+      "reason": "ordinary English, not a game term"
+    },
+    {
+      "term": "way",
+      "reason": "ordinary English, not a game term"
+    },
+    {
+      "term": "right",
+      "reason": "ordinary English, not a game term"
+    },
+    {
+      "term": "back",
+      "reason": "ordinary English, not a game term"
+    },
+    {
+      "term": "days",
+      "reason": "ordinary English, used for tournament deadlines"
+    },
+    {
+      "term": "whether",
+      "reason": "ordinary English, not a game term"
+    },
+    {
+      "term": "without",
+      "reason": "ordinary English, not a game term"
+    },
+    {
+      "term": "otherwise",
+      "reason": "ordinary English, not a game term"
+    },
+    {
+      "term": "either",
+      "reason": "ordinary English, not a game term"
+    },
+    {
+      "term": "anyone",
+      "reason": "ordinary English, not a game term"
+    },
+    {
+      "term": "everyone",
+      "reason": "ordinary English, not a game term"
+    }
+  ]
+}
