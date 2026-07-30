@@ -81,14 +81,22 @@ def main() -> int:
                          "classified or declined (default 5)")
     args = ap.parse_args()
 
-    lex_path = args.root / "content" / "lexicon.json"
-    if not lex_path.is_file():
-        print(f"ERROR: no lexicon at {lex_path}", file=sys.stderr)
+    # A directory, not a file: content/*.json is the parsed-document glob, and
+    # a lexicon sitting in it gets loaded as a document and fails on a missing
+    # "document" key. Splitting into files also lets batches be classified in
+    # parallel without fighting over one file.
+    lex_dir = args.root / "content" / "lexicon"
+    files = sorted(lex_dir.glob("*.json")) if lex_dir.is_dir() else []
+    if not files:
+        print(f"ERROR: no lexicon files in {lex_dir}", file=sys.stderr)
         return 1
 
-    payload = json.loads(lex_path.read_text())
-    terms = payload.get("terms", [])
-    declined = {stem(d["term"]): d for d in payload.get("declined", [])}
+    terms, declined = [], {}
+    for path in files:
+        payload = json.loads(path.read_text())
+        terms.extend(payload.get("terms", []))
+        for d in payload.get("declined", []):
+            declined[stem(d["term"])] = d
 
     problems = validate(terms)
 
