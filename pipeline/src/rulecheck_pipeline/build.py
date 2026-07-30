@@ -7,6 +7,7 @@ from pathlib import Path
 from rulecheck_pipeline.flatten import flatten_entry
 from rulecheck_pipeline.model import load_document
 from rulecheck_pipeline.rewrites import is_skip, load_rewrites
+from rulecheck_pipeline.model import load_xrefs
 from rulecheck_pipeline.xrefs import detect_xrefs
 
 SCHEMA = """
@@ -109,9 +110,14 @@ def build_db(content_dir: Path, out_path: Path, rewrites_dir: Path | None = None
                   if s.id in rewrites else None) for s in shipped],
             )
             shipped_ids = {s.id for s in shipped}
+            # Recorded at parse time, when the body text still existed. Only
+            # fall back to detecting them here when the file records none,
+            # which is the full artifact rather than the committed index.
+            recorded = load_xrefs(json_path)
+            xref_pairs = detect_xrefs(sections) if recorded is None else recorded
             con.executemany(
                 "INSERT INTO xrefs(from_id, to_id) VALUES (?, ?)",
-                [(f, t) for f, t in detect_xrefs(sections)
+                [(f, t) for f, t in xref_pairs
                  if f in shipped_ids and t in shipped_ids],
             )
         con.execute(

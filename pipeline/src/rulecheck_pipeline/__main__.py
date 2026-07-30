@@ -15,6 +15,7 @@ from rulecheck_pipeline import shingles
 from rulecheck_pipeline.model import dump_document, dump_index, load_document
 from rulecheck_pipeline.parse import parse_pdf
 from rulecheck_pipeline.rewrites import is_skip, load_rewrites
+from rulecheck_pipeline.xrefs import detect_xrefs
 from rulecheck_pipeline.verify import verify_db
 
 
@@ -48,7 +49,7 @@ def cmd_parse(root: Path) -> int:
         sections = parse_pdf(pdf_path, source)
         dump_document(source, sections, full_dir / f"{source.id}.json")
         index = content_dir / f"{source.id}.json"
-        dump_index(source, sections, index)
+        dump_index(source, sections, index, xrefs=detect_xrefs(sections))
         shingles.dump(sections, content_dir / "fingerprints" / f"{source.id}.json")
         print(f"parsed {source.id}: {len(sections)} sections -> {index} (+ fingerprints)")
     return 0

@@ -78,14 +78,34 @@ def dump_document(source: SourceDoc, sections: list[Section], path: Path) -> Non
     _write(_payload(source, sections, bodies=True), path)
 
 
-def dump_index(source: SourceDoc, sections: list[Section], path: Path) -> None:
+def load_xrefs(path: Path) -> list[tuple[str, str]] | None:
+    """Cross-references recorded in an index.
+
+    None means the file records none at all, which is different from recording
+    an empty list. The full parse artifact has no `xrefs` key, so a caller
+    holding real body text can still detect them itself.
+    """
+    payload = json.loads(Path(path).read_text())
+    if "xrefs" not in payload:
+        return None
+    return [(a, b) for a, b in payload["xrefs"]]
+
+
+def dump_index(source: SourceDoc, sections: list[Section], path: Path,
+               xrefs: list[tuple[str, str]] | None = None) -> None:
     """The committed record: structure, citations and body lengths, no prose.
 
     Everything here already ships inside the app — section numbers, titles and
     breadcrumbs are how a rule is cited — so committing it exposes nothing the
     App Store build does not.
+
+    Cross-references travel here too. Detecting them needs body text, which
+    this file deliberately lacks, so they are found at parse time while the
+    text is still in hand. A pair of section ids reveals no prose.
     """
-    _write(_payload(source, sections, bodies=False), path)
+    payload = _payload(source, sections, bodies=False)
+    payload["xrefs"] = [list(pair) for pair in (xrefs or [])]
+    _write(payload, path)
 
 
 def load_document(path: Path) -> tuple[SourceDoc, list[Section]]:

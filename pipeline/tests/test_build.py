@@ -182,3 +182,46 @@ def test_build_rejects_a_section_pointing_at_an_unknown_document(fixture_source,
         "id": "fix-1", "doc_id": "no-such-doc", "parent_id": None})
     with pytest.raises(sqlite3.IntegrityError):
         build_db(content_dir, tmp_path / "rulecheck.db")
+
+
+def test_xrefs_survive_a_bodies_free_index(tmp_path):
+    """Cross-references must reach the app even though the committed index
+    carries no prose.
+
+    Detection needs body text, and since the verbatim bodies left the
+    repository the index has none. Detecting at build time therefore found
+    nothing and shipped an empty xrefs table, silently killing the reader's
+    "See also" section. Detection now happens at parse time, when the text is
+    still in hand, and the resulting pairs travel in the index.
+    """
+    from rulecheck_pipeline.model import Section, SourceDoc, dump_index
+
+    source = SourceDoc(id="fix", prefix="fix", title="Fixture", version="1",
+                       published="2026-01-01", url="https://example.com/f.pdf",
+                       file="f.pdf", heading_rules=[])
+    sections = [
+        Section(id="fix-1", doc_id="fix", parent_id=None, number="1",
+                title="One", breadcrumb="Fixture", order=0,
+                body="See section 2 for details."),
+        Section(id="fix-2", doc_id="fix", parent_id=None, number="2",
+                title="Two", breadcrumb="Fixture", order=1, body="Details."),
+    ]
+    content = tmp_path / "content"
+    dump_index(source, sections, content / "fix.json", xrefs=[("fix-1", "fix-2")])
+
+    # Both sections are authored, matching the real corpus. Without entries
+    # the build correctly refuses, since the index carries no prose to ship.
+    rewrites = tmp_path / "rewrites"
+    rewrites.mkdir()
+    (rewrites / "fix.json").write_text(json.dumps({
+        sid: {"archetype": "note", "tier": "standard",
+              "summary": "s", "paragraphs": ["p"]}
+        for sid in ("fix-1", "fix-2")}))
+
+    db = tmp_path / "out.db"
+    build_db(content, db, rewrites_dir=rewrites)
+
+    con = sqlite3.connect(db)
+    rows = con.execute("SELECT from_id, to_id FROM xrefs").fetchall()
+    con.close()
+    assert rows == [("fix-1", "fix-2")], "xrefs lost between parse and build"
