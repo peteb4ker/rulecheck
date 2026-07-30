@@ -33,6 +33,14 @@ all:
 test:
     cd pipeline && uv run pytest
 
+# Candidate vocabulary from the authored corpus (deterministic, re-runnable)
+lexicon-candidates:
+    cd pipeline && uv run python -m rulecheck_pipeline lexicon-candidates --root ..
+
+# Independently check the lexicon against the corpus (the buddy script)
+check-lexicon:
+    python3 scripts/check_lexicon.py
+
 # Rewrites-layer coverage / archetype / review report
 content-status:
     cd pipeline && uv run python -m rulecheck_pipeline content-status --root ..
