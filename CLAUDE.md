@@ -29,6 +29,12 @@ the spec wins if this file and the spec ever disagree.
   build if any committed section carries a `body`.
 - **Verbatim rules text is gated on the Research Gate** in the spec. Don't
   ship or publicize content decisions before that research is done.
+  `just transformation-report` quantifies where the corpus sits: declared
+  quote share against budget, the distribution of longest shared token runs,
+  and how much shorter the paraphrase is than its source. It needs the PDFs,
+  so it is a local and pre-release check rather than a CI gate. Read the
+  median and 95th percentile, never the maximum: the tripwire fails the build
+  at 12 tokens, so the maximum is censored at 11 by construction.
 - **No Pokemon character/species names anywhere user-facing** (app name,
   screenshots, marketing). Character names are TPCi trademarks; rules facts
   are not. The app carries the standard not-affiliated disclaimer.

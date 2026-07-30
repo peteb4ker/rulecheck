@@ -69,6 +69,12 @@ check-decomposition: build
 check-fidelity-review *ARGS:
     python3 scripts/check_fidelity_review.py --root . {{ARGS}}
 
+# Fair-use quantification: quote budgets, overlap distribution, compression.
+# Needs the source PDFs, so this is a local/release check and not a CI gate —
+# CI has no PDFs and fingerprints cannot answer how long the shared runs are.
+transformation-report *ARGS: parse
+    python3 scripts/transformation_report.py --root . {{ARGS}}
+
 # Committed content still reproduces from the source PDFs + manifest
 # (runs inside the pipeline env — it imports the parser it validates)
 check-ingest *ARGS:
