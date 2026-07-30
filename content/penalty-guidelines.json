@@ -2,7 +2,7 @@
   "document": {
     "file": "penalty-guidelines.pdf",
     "heading_rules": [
-      "^([1-8]):?\\s+(?!.*\\.{2,})(?=.*[A-Za-z])([^a-z].*)$",
+      "^(Appendix [A-Z]|[1-8])(?::?\\s+((?!.*\\.{2,})(?=.*[A-Za-z])[^a-z].*))?$",
       "^([1-8]\\.\\d+):?\\s+(?!.*\\.{2,})(?=.*[A-Za-z])([^a-z].*)$",
       "^([1-8]\\.\\d+\\.\\d+):?\\s+(?!.*\\.{2,})(?=.*[A-Za-z])([^a-z].*)$",
       "^([1-8]\\.\\d+\\.\\d+\\.\\d+):?\\s+(?!.*\\.{2,})(?=.*[A-Za-z])([^a-z].*)$"
@@ -681,7 +681,7 @@
       "title": "Disqualification Reports"
     },
     {
-      "body_chars": 3358,
+      "body_chars": 1385,
       "breadcrumb": "Play! Pokémon Penalty Guidelines",
       "doc_id": "penalty-guidelines",
       "id": "pen-7",
@@ -691,14 +691,42 @@
       "title": "Post-Event Disciplinary Action"
     },
     {
+      "body_chars": 1961,
+      "breadcrumb": "Play! Pokémon Penalty Guidelines",
+      "doc_id": "penalty-guidelines",
+      "id": "pen-Appendix A",
+      "number": "Appendix A",
+      "order": 67,
+      "parent_id": null,
+      "title": "Appendix A"
+    },
+    {
       "body_chars": 464,
       "breadcrumb": "Play! Pokémon Penalty Guidelines",
       "doc_id": "penalty-guidelines",
       "id": "pen-8",
       "number": "8",
-      "order": 67,
+      "order": 68,
       "parent_id": null,
       "title": "Summary of Changes"
     }
+  ],
+  "xrefs": [
+    [
+      "pen-2.4",
+      "pen-4"
+    ],
+    [
+      "pen-4.1",
+      "pen-5"
+    ],
+    [
+      "pen-4.1",
+      "pen-4.2"
+    ],
+    [
+      "pen-5.5",
+      "pen-4.2.1"
+    ]
   ]
 }

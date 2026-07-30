@@ -1293,5 +1293,34 @@
     ],
     "summary": "The May 21, 2026 edition's only recorded content change from the April 7, 2026 edition is updated wording for Tardiness.",
     "tier": "standard"
+  },
+  "pen-Appendix A": {
+    "archetype": "penalty",
+    "base_penalty": [
+      {
+        "examples": [
+          "Carried in a Poké Ball that the species cannot be caught in ordinarily",
+          "Marked as hatched from an Egg yet carried in a Master Ball or Cherish Ball",
+          "Shiny despite belonging to a species that never appears Shiny outside a promotion",
+          "A nickname or original trainer that points to an illegitimate origin"
+        ],
+        "note": "The irregularity is cosmetic and wins the competitor nothing.",
+        "penalty": "Major team error",
+        "tier": "Major"
+      },
+      {
+        "note": "An attack, Ability, Nature, statistic or similar attribute could hand the competitor an edge that ordinary play cannot produce.",
+        "penalty": "Severe team error",
+        "tier": "Severe"
+      }
+    ],
+    "handling": [
+      "Take the offending Pokémon off the Battle Team and put nothing in its place.",
+      "Disqualify the competitor when that removal drops the team below the smallest size the tournament will accept.",
+      "Penalise under the Pokémon Video Game Penalty Guidelines."
+    ],
+    "infraction": "A Battle Team holds a Pokémon whose attributes show it came from somewhere other than ordinary play or an official promotion",
+    "summary": "Catalogues the manipulated Pokémon an electronic team check can miss, sorted by whether the irregularity could change the outcome of a game. Where staff cannot agree whether a Pokémon qualifies, the Head Judge decides.",
+    "tier": "judge"
   }
 }
