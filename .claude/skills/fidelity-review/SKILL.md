@@ -61,6 +61,11 @@ Every one of these has produced a real defect. Check them explicitly:
 - **Cross-section synthesis**: if an entry states a fact not in its own
   source section, verify it is genuinely corroborated elsewhere in the
   corpus. Accurate synthesis is sanctioned; unverified assertion is not.
+  Use `just corroborate "the words in question"` rather than grep. It
+  searches the source text and our entries together, and it matches
+  inflections, so a search for "damage counter" also finds "damage
+  counters". A section listed as `ours only` uses a word our entry uses and
+  the rulebook never does, which is where to look first.
 - **Invention from world knowledge**: when a source section is thin or
   label-only, an author may fill gaps from general knowledge. Judge each
   such statement: supported by the corpus, or invented? (A real review
