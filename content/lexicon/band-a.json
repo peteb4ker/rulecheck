@@ -1,0 +1,370 @@
+{
+  "_comment": "Band A: the 60 most frequent candidate terms from `just lexicon-candidates`, ranks 1-60 once stopwords are removed. Re-derivable: the extractor proposes, this file records the judgement, `just check-lexicon` verifies the two agree. See .claude/skills/build-lexicon/SKILL.md. Three of the band's ranks (competitor, attack, evolves) were already decided in core.json and are not repeated here.",
+  "terms": [
+    {
+      "term": "pokémon",
+      "category": "entity",
+      "gloss": "The creatures the game is fought with: the card type that has HP, attacks and a stage, occupies the Active spot or the Bench, and is what Knock Outs and Prize cards are counted against.",
+      "variants": [],
+      "sections": [
+        "tcg-3 Card Types",
+        "tcg-Parts of a Pokémon Card"
+      ]
+    },
+    {
+      "term": "card",
+      "category": "entity",
+      "gloss": "The unit everything in the game is made of: a printed piece that belongs to a deck, moves between zones, and carries the type, name and rules text that decide what it can do.",
+      "variants": [
+        "cards"
+      ],
+      "sections": [
+        "tcg-3 Card Types",
+        "tcg-Parts of a Pokémon Card"
+      ]
+    },
+    {
+      "term": "play",
+      "category": "action",
+      "gloss": "Put a card from your hand onto the field and let it take effect, which is how Pokemon reach the Bench and Trainer cards are used.",
+      "variants": [
+        "plays",
+        "played",
+        "playing"
+      ],
+      "sections": [
+        "tcg-Playing the Game",
+        "tcg-Turn Actions"
+      ]
+    },
+    {
+      "term": "game",
+      "category": "entity",
+      "gloss": "One contest between two players, from setup until a win condition is met. It is the scope an effect limited to once per game is measured against, and the unit a Game Loss is recorded for.",
+      "variants": [
+        "games"
+      ],
+      "sections": [
+        "tcg-How to Win the Game",
+        "tcg-Playing the Game"
+      ]
+    },
+    {
+      "term": "deck",
+      "category": "entity",
+      "gloss": "The face-down stack a player draws from, built to a fixed size before the event and subject to the cap on how many cards may share one name.",
+      "variants": [
+        "decks"
+      ],
+      "sections": [
+        "tcg-Deck Building",
+        "tcg-Zones of the Pokémon TCG"
+      ]
+    },
+    {
+      "term": "hand",
+      "category": "entity",
+      "gloss": "The cards a player holds, hidden from the opponent; the zone cards are played from and the one a mulligan or a forced shuffle reworks.",
+      "variants": [
+        "hands"
+      ],
+      "sections": [
+        "tcg-Zones of the Pokémon TCG",
+        "tcg-Setting Up to Play"
+      ]
+    },
+    {
+      "term": "prize",
+      "category": "entity",
+      "gloss": "One of the cards set aside face down at setup. A Knock Out lets the attacking player claim one or more, and claiming the last of them wins the game.",
+      "variants": [
+        "prizes"
+      ],
+      "sections": [
+        "tcg-How to Win the Game",
+        "tcg-Zones of the Pokémon TCG"
+      ]
+    },
+    {
+      "term": "damage",
+      "category": "entity",
+      "gloss": "The harm an attack does, counted in tens and tracked with counters on the Pokemon; reaching its HP total Knocks it Out.",
+      "variants": [],
+      "sections": [
+        "tcg-Full details of attacking",
+        "tcg-Glossary"
+      ]
+    },
+    {
+      "term": "effect",
+      "category": "entity",
+      "gloss": "Anything a card makes happen beyond plain attack damage, whether it resolves at once or keeps applying afterwards.",
+      "variants": [
+        "effects"
+      ],
+      "sections": [
+        "tcg-Other Effects",
+        "tcg-Glossary"
+      ]
+    },
+    {
+      "term": "name",
+      "category": "entity",
+      "gloss": "The title printed on a card. Effects that look for a particular card match on it, and the deck-building copy cap counts by it rather than by printing.",
+      "variants": [
+        "names",
+        "named"
+      ],
+      "sections": [
+        "tcg-What does and doesn’t count for a Pokémon’s name?",
+        "tcg-Deck Building"
+      ]
+    },
+    {
+      "term": "stage",
+      "category": "entity",
+      "gloss": "How far up its Evolution line a Pokemon card sits, printed in the corner. Effects are routinely keyed to a particular one.",
+      "variants": [
+        "stages"
+      ],
+      "sections": [
+        "tcg-3 Card Types"
+      ]
+    },
+    {
+      "term": "basic",
+      "category": "entity",
+      "gloss": "The unevolved starting point: a Pokemon that can be played straight from hand with nothing beneath it, and by extension the plain Energy that carries no extra rules text.",
+      "variants": [
+        "basics"
+      ],
+      "sections": [
+        "tcg-3 Card Types",
+        "tcg-Setting Up to Play"
+      ]
+    },
+    {
+      "term": "trainer",
+      "category": "entity",
+      "gloss": "The card type covering Items, Supporters, Stadiums and Tools, played for its written effect rather than to battle.",
+      "variants": [
+        "trainers"
+      ],
+      "sections": [
+        "tcg-3 Card Types"
+      ]
+    },
+    {
+      "term": "turn",
+      "category": "phase",
+      "gloss": "One player's stretch of the game loop, from their draw through their actions to the checkup that closes it.",
+      "variants": [
+        "turns",
+        "turned",
+        "turning"
+      ],
+      "sections": [
+        "tcg-Parts of a Turn",
+        "tcg-Turn Actions"
+      ]
+    },
+    {
+      "term": "player",
+      "category": "entity",
+      "gloss": "One of the two sides in a game, owning a deck, a hand, a Bench and a set of Prize cards.",
+      "variants": [
+        "players"
+      ],
+      "sections": [
+        "tcg-Playing the Game"
+      ]
+    },
+    {
+      "term": "opponent",
+      "category": "entity",
+      "gloss": "The other player in the game, whose Pokemon you attack and whose Prize cards and board an effect may reach.",
+      "variants": [
+        "opponents"
+      ],
+      "sections": [
+        "tcg-Playing the Game",
+        "tcg-Full details of attacking"
+      ]
+    },
+    {
+      "term": "win",
+      "category": "action",
+      "gloss": "End the game in your favour by meeting a win condition: claiming your last Prize card, leaving the opponent with no Pokemon in play, or leaving them unable to draw.",
+      "variants": [
+        "wins",
+        "winning"
+      ],
+      "sections": [
+        "tcg-How to Win the Game",
+        "tcg-What if both players win at the same time?"
+      ]
+    }
+  ],
+  "declined": [
+    {
+      "term": "tournament",
+      "reason": "tournament administration, not game vocabulary: the event a game is played inside, following the precedent set by declining competitor"
+    },
+    {
+      "term": "round",
+      "reason": "tournament administration, not game vocabulary: a slice of the event schedule in which one match is played. The two game-rules uses mean a cycle of turns, which the term turn already covers"
+    },
+    {
+      "term": "match",
+      "reason": "tournament administration, not game vocabulary: the set of games between two competitors that produces one recorded result. The game-rules uses are the ordinary verb, as in a matching card name"
+    },
+    {
+      "term": "event",
+      "reason": "tournament administration, not game vocabulary: a sanctioned gathering, used interchangeably with tournament"
+    },
+    {
+      "term": "judge",
+      "reason": "tournament administration, not game vocabulary: a staffing role at an event, alongside the already-declined competitor"
+    },
+    {
+      "term": "organizer",
+      "reason": "tournament administration, not game vocabulary: the person or store responsible for running an event"
+    },
+    {
+      "term": "staff",
+      "reason": "tournament administration, not game vocabulary: the people working an event"
+    },
+    {
+      "term": "penalty",
+      "reason": "tournament administration, not game vocabulary: what a judge issues for an infraction, with no counterpart inside a game"
+    },
+    {
+      "term": "infraction",
+      "reason": "tournament administration, not game vocabulary: the classified mistake a penalty answers"
+    },
+    {
+      "term": "disqualification",
+      "reason": "tournament administration, not game vocabulary: the heaviest penalty, removing a competitor from the event"
+    },
+    {
+      "term": "loss",
+      "reason": "tournament administration, not game vocabulary: a recorded result and the name of two penalties, appearing nowhere in the game rules"
+    },
+    {
+      "term": "record",
+      "reason": "tournament administration, not game vocabulary: a competitor's win, loss and tie tally, plus the ordinary verb"
+    },
+    {
+      "term": "swiss",
+      "reason": "tournament administration, not game vocabulary: a pairing system for the event schedule"
+    },
+    {
+      "term": "swiss round",
+      "reason": "tournament administration, not game vocabulary: a round paired by the Swiss system"
+    },
+    {
+      "term": "elimination",
+      "reason": "tournament administration, not game vocabulary: the knockout portion of an event schedule"
+    },
+    {
+      "term": "single elimination",
+      "reason": "tournament administration, not game vocabulary: a bracket in which one match loss ends a competitor's run"
+    },
+    {
+      "term": "elimination round",
+      "reason": "tournament administration, not game vocabulary: a round inside the knockout bracket"
+    },
+    {
+      "term": "phase",
+      "reason": "tournament administration, not game vocabulary: every occurrence in the corpus is a segment of an event schedule. The word never means a step of the game loop here, which is why the lexicon's phase category is carried by turn instead"
+    },
+    {
+      "term": "championship",
+      "reason": "tournament administration, not game vocabulary: a tier of the organised play programme"
+    },
+    {
+      "term": "league",
+      "reason": "tournament administration, not game vocabulary: a local level of the organised play programme"
+    },
+    {
+      "term": "paired",
+      "reason": "tournament administration, not game vocabulary: assigning competitors to each other and to tables for a round"
+    },
+    {
+      "term": "list",
+      "reason": "tournament administration, not game vocabulary: the deck list or team list a competitor registers, plus the ordinary verb"
+    },
+    {
+      "term": "team",
+      "reason": "not TCG game vocabulary: the registered roster used by the video game, GO and UNITE formats. The card-label sense is part of the fixed name TAG TEAM"
+    },
+    {
+      "term": "pokémon go",
+      "reason": "the title of a different Pokemon game covered by the tournament documents, not TCG game vocabulary"
+    },
+    {
+      "term": "go",
+      "reason": "chiefly the second half of the title Pokemon GO; the remainder is ordinary English"
+    },
+    {
+      "term": "rules",
+      "reason": "the documents' own meta-vocabulary and the ordinary verb to rule; the game sense that matters is the card feature Rule Box, which is a separate candidate"
+    },
+    {
+      "term": "state",
+      "reason": "ordinary English on its own. The domain sense lives in the phrase game state, which the extractor proposes separately, and the stemmer also folds the unrelated stat into this group"
+    },
+    {
+      "term": "point",
+      "reason": "ordinary English or the programme's Championship Points; the game sense belongs to the phrase Hit Points"
+    },
+    {
+      "term": "top",
+      "reason": "ordinary English; the domain senses live in phrases, top of the deck and top cut"
+    },
+    {
+      "term": "takes",
+      "reason": "ordinary English across the corpus, mostly take part and take effect; the game sense lives in the phrase takes Prize cards, which the extractor proposes separately"
+    },
+    {
+      "term": "single",
+      "reason": "ordinary English; where it is load-bearing it is part of single elimination"
+    },
+    {
+      "term": "final",
+      "reason": "ordinary English, whether describing a last Prize card or a judge's last word"
+    },
+    {
+      "term": "total",
+      "reason": "ordinary English for a sum, of damage, of cards, or of rounds"
+    },
+    {
+      "term": "count",
+      "reason": "ordinary English, overwhelmingly the phrase counts as; the game marker sense is the separate word counter"
+    },
+    {
+      "term": "run",
+      "reason": "ordinary English, used both for operating a tournament and for an effect that keeps applying"
+    },
+    {
+      "term": "start",
+      "reason": "ordinary English, not a game term; the game-loop reference it modifies is turn"
+    },
+    {
+      "term": "time",
+      "reason": "ordinary English; the tournament sense is clock management rather than game vocabulary"
+    },
+    {
+      "term": "get",
+      "reason": "ordinary English, not a game term"
+    },
+    {
+      "term": "needs",
+      "reason": "ordinary English, not a game term"
+    },
+    {
+      "term": "follow",
+      "reason": "ordinary English, not a game term"
+    }
+  ]
+}
