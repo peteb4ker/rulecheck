@@ -100,7 +100,8 @@ def main() -> int:
         payload = json.loads(path.read_text())
         terms.extend(payload.get("terms", []))
         for d in payload.get("declined", []):
-            declined[stem(d["term"])] = d
+            # Phrase stem, not word stem, so declining "prize cards" registers.
+            declined[stem_phrase(d["term"])] = d
 
     problems = validate(terms)
 
@@ -147,13 +148,25 @@ def main() -> int:
             continue
         missing.append((n, key))
 
+    # Phrases need deciding too. Without this a multi-word term is never
+    # listed as outstanding and declining one has no effect at all, which
+    # makes the decline silently pointless. Phrases carry a higher floor
+    # because they are inherently rarer and noisier than single words.
+    phrase_floor = args.min_count * 2
+    for key, n in sorted(phrases.items(), key=lambda kv: -kv[1]):
+        if n < phrase_floor or key in known or key in declined:
+            continue
+        missing.append((n, key))
+    missing.sort(reverse=True)
+
     # 3. progress, split so declining is visibly productive
     is_stop = {k for k in by_stem
                if k in STOPWORDS or any(stem(s) == k for s in STOPWORDS)}
     domain = {k: n for k, n in by_stem.items() if k not in is_stop}
     domain_total = sum(domain.values())
     n_classified = sum(n for k, n in domain.items() if k in known)
-    n_declined = sum(n for k, n in domain.items() if k in declined)
+    n_declined = (sum(n for k, n in domain.items() if k in declined)
+                  + sum(n for k, n in phrases.items() if k in declined))
     undecided = {k: n for k, n in domain.items()
                  if k not in known and k not in declined}
 

@@ -201,3 +201,16 @@ def test_phrase_stem_is_stable_for_a_multi_word_variant():
     from rulecheck_pipeline.lexicon import stem_phrase
     assert stem_phrase("damage counters") == stem_phrase("damage counter")
     assert stem_phrase("Prize cards") == stem_phrase("prize card")
+
+
+@pytest.mark.parametrize("singular,plural", [
+    ("penalty", "penalties"),
+    ("ability", "abilities"),
+    ("apply", "applies"),
+    ("deny", "denies"),
+])
+def test_y_pluralises_as_ies_and_still_groups(singular, plural):
+    """English turns a final "y" into "ies". Stripping the plural left an "i"
+    that never matched the singular, so one concept became two terms in two
+    different frequency bands. Both classifiers hit this independently."""
+    assert same_term(singular, plural), f"{singular}/{plural} split"

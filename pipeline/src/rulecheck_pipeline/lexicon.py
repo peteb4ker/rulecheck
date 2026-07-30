@@ -75,6 +75,11 @@ def stem(word: str) -> str:
     # evolve -> evolv, rotate -> rotat, so every inflection lands on one form
     if len(w) > 3 and w.endswith("e"):
         w = w[:-1]
+    # penalti -> penalty, abiliti -> ability. English pluralises a final "y"
+    # as "ies", so stripping the plural leaves an "i". This must run last:
+    # "penalties" only reaches "penalti" after the trailing "e" comes off.
+    if len(w) > 2 and w.endswith("i"):
+        w = w[:-1] + "y"
     return w
 
 
