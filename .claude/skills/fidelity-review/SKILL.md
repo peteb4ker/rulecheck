@@ -92,6 +92,12 @@ Then adjudicate anything the author explicitly flagged as uncertain
 Report findings; do not fix them. The author applies fixes, so the
 authoring context stays with the author and the review stays independent.
 
+**Including the serious ones.** Finding a high-severity defect is not a
+licence to correct it. A reviewer who fixes an entry and then records a
+verdict on it has reviewed its own writing, which is the one thing this
+process exists to prevent, and the finding it was proudest of is the one
+where its judgement is now worth least. Hand it on instead.
+
 ## Recording the verdict
 
 Write results to `validation/<doc-id>.json` so the review is durable and
@@ -111,12 +117,34 @@ The hash is what makes this trustworthy: if an entry is edited after
 review, the recorded hash no longer matches and the buddy script flags it
 as stale rather than silently accepting an unreviewed change.
 
+### Handing a high-severity finding on
+
+A high-severity finding must say what happens next. Two ways:
+
+```json
+{"class": "OMISSION", "severity": "high", "note": "…",
+ "acknowledged": true, "owner": "author"}
+```
+
+`acknowledged` with an `owner` is the reviewer's move: the defect is real,
+it is somebody's, and the reviewer is not touching the content. The review
+gate goes green; the release gate does not, because handing a defect over
+does not close it.
+
+`resolved: true` is the author's move, recorded when the entry is corrected.
+A reviewer setting this on its own fix is the failure described above. The
+two are mutually exclusive and the buddy script rejects both at once.
+
 ## Validate with the buddy script
 
 ```bash
-just check-fidelity-review
+just check-fidelity-review --doc tcg-rules
 ```
 
 Deterministic gate: every non-skipped entry has a verdict, no verdict is
-stale against its entry, no unresolved high-severity findings, no orphan
-records.
+stale against its entry, every high-severity finding is either resolved or
+owned, no orphan records.
+
+Pass `--doc` while reviewing one document. Without it every entry in every
+other document prints a pending line — 183 of them at the time of writing —
+and the one line that matters is somewhere in the middle of them.
