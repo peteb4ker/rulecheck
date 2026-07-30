@@ -230,3 +230,86 @@ def extract(texts: list[str], min_count: int = 1, max_words: int = 1) -> list[di
             "forms": [w for w, _ in surface],
         })
     return sorted(candidates, key=lambda c: (-c["count"], c["stem"]))
+
+
+# Where the game's concepts actually live. A term in one of these places is
+# load-bearing by construction: a rule turns on it, or the document thought it
+# deserved its own section. Frequency cannot see this. "Asleep" is written 9
+# times and "competitor" 462, and only one of them is a concept the game is
+# built from.
+STRUCTURAL_SOURCES = (
+    ("section title", 5),   # the document's own table of contents
+    ("defined term", 5),    # a definition archetype names it explicitly
+    ("effect row", 4),      # a rule's outcome table turns on it
+    ("branch", 4),          # a rule forks on it
+    ("state", 3),           # a condition while something is in effect
+    ("penalty tier", 3),
+    ("actor", 2),           # who performs a step
+)
+
+
+def structural_candidates(sections: list[dict], entries: dict) -> list[dict]:
+    """Concepts drawn from structure rather than prose frequency.
+
+    `sections` are index rows (id, title). `entries` are rewrite entries by id.
+
+    Returns each concept with the places it came from and a weight, so a term
+    naming a whole section outranks one mentioned in a single effects row. No
+    occurrence floor: "mulligan" is written 4 times and is still a rule of the
+    game, which a frequency cut can never express.
+    """
+    found: dict[str, dict] = {}
+
+    def add(text: str, source: str, weight: int, where: str):
+        text = (text or "").strip()
+        # Structured fields hold phrases; a long one is prose describing a
+        # concept rather than naming it. Section titles get more room, because
+        # the rulebook writes headings like "Full details of taking a
+        # mulligan" and the concept is buried inside. The classifier names the
+        # concept; extraction only has to surface the section.
+        cap = 9 if source == "section title" else 4
+        if not text or len(text.split()) > cap:
+            return
+        key = stem_phrase(text)
+        if not key:
+            return
+        rec = found.setdefault(key, {"term": text, "weight": 0,
+                                     "sources": set(), "sections": set()})
+        rec["weight"] += weight
+        rec["sources"].add(source)
+        rec["sections"].add(where)
+        # Prefer the shortest surface form as the canonical name.
+        if len(text) < len(rec["term"]):
+            rec["term"] = text
+
+    for row in sections:
+        sid, title = row.get("id", ""), row.get("title", "")
+        add(title, "section title", 5, sid)
+
+    for sid, entry in entries.items():
+        if "skip" in entry:
+            continue
+        for t in entry.get("terms", []) or []:
+            add(t.get("term", ""), "defined term", 5, sid)
+        for key in (entry.get("effects") or {}):
+            add(key, "effect row", 4, sid)
+        for value in (entry.get("effects") or {}).values():
+            add(value, "effect row", 4, sid)
+        branch = entry.get("branch") or {}
+        add(branch.get("when", ""), "branch", 4, sid)
+        for opt in branch.get("options", []) or []:
+            add(opt.get("condition", ""), "branch", 4, sid)
+            add(opt.get("outcome", ""), "branch", 4, sid)
+        for line in entry.get("state") or []:
+            add(line, "state", 3, sid)
+        for row in entry.get("base_penalty") or []:
+            add(row.get("tier", ""), "penalty tier", 3, sid)
+        for step in entry.get("steps") or []:
+            add(step.get("actor", ""), "actor", 2, sid)
+
+    out = []
+    for key, rec in found.items():
+        out.append({"stem": key, "term": rec["term"], "weight": rec["weight"],
+                    "sources": sorted(rec["sources"]),
+                    "sections": sorted(rec["sections"])[:3]})
+    return sorted(out, key=lambda c: (-c["weight"], c["term"]))

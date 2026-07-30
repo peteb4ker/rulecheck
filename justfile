@@ -37,6 +37,10 @@ test:
 lexicon-candidates:
     cd pipeline && uv run python -m rulecheck_pipeline lexicon-candidates --root ..
 
+# Concepts drawn from structure, not prose frequency (what rules turn on)
+lexicon-structural:
+    cd pipeline && uv run python -m rulecheck_pipeline lexicon-structural --root ..
+
 # Independently check the lexicon against the corpus (the buddy script)
 check-lexicon:
     python3 scripts/check_lexicon.py

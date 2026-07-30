@@ -122,6 +122,23 @@ def cmd_lexicon_candidates(root: Path, min_count: int = 5, max_words: int = 3) -
     return 0
 
 
+def cmd_lexicon_structural(root: Path) -> int:
+    """Concepts drawn from structure rather than prose frequency.
+
+    Frequency finds what is written often; this finds what rules turn on.
+    "Knock Out" ranks 2544 by frequency, below the floor, and first here.
+    """
+    sections: list[dict] = []
+    for path in sorted((root / "content").glob("*.json")):
+        sections.extend(json.loads(path.read_text()).get("sections", []))
+    entries: dict = {}
+    for path in sorted((root / "rewrites").glob("*.json")):
+        entries.update(json.loads(path.read_text()))
+    for c in lexicon.structural_candidates(sections, entries):
+        print(f"{c['weight']:5d}  {c['term'][:40]:42s} {','.join(c['sources'])}")
+    return 0
+
+
 def _free_text(entry: dict) -> list[str]:
     out: list[str] = []
 
@@ -211,7 +228,8 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="rulecheck_pipeline")
     parser.add_argument("command",
                         choices=["parse", "build", "verify", "download", "check-sources",
-                                 "content-status", "lexicon-candidates", "all"])
+                                 "content-status", "lexicon-candidates",
+                                 "lexicon-structural", "all"])
     parser.add_argument("--root", type=Path, default=Path.cwd().parent,
                         help="repo root (default: parent of CWD, i.e. run from pipeline/)")
     parser.add_argument("--release", action="store_true",
@@ -249,6 +267,8 @@ def main(argv: list[str] | None = None) -> int:
         return cmd_content_status(root)
     if args.command == "lexicon-candidates":
         return cmd_lexicon_candidates(root)
+    if args.command == "lexicon-structural":
+        return cmd_lexicon_structural(root)
     rc = cmd_parse(root)
     if rc == 0:
         rc = cmd_build(root)
