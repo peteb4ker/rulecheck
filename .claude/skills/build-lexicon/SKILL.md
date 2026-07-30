@@ -71,6 +71,29 @@ two of the five special conditions indistinguishable.
 If a term genuinely fits none of these, that is a finding worth reporting
 rather than forcing. Categories may need to grow.
 
+## Scope: the game, not the tournament
+
+**Classify what the game is made of. Decline what surrounds it.**
+
+Inside a game: cards, zones, markers, the turn, in-game roles, the things a
+rule turns on. Classify these.
+
+Around a game: schedule, staffing, results, penalties, standings. Decline
+these, with a reason. That covers `tournament`, `round`, `match`, `judge`,
+`organizer`, `staff`, `penalty`, `infraction`, `game loss`, `match loss`,
+`top cut`, `bye`, `seed`, `standings` and their relatives.
+
+This is a project ruling, not a linguistic one. Two of the three source
+documents are tournament documents, so the tournament layer is large and
+tempting, but the lexicon's near-term job is the icon set for players. The
+judge experience is deliberately later.
+
+The line matters most where it is least obvious. `match loss` and `game loss`
+are the same kind of thing and must get the same answer; the first parallel
+run gave them opposite ones because this rule did not exist yet. When the
+judge work starts, revisit by adding a scope field rather than reclassifying,
+so both layers can coexist.
+
 ## Words that are two things at once
 
 Some terms are genuinely more than one category. In the game rules "attack" is
