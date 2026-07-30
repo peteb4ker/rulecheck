@@ -77,8 +77,18 @@ the spec wins if this file and the spec ever disagree.
   only** — never on pushes to `main`, since squash-merge means the
   landed tree is the one the PR tested. A daily scheduled run verifies
   `main`; `gh workflow run ci.yml` forces one on demand.
-  Checks are advisory (no branch protection on the current GitHub plan) —
-  a red check still means stop and fix.
+  **`main` is protected by a ruleset and a red check blocks the merge.**
+  Required: `detect`, `guards`, `pipeline`, `app`, `conventional-title`
+  and both CodeQL analyses, plus a pull request, no force pushes and no
+  branch deletion. Public repositories get this free, which the old note
+  about the plan predates.
+
+  A ruleset rather than classic branch protection, because a ruleset
+  treats a `skipped` check as passing. That is what lets the macOS `app`
+  job be required even though it is skipped on content-only changes;
+  classic protection would wait forever for a check that never arrives.
+
+  Read every row of `gh pr checks`, not the tail.
 
 ## The lexicon
 
