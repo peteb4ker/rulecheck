@@ -186,27 +186,18 @@ jobs:
       # the wait happens in the bootstatus step below.
       - name: Start simulator boot
         id: sim
+        # SIMULATOR_DEVICE is a preference, not a requirement. Pinning a name
+        # with no fallback meant the day the image drops that device every
+        # pull request goes red at once, and a runner that came up with no
+        # simulator runtimes reported "device not found" rather than saying
+        # what was actually wrong (issue #8, seen twice).
         run: |
-          udid=$(xcrun simctl list devices available --json \
-            | SIMULATOR_DEVICE="$SIMULATOR_DEVICE" python3 -c '
-          import json, os, sys
-          want = os.environ["SIMULATOR_DEVICE"]
-          runtimes = json.load(sys.stdin)["devices"]
-          found = ""
-          for runtime in sorted(runtimes):
-              if "iOS" not in runtime:
-                  continue
-              for device in runtimes[runtime]:
-                  if device["name"] == want:
-                      found = device["udid"]
-          print(found)
-          ')
-          if [ -z "$udid" ]; then
-            echo "::error::no available '$SIMULATOR_DEVICE' simulator on this runner"
+          if ! udid=$(xcrun simctl list devices available --json \
+                        | python3 .github/scripts/resolve_simulator.py); then
+            echo "::error::this runner has no iOS iPhone simulator at all, so there is nothing to test on"
             xcrun simctl list devices available
             exit 1
           fi
-          echo "booting $SIMULATOR_DEVICE ($udid)"
           xcrun simctl boot "$udid" || true
           echo "udid=$udid" >> "$GITHUB_OUTPUT"
       - uses: astral-sh/setup-uv@v9.0.0
