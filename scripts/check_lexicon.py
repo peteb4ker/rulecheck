@@ -13,8 +13,11 @@ Three questions:
      Catches invented vocabulary.
   2. Is every recurring corpus term either classified or explicitly declined?
      Catches omissions, which is the failure that prompted this work.
-  3. What fraction of running words are classified?
-     Makes progress measurable between runs.
+  3. How much of the corpus has been decided either way?
+     Progress is classified plus declined, not classified alone. Declining
+     ordinary English is the correct answer for much of any corpus, and a
+     metric that ignores it rewards padding the lexicon with words that are
+     not game vocabulary.
 
 Usage:  python3 scripts/check_lexicon.py [--min-count N] [--root DIR]
 Exit 0 when the lexicon agrees with the corpus, 1 when it does not.
@@ -124,7 +127,11 @@ def main() -> int:
             problems.append(
                 f"{entry['term']}: classified but appears nowhere in the corpus")
         for variant in entry.get("variants", []):
-            if counts.get(variant.lower(), 0) == 0:
+            # A multi-word variant is a phrase, not a token, so it will never
+            # appear in the single-word counts.
+            seen = (counts.get(variant.lower(), 0)
+                    or phrases.get(stem_phrase(variant), 0))
+            if seen == 0:
                 problems.append(
                     f"{entry['term']}: declared variant {variant!r} never occurs")
 
@@ -140,18 +147,27 @@ def main() -> int:
             continue
         missing.append((n, key))
 
-    # 3. coverage
-    total = sum(by_stem.values())
-    classified = sum(n for k, n in by_stem.items() if k in known)
-    stop = sum(n for k, n in by_stem.items()
-               if k in STOPWORDS or any(stem(s) == k for s in STOPWORDS))
-    domain_total = total - stop
-    pct = (100 * classified / domain_total) if domain_total else 0
+    # 3. progress, split so declining is visibly productive
+    is_stop = {k for k in by_stem
+               if k in STOPWORDS or any(stem(s) == k for s in STOPWORDS)}
+    domain = {k: n for k, n in by_stem.items() if k not in is_stop}
+    domain_total = sum(domain.values())
+    n_classified = sum(n for k, n in domain.items() if k in known)
+    n_declined = sum(n for k, n in domain.items() if k in declined)
+    undecided = {k: n for k, n in domain.items()
+                 if k not in known and k not in declined}
 
-    print(f"lexicon: {len(terms)} terms, {len(declined)} declined")
-    print(f"corpus : {total:,} running words across {len(corpus)} documents")
-    print(f"coverage: {classified:,} of {domain_total:,} non-stopword "
-          f"occurrences classified ({pct:.1f}%)")
+    def pct(x):
+        return (100 * x / domain_total) if domain_total else 0
+
+    print(f"lexicon : {len(terms)} classified, {len(declined)} declined")
+    print(f"corpus  : {len(domain):,} distinct non-stopword terms, "
+          f"{domain_total:,} occurrences")
+    print(f"decided : {pct(n_classified + n_declined):5.1f}%  "
+          f"({n_classified + n_declined:,} occurrences)")
+    print(f"  classified {pct(n_classified):5.1f}%   declined {pct(n_declined):5.1f}%")
+    print(f"remaining: {len(undecided):,} terms undecided, "
+          f"worth {pct(sum(undecided.values())):.1f}%")
 
     if missing:
         print(f"\nunclassified terms occurring {args.min_count}+ times "

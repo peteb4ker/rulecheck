@@ -193,3 +193,11 @@ def test_a_phrase_does_not_span_punctuation():
     stems = {c["stem"] for c in extract(texts, min_count=2, max_words=2)}
     assert "singl elimination" in stems
     assert "round singl" not in stems, "a phrase crossed a comma"
+
+
+def test_phrase_stem_is_stable_for_a_multi_word_variant():
+    """A multi-word variant is a phrase, not a token, so checking it against
+    single-word counts always reported it as never occurring."""
+    from rulecheck_pipeline.lexicon import stem_phrase
+    assert stem_phrase("damage counters") == stem_phrase("damage counter")
+    assert stem_phrase("Prize cards") == stem_phrase("prize card")

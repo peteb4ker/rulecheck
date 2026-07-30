@@ -144,8 +144,14 @@ Declining is a real answer. A lexicon that classifies everything is wrong.
 - **Never declare a variant you have not seen.** Validate checks each one.
 - **Do not widen the stemmer to make a grouping work.** If two words should
   group and do not, say so. Changing `stem()` changes every grouping at once.
-- **Coverage is a number, not a feeling.** Validate reports the percentage of
-  non-stopword occurrences classified. Quote it.
+- **Progress is "decided", not "classified".** Validate reports both.
+  Declining ordinary English is a correct answer and counts as progress, so do
+  not pad the lexicon to move the classified number. Only "decided" can reach
+  100%; "classified" has an unknown ceiling, and chasing it produces a lexicon
+  full of words that are not game vocabulary. Quote both.
+- **Work down the frequency list.** The curve is steep: the top 100 terms are
+  46% of all non-stopword occurrences and the top 300 are 68%, while 984 terms
+  occur once or twice and are together worth 7%. Start at the top.
 - **Work in batches and re-run validate between them.** A batch that drops
   coverage or adds failures is easier to unpick when it is small.
 - **One file per batch, under `content/lexicon/`.** Batches are assigned by
