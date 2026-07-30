@@ -1,0 +1,409 @@
+{
+  "pen-1": {
+    "entry_sha256": "5c3346406de3ab1c2bae73eefb167ccad543504e33e467f5757d5076295621be",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "pen-1.1": {
+    "entry_sha256": "abd346b8a0a63e33395314cad7c399d0ea296163a0814ce40fab12b438f2b71d",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "pen-1.2": {
+    "entry_sha256": "60fb70ef9575606efe40843ba5fc1b644a1594b52b7108c86379b8dbffb00f88",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "pen-1.3": {
+    "entry_sha256": "62bfc0df91dfcdb55f9d81e217fe6d138e93826edb2cd8a19c4d99f896664eb7",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "pen-1.4": {
+    "entry_sha256": "b9b0788607fcbdceb13ac8695979da44b65be8b486ebb9e037ecc8fa2f51027e",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "pen-2": {
+    "entry_sha256": "8cda79b74839b417942a298fc95d30301a86502f756cbee43e82da8c3b40599e",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "pen-2.1": {
+    "entry_sha256": "8a9cff4f9c80a106c0e070f6984d43fd4e1c7569e506cb52ccebfc01eaaf7b12",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "pen-2.2": {
+    "entry_sha256": "c8f8dc28287d773283bebc2c5b4c33133870356f144b0428cc9a423e8e65c610",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "pen-2.3": {
+    "entry_sha256": "b475087e5ef28a97bfed4c9e39a088545fe6922d25a2c28d7cae4a719a45bd0d",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "pen-2.4": {
+    "entry_sha256": "809cbdcabcc7ed7541d404e629cdd4e9a2d2f6fb1184d180ffeb6051722f6696",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "pen-3": {
+    "entry_sha256": "e0b72328856863426c0710a14edcfdf9578ba05d74c18c0a803ce2b9110162fd",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "pen-3.1": {
+    "entry_sha256": "150cbd353afcd431e818f82748ef9d0c4723beba657686067f9fd62a21a8659f",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "pen-3.2": {
+    "entry_sha256": "769f139ad3df0c2b022f9590488eaf7d863daba73093020531fd09fd231a53c3",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "pen-3.3": {
+    "entry_sha256": "a8874b0b307c8e4f6c8840c6e86fa84d28095704c0f775a6d480a6b389098cc9",
+    "findings": [
+      {
+        "class": "DRIFT",
+        "note": "the source gives two alternative triggers joined by 'or' - a mistake that significantly affects the game state with no clear way to resolve it, OR a case where a Warning has been given and a Quadruple Prize Card penalty would be too harsh. The summary joins them with 'and', so a judge reading the entry needs both to hold before reaching for a Double Prize Card. The second limb is also restated as a judgement ('a Warning is too light') rather than the source's fact that a Warning has already been issued",
+        "severity": "low"
+      }
+    ],
+    "verdict": "findings"
+  },
+  "pen-3.4": {
+    "entry_sha256": "d3e5833f1e51174ff516041ca9b95574f03ea4a4e412a05a5eeb667637ffe0e4",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "pen-3.5": {
+    "entry_sha256": "c109c8969b31373a36302b5f0350f58ddd7b9cd9fdfc9cee3dc5230187b0542e",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "pen-3.6": {
+    "entry_sha256": "fb1e4f9ee69f0a9f70555abb5931b6c8715912223d167a77ca79368b43fd34e7",
+    "findings": [
+      {
+        "class": "DRIFT",
+        "note": "the source says a Match Loss 'may be used when one competitor's conduct or actions irreparably compromise the integrity of a match'. The summary drops both the discretion and the irreparability threshold: 'Match Loss ends the whole match immediately when one competitor's conduct compromises its integrity'. A judge consulting the penalty definition could apply a Match Loss to a compromise the source expects to be repaired instead",
+        "severity": "low"
+      }
+    ],
+    "verdict": "findings"
+  },
+  "pen-3.7": {
+    "entry_sha256": "5881390fc01b504bf5ac03c154caf12ded2c5d0e5a2902ca173e21e3ee277fdc",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "pen-4": {
+    "entry_sha256": "ad17edf5b79abba2016606ba0fe0b9be09a2a23d3df1611849f10469bdb0525e",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "pen-4.1": {
+    "entry_sha256": "3132077b7545ce9310c86b4d78011e8d051160ccec3f93d4081e6de49c296b6e",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "pen-4.1.1": {
+    "entry_sha256": "fb107fd2e28368b48b21dcda741f925fb7c4c1c89501d8f9d326d9cf3cd08447",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "pen-4.1.1.1": {
+    "entry_sha256": "80962c97ef71adc5cf72d96d13f8f810070a4c552ed210edd2dfaf6f48a5531e",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "pen-4.1.1.2": {
+    "entry_sha256": "e5d0f712cf64bd98a94c0d290b4f5b286dcd6370ed2d106c6334cc642887b12c",
+    "findings": [
+      {
+        "class": "OMISSION",
+        "note": "the source section is headed 'Prize Card Penalties (Pokemon TCG Only)' and the entry carries no game-scope qualifier anywhere in its summary or steps, unlike pen-3.3 and pen-3.4 which both say 'TCG-only' and pen-4.1.1.5 which repeats the Pokemon GO scope in every step. Low rather than high only because Prize cards do not exist outside the TCG, so the scope is self-evident from the mechanic",
+        "severity": "low"
+      }
+    ],
+    "verdict": "findings"
+  },
+  "pen-4.1.1.3": {
+    "entry_sha256": "734a1096614b9ee0d711c54b1f521d148735dc007b930246ba1ab71d04675d41",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "pen-4.1.1.4": {
+    "entry_sha256": "7e79b66ff9326d42121990feb5f9f618e510fcb55a7d2f71c3102673a9c8923c",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "pen-4.1.1.5": {
+    "entry_sha256": "25cfb3f8a638ff14ddbec57bcbdb1a5140ab02f73b25c224a6cb5a5fee7bad62",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "pen-4.1.1.6": {
+    "entry_sha256": "fdec64d3f5c57ef1a7fd9d9c3738989dd1dfd128328432beadc2b0bc0eb3d7a2",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "pen-4.2": {
+    "entry_sha256": "c9f6f04cee3a9934bd8522b4ead5e86693faca0324ec576796e6a852005d63cd",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "pen-4.2.1": {
+    "entry_sha256": "b68c492d4f9eadfbc3df22969c658026c0202faff3493816df5e7c5c2de29306",
+    "findings": [
+      {
+        "class": "OMISSION",
+        "note": "in both of the source's recoverable worked examples the game-state correction ends with the erroneously played card being returned to the offending competitor's hand. The entry describes the rest of each correction but never says where the offending card goes, which is an action the judge has to take",
+        "severity": "low"
+      }
+    ],
+    "verdict": "findings"
+  },
+  "pen-4.2.2": {
+    "entry_sha256": "cf2af59f2d1167d5a1bdf29ec8a7cb837bd7380092f8b2222a9cbaecef7c3eba",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "pen-4.2.3": {
+    "entry_sha256": "f869f38440ce6aa48fafc4ef9603bf601c5ffcff9144f94ccc6d01624281595b",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "pen-4.3": {
+    "entry_sha256": "10e6ea5d262fd2660223bc51b4543b6a90db508f0a10831642dc78c83a6d46e2",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "pen-4.3.1": {
+    "entry_sha256": "f349d8a3be2aeb84e1a383d69b42efbc154b891132f055a7a6d598c436c0c290",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "pen-4.4": {
+    "entry_sha256": "69b35a817494a19394d434957738681a9eca0932d21a873adeee4e49e1dffde6",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "pen-5": {
+    "entry_sha256": "f51ee48265a391d4e226e6abe9befeed47233b3b48d99f59d398c947ec13417c",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "pen-5.1": {
+    "entry_sha256": "56b40970dde63f5a571a68b3d640a000fe5ebf37d01b1d152e638fefe010eece",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "pen-5.1.1": {
+    "entry_sha256": "8f8ea4b9c92189aa27a64e39b624ed059e22e8236911003ea0e3f654f946e1ce",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "pen-5.1.2": {
+    "entry_sha256": "57c11ea0b3cc10326709fea666b206fbf77a83610b7f93bd890037db488430de",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "pen-5.2": {
+    "entry_sha256": "b67e266ea478c2976e7dfba57f409a59db083c5298cd5e7f2dfd670c2549528f",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "pen-5.2.1": {
+    "entry_sha256": "7d4afdb975980aee2e4604638e521f83cc433e7e2c583443c0136cb523db879a",
+    "findings": [
+      {
+        "class": "DRIFT",
+        "note": "the source says that once the subsequent round is paired the dropped competitor cannot re-enter 'and their match record is updated accordingly'. The handling note renders that as 'their record stands as recorded', which says the opposite: the source has the record change to reflect the drop, the entry has it frozen",
+        "severity": "low"
+      }
+    ],
+    "verdict": "findings"
+  },
+  "pen-5.2.2": {
+    "entry_sha256": "35c3b31b4664b916ad824feae155f9448822489c3ebab1a520baaa64aa7a6bf5",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "pen-5.3": {
+    "entry_sha256": "fda734cd0ceb9442c9fac6b583f29dfaa42f9c21ccce89c78f62706f68830f11",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "pen-5.3.1": {
+    "entry_sha256": "bd6ecc50f90e349bf3e76fa911e5c39cba533bd19e498a511e8eca4a9cd29b76",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "pen-5.3.2": {
+    "entry_sha256": "1755d1a5767005d082744aa0128694bceec8d28deb22df5ff41f3ed35a80015d",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "pen-5.4": {
+    "entry_sha256": "66e4bbbf45d5c5082a3e1addb402b4834c9776eddb63cc9663435a8b62e3e41a",
+    "findings": [
+      {
+        "class": "DRIFT",
+        "note": "the source's all-games example is soliciting and acting on 'private game information from an external source'. The entry drops 'private' and reads 'outside information about a game already underway', which widens a Disqualification trigger to cover ordinary outside strategy advice as well as leaked hidden information",
+        "severity": "low"
+      }
+    ],
+    "verdict": "findings"
+  },
+  "pen-5.5": {
+    "entry_sha256": "e5438587e516a6b5863809ad51e9b3b64afc3577be59d09aeee65aea2a55ae2d",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "pen-5.5.1": {
+    "entry_sha256": "d0389e77b3beba7b179daf0f1d510d57b3486b2038c68f79cf2f104c88b3c82b",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "pen-5.5.1.1": {
+    "entry_sha256": "046320250d94732876f3685391ddf23a728b61833d0aa7f26685ac6912b264db",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "pen-5.5.2": {
+    "entry_sha256": "6ac808d3cdb584a7149af061d0173b7b3e6a4279a3095fd7431132b04ad2f546",
+    "findings": [
+      {
+        "acknowledged": true,
+        "class": "DRIFT",
+        "note": "the Severe VG example is 'A competitor causes their system to lose power or internet connection'; the entry states it as \"A competitor's system loses power or its internet connection\", dropping the competitor's agency. Every other example in the same tier keeps it (removes their game card, removes a controller, induces an unfixable freeze), and the Minor tier of the same section covers blameless hardware trouble at Warning level ('delays the beginning of a match due to hardware issues or needs'). As written the entry hands a Game Loss to a competitor whose device died through no act of theirs, which is a Warning-or-nothing case in the source",
+        "owner": "author",
+        "severity": "high"
+      }
+    ],
+    "verdict": "findings"
+  },
+  "pen-5.5.2.1": {
+    "entry_sha256": "abf0263a9b43c19b3747d28dcd4e51e79385d02a5e2b50940903cb7184b96da6",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "pen-5.5.3": {
+    "entry_sha256": "2cd8d5556e474c287ba4c05d8f3d8024285f09721aad8009f6a20dc294396296",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "pen-5.5.3.1": {
+    "entry_sha256": "4d412c68bedd33f5340c0b6d690362603cff36107f9100c4da61ff5d082ff536",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "pen-5.5.4": {
+    "entry_sha256": "3222491c5b4e65bdf28b0951d30e22f6c8fcad97fe19e4f0dbc578049e56fb11",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "pen-5.5.4.1": {
+    "entry_sha256": "dc46abd275b26a2674af0e8662376506d6582d0568d6de482db85d09ecc23989",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "pen-5.6": {
+    "entry_sha256": "054bcf657760380ad2bb13f1808711b21ff98d38c56321b8a2ee69659f47b60b",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "pen-5.6.1": {
+    "entry_sha256": "b88895148098a24d69b9f685c20fc520280d5fe94345b643ed13168e851ee7c6",
+    "findings": [
+      {
+        "class": "DRIFT",
+        "note": "the source states 'the offending card or cards should be replaced in all cases' and then carves out one specific Minor example (an illustration-rare printing listed under a common-rarity collector number) as not requiring 'a proxy card or Basic Energy replacement'. The entry promotes that carve-out to the whole Minor tier ('no proxy or Energy replacement needed for trivial list variances') while still asserting 'Replace the offending card or cards in every case' in handling, so the no-replacement exception applies far more broadly than the source allows",
+        "severity": "low"
+      }
+    ],
+    "verdict": "findings"
+  },
+  "pen-5.6.1.1": {
+    "entry_sha256": "699a62012e72f81343e553a0665615ab62ffe200df24480a6e46ea78470626ea",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "pen-5.6.2": {
+    "entry_sha256": "6c11d512472541f28801bcf064415de7f68be0f74a946b0eb2181781949778ac",
+    "findings": [
+      {
+        "class": "DRIFT",
+        "note": "the source's Major and Severe examples point at 'section 1 / section 2 of appendix A (Manual Team Checking) in the Play! Pokemon VG Rules and Formats handbook', a different document. The entry redirects both to 'the two illegal-manipulation lists referenced in the post-event disciplinary section', and see_also points at pen-7. The equivalent lists live in this document's own Appendix A (pen-Appendix A), so the pointer is both mis-attributed and aimed at the wrong section of our own corpus",
+        "severity": "low"
+      }
+    ],
+    "verdict": "findings"
+  },
+  "pen-5.6.2.1": {
+    "entry_sha256": "63412606ecf219b1d48d872095f24463187ec802cf06c695408e97e0f1a99460",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "pen-5.6.3": {
+    "entry_sha256": "0c38bce15bedb7d37122b4df79bd1b1a304442344b6aa1265b731c35f78aa076",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "pen-5.6.3.1": {
+    "entry_sha256": "8e1a8320de77630e2c80c148fbf1981797384934b9f77e35e0bc9518a595f8bc",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "pen-5.7": {
+    "entry_sha256": "b9231b46d4327d8f8200b089d221d40667faf33c307ff1ecf2114ab9c25fa8d4",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "pen-5.7.1": {
+    "entry_sha256": "b5cbaedf63b64257d646c2b50274bab5ace4d3cf01678fd3fe4757681beae549",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "pen-6": {
+    "entry_sha256": "ef16edf88808e689fee1dae4ee3d219f2621fcbdaf258ff67e30bc5d7d4db894",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "pen-6.1": {
+    "entry_sha256": "8cbf4700dd9e3bc34f9d7b3b386434df55f2034419ef7bc795f2a2ea18dd7e12",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "pen-6.2": {
+    "entry_sha256": "1bc05f21b827f30c33580fc423ed527ff84167f1fe1cf29fa893a7bcda7a8fa4",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "pen-7": {
+    "entry_sha256": "800eac28673ab396bf9480064263b3954144200716f0b404003716f2d0e9bea7",
+    "findings": [
+      {
+        "class": "DRIFT",
+        "note": "the last two paragraphs summarise Appendix A and introduce it as 'An appendix to this section'. Appendix A is a document-level appendix that follows section 7, not part of it, and the text that cites those tiers (pen-5.6.2) attributes them to the VG Rules and Formats handbook. The summarised content itself is accurate to pen-Appendix A; the framing of where it lives is not",
+        "severity": "low"
+      }
+    ],
+    "verdict": "findings"
+  },
+  "pen-8": {
+    "entry_sha256": "39f6860fb3977d9c4806783caa800140105093840c985dbab409908b2f80f5c6",
+    "findings": [],
+    "verdict": "clean"
+  },
+  "pen-Appendix A": {
+    "entry_sha256": "aeaa931a2f22e11cd7a107e9e3f13228ed7365313a9451858e045da80d2e0c0c",
+    "findings": [],
+    "verdict": "clean"
+  }
+}
