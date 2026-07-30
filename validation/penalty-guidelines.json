@@ -276,13 +276,12 @@
     "verdict": "clean"
   },
   "pen-5.5.2": {
-    "entry_sha256": "6ac808d3cdb584a7149af061d0173b7b3e6a4279a3095fd7431132b04ad2f546",
+    "entry_sha256": "91a81c8a5d4e1f585c3aa8a9f717e02297d723958288977defcc81298c7d325f",
     "findings": [
       {
-        "acknowledged": true,
         "class": "DRIFT",
-        "note": "the Severe VG example is 'A competitor causes their system to lose power or internet connection'; the entry states it as \"A competitor's system loses power or its internet connection\", dropping the competitor's agency. Every other example in the same tier keeps it (removes their game card, removes a controller, induces an unfixable freeze), and the Minor tier of the same section covers blameless hardware trouble at Warning level ('delays the beginning of a match due to hardware issues or needs'). As written the entry hands a Game Loss to a competitor whose device died through no act of theirs, which is a Warning-or-nothing case in the source",
-        "owner": "author",
+        "note": "the Severe VG example is 'A competitor causes their system to lose power or internet connection'; the entry states it as \"A competitor's system loses power or its internet connection\", dropping the competitor's agency. Every other example in the same tier keeps it (removes their game card, removes a controller, induces an unfixable freeze), and the Minor tier of the same section covers blameless hardware trouble at Warning level ('delays the beginning of a match due to hardware issues or needs'). As written the entry hands a Game Loss to a competitor whose device died through no act of theirs, which is a Warning-or-nothing case in the source. RESOLVED by a second, independent reviewer: the example now reads \"A competitor causes their own system to lose power or its internet connection\", which restores the causal verb, matches the active voice of every sibling example in the Severe tier, and no longer collides with the Minor tier's blameless hardware case. The whole entry was re-read against the source, not only the changed line: the Minor/Severe to Warning/Game Loss mapping was re-extracted from page 23 of the PDF with layout=True and confirmed in column order, both tier notes and all seven examples track the source, the double-game-freeze cross-reference and see_also pen-5.5.2.1 both resolve, and the corrected line's longest shared token run with the source is 5, far inside the 12-token tripwire",
+        "resolved": true,
         "severity": "high"
       }
     ],
