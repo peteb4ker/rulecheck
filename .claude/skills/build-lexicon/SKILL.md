@@ -71,6 +71,30 @@ two of the five special conditions indistinguishable.
 If a term genuinely fits none of these, that is a finding worth reporting
 rather than forcing. Categories may need to grow.
 
+## Two signals, and frequency is the weaker one
+
+    just lexicon-candidates   # what is written often
+    just lexicon-structural   # what rules turn on
+
+Frequency finds common words. Structure finds concepts: terms that head a
+section, are named in a definition, label an effects row, or are the condition
+a rule branches on. A term in one of those places is load-bearing by
+construction.
+
+They disagree sharply, and structure is right when they do. "Knock Out" ranks
+2544 by frequency, below the floor, and first by structure. "competitor" is
+written 462 times and is not a concept the game is built from.
+
+Structure has no occurrence floor, because "mulligan" is written four times
+and is still a rule of the game.
+
+**A structural candidate may be a section heading rather than a term.** The
+rulebook heads its mulligan rule "Full details of taking a mulligan". Classify
+the concept inside it, `mulligan`, not the heading. Extraction surfaces the
+section; naming the concept is your job.
+
+Work structure first. It is smaller, and it is what the icon set needs.
+
 ## Scope: the game, not the tournament
 
 **Classify what the game is made of. Decline what surrounds it.**

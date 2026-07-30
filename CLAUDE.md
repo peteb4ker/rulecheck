@@ -98,9 +98,15 @@ phase. It backs the icon set, search synonyms and eventually a knowledge graph.
 The methodology is the asset, not the file. Source documents get revised and
 parsing changes, so the lexicon must be re-derivable rather than hand-curated:
 
-    just lexicon-candidates   # deterministic extraction, no judgement
+    just lexicon-candidates   # what is written often (frequency)
+    just lexicon-structural   # what rules turn on (concepts)
     ...classify the delta...  # .claude/skills/build-lexicon/SKILL.md
     just check-lexicon        # independent validation, reports coverage
+
+Two signals, and frequency is the weaker one. "Knock Out" ranks 2544 by
+frequency and first by structure; "competitor" is written 462 times and is not
+a game concept. Structure has no occurrence floor, since "mulligan" appears
+four times and is still a rule.
 
 Inflections group (evolve, evolves, evolving). Derived words do not, because
 `attacker` is an entity and `attack` is an action. Never hand-edit the lexicon

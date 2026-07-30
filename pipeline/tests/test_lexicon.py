@@ -214,3 +214,47 @@ def test_y_pluralises_as_ies_and_still_groups(singular, plural):
     that never matched the singular, so one concept became two terms in two
     different frequency bands. Both classifiers hit this independently."""
     assert same_term(singular, plural), f"{singular}/{plural} split"
+
+
+def test_structural_signal_finds_what_frequency_misses():
+    """Frequency ranks "Knock Out" at 2544, below the floor, because the words
+    are rarely written. It is the single most load-bearing term in the effects
+    tables. Structure sees that; prose counting cannot."""
+    from rulecheck_pipeline.lexicon import structural_candidates
+    sections = [{"id": "tcg-Asleep", "title": "Asleep"}]
+    entries = {"tcg-Asleep": {"archetype": "mechanic", "tier": "standard",
+                              "summary": "s",
+                              "state": ["No attacking"],
+                              "effects": {"Attack": "Blocked"},
+                              "branch": {"when": "Pokemon Checkup",
+                                         "options": [{"condition": "Heads",
+                                                      "outcome": "Wakes up"}]}}}
+    got = {c["term"]: c for c in structural_candidates(sections, entries)}
+    assert "Asleep" in got and "Blocked" in got and "Heads" in got
+    assert "Pokemon Checkup" in got
+    assert got["Asleep"]["sources"] == ["section title"]
+
+
+def test_a_section_title_outweighs_a_passing_mention():
+    from rulecheck_pipeline.lexicon import structural_candidates
+    sections = [{"id": "x", "title": "Asleep"}]
+    entries = {"x": {"archetype": "mechanic", "tier": "standard", "summary": "s",
+                     "steps": [{"actor": "Referee", "action": "a"}]}}
+    got = {c["term"]: c["weight"] for c in structural_candidates(sections, entries)}
+    assert got["Asleep"] > got["Referee"]
+
+
+def test_long_section_titles_still_surface_their_concept():
+    """The rulebook heads the mulligan rule "Full details of taking a
+    mulligan". A four-word cap dropped it, losing a rule of the game."""
+    from rulecheck_pipeline.lexicon import structural_candidates
+    sections = [{"id": "m", "title": "Full details of taking a mulligan"}]
+    got = [c["term"] for c in structural_candidates(sections, {})]
+    assert "Full details of taking a mulligan" in got
+
+
+def test_prose_sentences_in_structured_fields_are_not_concepts():
+    from rulecheck_pipeline.lexicon import structural_candidates
+    entries = {"x": {"archetype": "mechanic", "tier": "standard", "summary": "s",
+                     "state": ["This is a long sentence describing behaviour at length"]}}
+    assert structural_candidates([], entries) == []
