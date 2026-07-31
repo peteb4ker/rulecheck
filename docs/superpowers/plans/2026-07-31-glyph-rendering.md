@@ -1,7 +1,9 @@
 # Glyph rendering for players: implementation plan
 
-> **For agentic workers:** implement this plan task by task. Steps use
-> checkbox (`- [ ]`) syntax for tracking. Every task ends in its own PR.
+> **Status 2026-07-31: tasks 1 to 5 shipped.** The glyph layer is on `main`
+> and running. Task 6, the review gate, ran informally from simulator
+> screenshots rather than as a written step. The follow-up work it produced is
+> tracked as issues #52 and #53 rather than left in this plan.
 
 **Goal:** A player reading a rule sees a glyph on each structured row, so the
 shape of the rule is visible before a word is read. Phase one is the game
@@ -49,7 +51,7 @@ Validation before data, so the data cannot be written wrong.
 - Produces: `validate()` accepting and checking `glyph`, `glyph_render`,
   `glyph_note`, `glyph_triggers`. Task 2 writes data against this.
 
-- [ ] **Step 1: Write the failing tests**
+- [x] **Step 1: Write the failing tests**
 
 Cover, in `test_lexicon.py`:
 
@@ -71,12 +73,12 @@ Run them and confirm they fail:
 cd pipeline && uv run pytest tests/test_lexicon.py -q
 ```
 
-- [ ] **Step 2: Extend `validate()` until they pass**
+- [x] **Step 2: Extend `validate()` until they pass**
 
 Keep the existing error-message style: name the term, say what is wrong, say
 what to do about it.
 
-- [ ] **Step 3: Confirm the existing lexicon still validates**
+- [x] **Step 3: Confirm the existing lexicon still validates**
 
 ```bash
 just check-lexicon
@@ -85,7 +87,7 @@ just check-lexicon
 No term has glyph fields yet, so this must pass unchanged. If it does not,
 the new checks are firing on absent keys.
 
-- [ ] **Step 4: PR**
+- [x] **Step 4: PR**
 
 Title: `feat(lexicon): schema for glyph decisions`.
 
@@ -102,7 +104,7 @@ Title: `feat(lexicon): schema for glyph decisions`.
 - Produces: 29 terms carrying `glyph: true` with a `glyph_render`, and 4
   carrying `glyph: false` with a `glyph_note`. Task 3 matches against these.
 
-- [ ] **Step 1: Classify the 12 terms not yet in the lexicon**
+- [x] **Step 1: Classify the 12 terms not yet in the lexicon**
 
 Follow `.claude/skills/build-lexicon/SKILL.md`. Eleven are glyph-bearing:
 Paralyzed, Confused, Knock Out, search, Trainer card, Stadium, blocked,
@@ -118,7 +120,7 @@ so decide rather than default, and put the reasoning in the gloss:
   chips and the rows they match are the literal words, so a competing match
   is unlikely.
 
-- [ ] **Step 2: Add glyph fields to all 33 terms**
+- [x] **Step 2: Add glyph fields to all 33 terms**
 
 The 29 glyph-bearing concepts and their counts are in the spec. Use SF Symbol
 names for `glyph_render.symbol`.
@@ -141,7 +143,7 @@ gate in Task 6.
 The four held out are attack, play, evolve and Pokemon. Each needs a
 `glyph_note` giving its render count and why it is held out.
 
-- [ ] **Step 3: Write the failing buddy-script tests, then extend the script**
+- [x] **Step 3: Write the failing buddy-script tests, then extend the script**
 
 `check_lexicon.py` must additionally fail when:
 
@@ -158,14 +160,14 @@ renders it is 28 against 31. Any cut-off fires on the wrong terms often
 enough to be ignored, and a check people ignore is worse than no check.
 Judging this is what Task 6 is for.
 
-- [ ] **Step 4: Verify**
+- [x] **Step 4: Verify**
 
 ```bash
 just check-lexicon
 just test
 ```
 
-- [ ] **Step 5: PR**
+- [x] **Step 5: PR**
 
 Title: `feat(content): record which concepts carry a glyph`. The body should
 list the four held out with their counts, since that is the decision most
@@ -183,7 +185,7 @@ likely to be questioned later.
 - Produces: `glyph_for(text, terms) -> str | None` and
   `annotate(entry, terms) -> dict`. Task 4 calls `annotate`.
 
-- [ ] **Step 1: Write the failing tests**
+- [x] **Step 1: Write the failing tests**
 
 - A value naming one glyph-bearing concept returns that glyph.
 - Inflections match: "evolving" and "evolves" reach the same concept. Reuse
@@ -198,13 +200,13 @@ likely to be questioned later.
 - A `glyph_trigger` phrase matches: "No attacking" returns the blocked glyph.
 - Matching is deterministic: the same input returns the same glyph every time.
 
-- [ ] **Step 2: Implement until they pass**
+- [x] **Step 2: Implement until they pass**
 
 Priority order is `state`, `modifier`, `entity`, `action`, `phase`. Rarity is
 measured by total renders across the corpus, computed once rather than per
 call.
 
-- [ ] **Step 3: Sanity check against the real corpus**
+- [x] **Step 3: Sanity check against the real corpus**
 
 ```bash
 cd pipeline && uv run python -c "
@@ -228,7 +230,7 @@ rarer concept. Without them "Tails, Still Asleep" draws the Asleep glyph;
 with them it draws TAILS, which is what the row is about. Task 4 must compute
 and pass them.
 
-- [ ] **Step 4: PR**
+- [x] **Step 4: PR**
 
 Title: `feat(pipeline): resolve a glyph for a structured row`.
 
@@ -244,7 +246,7 @@ Title: `feat(pipeline): resolve a glyph for a structured row`.
 - Produces: `state_glyphs`, `effect_glyphs`, `branch_glyphs` and
   `step_glyphs` inside `sections.structure`. Task 5 decodes them.
 
-- [ ] **Step 1: Write the failing tests**
+- [x] **Step 1: Write the failing tests**
 
 - Each glyph array has exactly the same length as the field it annotates.
 - A row resolving to no glyph gets `null` in the array, not a gap, so the
@@ -254,9 +256,9 @@ Title: `feat(pipeline): resolve a glyph for a structured row`.
   database and nowhere else.
 - Rebuilding is idempotent: building twice produces byte-identical JSON.
 
-- [ ] **Step 2: Implement until they pass**
+- [x] **Step 2: Implement until they pass**
 
-- [ ] **Step 3: Verify against the real build**
+- [x] **Step 3: Verify against the real build**
 
 ```bash
 just all
@@ -264,7 +266,7 @@ sqlite3 build/rulecheck.db "select json_extract(structure,'\$.state_glyphs') fro
 git status --short          # rewrites/ must be untouched
 ```
 
-- [ ] **Step 4: PR**
+- [x] **Step 4: PR**
 
 Title: `feat(pipeline): write glyph annotations into the built database`.
 
@@ -281,7 +283,7 @@ Title: `feat(pipeline): write glyph annotations into the built database`.
 **Interfaces:**
 - Consumes: the glyph arrays from Task 4.
 
-- [ ] **Step 1: Write the failing tests**
+- [x] **Step 1: Write the failing tests**
 
 - A section with no glyph arrays renders as it does today.
 - A glyph array shorter or longer than its field is ignored rather than
@@ -290,14 +292,14 @@ Title: `feat(pipeline): write glyph annotations into the built database`.
 - An unknown glyph name renders no glyph.
 - A chip whose tint names no `Palette` case falls back to the accent colour.
 
-- [ ] **Step 2: Add `Glyph.swift`**
+- [x] **Step 2: Add `Glyph.swift`**
 
 A small view taking a glyph name and drawing either an SF Symbol or a chip.
 Chips are a capsule with the tint, text in caps, sized against the existing
 type ramp. Every glyph carries an accessibility label, since a glyph that
 replaces a word must still be readable aloud.
 
-- [ ] **Step 3: Wire it into `StructuredRuleView`**
+- [x] **Step 3: Wire it into `StructuredRuleView`**
 
 The layout does not change. Each state line already draws a `Label` whose
 icon is a small accent circle at
@@ -305,14 +307,14 @@ icon is a small accent circle at
 the circle becomes the glyph. Effects rows, branch options and steps take the
 same treatment.
 
-- [ ] **Step 4: Delete `blocked()`**
+- [x] **Step 4: Delete `blocked()`**
 
 [StructuredRuleView.swift:104](app/RuleCheck/Reader/StructuredRuleView.swift:104)
 decides what turns red by searching for "blocked", "cannot" and "no ". The
 `blocked` glyph and its triggers replace it. If anything still needs to
 render red, drive it from the glyph, not from a string search.
 
-- [ ] **Step 5: Verify**
+- [x] **Step 5: Verify**
 
 ```bash
 just app-test
@@ -320,7 +322,7 @@ just app-test
 
 Both persona acceptance tests must still pass against the real database.
 
-- [ ] **Step 6: PR**
+- [x] **Step 6: PR**
 
 Title: `feat(app): draw a glyph on each structured row`.
 
@@ -330,7 +332,7 @@ Title: `feat(app): draw a glyph on each structured row`.
 
 **Files:** none. This is a review gate, not a change.
 
-- [ ] **Step 1: Build to the simulator and capture the rules a player hits**
+- [x] **Step 1: Build to the simulator and capture the rules a player hits**
 
 ```bash
 just app-db
@@ -340,7 +342,7 @@ Then build and launch in the simulator, and screenshot at least: Asleep,
 Confused, Paralyzed, Poisoned, Burned, the attacking procedure, and one
 Appendix entry with sparse structure.
 
-- [ ] **Step 2: Send the screenshots to Pete and wait**
+- [x] **Step 2: Send the screenshots to Pete and wait**
 
 The questions to put to him, which are the reason this phase exists:
 
@@ -353,7 +355,7 @@ The questions to put to him, which are the reason this phase exists:
 - Are there too many chips? If the page reads as text badges, some need to
   become symbols instead.
 
-- [ ] **Step 3: Do not proceed past this point without an answer**
+- [x] **Step 3: Do not proceed past this point without an answer**
 
 The next work is replacing placeholder symbols, and it depends entirely on
 what he says. At most seven are expected to need a real icon, and fewer if
@@ -369,3 +371,35 @@ works or a chip.
 - Rule diagrams for the top rules. Sequenced after this ships.
 - The tournament rules and penalty guidelines.
 - Energy type symbols, which carry their own licensing question.
+
+
+---
+
+## What actually happened
+
+Worth recording, since three of these were only found by running the thing
+rather than by reading it.
+
+**The spec's 270 was wrong.** It counted how often concepts occur; only one
+glyph renders per row. The real figure is 130 glyphs on 214 structured rows,
+60% of them, across 47 of 62 sections.
+
+**The density warning in Task 2 was dropped.** The corpus does not support a
+threshold: "deck" is written 107 times and keeps its glyph while "attack" is
+written 117 and does not. Any cut-off fires on the wrong terms often enough
+to be ignored.
+
+**Ties broke alphabetically until the counts were passed.** Without occurrence
+counts the row "Tails, Still Asleep" drew the Asleep glyph, because "asleep"
+sorts before "tails".
+
+**Effects were annotated in file order while the app renders them sorted.**
+Every glyph would have landed on the wrong row for any entry whose effects
+were not already alphabetical.
+
+**The first build printed "HEA… Heads".** A truncated chip duplicating the
+word beside it. A chip whose text is the condition now replaces that text.
+
+Four validator catches during Task 2 are recorded in that PR: two derivational
+variants, a multi-word variant the validator could not handle, an unextractable
+term, and two trigger phrases that were invented rather than observed.
