@@ -26,7 +26,7 @@
   "trh-1.2": {
     "archetype": "note",
     "paragraphs": [
-      "Every reader benefits from working through the whole handbook at least once, but Judges and other Professors get the most out of covering the entire document, since their role touches all of it.",
+      "Every reader benefits from working through the whole handbook at least once, but Judges are the one audience the chart points at the entire document, since their role touches all of it.",
       "Tournament Organizers and administrators are pointed toward Participation Fundamentals, Event Expectations, Tournament Policies, Tournament Operations & Specifics, and Rules Violations & Penalties.",
       "Competitors and the parents of competitors are pointed toward Participation Fundamentals, Event Expectations, and Rules Violations & Penalties.",
       "Spectators and other general attendees need only Participation Fundamentals."
@@ -80,7 +80,7 @@
     "paragraphs": [
       "Beyond everyone excluded under section 2.1.1, Championship Point tournaments are closed to competitors younger than 6.",
       "Current employees of The Pokémon Company and its subsidiaries are excluded too — that covers The Pokémon Company International and its Ireland and Mexico offices, plus Pokémon Korea, Pokémon Singapore, Pokémon Shanghai, and Millennium Print Group — along with anyone who left one of those companies in the past 60 days.",
-      "The same current-employee and recent-former-employee exclusion applies to GAME FREAK Inc. and Creatures Inc. Separately, current employees of The Pokémon Company and its subsidiaries also have their immediate family and household members excluded.",
+      "The same current-employee and recent-former-employee exclusion applies to GAME FREAK Inc. and Creatures Inc. Separately, the immediate family and household members of those employees are excluded too, on the same terms as the employees themselves, so the 60-day window after a departure reaches them as well.",
       "Full-time contractors and contingent workers at TPCi who directly support or help implement Play! Pokémon programs, or whose role gives them early access to products the program supports, are excluded as well, along with their immediate family and household members and anyone who left that kind of contractor role in the past 60 days.",
       "Store owners at the retail locations hosting the tournament round out the list."
     ],
@@ -162,8 +162,8 @@
         "note": "identity verification is only required the first time a child gets added"
       },
       {
-        "action": "Generate a Player ID from the PTC account ahead of time, or let an Organizer generate one on-site",
-        "note": "arriving with a Player ID already on hand is recommended; the same process works for adding a Player ID to an existing child's account that doesn't have one yet"
+        "action": "Link a Player ID to the account through the Play! Pokémon section of Pokémon Trainer Central, or let an Organizer issue one on-site",
+        "note": "someone already holding an ID from an event or a support ticket chooses the option saying so and supplies both that ID and its PIN; everyone else takes the other branch and is issued one. arriving with a Player ID already on hand is recommended; the same process works for adding a Player ID to an existing child's account that doesn't have one yet"
       },
       {
         "action": "Opt in to the Play! Pokémon program with a true, verifiable address and personal information on file",
@@ -217,7 +217,7 @@
   "trh-3.1": {
     "archetype": "note",
     "paragraphs": [
-      "Everyone attending is expected to meet the event's registration or entry requirements, including buying a pass or badge where one is needed; stay free of mind-altering substances, alcohol included; avoid inappropriate language or inflammatory topics; follow tournament staff's direction; and treat everyone with respect and courtesy.",
+      "Everyone attending is expected to meet the event's registration or entry requirements, including buying a pass or badge where one is needed; stay free of the influence of mind-altering substances, alcohol included; avoid inappropriate language or inflammatory topics; follow tournament staff's direction; and treat everyone with respect and courtesy.",
       "Falling short on any of those points can be grounds for immediate removal from a Play! Pokémon event, including any related activations even away from the venue itself. Whether a participant gets to stay is the Tournament Organizer's and tournament staff's call, and a serious enough violation of program standards or guidelines can mean immediate removal from the premises with no path back.",
       "Everyone is also expected to read the Play! Pokémon Standards of Conduct for a fuller picture of what counts as acceptable behavior at these events."
     ],
@@ -227,7 +227,7 @@
   "trh-3.2": {
     "archetype": "note",
     "paragraphs": [
-      "Keeping the environment welcoming and comfortable for everyone rules out several things outright: selling or using any mind-altering substance besides alcohol; selling or drinking alcohol anywhere in the play area; wagering or gambling on how a game, part of a game, match, or set of matches turns out; offering or taking any kind of payoff meant to change how a game, part of a game, match, or set of matches comes out — bribery, in other words; and any weapon, mock ones included, that could reasonably be mistaken for the real thing. Anyone caught doing one of these gets removed from the tournament site, and the matter gets reported to Play! Pokémon.",
+      "Keeping the environment welcoming and comfortable for everyone rules out several things outright: selling or using any mind-altering substance besides alcohol; selling or drinking alcohol anywhere in the play area; wagering or gambling on how a game, part of a game, match, or set of matches turns out; offering or taking any kind of payoff meant to change how a game, part of a game, match, or set of matches comes out — bribery, in other words; and any weapon, mock ones included, that could reasonably be mistaken for the real thing. Anyone found in breach of these should be removed from the tournament site, at the staff's discretion, and the matter gets reported to Play! Pokémon.",
       "Attire has its own rules: nothing that runs against the Standards of Conduct or Inclusion Policy or otherwise clashes with a Play! Pokémon tournament setting; nothing that could make someone look like staff when they aren't, such as a Judge shirt or uniform worn by someone not currently on duty; rolling luggage or hard cases bigger than the venue's size allowance; and costumes or cosplay that fully cover the face or head.",
       "Everyone is also expected to keep a reasonable standard of personal hygiene throughout the event.",
       "Depending on the attire or hygiene issue, a Tournament Organizer can give a participant the chance to change or clean up and come back; complying means being allowed to keep participating, while refusing means removal from the tournament and venue and surrendering the badge to staff. A gross violation can mean immediate removal from the venue, and refusing to cooperate with staff can also lead to post-event disciplinary action.",
@@ -240,7 +240,7 @@
     "archetype": "note",
     "paragraphs": [
       "During an active match, and without explicit permission from tournament staff, competitors can't take in outside information about their own match or anyone else's, and can't take a phone call or otherwise use a cellular device — including using one to record the match, as a calculator, or to stream music or video.",
-      "Ear or headphones aren't allowed either, with one exception: competitors in a Pokémon video game tournament — VGC, Pokémon GO, or Pokémon UNITE — can wear them if they're visibly plugged into their own game system. Headsets that add a microphone stay banned even then, except specifically during Pokémon UNITE tournaments. A competitor who needs sound dampeners for accessibility reasons should work through the Accessibility Policy instead.",
+      "Ear or headphones aren't allowed either, with one exception: competitors in a Pokémon video game tournament — VGC, Pokémon GO and Pokémon UNITE among them — can wear them if they're visibly plugged into their own game system. Headsets that add a microphone stay banned even then, except specifically during Pokémon UNITE tournaments. A competitor who needs sound dampeners for accessibility reasons should work through the Accessibility Policy instead.",
       "The play surface itself has its own restrictions: no food or drink, though a water bottle can sit on the floor near the competitor, and a medical need for food or water goes through the Accessibility Policy's accommodation process instead. Prewritten material is also barred, physical or digital — a turn sequence, notes carried over from an earlier match, a type chart, and the like.",
       "One narrow exception exists: a competitor can use a preconstructed outline for taking notes, as long as it's blank when the match starts and holds nothing but lines and simple shapes, no words or symbols. Whether preconstructed outlines are allowed at all is up to the Tournament Organizer, and competitors have to follow whatever instructions come with that decision. Any notepad or loose paper brought to a match has to start free of writing, and a competitor can't refer back to notes from an earlier match during the one they're currently playing."
     ],
@@ -739,8 +739,8 @@
     ],
     "steps": [
       {
-        "action": "Use digital match slips at Regional Championships and above, and at any other tournaments held during those Championship events",
-        "note": "digital slips serve the same purpose as paper ones — a record of one match's result"
+        "action": "Digital match slips may be used at Regional Championships and above, and at any other tournaments held during those Championship events",
+        "note": "permitted rather than required; digital slips serve the same purpose as paper ones — a record of one match's result"
       },
       {
         "action": "Submit the digital slip through the online client",
@@ -1235,7 +1235,7 @@
     "archetype": "note",
     "paragraphs": [
       "Sanctioned Pokémon TCG and video-game tournaments can run as Swiss, single-elimination, or Swiss followed by a single-elimination cut.",
-      "Sanctioned Pokémon GO tournaments run Swiss followed by single-elimination; Pokémon GO Regional Championships, International Championships, and World Championships instead run double-elimination, and depending on turnout may add an earlier group-stage phase ahead of a finals bracket.",
+      "Sanctioned Pokémon GO tournaments run Swiss followed by single-elimination; Pokémon GO Regional Championships, International Championships, and World Championships instead run double-elimination. Separately, any Pokémon GO event may be split into a group stage and a finals bracket, depending on how many people enter.",
       "Any other tournament style needs Play! Pokémon's express written permission first, and has to be spelled out clearly to competitors when they register."
     ],
     "summary": "TCG and video-game events choose from Swiss, single-elimination, or Swiss-plus-cut; Pokémon GO defaults to Swiss-plus-cut but runs double-elimination (with an optional group stage) at Regionals and above; anything else needs written sign-off.",
@@ -1463,7 +1463,7 @@
     "state": [
       "An asymmetrical top cut never seeds more than 16 competitors, no matter how large the event."
     ],
-    "summary": "Two-phase Championship events scale total Swiss rounds, the Phase Two qualifying threshold, and top-cut size to attendance per age division, up to a 16-competitor cap on any asymmetrical top cut.",
+    "summary": "Larger Championship Series events may run across two or three days, with the top-ranking competitors carrying into a second phase of Swiss. How many rounds each phase holds, and the match points needed to reach phase two, follow the competitor count in each age division.",
     "tier": "judge"
   },
   "trh-5.5.5": {
@@ -1521,7 +1521,7 @@
   "trh-5.5.5.3": {
     "archetype": "mechanic",
     "state": [
-      "Round-robin play is available for Pokémon GO tournaments at the level of Regional Championships and above.",
+      "Round-robin play is available at events at the level of Regional Championships and above.",
       "It's usable only at the Organizer's discretion, and only when the tournament has six or fewer competitors.",
       "Every competitor plays every other competitor once, continuing until no unplayed pairing remains."
     ],
@@ -1577,7 +1577,7 @@
       {
         "action": "Check their own bracket before their next match begins, in Pokémon GO tournaments at Regional Championships and above",
         "actor": "Competitor",
-        "note": "Pokémon GO doesn't run through TOM at that level, so this self-check takes the place of the usual pre-round window; see section 5.3.1.1"
+        "note": "Pokémon GO doesn't run through TOM at that level, so checking the bracket falls to the competitor; see section 5.3.1.1"
       }
     ],
     "summary": "Each round gets paired and posted, competitors get a window to flag standings errors and find their seats, and once the round starts, its pairings are locked — with Pokémon GO's own self-check rule where it doesn't run through TOM.",
