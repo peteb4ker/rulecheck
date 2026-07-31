@@ -9,7 +9,9 @@
       "sections": [
         "tcg-3 Card Types",
         "tcg-Parts of a Pokémon Card"
-      ]
+      ],
+      "glyph": false,
+      "glyph_note": "Renders 107 times across 34 sections. The most common noun in the corpus; a glyph on it would appear almost everywhere and make every other glyph harder to notice."
     },
     {
       "term": "card",
@@ -35,7 +37,9 @@
       "sections": [
         "tcg-Playing the Game",
         "tcg-Turn Actions"
-      ]
+      ],
+      "glyph": false,
+      "glyph_note": "Renders 34 times across 15 sections. Too common for a glyph to carry meaning."
     },
     {
       "term": "game",
@@ -59,7 +63,11 @@
       "sections": [
         "tcg-Deck Building",
         "tcg-Zones of the Pokémon TCG"
-      ]
+      ],
+      "glyph": true,
+      "glyph_render": {
+        "symbol": "rectangle.stack"
+      }
     },
     {
       "term": "hand",
@@ -71,7 +79,8 @@
       "sections": [
         "tcg-Zones of the Pokémon TCG",
         "tcg-Setting Up to Play"
-      ]
+      ],
+      "glyph": "undecided"
     },
     {
       "term": "prize",

@@ -1,0 +1,108 @@
+{
+  "terms": [
+    {
+      "term": "paralyzed",
+      "category": "state",
+      "gloss": "A Special Condition. The Pokemon cannot attack or retreat, and it recovers automatically between turns.",
+      "glyph": true,
+      "glyph_render": {
+        "symbol": "bolt.fill"
+      }
+    },
+    {
+      "term": "confused",
+      "category": "state",
+      "gloss": "A Special Condition. Attacking requires a coin flip, and failing it damages the Pokemon itself.",
+      "glyph": "undecided"
+    },
+    {
+      "term": "knock out",
+      "category": "action",
+      "gloss": "What happens when damage reaches a Pokemon's HP: it goes to the discard pile with everything attached, and the opponent takes a Prize card.",
+      "variants": [
+        "knocked out",
+        "knocks out"
+      ],
+      "glyph": "undecided"
+    },
+    {
+      "term": "search",
+      "category": "action",
+      "gloss": "Look through a deck or discard pile for a named card, usually followed by a shuffle.",
+      "variants": [
+        "searches",
+        "searching"
+      ],
+      "glyph": true,
+      "glyph_render": {
+        "symbol": "magnifyingglass"
+      }
+    },
+    {
+      "term": "trainer card",
+      "category": "entity",
+      "gloss": "A card that is played for an effect rather than put into play as a Pokemon; Item, Supporter, Stadium and Tool are its kinds.",
+      "variants": [
+        "trainer cards"
+      ],
+      "glyph": "undecided"
+    },
+    {
+      "term": "stadium",
+      "category": "entity",
+      "gloss": "A Trainer card that stays in play and applies to both players until it is replaced.",
+      "variants": [
+        "stadiums"
+      ],
+      "glyph": "undecided"
+    },
+    {
+      "term": "blocked",
+      "category": "modifier",
+      "gloss": "Marks an action a rule forbids while some condition holds, as against merely unavailable.",
+      "glyph": true,
+      "glyph_render": {
+        "symbol": "nosign"
+      },
+      "glyph_triggers": [
+        "no attacking",
+        "no retreating"
+      ]
+    },
+    {
+      "term": "allowed",
+      "category": "modifier",
+      "gloss": "Marks an action a rule permits where a reader might expect it to be forbidden.",
+      "glyph": true,
+      "glyph_render": {
+        "symbol": "checkmark"
+      }
+    },
+    {
+      "term": "heads",
+      "category": "state",
+      "gloss": "The winning face of a coin flip. Note that the stemmer folds Head Judge into this term, which matters once tournament content is in scope.",
+      "glyph": true,
+      "glyph_render": {
+        "chip": "HEADS",
+        "tint": "accent"
+      }
+    },
+    {
+      "term": "tails",
+      "category": "state",
+      "gloss": "The losing face of a coin flip.",
+      "glyph": true,
+      "glyph_render": {
+        "chip": "TAILS",
+        "tint": "accent"
+      }
+    }
+  ],
+  "declined": [
+    {
+      "term": "face down",
+      "reason": "A real distinction a player cares about, and not derivable: extract() never proposes it because 'down' is a phrase-edge stop word. Adding it by hand would be a term nobody could reproduce. Revisit with the edge-stop rule, not here."
+    }
+  ]
+}
