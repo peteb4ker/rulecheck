@@ -437,7 +437,7 @@
     "archetype": "note",
     "paragraphs": [
       "When a mistake can only be partly undone, a penalty may still be needed to offset whatever edge survives the correction: a competitor who plays an extra card of a limited type that draws them cards and forces a discard from the opponent's hand can have the known discarded card restored, but since nobody can verify exactly which new cards they drew, a Judge has to return two random cards to their deck instead, and the offending card itself goes back to its owner's hand once the game state has been restored as far as it can be, leaving a residual advantage that a Double Prize Card penalty offsets.",
-      "When the action can be fully reversed, say, an erroneous extra card of that type swaps each side's active creature with a benched one, and the Judge can identify and restore the original active creature for both sides, a lighter penalty like a Warning may be all that's needed, along with a note in the tournament's penalty summary.",
+      "When the action can be fully reversed, say, an erroneous extra card of that type swaps each side's active creature with a benched one, and the Judge can identify and restore the original active creature for both sides, the offending card likewise returns to its owner's hand once the game state is back in order, and a lighter penalty like a Warning may be all that's needed, along with a note in the tournament's penalty summary.",
       "When the action can't be reversed at all, for instance an extra card of that type shuffles the competitor's hand back into their deck with no way to reconstruct what was there, no lesser penalty can make up for it, so a Game Loss is the fitting response.",
       "Catching the error before it's fully carried out also matters: the earlier it's caught, the more room there usually is to walk it back."
     ],
@@ -1064,7 +1064,7 @@
       {
         "examples": [
           "Earlier penalties have already dropped a competitor's usable team below the tournament's minimum team size",
-          "A team member appears on the more serious of the two illegal-manipulation lists referenced in the post-event disciplinary section",
+          "A team member appears on the more serious of the two illegal-manipulation lists, which the source keeps in the VG Rules and Formats handbook and this document mirrors in its Appendix A",
           "An official tool indicates a team member has been illegally manipulated, such as failing an electronic team check"
         ],
         "note": "causes extreme disruption to match integrity and calls for immediate Disqualification",
@@ -1279,8 +1279,9 @@
       "A team member caught under the milder tier is removed from the Battle Team without replacement; if that removal alone drops the competitor below the tournament's minimum entry requirement, they must also be disqualified from the event even though the underlying infraction is only the milder tier."
     ],
     "see_also": [
+      "pen-3.7",
       "pen-5.6.2",
-      "pen-3.7"
+      "pen-Appendix A"
     ],
     "summary": "Post-event disciplinary action reviews penalties serious enough to question whether a competitor belongs in the Play! Pokémon community, and can lead to a program-wide suspension.",
     "tier": "judge"
