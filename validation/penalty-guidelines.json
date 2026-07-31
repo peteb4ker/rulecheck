@@ -65,11 +65,12 @@
     "verdict": "clean"
   },
   "pen-3.3": {
-    "entry_sha256": "a8874b0b307c8e4f6c8840c6e86fa84d28095704c0f775a6d480a6b389098cc9",
+    "entry_sha256": "089b432376333900be0346a4d9f1bac7d1bd0c3d6234ae374fc43ff0f9fce8a1",
     "findings": [
       {
         "class": "DRIFT",
-        "note": "the source gives two alternative triggers joined by 'or' - a mistake that significantly affects the game state with no clear way to resolve it, OR a case where a Warning has been given and a Quadruple Prize Card penalty would be too harsh. The summary joins them with 'and', so a judge reading the entry needs both to hold before reaching for a Double Prize Card. The second limb is also restated as a judgement ('a Warning is too light') rather than the source's fact that a Warning has already been issued",
+        "note": "the source gives two alternative triggers joined by 'or' - a mistake that significantly affects the game state with no clear way to resolve it, OR a case where a Warning has been given and a Quadruple Prize Card penalty would be too harsh. The summary joins them with 'and', so a judge reading the entry needs both to hold before reaching for a Double Prize Card. The second limb is also restated as a judgement ('a Warning is too light') rather than the source's fact that a Warning has already been issued — RE-REVIEWED 2026-07-31 (independent, not the author): fixed. The summary now reads 'used either when a mistake meaningfully disrupts the game state with no clean fix, or when a Warning has already been given', which restores the source's disjunction and its factual second limb. Noted but not a defect: the correction lifts this entry's longest shared token run with the source from 7 to 10 ('been given and a Quadruple Prize Card penalty would be'), two tokens under the 12-token tripwire.",
+        "resolved": true,
         "severity": "low"
       }
     ],
@@ -86,11 +87,12 @@
     "verdict": "clean"
   },
   "pen-3.6": {
-    "entry_sha256": "fb1e4f9ee69f0a9f70555abb5931b6c8715912223d167a77ca79368b43fd34e7",
+    "entry_sha256": "ce29d46a8d37c4a62255eabde89520feaac019aa5d9b4b62df2791505b925339",
     "findings": [
       {
         "class": "DRIFT",
-        "note": "the source says a Match Loss 'may be used when one competitor's conduct or actions irreparably compromise the integrity of a match'. The summary drops both the discretion and the irreparability threshold: 'Match Loss ends the whole match immediately when one competitor's conduct compromises its integrity'. A judge consulting the penalty definition could apply a Match Loss to a compromise the source expects to be repaired instead",
+        "note": "the source says a Match Loss 'may be used when one competitor's conduct or actions irreparably compromise the integrity of a match'. The summary drops both the discretion and the irreparability threshold: 'Match Loss ends the whole match immediately when one competitor's conduct compromises its integrity'. A judge consulting the penalty definition could apply a Match Loss to a compromise the source expects to be repaired instead — RE-REVIEWED 2026-07-31 (independent, not the author): fixed. The summary now reads 'A judge may reach for a Match Loss where a competitor's conduct damages the integrity of the whole match beyond repair', restoring both the source's 'may be used' discretion and its 'irreparably compromise' threshold. Longest shared run 8 tokens.",
+        "resolved": true,
         "severity": "low"
       }
     ],
@@ -122,11 +124,12 @@
     "verdict": "clean"
   },
   "pen-4.1.1.2": {
-    "entry_sha256": "e5d0f712cf64bd98a94c0d290b4f5b286dcd6370ed2d106c6334cc642887b12c",
+    "entry_sha256": "272d6f4d9ec625a3cd24a39db9fe3eb5cb11020fac1797c8ca03bcf4124e10fb",
     "findings": [
       {
         "class": "OMISSION",
-        "note": "the source section is headed 'Prize Card Penalties (Pokemon TCG Only)' and the entry carries no game-scope qualifier anywhere in its summary or steps, unlike pen-3.3 and pen-3.4 which both say 'TCG-only' and pen-4.1.1.5 which repeats the Pokemon GO scope in every step. Low rather than high only because Prize cards do not exist outside the TCG, so the scope is self-evident from the mechanic",
+        "note": "the source section is headed 'Prize Card Penalties (Pokemon TCG Only)' and the entry carries no game-scope qualifier anywhere in its summary or steps, unlike pen-3.3 and pen-3.4 which both say 'TCG-only' and pen-4.1.1.5 which repeats the Pokemon GO scope in every step. Low rather than high only because Prize cards do not exist outside the TCG, so the scope is self-evident from the mechanic — RE-REVIEWED 2026-07-31 (independent, not the author): fixed. The summary now says the penalties 'exist only in the Pokémon TCG' and step one says 'during the TCG game already underway', matching the source heading 'Prize Card Penalties (Pokémon TCG Only)'. The three steps still track the source and longest shared run is 4 tokens.",
+        "resolved": true,
         "severity": "low"
       }
     ],
@@ -158,11 +161,13 @@
     "verdict": "clean"
   },
   "pen-4.2.1": {
-    "entry_sha256": "b68c492d4f9eadfbc3df22969c658026c0202faff3493816df5e7c5c2de29306",
+    "entry_sha256": "7e35404c8d35f1b9421eb77988fc2ccd798a93c32eb94399a733248673d4162f",
     "findings": [
       {
+        "acknowledged": true,
         "class": "OMISSION",
-        "note": "in both of the source's recoverable worked examples the game-state correction ends with the erroneously played card being returned to the offending competitor's hand. The entry describes the rest of each correction but never says where the offending card goes, which is an action the judge has to take",
+        "note": "in both of the source's recoverable worked examples the game-state correction ends with the erroneously played card being returned to the offending competitor's hand. The entry describes the rest of each correction but never says where the offending card goes, which is an action the judge has to take — RE-REVIEWED 2026-07-31 (independent, not the author): only half fixed, so this stays open. The first paragraph now carries 'the offending card itself goes back to its owner's hand once the game state has been restored as far as it can be'. The second paragraph, the fully-reversible example, still stops at restoring both Active Pokémon and does not say where the erroneously played card goes, yet the source ends that correction the same way, returning the played card to the offending competitor's hand once the game state has been restored. A judge working the de-escalation case from this entry still has no instruction to return the card. Longest shared run is 7 tokens, so the added clause introduced no overlap risk.",
+        "owner": "author",
         "severity": "low"
       }
     ],
@@ -219,11 +224,12 @@
     "verdict": "clean"
   },
   "pen-5.2.1": {
-    "entry_sha256": "7d4afdb975980aee2e4604638e521f83cc433e7e2c583443c0136cb523db879a",
+    "entry_sha256": "330d357f3eee269b03a98ff424ed7e444448a55d4fdc32823f4c3cb8673977fe",
     "findings": [
       {
         "class": "DRIFT",
-        "note": "the source says that once the subsequent round is paired the dropped competitor cannot re-enter 'and their match record is updated accordingly'. The handling note renders that as 'their record stands as recorded', which says the opposite: the source has the record change to reflect the drop, the entry has it frozen",
+        "note": "the source says that once the subsequent round is paired the dropped competitor cannot re-enter 'and their match record is updated accordingly'. The handling note renders that as 'their record stands as recorded', which says the opposite: the source has the record change to reflect the drop, the entry has it frozen — RE-REVIEWED 2026-07-31 (independent, not the author): fixed. The handling note now reads 'their match record is brought into line with the drop', matching the source's 'their match record is updated accordingly'. Tier mapping re-extracted from page 18 of the PDF with pdfplumber layout=True and confirmed as Minor: Warning / Major: Game Loss / Severe: See Below, which the entry has right. Noted: the Severe example carries an 11-token shared run ('a competitor arrives more than 10 minutes late to their match'), pre-existing and one token under the tripwire.",
+        "resolved": true,
         "severity": "low"
       }
     ],
@@ -250,11 +256,12 @@
     "verdict": "clean"
   },
   "pen-5.4": {
-    "entry_sha256": "66e4bbbf45d5c5082a3e1addb402b4834c9776eddb63cc9663435a8b62e3e41a",
+    "entry_sha256": "59dc1976c9b6b3cbbeb14525a427bcee51e61bec5a5055b17336de90072cbe28",
     "findings": [
       {
         "class": "DRIFT",
-        "note": "the source's all-games example is soliciting and acting on 'private game information from an external source'. The entry drops 'private' and reads 'outside information about a game already underway', which widens a Disqualification trigger to cover ordinary outside strategy advice as well as leaked hidden information",
+        "note": "the source's all-games example is soliciting and acting on 'private game information from an external source'. The entry drops 'private' and reads 'outside information about a game already underway', which widens a Disqualification trigger to cover ordinary outside strategy advice as well as leaked hidden information — RE-REVIEWED 2026-07-31 (independent, not the author): fixed. The example now reads 'seeks out and acts on private game information from an outside source while a game is under way', restoring 'private' and so keeping the Disqualification trigger on leaked hidden information rather than on ordinary outside advice. Remaining examples check out against all five game-scope lists; longest shared run 9 tokens.",
+        "resolved": true,
         "severity": "low"
       }
     ],
@@ -318,11 +325,12 @@
     "verdict": "clean"
   },
   "pen-5.6.1": {
-    "entry_sha256": "b88895148098a24d69b9f685c20fc520280d5fe94345b643ed13168e851ee7c6",
+    "entry_sha256": "e3953468892183647b57a9bb40fde92cccd12b20ff64c3ca21c417fcbd27bee9",
     "findings": [
       {
         "class": "DRIFT",
-        "note": "the source states 'the offending card or cards should be replaced in all cases' and then carves out one specific Minor example (an illustration-rare printing listed under a common-rarity collector number) as not requiring 'a proxy card or Basic Energy replacement'. The entry promotes that carve-out to the whole Minor tier ('no proxy or Energy replacement needed for trivial list variances') while still asserting 'Replace the offending card or cards in every case' in handling, so the no-replacement exception applies far more broadly than the source allows",
+        "note": "the source states 'the offending card or cards should be replaced in all cases' and then carves out one specific Minor example (an illustration-rare printing listed under a common-rarity collector number) as not requiring 'a proxy card or Basic Energy replacement'. The entry promotes that carve-out to the whole Minor tier ('no proxy or Energy replacement needed for trivial list variances') while still asserting 'Replace the offending card or cards in every case' in handling, so the no-replacement exception applies far more broadly than the source allows — RE-REVIEWED 2026-07-31 (independent, not the author): fixed, and the author's scoping question is answered yes. The source carves the exception out at example 1(d)(i) only — the sub-point saying it 'does not require a proxy card or Basic Energy replacement' hangs off the single illustration-rare-listed-as-common example, while the section preamble still says 'the offending card or cards should be replaced in all cases'. Attaching 'this one case alone needs no proxy or Basic Energy replacement' to that example and leaving the handling line at 'in every case' reproduces the source's own arrangement. Tier mapping re-extracted from page 26 with layout=True: the flattened parse shows '3) Severe:' above '1) Minor: Warning 2) Major: Game Loss' with 'Disqualification' below, but the column x-positions put Minor at col 12, Major at col 34 and Severe/Disqualification wrapping in col 56, so Minor→Warning, Major→Game Loss, Severe→Disqualification, which is what the entry has.",
+        "resolved": true,
         "severity": "low"
       }
     ],
@@ -334,11 +342,13 @@
     "verdict": "clean"
   },
   "pen-5.6.2": {
-    "entry_sha256": "6c11d512472541f28801bcf064415de7f68be0f74a946b0eb2181781949778ac",
+    "entry_sha256": "5f1ff4c3e96cad0d52f5517d07c35718e523e4fe803aa28ff112343e87855153",
     "findings": [
       {
+        "acknowledged": true,
         "class": "DRIFT",
-        "note": "the source's Major and Severe examples point at 'section 1 / section 2 of appendix A (Manual Team Checking) in the Play! Pokemon VG Rules and Formats handbook', a different document. The entry redirects both to 'the two illegal-manipulation lists referenced in the post-event disciplinary section', and see_also points at pen-7. The equivalent lists live in this document's own Appendix A (pen-Appendix A), so the pointer is both mis-attributed and aimed at the wrong section of our own corpus",
+        "note": "the source's Major and Severe examples point at 'section 1 / section 2 of appendix A (Manual Team Checking) in the Play! Pokemon VG Rules and Formats handbook', a different document. The entry redirects both to 'the two illegal-manipulation lists referenced in the post-event disciplinary section', and see_also points at pen-7. The equivalent lists live in this document's own Appendix A (pen-Appendix A), so the pointer is both mis-attributed and aimed at the wrong section of our own corpus — RE-REVIEWED 2026-07-31 (independent, not the author): only half fixed, so this stays open. The Major example was repointed and now reads 'the milder of the two illegal-manipulation lists, which the source keeps in the VG Rules and Formats handbook and this document mirrors in its Appendix A', which is accurate. The Severe example was not touched and still reads 'the more serious of the two illegal-manipulation lists referenced in the post-event disciplinary section', which is the same mis-attribution the finding named, on the limb that carries Disqualification. The entry is now internally inconsistent: two citations of the same appendix point at two different sections of our corpus, and the one the author's own pen-7 fix declares wrong is the one still in place. The Appendix A equivalence itself is supported — pen-Appendix A section 1 is a 'major team error infraction' and section 2 a 'severe team error infraction', matching the source's citation of section 1 under Major and section 2 under Severe, and its preamble covers illegal manipulation 'not be caught by the electronic team check'. Tier mapping re-extracted from page 28 with layout=True and confirmed as Minor→Warning, Major→Game Loss, Severe→Disqualification.",
+        "owner": "author",
         "severity": "low"
       }
     ],
@@ -385,11 +395,12 @@
     "verdict": "clean"
   },
   "pen-7": {
-    "entry_sha256": "800eac28673ab396bf9480064263b3954144200716f0b404003716f2d0e9bea7",
+    "entry_sha256": "930fef91f7b88d9a075fcef131bf952d0fc5b6a0772cbcbc18416c69e721176f",
     "findings": [
       {
         "class": "DRIFT",
-        "note": "the last two paragraphs summarise Appendix A and introduce it as 'An appendix to this section'. Appendix A is a document-level appendix that follows section 7, not part of it, and the text that cites those tiers (pen-5.6.2) attributes them to the VG Rules and Formats handbook. The summarised content itself is accurate to pen-Appendix A; the framing of where it lives is not",
+        "note": "the last two paragraphs summarise Appendix A and introduce it as 'An appendix to this section'. Appendix A is a document-level appendix that follows section 7, not part of it, and the text that cites those tiers (pen-5.6.2) attributes them to the VG Rules and Formats handbook. The summarised content itself is accurate to pen-Appendix A; the framing of where it lives is not — RE-REVIEWED 2026-07-31 (independent, not the author): fixed. The framing is now correct: the PDF table of contents lists Appendix A as a top-level item on page 35, between section 7 on page 34 and section 8 on page 36, so 'follows this section as an appendix to the document rather than a part of section 7' is accurate. The two summarised tiers still match pen-Appendix A section 1 and section 2, the Head Judge tie-break matches its preamble, and the removal-plus-disqualification paragraph matches its section 1. Longest shared run 8 tokens. Observation only, not a finding: see_also does not list pen-Appendix A even though the paragraph now names it.",
+        "resolved": true,
         "severity": "low"
       }
     ],
