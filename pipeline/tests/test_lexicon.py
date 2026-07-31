@@ -274,9 +274,9 @@ def test_a_term_with_no_glyph_key_is_valid():
     assert validate([term()]) == []
 
 
-def test_glyph_must_be_a_boolean():
-    errors = validate([term(glyph="yes", glyph_render={"symbol": "moon.zzz"})])
-    assert any("must be true or false" in e for e in errors)
+def test_glyph_must_be_one_of_the_three_states():
+    errors = validate([term(glyph=1, glyph_render={"symbol": "moon.zzz"})])
+    assert any("true, false or" in e for e in errors)
 
 
 def test_a_glyph_bearing_term_needs_a_rendering():
@@ -352,3 +352,59 @@ def test_a_glyph_render_without_the_boolean_is_an_error():
     no decision behind it would never be picked up by the matcher."""
     errors = validate([term(glyph_render={"symbol": "moon.zzz"})])
     assert any("glyph_render but no glyph" in e for e in errors)
+
+
+# --- the undecided state ---
+
+def test_undecided_is_a_valid_glyph_value():
+    """The state that lets the whole set ship before anyone has judged it.
+    An undecided concept renders a chip of its own name until someone
+    decides it deserves a symbol."""
+    assert validate([term(term="damage counter", category="entity",
+                          gloss="g", glyph="undecided")]) == []
+
+
+def test_undecided_needs_no_rendering():
+    """The chip is derived from the term, so there is nothing to author.
+    Requiring one would put the work back where this state exists to remove it."""
+    errors = validate([term(glyph="undecided")])
+    assert not any("glyph_render" in e for e in errors)
+
+
+def test_undecided_needs_no_note():
+    errors = validate([term(glyph="undecided")])
+    assert not any("glyph_note" in e for e in errors)
+
+
+def test_undecided_may_carry_triggers():
+    """A concept can be undecided about its picture and still know which
+    phrases mean it."""
+    assert validate([term(term="blocked", category="modifier", gloss="g",
+                          glyph="undecided",
+                          glyph_triggers=["no attacking"])]) == []
+
+
+def test_undecided_may_override_its_derived_chip():
+    """Deciding the chip text is not the same as deciding it is a chip
+    forever. "Prize card" reads better as PRIZE."""
+    assert validate([term(term="Prize card", category="entity", gloss="g",
+                          glyph="undecided",
+                          glyph_render={"chip": "PRIZE", "tint": "secondary"})]) == []
+
+
+def test_undecided_cannot_override_with_a_symbol():
+    """A symbol is a decision. Choosing one means glyph is true."""
+    errors = validate([term(glyph="undecided",
+                            glyph_render={"symbol": "moon.zzz"})])
+    assert any("undecided" in e and "symbol" in e for e in errors)
+
+
+def test_any_other_string_is_rejected():
+    errors = validate([term(glyph="maybe")])
+    assert any("true, false or" in e for e in errors)
+
+
+def test_the_boolean_cases_still_hold():
+    assert validate([term(glyph=True, glyph_render={"symbol": "moon.zzz"})]) == []
+    assert any("needs a glyph_note" in e
+               for e in validate([term(term="attack", category="action", glyph=False)]))

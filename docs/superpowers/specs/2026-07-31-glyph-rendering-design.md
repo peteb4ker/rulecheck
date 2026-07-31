@@ -109,9 +109,26 @@ hard to state in words, but it does not justify sourcing on its own.
 
 ## Data model
 
-A `glyph` boolean on each lexicon term, with the rendering held separately.
-Absent means no glyph, so classifying a new term never silently creates a
-sourcing obligation.
+A `glyph` field on each lexicon term with three values, and the rendering
+held separately. Absent means the concept has not been considered, so
+classifying a new term never silently creates a sourcing obligation.
+
+| Value | Meaning | Renders |
+|---|---|---|
+| `true` | Decided. This concept carries a glyph. | Whatever `glyph_render` says |
+| `false` | Decided. This concept carries no glyph. | Nothing |
+| `"undecided"` | Not yet decided. | A chip of the term's own name |
+
+The third value is what lets the whole set ship before anyone has judged it.
+A concept marked `undecided` renders a chip derived from its term, so it is
+visible and readable on day one, and becoming a symbol later is a data
+change rather than a gap to be filled first.
+
+An undecided chip is deliberately indistinguishable from a decided one. The
+point of the review gate is to judge how the page reads, and marking the
+provisional ones would tell the reader what to think. Which concepts are
+still open is recorded in the lexicon, where a decision belongs, not in the
+rendering.
 
 ```json
 {
@@ -151,6 +168,17 @@ existing design tokens and light and dark mode come free:
 }
 ```
 
+An undecided concept needs nothing else. The chip text is its term in caps
+and the tint follows the rules below:
+
+```json
+{
+  "term": "damage counter",
+  "category": "entity",
+  "glyph": "undecided"
+}
+```
+
 A held-out concept records why:
 
 ```json
@@ -161,6 +189,55 @@ A held-out concept records why:
   "glyph_note": "Renders 49 times across 18 sections. Too common to carry meaning."
 }
 ```
+
+## Chip colour
+
+Low-risk and revisable. This is a first cut to be judged on screen at the
+review gate, not a settled system.
+
+A chip is drawn from a single `Palette` token: the background is that token
+at low opacity and the text is the token at full strength. One token gives
+both, so light and dark come free from the existing Solar and Lunar sets and
+no chip needs a colour pair maintained by hand.
+
+Colour carries meaning, and the meaning is what the concept does to the
+player rather than which lexicon category it sits in. Colours are shared
+across concepts on purpose. A player should learn four colours, not thirty.
+
+| Tint | Means | Concepts |
+|---|---|---|
+| `negative` | Stops, blocks or harms you | Asleep, Burned, Confused, Paralyzed, Poisoned, blocked, Knock Out |
+| `positive` | Permits or restores | allowed |
+| `accent` | Something you do, or its outcome | draw, discard, retreat, flip, place, attach, remove, search, Heads, Tails |
+| `secondary` | A thing or a place | deck, Bench, Prize card, Energy, damage counter, hand, Trainer card, discard pile, Stadium, face down |
+
+`positive` is a new token and the only addition. It exists because `blocked`
+and `allowed` are the pair where a colour contrast does the most work, and
+reading one against the other should not require reading at all.
+
+### When the source overrides the semantics
+
+A concept may override its semantic tint where the source material has an
+established colour a player already recognises. Ability is the case that
+prompted this rule: it renders `negative`, which is to say red, not because
+an Ability is bad but because the cards print ABILITY as a red banner and
+that is the thing a player's eye is trained on.
+
+An override is recorded explicitly, so it reads as a decision rather than a
+miscategorisation:
+
+```json
+{
+  "term": "Ability",
+  "category": "entity",
+  "glyph": true,
+  "glyph_render": { "chip": "ABILITY", "tint": "negative" },
+  "glyph_note": "Red follows the cards, which print ABILITY as a red banner. Not a semantic negative."
+}
+```
+
+Overrides should stay rare. If several accumulate, the semantic groups are
+wrong and the table above should change instead.
 
 ### glyph_triggers
 
