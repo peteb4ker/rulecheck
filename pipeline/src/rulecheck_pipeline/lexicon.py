@@ -24,6 +24,11 @@ from pathlib import Path
 
 CATEGORIES = {"entity", "action", "state", "modifier", "phase"}
 
+# The third glyph state. A concept nobody has judged yet still renders, as a
+# chip of its own name, so the set can ship and be looked at before anyone
+# decides which ones deserve a drawn symbol.
+UNDECIDED = "undecided"
+
 # Marks tense or number. Stripping these does not change what a word denotes.
 INFLECTIONAL = ("ing", "ed", "es", "s")
 
@@ -167,18 +172,32 @@ def _glyph_errors(term: str, entry: dict) -> list[str]:
     if not has_key:
         if render is not None:
             errors.append(
-                f"{term}: has glyph_render but no glyph — without the boolean the "
+                f"{term}: has glyph_render but no glyph — without the decision the "
                 f"matcher never picks it up, so the rendering would go unused")
         if triggers is not None:
             errors.append(
                 f"{term}: has glyph_triggers but no glyph — nothing for them to render")
         return errors
 
-    if not isinstance(glyph, bool):
-        errors.append(f"{term}: glyph must be true or false, not {glyph!r}")
+    if not (isinstance(glyph, bool) or glyph == UNDECIDED):
+        errors.append(
+            f"{term}: glyph must be true, false or {UNDECIDED!r}, not {glyph!r}")
         return errors
 
-    if glyph:
+    if glyph == UNDECIDED:
+        # Nothing else is required. The chip text comes from the term and the
+        # tint from its meaning, which is the whole point of this state: a
+        # concept is visible and readable before anyone has judged it, and
+        # becoming a symbol later is a data change rather than a gap to fill
+        # before anything can ship.
+        if render is not None:
+            if "symbol" in render:
+                errors.append(
+                    f"{term}: glyph is {UNDECIDED!r} but glyph_render names a symbol. "
+                    f"Choosing a symbol is the decision — set glyph to true")
+            else:
+                errors.extend(_render_errors(term, render))
+    elif glyph:
         if render is None:
             errors.append(f"{term}: glyph is true, so it needs a glyph_render")
         else:
