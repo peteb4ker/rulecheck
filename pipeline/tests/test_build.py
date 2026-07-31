@@ -291,7 +291,8 @@ def test_a_row_with_no_glyph_gets_null_not_a_gap(tmp_path):
     """A gap would slide every later glyph onto the wrong row."""
     content, rewrites = _glyph_fixture(tmp_path, GLYPH_ENTRY)
     build_db(content, tmp_path / "out.db", rewrites_dir=rewrites)
-    assert _structure_of(tmp_path / "out.db")["state_glyphs"] == ["blocked", None]
+    g = _structure_of(tmp_path / "out.db")["state_glyphs"]
+    assert [(x or {}).get("name") for x in g] == ["blocked", None]
 
 
 def test_the_rarer_concept_wins_a_tie(tmp_path):
@@ -300,7 +301,7 @@ def test_the_rarer_concept_wins_a_tie(tmp_path):
     because "asleep" sorts before "tails"."""
     content, rewrites = _glyph_fixture(tmp_path, GLYPH_ENTRY)
     build_db(content, tmp_path / "out.db", rewrites_dir=rewrites)
-    assert _structure_of(tmp_path / "out.db")["branch_glyphs"][1] == "tails"
+    assert _structure_of(tmp_path / "out.db")["branch_glyphs"][1]["name"] == "tails"
 
 
 def test_an_entry_with_no_structured_fields_gets_no_arrays(tmp_path):

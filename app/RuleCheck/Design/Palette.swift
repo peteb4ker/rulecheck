@@ -22,6 +22,10 @@ enum Palette {
     static let docPenalty = Color("docPenalty")
     /// "Blocked" values in effects tables and penalty outcomes (visual spec §1).
     static let negative = Color("negative")
+    /// The counterpart to `negative`: a rule that permits where a reader might
+    /// expect it to forbid. Added for glyph chips, where blocked against
+    /// allowed is the pair a colour contrast does the most work on.
+    static let positive = Color("positive")
 }
 
 extension DocumentInfo {
