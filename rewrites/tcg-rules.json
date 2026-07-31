@@ -1353,7 +1353,7 @@
       "Non-attack effect phrased 'up to X' (Trainer card or Ability)": "Choose any number from 1 to X",
       "Unrestricted deck or discard-pile search under an 'up to X' effect": "Must choose at least 1 card, whether or not the effect is an attack"
     },
-    "summary": "'Up to X' allows zero on an attack effect but requires at least one on a non-attack effect, and an unrestricted deck or discard search always requires at least one; 'any amount' and 'any number' always allow zero.",
+    "summary": "'Up to X' allows zero on an attack effect but requires at least one on a non-attack effect, and an 'up to X' search of deck or discard for any card at all requires at least one either way; 'any amount' and 'any number' allow zero.",
     "tier": "standard"
   },
   "tcg-Zones of the Pokémon TCG": {
