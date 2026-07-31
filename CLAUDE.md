@@ -27,8 +27,15 @@ the spec wins if this file and the spec ever disagree.
   no prose — plus `content/fingerprints/` (one-way hashes that keep the
   paraphrase tripwire working without the text). A CI guard fails the
   build if any committed section carries a `body`.
-- **Verbatim rules text is gated on the Research Gate** in the spec. Don't
-  ship or publicize content decisions before that research is done.
+- **Accuracy beats overlap.** Never reword a rule into something weaker to
+  get clear of the paraphrase tripwire. Where the exact wording is the rule,
+  quote it and declare it. The Research Gate closed on 2026-07-26 on exactly
+  this: faithful paraphrase by default, short verbatim quotes where exact
+  wording is load-bearing for judges. The undeclared limit is 25 consecutive
+  tokens, aimed at source prose pasted in wholesale rather than at stating a
+  rule precisely. Rules are systems and are not themselves copyrightable;
+  what is protected is their creative expression, so the risk is reproducing
+  the document, not sharing a sentence that states a rule.
   `just transformation-report` quantifies where the corpus sits: declared
   quote share against budget, the distribution of longest shared token runs,
   and how much shorter the paraphrase is than its source. It needs the PDFs,

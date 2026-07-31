@@ -73,8 +73,14 @@ honest fallback, not a defeat — but reach for it last.
 
 Non-negotiable rules, every one learned from a real defect:
 
-- **Never 12+ consecutive tokens shared with the source.** The verify
-  tripwire fails the build. Genuinely re-express.
+- **Accuracy beats overlap. Always.** If the only accurate way to state a
+  rule reuses the source's words, use those words and declare the quote.
+  Never reword a rule into something weaker or different to get clear of the
+  tripwire. This rule is first because it was learned last, and expensively:
+  this list used to open with the overlap limit, and an author writing a
+  penalty entry turned "a competitor **causes** their system to lose power"
+  into "a competitor's system loses power". One word, and it moved a dead
+  battery from a Warning to a Game Loss.
 - **Preserve every load-bearing fact**: numbers, thresholds, tier→penalty
   mappings, deadlines, counts, deck caps, per-game limits.
 - **Preserve modality exactly** — `may` is not `must`. A real finding
@@ -92,9 +98,19 @@ Non-negotiable rules, every one learned from a real defect:
 - **Cross-section synthesis is allowed only when corroborated** elsewhere
   in the corpus — state a fact from a neighbouring section only if you have
   actually read it there. Note it for the reviewer.
-- **Declared quotes are rare.** Use `quotes: ["..."]` only where the exact
-  official wording is load-bearing; each must appear verbatim in the source
-  AND in your entry text.
+- **Declare a quote whenever the exact wording is the rule.** Use
+  `quotes: ["..."]`; each must appear verbatim in the source AND in your
+  entry text, and the build checks both. This is not a last resort. The spec
+  settled it at the Research Gate on 2026-07-26: faithful paraphrase by
+  default, short verbatim quotes where exact wording is load-bearing for
+  judges. That was available from the start and no entry ever used it, which
+  is how a rule got paraphrased away.
+- **Undeclared reuse is capped at 25 consecutive tokens** and the verify
+  tripwire fails the build there. That limit is aimed at source prose pasted
+  in wholesale, not at stating a rule precisely. A rule that needs eleven of
+  the source's words is a quote, not a violation. Rules are systems and are
+  not themselves copyrightable; their creative expression is. Copying a
+  sentence that states a rule is not the risk. Reproducing the document is.
 - **`see_also` must point at ids that exist and are not skipped.**
 - `tier`: `judge` for anything staff cite or enforce; `standard` for
   player-facing content.

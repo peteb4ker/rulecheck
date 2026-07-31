@@ -833,7 +833,7 @@
       {
         "examples": [
           "A competitor removes their game card from their system mid-game",
-          "A competitor causes their own system to lose power or its internet connection",
+          "A competitor causes their system to lose power or internet connection",
           "A competitor removes a controller or other peripheral mid-game",
           "A competitor causes a game freeze that can't be fixed — if both sides suffer an unfixable freeze and fault is unclear, resolve it under the VG handbook's double game freeze rule instead",
           "A competitor tries to view their opponent's screen to gain an advantage"
@@ -844,6 +844,9 @@
       }
     ],
     "infraction": "A VG gameplay error — a mistake made during an active video game match",
+    "quotes": [
+      "A competitor causes their system to lose power or internet connection"
+    ],
     "see_also": [
       "pen-5.5.2.1"
     ],

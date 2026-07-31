@@ -2,7 +2,7 @@ import json
 
 import pytest
 
-from rulecheck_pipeline.content_check import check_rewrites
+from rulecheck_pipeline.content_check import OVERLAP_TOKENS, check_rewrites
 from rulecheck_pipeline.model import Section, SourceDoc, dump_document
 
 SOURCE_BODY = (
@@ -123,20 +123,37 @@ def test_quote_unused_in_text_is_error(tmp_path):
     assert any("unused" in m for m in check_rewrites(content, rewrites))
 
 
-def test_undeclared_12_token_overlap_is_error(tmp_path):
+def lift(n: int) -> str:
+    """The first n words of the fixture source, lifted verbatim.
+
+    Derived from OVERLAP_TOKENS rather than written out. These two tests held
+    hand-counted 13-word and 11-word strings, so raising the window made the
+    first one stop testing anything.
+    """
+    return " ".join(SOURCE_BODY.split()[:n])
+
+
+def test_an_undeclared_lift_the_length_of_the_window_is_an_error(tmp_path):
     content = make_content(tmp_path)
-    # 13 consecutive source tokens, no quote declared
-    lifted = "Asleep is turned sideways. It cannot attack or retreat. Between turns its controller"
     rewrites = write_rewrites(tmp_path, {
-        "fix-1.1": entry(paragraphs=[lifted]), "fix-2": entry()})
+        "fix-1.1": entry(paragraphs=[lift(OVERLAP_TOKENS)]), "fix-2": entry()})
     assert any("overlap" in m for m in check_rewrites(content, rewrites))
 
 
-def test_11_token_overlap_is_ok(tmp_path):
+def test_a_lift_one_token_short_of_the_window_is_allowed(tmp_path):
     content = make_content(tmp_path)
-    lifted = "sideways. It cannot attack or retreat. Between turns its controller"  # 11 tokens
     rewrites = write_rewrites(tmp_path, {
-        "fix-1.1": entry(paragraphs=[lifted]), "fix-2": entry()})
+        "fix-1.1": entry(paragraphs=[lift(OVERLAP_TOKENS - 1)]), "fix-2": entry()})
+    assert not any("overlap" in m for m in check_rewrites(content, rewrites))
+
+
+def test_a_long_lift_is_allowed_once_declared_as_a_quote(tmp_path):
+    """The escape hatch the Research Gate decided on and nothing ever used.
+    Where the exact wording is the rule, the entry quotes it and says so."""
+    content = make_content(tmp_path)
+    quoted = lift(OVERLAP_TOKENS + 4)
+    rewrites = write_rewrites(tmp_path, {
+        "fix-1.1": entry(paragraphs=[quoted], quotes=[quoted]), "fix-2": entry()})
     assert not any("overlap" in m for m in check_rewrites(content, rewrites))
 
 
