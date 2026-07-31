@@ -165,7 +165,7 @@
       "Every prize card stays in the prize area for both competitors",
       "The offending competitor's opponent needs two fewer prizes than the format normally requires to win"
     ],
-    "summary": "A TCG-only penalty for a mistake that meaningfully disrupts the game state with no clean fix, used when a Warning is too light and a Quadruple Prize Card penalty would be excessive.",
+    "summary": "A TCG-only penalty, used either when a mistake meaningfully disrupts the game state with no clean fix, or when a Warning has already been given and a Quadruple Prize Card penalty would be excessive.",
     "tier": "judge"
   },
   "pen-3.4": {
@@ -213,7 +213,7 @@
     "see_also": [
       "pen-4.1.1.4"
     ],
-    "summary": "Match Loss ends the whole match immediately when one competitor's conduct compromises its integrity, not just a single game.",
+    "summary": "A judge may reach for a Match Loss where a competitor's conduct damages the integrity of the whole match beyond repair, rather than of a single game. The match ends at once and is recorded as their loss.",
     "tier": "judge"
   },
   "pen-3.7": {
@@ -310,7 +310,7 @@
     ],
     "steps": [
       {
-        "action": "Apply the penalty right when it's decided, during the game already underway"
+        "action": "Apply the penalty right when it's decided, during the TCG game already underway"
       },
       {
         "action": "Tell the opponent they now need two fewer prizes (Double) or four fewer (Quadruple) than the format's usual count"
@@ -319,7 +319,7 @@
         "action": "End the game immediately in the opponent's favor if they already hold that many prizes"
       }
     ],
-    "summary": "Double and Quadruple Prize Card penalties take effect immediately and change how many prizes the opponent still needs to win.",
+    "summary": "Double and Quadruple Prize Card penalties, which exist only in the Pokémon TCG, take effect immediately and change how many prizes the opponent still needs to win.",
     "tier": "judge"
   },
   "pen-4.1.1.3": {
@@ -436,7 +436,7 @@
   "pen-4.2.1": {
     "archetype": "note",
     "paragraphs": [
-      "When a mistake can only be partly undone, a penalty may still be needed to offset whatever edge survives the correction: a competitor who plays an extra card of a limited type that draws them cards and forces a discard from the opponent's hand can have the known discarded card restored, but since nobody can verify exactly which new cards they drew, a Judge has to return two random cards to their deck instead, leaving a residual advantage that a Double Prize Card penalty offsets.",
+      "When a mistake can only be partly undone, a penalty may still be needed to offset whatever edge survives the correction: a competitor who plays an extra card of a limited type that draws them cards and forces a discard from the opponent's hand can have the known discarded card restored, but since nobody can verify exactly which new cards they drew, a Judge has to return two random cards to their deck instead, and the offending card itself goes back to its owner's hand once the game state has been restored as far as it can be, leaving a residual advantage that a Double Prize Card penalty offsets.",
       "When the action can be fully reversed, say, an erroneous extra card of that type swaps each side's active creature with a benched one, and the Judge can identify and restore the original active creature for both sides, a lighter penalty like a Warning may be all that's needed, along with a note in the tournament's penalty summary.",
       "When the action can't be reversed at all, for instance an extra card of that type shuffles the competitor's hand back into their deck with no way to reconstruct what was there, no lesser penalty can make up for it, so a Game Loss is the fitting response.",
       "Catching the error before it's fully carried out also matters: the earlier it's caught, the more room there usually is to walk it back."
@@ -619,7 +619,7 @@
       }
     ],
     "handling": [
-      "A dropped competitor can rejoin the tournament if the next round hasn't been paired yet and they confirm with the Tournament Organizer; once that round is paired, re-entry is closed and their record stands as recorded",
+      "A dropped competitor can rejoin the tournament if the next round hasn't been paired yet and they confirm with the Tournament Organizer; once that round is paired, re-entry is closed and their match record is brought into line with the drop",
       "Where a format can't drop a competitor outright, such as double-elimination, they keep collecting Match Losses under this rule until double elimination removes them naturally"
     ],
     "infraction": "A competitor arrives late to their match after the round has begun",
@@ -716,7 +716,7 @@
     "base_penalty": [
       {
         "examples": [
-          "All formats: a competitor solicits and acts on outside information about a game already underway",
+          "All formats: a competitor seeks out and acts on private game information from an outside source while a game is under way",
           "All formats: a competitor knowingly fills out or verifies a match slip incorrectly to change the recorded result",
           "TCG: a competitor deliberately draws extra cards, or moves cards from the discard pile into their deck or hand",
           "TCG: a competitor freely adjusts Special Conditions or damage counters on cards already in play",
@@ -973,9 +973,9 @@
           "Uniform wear scattered across the whole sleeved deck",
           "A few factory-defect sleeve backs with no useful pattern",
           "A list that omits a collector number where only one card of that name exists in the set",
-          "The deck runs a premium illustration variant while the list names another printing of the same card"
+          "The deck runs a premium illustration variant while the list names another printing of the same card — this one case alone needs no proxy or Basic Energy replacement"
         ],
-        "note": "little or no advantage available; no proxy or Energy replacement needed for trivial list variances",
+        "note": "little or no advantage available",
         "penalty": "Warning",
         "tier": "Minor"
       },
@@ -1054,7 +1054,7 @@
           "The Battle Team, team list, and Rental Team ID disagree with each other — where only one of the three is out of step, correct it to match the other two; where all three disagree, the team member involved sits out the rest of the tournament",
           "A listed move name doesn't match what the team member actually knows",
           "A stat is missing or wrong on the team list",
-          "A team member appears on the milder of the two illegal-manipulation lists referenced in the post-event disciplinary section",
+          "A team member appears on the milder of the two illegal-manipulation lists, which the source keeps in the VG Rules and Formats handbook and this document mirrors in its Appendix A",
           "A team member's nickname, Original Trainer name, or other detail deliberately references something that runs against the Spirit of the Game"
         ],
         "note": "the mismatch could give the offending competitor a real advantage; the offending team member, Tera Type, move, Ability, or held item is barred from play, with an on-the-spot fix offered when the corrected version is available — otherwise it's removed without replacement, and an offending Tera Type or Ability is handled by removing the team member entirely since neither can be swapped out on its own",
@@ -1079,7 +1079,7 @@
     "infraction": "A mismatch between a competitor's in-game Battle Team — its roster, stats, moves, and held items — and their submitted team list, which is the source of truth for VG",
     "see_also": [
       "pen-5.6.2.1",
-      "pen-7"
+      "pen-Appendix A"
     ],
     "summary": "VG team check severity depends on whether the mismatch could hand the competitor a real advantage, and the team list always controls how any fix is made.",
     "tier": "judge"
@@ -1275,7 +1275,7 @@
       "This applies when an on-site penalty, such as one for Cheating or a serious inclusion-policy violation, gets escalated for review by an internal team. If that team confirms the case warrants it, the competitor receives notice of the disciplinary action.",
       "Play! Pokémon reserves the right to discipline any competitor for rules infractions, weighing severity and whether the conduct is repeated; a program suspension is one possible outcome, and a suspended competitor's name and player ID are shared with Organizers so the suspension can be enforced.",
       "A suspended competitor may not attend a Play! Pokémon event in any capacity — not as a spectator, competitor, or Judge. If they try to participate anyway and won't leave when asked, that gets reported to Play! Pokémon and can extend the suspension.",
-      "An appendix to this section defines two tiers of illegal VG team manipulation that an electronic team check might miss, and those tiers feed directly into the VG team-check penalties: the milder tier covers a team member showing some sign it wasn't obtained through normal play or official promotions but with no real competitive edge from that alone — for example an origin, capture method, or rarity flag inconsistent with legitimate acquisition, or a nickname or trainer name that gives it away. The more serious tier covers any attack, Ability, Nature, stat, or other attribute that gives a real competitive advantage and could not have been obtained through normal play or official promotions. Where event staff disagree on which tier applies, the Head Judge has final say.",
+      "Appendix A, which follows this section as an appendix to the document rather than a part of section 7, defines two tiers of illegal VG team manipulation that an electronic team check might miss, and those tiers feed directly into the VG team-check penalties: the milder tier covers a team member showing some sign it wasn't obtained through normal play or official promotions but with no real competitive edge from that alone — for example an origin, capture method, or rarity flag inconsistent with legitimate acquisition, or a nickname or trainer name that gives it away. The more serious tier covers any attack, Ability, Nature, stat, or other attribute that gives a real competitive advantage and could not have been obtained through normal play or official promotions. Where event staff disagree on which tier applies, the Head Judge has final say.",
       "A team member caught under the milder tier is removed from the Battle Team without replacement; if that removal alone drops the competitor below the tournament's minimum entry requirement, they must also be disqualified from the event even though the underlying infraction is only the milder tier."
     ],
     "see_also": [
