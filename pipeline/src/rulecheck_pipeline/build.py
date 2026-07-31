@@ -4,6 +4,7 @@ import json
 import sqlite3
 from pathlib import Path
 
+from rulecheck_pipeline import glyphs
 from rulecheck_pipeline.flatten import flatten_entry
 from rulecheck_pipeline.model import load_document
 from rulecheck_pipeline.rewrites import is_skip, load_rewrites
@@ -46,6 +47,67 @@ CREATE VIRTUAL TABLE sections_fts USING fts5(
 """
 
 
+def _structure_json(entry: dict, glyph_index: list[dict]) -> str:
+    """The authored entry plus its derived glyphs, as it ships.
+
+    The glyphs are added here and nowhere else. `rewrites/` is hand-authored
+    and never written back to, so a rebuild always regenerates them and they
+    cannot drift from the lexicon.
+    """
+    payload = dict(entry)
+    if glyph_index:
+        payload.update(glyphs.annotate(entry, glyph_index))
+    return json.dumps(payload, sort_keys=True, ensure_ascii=False)
+
+
+def _glyph_index(lexicon_dir: Path, rewrites: dict) -> list[dict]:
+    """The glyph matcher's index, or empty when there is no lexicon.
+
+    A fresh clone, or any build predating the lexicon, must still produce a
+    database. No lexicon means no glyphs, not a failure.
+
+    Occurrence counts come from the authored corpus and matter more than they
+    look: they break ties inside a category toward the rarer concept. Without
+    them the row "Tails, Still Asleep" draws the Asleep glyph, because
+    "asleep" sorts before "tails" and the tie falls back to the term itself.
+    """
+    if not lexicon_dir.is_dir():
+        return []
+
+    terms: list[dict] = []
+    for path in sorted(lexicon_dir.glob("*.json")):
+        terms.extend(json.loads(path.read_text()).get("terms", []))
+    if not terms:
+        return []
+
+    texts: list[str] = []
+
+    def walk(value):
+        if isinstance(value, str):
+            texts.append(value)
+        elif isinstance(value, list):
+            for item in value:
+                walk(item)
+        elif isinstance(value, dict):
+            for key, item in value.items():
+                texts.append(key)
+                walk(item)
+
+    for entry in rewrites.values():
+        if not is_skip(entry):
+            walk(entry)
+
+    corpus = glyphs.stems(" ".join(texts))
+    counts: dict[str, int] = {}
+    for term in terms:
+        key = glyphs.stems(term["term"])
+        counts[term["term"]] = (
+            sum(1 for i in range(len(corpus) - len(key) + 1)
+                if corpus[i:i + len(key)] == key) if key else 0)
+
+    return glyphs.build_index(terms, counts)
+
+
 def build_db(content_dir: Path, out_path: Path, rewrites_dir: Path | None = None,
              full_content_dir: Path | None = None) -> None:
     """Build the shipped DB from the authored structure.
@@ -61,6 +123,7 @@ def build_db(content_dir: Path, out_path: Path, rewrites_dir: Path | None = None
     the no-verbatim guarantee is structural rather than a matter of trust.
     """
     rewrites = load_rewrites(rewrites_dir) if rewrites_dir and Path(rewrites_dir).is_dir() else {}
+    glyph_index = _glyph_index(Path(content_dir) / "lexicon", rewrites)
     bodies: dict[str, str] = {}
     if full_content_dir and Path(full_content_dir).is_dir():
         for path in sorted(Path(full_content_dir).glob("*.json")):
@@ -109,7 +172,7 @@ def build_db(content_dir: Path, out_path: Path, rewrites_dir: Path | None = None
                   flatten_entry(rewrites[s.id]) if s.id in rewrites
                   else bodies.get(s.id, s.body),
                   s.breadcrumb, s.order,
-                  json.dumps(rewrites[s.id], sort_keys=True, ensure_ascii=False)
+                  _structure_json(rewrites[s.id], glyph_index)
                   if s.id in rewrites else None) for s in shipped],
             )
             shipped_ids = {s.id for s in shipped}
