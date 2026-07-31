@@ -45,12 +45,12 @@
     "verdict": "clean"
   },
   "tcg-Appendix 18: Rare Fossil, Unidentified Fossil,": {
-    "entry_sha256": "70cb6d3637c0149ce454a81bdaaa1819e6d43e329686b211fff0feca2eeda027",
+    "entry_sha256": "3a8d28169ca9a63eabb681d7c59e0dc35cdfd35688fa8eb0797930262612f231",
     "findings": [
       {
         "class": "OMISSION",
         "note": "the source says Fossil cards with 'Antique' in the name can also be played as Basic Pokemon; the entry states that only for the other two named Item cards, leaving how an Antique Fossil reaches play unstated",
-        "resolved": false,
+        "resolved": true,
         "severity": "low"
       }
     ],
@@ -80,24 +80,24 @@
     "verdict": "findings"
   },
   "tcg-Appendix 20: Ultra Beasts": {
-    "entry_sha256": "a48f83cfc1725b13968074b07cb9e9dcb835f9f01be2c74848040fe773e0d18b",
+    "entry_sha256": "19bc2f44ca509a316bfbcd2466ba84dd41a95bfdadc85ea1e29a10dbf45f76f0",
     "findings": [
       {
         "class": "DRIFT",
         "note": "in the source the corner bar is how an Ultra Beast is identified, full stop; the entry makes the marking conditional on another card's effect interacting with Ultra Beasts, which is not what the source says",
-        "resolved": false,
+        "resolved": true,
         "severity": "low"
       }
     ],
     "verdict": "findings"
   },
   "tcg-Appendix 21: Dual-Type Pokémon": {
-    "entry_sha256": "a31a7519c4add0d491377b9834b294092f7ee3b72803d395a6428fc8f02fc7f6",
+    "entry_sha256": "a65f76eb9b4b6c9690ef21d52a79e3716a6c04644a0f6c9ac9f51a54049e9b92",
     "findings": [
       {
         "class": "DRIFT",
         "note": "the source scopes the rule to the dual-type Pokemon attacking a defender that has Weakness or Resistance to either of its two types; the entry says 'when it attacks or is attacked' and phrases the Weakness-then-Resistance order as though the dual-type itself held both, inverting which side carries them",
-        "resolved": false,
+        "resolved": true,
         "severity": "low"
       }
     ],
@@ -179,12 +179,12 @@
     "verdict": "clean"
   },
   "tcg-Asleep": {
-    "entry_sha256": "5595ef623cf33a132917f89f14f23acf20ae25772c41f19ef6d1107765d333f6",
+    "entry_sha256": "ed44ab4305581a079ca9cad6372faf6cad6622e604fa955962486c2993a3559c",
     "findings": [
       {
         "class": "INVENTION",
         "note": "the entry asserts Abilities remain usable while Asleep; the source section says only that attacking and retreating are blocked and never affirms the Ability case, and the corpus's own glossary states most Poke-Powers switch off under any Special Condition, so the added claim is unsupported and locally contradicted",
-        "resolved": false,
+        "resolved": true,
         "severity": "low"
       }
     ],
@@ -211,30 +211,30 @@
     "verdict": "clean"
   },
   "tcg-Energy Types": {
-    "entry_sha256": "26d815c5dc0a5a882a65dd0c4a24eeef95379bc235fdb547fe0f18a3e93c2110",
+    "entry_sha256": "56a91412d279de08efa92ba8e15e554b962b92309d61b95067119618e0fdd6a6",
     "findings": [
       {
         "class": "OMISSION",
         "note": "the source notes that the current Mega Evolution Series prints no Fairy-type Pokemon cards even though older expansions do; the entry drops that scope entirely, so a deck builder gets no signal that the type is legacy-only",
-        "resolved": false,
+        "resolved": true,
         "severity": "low"
       },
       {
         "class": "DRIFT",
         "note": "the source says only some formerly Fairy-type Pokemon now appear as Psychic; the entry states it as a blanket conversion of every card that was once that type",
-        "resolved": false,
+        "resolved": true,
         "severity": "low"
       }
     ],
     "verdict": "findings"
   },
   "tcg-Full details of attacking": {
-    "entry_sha256": "ab8eb6f0dba1df1a0560a1c771030a2457824fc7c2cc89e119877f1576e97322",
+    "entry_sha256": "ca3893c141fcf1fd8e29a36755e2252ac04f912405149871a2d3d8d36493dd26",
     "findings": [
       {
         "class": "DRIFT",
         "note": "the source's second damage step covers damage effects on the attacker from Trainer cards or any other relevant effect, in either direction; the entry narrows it to a damage bonus carried from an earlier effect, dropping both reductions and the Trainer-card source",
-        "resolved": false,
+        "resolved": true,
         "severity": "low"
       }
     ],
@@ -331,7 +331,7 @@
     "verdict": "clean"
   },
   "tcg-Turn Actions": {
-    "entry_sha256": "07f033a388886563e21bc0b9ce2070069e671340cfc6961551ea2eb1fa03ea3e",
+    "entry_sha256": "11a532a8d1abf467d21c6814e47c58aedd43edb7d6016c668993de151b429a24",
     "findings": [
       {
         "class": "OMISSION",
@@ -342,7 +342,7 @@
       {
         "class": "OMISSION",
         "note": "the source tells players to announce which Abilities they are using so the opponent can follow along; the entry keeps the Ability step but not that procedural obligation",
-        "resolved": false,
+        "resolved": true,
         "severity": "low"
       }
     ],
@@ -374,11 +374,13 @@
     "verdict": "clean"
   },
   "tcg-What’s the difference between “up to” and “any amount”?": {
-    "entry_sha256": "cc46c69490c5ac0cf431c66a0b167143909f96540d0baea02421eb28a34b976d",
+    "entry_sha256": "8d5defc9f0d2108f0025f169d632dc9dd54bc475a0eb0480ebc6bc0ceac40613",
     "findings": [
       {
+        "acknowledged": true,
         "class": "DRIFT",
-        "note": "the source scopes the must-choose-at-least-one search exception to the 'up to X' rules; the entry generalises it to every phrasing above it, which sweeps in 'any amount' and 'any number' — phrasings the source explicitly says allow zero",
+        "note": "the source scopes the must-choose-at-least-one search exception to the 'up to X' rules; the entry generalises it to every phrasing, which sweeps in 'any amount' and 'any number' — phrasings the source explicitly says allow zero. Re-review: the effects row is now correctly scoped to an 'up to X' effect, but the summary was not changed in force and still reads \"an unrestricted deck or discard search always requires at least one; 'any amount' and 'any number' always allow zero\", two unscoped 'always' claims that contradict each other for an unrestricted search phrased 'any amount'. Scope the summary's search clause to 'up to X' the way the effects row now is, or drop the word 'always' from it",
+        "owner": "author",
         "resolved": false,
         "severity": "low"
       }
