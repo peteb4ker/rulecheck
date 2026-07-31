@@ -225,3 +225,110 @@ def test_xrefs_survive_a_bodies_free_index(tmp_path):
     rows = con.execute("SELECT from_id, to_id FROM xrefs").fetchall()
     con.close()
     assert rows == [("fix-1", "fix-2")], "xrefs lost between parse and build"
+
+
+# --- glyph annotation (spec: 2026-07-31-glyph-rendering-design.md) ---
+
+GLYPH_ENTRY = {
+    "archetype": "mechanic", "tier": "standard",
+    "summary": "Asleep stops a Pokemon acting.",
+    "state": ["No attacking", "Rotated counterclockwise"],
+    "branch": {"when": "Pokemon Checkup",
+               "options": [{"condition": "Heads", "outcome": "Wakes up"},
+                           {"condition": "Tails", "outcome": "Still Asleep"}]},
+}
+PLAIN_ENTRY = {"archetype": "note", "tier": "standard",
+               "summary": "Nothing structured here.", "paragraphs": ["p"]}
+
+
+def _glyph_fixture(tmp_path, entry, with_lexicon=True):
+    """A one-section corpus, its rewrite entry, and optionally a lexicon."""
+    from rulecheck_pipeline.model import Section, SourceDoc, dump_index
+
+    source = SourceDoc(id="fix", prefix="fix", title="Fixture", version="1",
+                       published="2026-01-01", url="https://example.com/f.pdf",
+                       file="f.pdf", heading_rules=[])
+    sections = [Section(id="fix-1", doc_id="fix", parent_id=None, number="1",
+                        title="One", breadcrumb="Fixture", order=0, body="Body.")]
+    content = tmp_path / "content"
+    dump_index(source, sections, content / "fix.json")
+
+    rewrites = tmp_path / "rewrites"
+    rewrites.mkdir()
+    (rewrites / "fix.json").write_text(json.dumps({"fix-1": entry}))
+
+    if with_lexicon:
+        lex = content / "lexicon"
+        lex.mkdir(parents=True)
+        (lex / "l.json").write_text(json.dumps({"terms": [
+            {"term": "asleep", "category": "state", "gloss": "g",
+             "glyph": True, "glyph_render": {"symbol": "moon.zzz"}},
+            {"term": "blocked", "category": "modifier", "gloss": "g",
+             "glyph": True, "glyph_render": {"symbol": "nosign"},
+             "glyph_triggers": ["no attacking"]},
+            {"term": "tails", "category": "state", "gloss": "g",
+             "glyph": True, "glyph_render": {"chip": "TAILS", "tint": "accent"}},
+        ], "declined": []}))
+    return content, rewrites
+
+
+def _structure_of(db_path, sid="fix-1"):
+    con = sqlite3.connect(db_path)
+    row = con.execute("select structure from sections where id = ?", (sid,)).fetchone()
+    con.close()
+    return json.loads(row[0]) if row and row[0] else None
+
+
+def test_glyph_arrays_align_with_their_field(tmp_path):
+    content, rewrites = _glyph_fixture(tmp_path, GLYPH_ENTRY)
+    build_db(content, tmp_path / "out.db", rewrites_dir=rewrites)
+    s = _structure_of(tmp_path / "out.db")
+    assert len(s["state_glyphs"]) == len(GLYPH_ENTRY["state"])
+    assert len(s["branch_glyphs"]) == len(GLYPH_ENTRY["branch"]["options"])
+
+
+def test_a_row_with_no_glyph_gets_null_not_a_gap(tmp_path):
+    """A gap would slide every later glyph onto the wrong row."""
+    content, rewrites = _glyph_fixture(tmp_path, GLYPH_ENTRY)
+    build_db(content, tmp_path / "out.db", rewrites_dir=rewrites)
+    assert _structure_of(tmp_path / "out.db")["state_glyphs"] == ["blocked", None]
+
+
+def test_the_rarer_concept_wins_a_tie(tmp_path):
+    """Needs occurrence counts computed from the corpus. Without them the tie
+    breaks alphabetically and "Tails, Still Asleep" draws the Asleep glyph,
+    because "asleep" sorts before "tails"."""
+    content, rewrites = _glyph_fixture(tmp_path, GLYPH_ENTRY)
+    build_db(content, tmp_path / "out.db", rewrites_dir=rewrites)
+    assert _structure_of(tmp_path / "out.db")["branch_glyphs"][1] == "tails"
+
+
+def test_an_entry_with_no_structured_fields_gets_no_arrays(tmp_path):
+    content, rewrites = _glyph_fixture(tmp_path, PLAIN_ENTRY)
+    build_db(content, tmp_path / "out.db", rewrites_dir=rewrites)
+    s = _structure_of(tmp_path / "out.db")
+    assert not any(k.endswith("_glyphs") for k in s)
+
+
+def test_building_without_a_lexicon_still_works(tmp_path):
+    """A fresh clone, or any build predating the lexicon, must not fail."""
+    content, rewrites = _glyph_fixture(tmp_path, GLYPH_ENTRY, with_lexicon=False)
+    build_db(content, tmp_path / "out.db", rewrites_dir=rewrites)
+    s = _structure_of(tmp_path / "out.db")
+    assert not any(k.endswith("_glyphs") for k in s)
+
+
+def test_the_authored_files_are_never_written_back(tmp_path):
+    """rewrites/ is hand-authored. Annotation happens on the way into the
+    database and nowhere else."""
+    content, rewrites = _glyph_fixture(tmp_path, GLYPH_ENTRY)
+    before = (rewrites / "fix.json").read_text()
+    build_db(content, tmp_path / "out.db", rewrites_dir=rewrites)
+    assert (rewrites / "fix.json").read_text() == before
+
+
+def test_building_twice_produces_identical_structure(tmp_path):
+    content, rewrites = _glyph_fixture(tmp_path, GLYPH_ENTRY)
+    build_db(content, tmp_path / "a.db", rewrites_dir=rewrites)
+    build_db(content, tmp_path / "b.db", rewrites_dir=rewrites)
+    assert _structure_of(tmp_path / "a.db") == _structure_of(tmp_path / "b.db")
