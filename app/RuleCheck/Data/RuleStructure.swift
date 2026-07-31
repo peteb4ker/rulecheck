@@ -71,12 +71,26 @@ struct RuleStructure: Decodable, Hashable {
     /// research gate allows the app to surface.
     let quotes: [String]?
 
+    /// Glyphs derived at build time, parallel to the field each annotates.
+    ///
+    /// Optional throughout, and never trusted for length. A database built
+    /// before glyphs existed simply has none, and the reader renders exactly
+    /// as it did before.
+    let stateGlyphs: [GlyphMark?]?
+    let effectGlyphs: [GlyphMark?]?
+    let branchGlyphs: [GlyphMark?]?
+    let stepGlyphs: [GlyphMark?]?
+
     enum CodingKeys: String, CodingKey {
         case archetype, summary, state, branch, effects, steps, infraction
         case handling, examples, terms, paragraphs, quotes
         case endsWhen = "ends_when"
         case basePenalty = "base_penalty"
         case upgradeConditions = "upgrade_conditions"
+        case stateGlyphs = "state_glyphs"
+        case effectGlyphs = "effect_glyphs"
+        case branchGlyphs = "branch_glyphs"
+        case stepGlyphs = "step_glyphs"
     }
 
     /// `effects` in a stable order — dictionaries do not preserve one, and a

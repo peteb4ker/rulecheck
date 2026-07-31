@@ -31,10 +31,14 @@ struct StructuredRuleView: View {
     @ViewBuilder private var mechanic: some View {
         if let state = structure.state, !state.isEmpty {
             block("WHILE IN EFFECT") {
-                ForEach(state, id: \.self) { fact in
+                ForEach(Array(state.enumerated()), id: \.offset) { index, fact in
                     Label { Text(fact).foregroundStyle(Palette.body) } icon: {
-                        Circle().fill(Palette.accent).frame(width: 5, height: 5)
-                            .padding(.top, 7)
+                        if let glyph = structure.stateGlyphs?.at(index) {
+                            GlyphView(glyph: glyph).padding(.top, 2)
+                        } else {
+                            Circle().fill(Palette.accent).frame(width: 5, height: 5)
+                                .padding(.top, 7)
+                        }
                     }
                     .labelStyle(.titleAndIcon)
                     .fixedSize(horizontal: false, vertical: true)
@@ -45,12 +49,11 @@ struct StructuredRuleView: View {
         if let branch = structure.branch {
             block(branch.when.uppercased()) {
                 VStack(spacing: 8) {
-                    ForEach(branch.options) { option in
+                    ForEach(Array(branch.options.enumerated()), id: \.offset) { index, option in
                         HStack(alignment: .top, spacing: 12) {
-                            Text(option.condition)
-                                .citationStyle()
-                                .foregroundStyle(Palette.accent)
-                                .frame(width: 76, alignment: .leading)
+                            branchCondition(option: option,
+                                            glyph: structure.branchGlyphs?.at(index))
+                                .frame(width: 96, alignment: .leading)
                             VStack(alignment: .leading, spacing: 2) {
                                 Text(option.outcome)
                                     .font(.subheadline.weight(.semibold))
@@ -73,12 +76,15 @@ struct StructuredRuleView: View {
             block("EFFECTS") {
                 VStack(spacing: 0) {
                     ForEach(Array(structure.orderedEffects.enumerated()), id: \.offset) { index, effect in
-                        HStack {
+                        HStack(spacing: 8) {
+                            if let glyph = structure.effectGlyphs?.at(index) {
+                                GlyphView(glyph: glyph)
+                            }
                             Text(effect.label).font(.subheadline).foregroundStyle(Palette.body)
                             Spacer()
                             Text(effect.value)
                                 .font(.subheadline.weight(.medium))
-                                .foregroundStyle(blocked(effect.value) ? Palette.negative : Palette.ink)
+                                .foregroundStyle(Palette.ink)
                         }
                         .padding(.vertical, 9)
                         if index < structure.orderedEffects.count - 1 {
@@ -101,9 +107,26 @@ struct StructuredRuleView: View {
         }
     }
 
-    private func blocked(_ value: String) -> Bool {
-        let lowered = value.lowercased()
-        return lowered.contains("blocked") || lowered.contains("cannot") || lowered.contains("no ")
+    /// A branch condition and its glyph.
+    ///
+    /// A chip whose text is the condition would print the same word twice, so
+    /// it replaces the text instead of sitting beside it. That is how HEADS
+    /// and TAILS read: the chip is the word. Anything else shows both, since
+    /// the glyph is then saying something the text does not.
+    @ViewBuilder
+    private func branchCondition(option: RuleStructure.BranchOption,
+                                 glyph: GlyphMark?) -> some View {
+        if let glyph, let chip = glyph.chip,
+           chip.caseInsensitiveCompare(option.condition) == .orderedSame {
+            GlyphView(glyph: glyph)
+        } else {
+            HStack(spacing: 6) {
+                if let glyph { GlyphView(glyph: glyph) }
+                Text(option.condition)
+                    .citationStyle()
+                    .foregroundStyle(Palette.accent)
+            }
+        }
     }
 
     // MARK: procedure — ordered steps

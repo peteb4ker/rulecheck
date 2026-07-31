@@ -66,7 +66,7 @@ def build_index(terms: list[dict], counts: dict[str, int] | None = None) -> list
         keys = [stems(term)] + [stems(t) for t in entry.get("glyph_triggers", []) or []]
         index.append({
             "term": term,
-            "glyph": _glyph_name(entry),
+            "glyph": _glyph_render(entry),
             "rank": rank,
             "count": counts.get(term, 0),
             "keys": [k for k in keys if k],
@@ -77,13 +77,48 @@ def build_index(terms: list[dict], counts: dict[str, int] | None = None) -> list
     return sorted(index, key=lambda e: (e["rank"], e["count"], e["term"]))
 
 
-def _glyph_name(entry: dict) -> str:
-    """What the app looks up. The term is the name; how it draws is the app's
-    business, read from the same lexicon."""
-    return entry["term"]
+# What an undecided concept's chip is tinted, by category. Colour carries
+# meaning, and the meaning is what the concept does to the player: a state is
+# something that has happened to you, an action is something you do, an object
+# is neither. A concept can override this by naming its own render.
+TINT_BY_CATEGORY = {
+    "state": "negative",
+    "modifier": "secondary",
+    "entity": "secondary",
+    "action": "accent",
+    "phase": "accent",
+}
+DEFAULT_TINT = "secondary"
 
 
-def glyph_for(text: str, index: list[dict]) -> str | None:
+def _glyph_render(entry: dict) -> dict:
+    """Exactly what the app draws, resolved here rather than in Swift.
+
+    The app renders what it is given and looks nothing up, so the whole
+    mapping from concept to appearance stays in the lexicon where it can be
+    reviewed, and the app degrades by simply not drawing anything it cannot
+    understand.
+
+    `name` travels alongside for the accessibility label. A glyph that
+    replaces a word still has to be readable aloud.
+    """
+    term = entry["term"]
+    render = entry.get("glyph_render")
+
+    if render:
+        out = {"name": term}
+        out.update(render)
+        return out
+
+    # Undecided with nothing specified: a chip of its own name. This is what
+    # lets a concept ship and be looked at before anyone chooses a symbol.
+    cats = categories_of(entry)
+    tint = next((TINT_BY_CATEGORY[c] for c in cats if c in TINT_BY_CATEGORY),
+                DEFAULT_TINT)
+    return {"name": term, "chip": term.upper(), "tint": tint}
+
+
+def glyph_for(text: str, index: list[dict]) -> dict | None:
     """The one glyph this row shows, or None.
 
     The index is already in priority order, so the first concept found is the
@@ -122,9 +157,16 @@ def annotate(entry: dict, index: list[dict]) -> dict:
 
     effects = entry.get("effects")
     if effects:
+        # Sorted by label, because that is the order the app renders them in:
+        # a truth table that reshuffles between launches is disorienting, so
+        # RuleStructure.orderedEffects sorts. Annotating in file order instead
+        # would put every glyph on the wrong row for any entry whose effects
+        # were not already written alphabetically.
+        #
         # Both halves of the row are read: the label names the thing and the
         # value says what happens to it, and either can carry the concept.
-        out["effect_glyphs"] = [glyph_for(f"{k} {v}", index) for k, v in effects.items()]
+        out["effect_glyphs"] = [glyph_for(f"{k} {v}", index)
+                                for k, v in sorted(effects.items())]
 
     branch = entry.get("branch") or {}
     options = branch.get("options")
