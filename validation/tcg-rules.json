@@ -374,14 +374,12 @@
     "verdict": "clean"
   },
   "tcg-What’s the difference between “up to” and “any amount”?": {
-    "entry_sha256": "8d5defc9f0d2108f0025f169d632dc9dd54bc475a0eb0480ebc6bc0ceac40613",
+    "entry_sha256": "f78fe18dc9a86451f365668b4947764f704d894970edca1315e2aa877908b466",
     "findings": [
       {
-        "acknowledged": true,
         "class": "DRIFT",
-        "note": "the source scopes the must-choose-at-least-one search exception to the 'up to X' rules; the entry generalises it to every phrasing, which sweeps in 'any amount' and 'any number' — phrasings the source explicitly says allow zero. Re-review: the effects row is now correctly scoped to an 'up to X' effect, but the summary was not changed in force and still reads \"an unrestricted deck or discard search always requires at least one; 'any amount' and 'any number' always allow zero\", two unscoped 'always' claims that contradict each other for an unrestricted search phrased 'any amount'. Scope the summary's search clause to 'up to X' the way the effects row now is, or drop the word 'always' from it",
-        "owner": "author",
-        "resolved": false,
+        "note": "the source scopes the must-choose-at-least-one search exception to the 'up to X' rules; the entry generalised it to every phrasing, which swept in 'any amount' and 'any number' — phrasings the source explicitly says allow zero. A first fix scoped the effects row and left the summary saying an unrestricted search 'always' requires at least one, so the entry contradicted itself; the summary now carries the same 'up to X' scope as the row and drops the competing 'always', and both fields agree with each other and with the source",
+        "resolved": true,
         "severity": "low"
       }
     ],
