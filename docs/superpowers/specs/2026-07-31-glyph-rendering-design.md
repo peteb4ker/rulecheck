@@ -81,7 +81,14 @@ thought and are called out under Open questions.
 | Outcome | Tails | 3 | 3 |
 | Modifier | face down | 5 | 3 |
 
-270 glyph renders across 48 of the 62 shipped sections.
+The Renders column counts how often each concept *occurs* in structured
+text, which is what made the case for including it. It is not the number of
+glyphs drawn. Only one glyph renders per row, so a row naming three concepts
+still draws one.
+
+Measured against the built matcher: **130 glyphs on 214 structured rows, 60%
+of them, across 47 of the 62 shipped sections.** That is the number to judge
+this by.
 
 ### Deliberately held out
 
