@@ -150,11 +150,11 @@
   "tcg-Appendix 18: Rare Fossil, Unidentified Fossil,": {
     "archetype": "mechanic",
     "state": [
-      "Rare Fossil and Unidentified Fossil are Item cards playable as a Basic Pokémon",
+      "Rare Fossil, Unidentified Fossil and any Fossil card with “Antique” in its name are Item cards playable as a Basic Pokémon",
       "Each can evolve into any printed Fossil Pokémon whose card text names that same Rare Fossil or Unidentified Fossil as its origin",
       "A Fossil card with \"Antique\" in its name instead evolves only into the one specific Pokémon its own printed text identifies"
     ],
-    "summary": "Rare Fossil and Unidentified Fossil are Item cards that can be played as Basic Pokémon and later evolve into any matching Fossil Pokémon, while an Antique Fossil card evolves into whichever single Pokémon its own text names.",
+    "summary": "Rare Fossil, Unidentified Fossil and Antique Fossil cards are Item cards that can be played as Basic Pokémon. The first two evolve into any matching Fossil Pokémon; an Antique Fossil evolves into whichever single Pokémon its own text names.",
     "tier": "standard"
   },
   "tcg-Appendix 19: Pokémon-GX": {
@@ -195,7 +195,8 @@
       "tcg-Appendix 19: Pokémon-GX"
     ],
     "state": [
-      "Marked with a small bar in the card's upper-right corner when another card's effect interacts specifically with Ultra Beasts",
+      "Identified by a bar in the card's upper-right corner",
+      "Some cards carry effects that single out Ultra Beasts specifically",
       "Every Ultra Beast has at least one attack tied to Prize cards"
     ],
     "summary": "Ultra Beasts show up as Pokémon-GX with a crimson color scheme instead of the usual GX blue, and every one of them packs an attack that interacts with Prize cards in some way.",
@@ -205,10 +206,10 @@
     "archetype": "mechanic",
     "state": [
       "Affected by card effects tied to either of its two types",
-      "When it attacks or is attacked, damage is adjusted for Weakness or Resistance from either type as applicable",
-      "If one of its types carries a Weakness and the other a Resistance, Weakness is applied first and Resistance second"
+      "When it attacks, damage is adjusted if the defending Pokémon has a Weakness or Resistance to either of the attacker's two types",
+      "Where the defender is Weak to one of those types and Resistant to the other, apply the Weakness first and the Resistance second"
     ],
-    "summary": "A dual-type Pokémon holds two types at once, so any card effect keyed to either type reaches it, and both types' Weakness and Resistance come into play when it fights.",
+    "summary": "A dual-type Pokémon holds two types at once, so any card effect keyed to either type reaches it, and either type can trigger a defender's Weakness or Resistance when it attacks.",
     "tier": "standard"
   },
   "tcg-Appendix 22: BREAK Evolution": {
@@ -415,7 +416,6 @@
       "when": "Pokémon Checkup"
     },
     "effects": {
-      "Abilities": "Still usable",
       "Attack": "Blocked",
       "Retreat": "Blocked"
     },
@@ -577,7 +577,7 @@
         "term": "Metal"
       },
       {
-        "meaning": "Dulls the effectiveness of an opponent's attacks; since Sword & Shield, cards that were once this type now print as Psychic instead.",
+        "meaning": "Dulls the effectiveness of an opponent's attacks. No card of this type is printed in the current Mega Evolution Series, though older expansions do have them, and some cards that once carried it now print as Psychic instead.",
         "term": "Fairy"
       },
       {
@@ -622,8 +622,8 @@
         "note": "a ×, +, or – symbol next to that number means the attack text spells out the adjustment; if the attack instead instructs placing damage counters directly, stop here and place them — counters placed that way skip Weakness, Resistance, and every other damage modifier"
       },
       {
-        "action": "Add in any damage bonus the attacking Pokémon is carrying from an earlier effect.",
-        "note": "skip this and every remaining damage step if the base damage is 0 or the attack deals no damage at all"
+        "action": "Work out any damage adjustment on the attacking Pokémon, up or down, from a Trainer card or any other effect in force.",
+        "note": "a lingering effect from one of its own earlier attacks is the common case; skip this and every remaining damage step if the base damage is 0 or the attack deals no damage at all"
       },
       {
         "action": "Multiply for Weakness if the target has Weakness to the attacker's type."
@@ -1246,7 +1246,7 @@
       },
       {
         "action": "Use any Abilities you want, on Pokémon Active or Benched.",
-        "note": "using an Ability isn't an attack, so it doesn't cost you your attack for the turn"
+        "note": "say out loud which ones you are using so your opponent can follow; using an Ability isn't an attack, so it doesn't cost you your attack for the turn"
       },
       {
         "action": "Choose whether to attack with your Active Pokémon.",
@@ -1351,9 +1351,9 @@
       "Attack effect phrased 'up to X'": "Choose any number from 0 to X",
       "Effect phrased 'any amount' or 'any number'": "Choose any number from 0 up to the maximum",
       "Non-attack effect phrased 'up to X' (Trainer card or Ability)": "Choose any number from 1 to X",
-      "Unrestricted deck or discard-pile search, any effect type": "Must choose at least 1 card regardless of the phrasing above"
+      "Unrestricted deck or discard-pile search under an 'up to X' effect": "Must choose at least 1 card, whether or not the effect is an attack"
     },
-    "summary": "'Up to X' allows zero on an attack effect but requires at least one on a non-attack effect, with an unrestricted deck/discard search always requiring at least one either way; 'any amount' or 'any number' always allows choosing zero.",
+    "summary": "'Up to X' allows zero on an attack effect but requires at least one on a non-attack effect, and an unrestricted deck or discard search always requires at least one; 'any amount' and 'any number' always allow zero.",
     "tier": "standard"
   },
   "tcg-Zones of the Pokémon TCG": {
