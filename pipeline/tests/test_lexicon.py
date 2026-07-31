@@ -408,3 +408,18 @@ def test_the_boolean_cases_still_hold():
     assert validate([term(glyph=True, glyph_render={"symbol": "moon.zzz"})]) == []
     assert any("needs a glyph_note" in e
                for e in validate([term(term="attack", category="action", glyph=False)]))
+
+
+def test_same_term_handles_a_multi_word_variant():
+    """same_term stemmed a phrase as if it were one word, so "knocked out"
+    never matched "knock out" and a legitimate variant was rejected.
+    check_lexicon already used stem_phrase for the same job; validate did not."""
+    from rulecheck_pipeline.lexicon import same_term
+    assert same_term("knocked out", "knock out")
+    assert same_term("prize cards", "prize card")
+    assert not same_term("knock out", "knock down")
+
+
+def test_a_multi_word_variant_validates():
+    assert validate([{"term": "knock out", "category": "action", "gloss": "g",
+                      "variants": ["knocked out", "knocks out"]}]) == []

@@ -77,6 +77,78 @@ def load_corpus(root: Path) -> dict[str, list[str]]:
     return corpus
 
 
+def occurs(stems: list[str], phrase: str) -> bool:
+    """Does this exact run of words appear in the corpus?
+
+    Checked against the token stream rather than the phrase extractor's
+    candidates, because those deliberately drop anything starting or ending
+    on a function word, and a trigger is usually exactly that: "no attacking",
+    "cannot retreat". Checking them the extractor's way reported every real
+    trigger as absent. This is also how the matcher itself will work, so the
+    check and the thing it guards ask the same question.
+    """
+    key = [stem(w) for w in tokenize(phrase)]
+    if not key:
+        return False
+    return any(stems[i:i + len(key)] == key
+               for i in range(len(stems) - len(key) + 1))
+
+
+def glyph_problems(terms: list[dict], corpus_stems: list[str]) -> list[str]:
+    """Glyph checks that reading the lexicon cannot do for you.
+
+    Two things, both invisible on the page. A trigger phrase naming wording
+    the corpus never uses renders nothing and nobody would notice. And two
+    concepts drawing the same picture, or showing the same chip text, cannot
+    be told apart on screen, which defeats the point of a glyph.
+
+    Tints are deliberately not checked. They are shared across concepts on
+    purpose, because a player should learn four colours rather than thirty.
+
+    There is no density warning here, and that is a decision rather than an
+    omission. The plan called for one, to catch a glyph given to a term as
+    common as "Pokemon". The corpus does not support a threshold: "deck" is
+    written 107 times and keeps its glyph, "attack" 117 times and does not,
+    and by structured renders it is 28 against 31. Any cut-off would fire on
+    the wrong terms often enough to be ignored, and a check people ignore is
+    worse than none. Judging that is what the review gate is for.
+    """
+    problems: list[str] = []
+    symbols: dict[str, str] = {}
+    chips: dict[str, str] = {}
+
+    for entry in terms:
+        term = entry.get("term", "?")
+        if entry.get("glyph") is not True:
+            # Undecided derives its chip from its own term, so there is
+            # nothing to collide. Held out and absent render nothing at all.
+            continue
+
+        render = entry.get("glyph_render") or {}
+        symbol = render.get("symbol")
+        chip = render.get("chip")
+
+        if symbol:
+            if symbol in symbols:
+                problems.append(
+                    f"{term}: symbol {symbol!r} is used by both {symbols[symbol]!r} "
+                    f"and {term!r}, so the two are indistinguishable on screen")
+            symbols[symbol] = term
+        if chip:
+            if chip in chips:
+                problems.append(
+                    f"{term}: chip text {chip!r} is used by both {chips[chip]!r} "
+                    f"and {term!r}, so the two are indistinguishable on screen")
+            chips[chip] = term
+
+        for trigger in entry.get("glyph_triggers", []) or []:
+            if not occurs(corpus_stems, trigger):
+                problems.append(
+                    f"{term}: glyph_trigger {trigger!r} never occurs in the corpus, "
+                    f"so it would render nothing")
+    return problems
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])
@@ -120,6 +192,9 @@ def main() -> int:
     texts = [t for group in corpus.values() for t in group]
     phrases = {c["stem"]: c["count"]
                for c in extract(texts, min_count=1, max_words=3) if c["words"] > 1}
+
+    corpus_stems = [stem(w) for text in texts for w in tokenize(text)]
+    problems.extend(glyph_problems(terms, corpus_stems))
 
     # 1. every lexicon term occurs
     for entry in terms:

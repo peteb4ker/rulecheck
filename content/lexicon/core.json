@@ -12,7 +12,9 @@
       ],
       "sections": [
         "tcg-Evolution"
-      ]
+      ],
+      "glyph": false,
+      "glyph_note": "Renders 31 times across 18 sections. Too common for a glyph to carry meaning."
     },
     {
       "term": "retreat",
@@ -24,7 +26,11 @@
       ],
       "sections": [
         "tcg-Retreating"
-      ]
+      ],
+      "glyph": true,
+      "glyph_render": {
+        "symbol": "arrow.uturn.backward"
+      }
     },
     {
       "term": "asleep",
@@ -33,7 +39,11 @@
       "variants": [],
       "sections": [
         "tcg-Asleep"
-      ]
+      ],
+      "glyph": true,
+      "glyph_render": {
+        "symbol": "moon.zzz"
+      }
     },
     {
       "term": "counterclockwise",
@@ -55,7 +65,8 @@
       ],
       "sections": [
         "tcg-Bench"
-      ]
+      ],
+      "glyph": "undecided"
     },
     {
       "term": "attack",
@@ -71,7 +82,9 @@
       ],
       "sections": [
         "tcg-Attacking"
-      ]
+      ],
+      "glyph": false,
+      "glyph_note": "Renders 49 times across 18 sections. Too common for a glyph to carry meaning."
     },
     {
       "term": "damage counter",
@@ -84,7 +97,8 @@
       ],
       "sections": [
         "tcg-Damage"
-      ]
+      ],
+      "glyph": "undecided"
     }
   ],
   "declined": [

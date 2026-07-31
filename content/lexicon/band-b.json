@@ -11,7 +11,8 @@
       "sections": [
         "tcg-Zones of the Pokémon TCG",
         "tcg-How to Win"
-      ]
+      ],
+      "glyph": "undecided"
     },
     {
       "term": "energy",
@@ -21,7 +22,8 @@
       "sections": [
         "tcg-3 Card Types",
         "tcg-Energy Types"
-      ]
+      ],
+      "glyph": "undecided"
     },
     {
       "term": "type",
@@ -43,7 +45,13 @@
       "sections": [
         "tcg-Glossary",
         "tcg-Appendix 23: Ancient Traits"
-      ]
+      ],
+      "glyph": true,
+      "glyph_render": {
+        "chip": "ABILITY",
+        "tint": "negative"
+      },
+      "glyph_note": "Red follows the cards, which print ABILITY as a red banner. Not a semantic negative."
     },
     {
       "term": "evolution",
@@ -155,7 +163,8 @@
       "sections": [
         "tcg-Parts of a Turn",
         "tcg-How to Win"
-      ]
+      ],
+      "glyph": "undecided"
     },
     {
       "term": "discard",
@@ -168,7 +177,11 @@
       ],
       "sections": [
         "tcg-Zones of the Pokémon TCG"
-      ]
+      ],
+      "glyph": true,
+      "glyph_render": {
+        "symbol": "trash"
+      }
     },
     {
       "term": "remove",
@@ -182,7 +195,8 @@
       "sections": [
         "tcg-Removing Special Conditions",
         "tcg-Special Conditions"
-      ]
+      ],
+      "glyph": "undecided"
     },
     {
       "term": "add",

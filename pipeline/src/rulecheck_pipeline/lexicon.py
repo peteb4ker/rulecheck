@@ -105,7 +105,15 @@ def categories_of(entry: dict) -> list[str]:
 
 
 def same_term(a: str, b: str) -> bool:
-    """True when two words are inflections of one another."""
+    """True when two terms are inflections of one another.
+
+    Multi-word terms stem word by word. Stemming a phrase as if it were one
+    word left "knocked out" and "knock out" looking like different terms, so a
+    legitimate variant was rejected. check_lexicon already used stem_phrase
+    for the same question; this brings validate into line with it.
+    """
+    if " " in a or " " in b:
+        return stem_phrase(a) == stem_phrase(b)
     return stem(a) == stem(b)
 
 
