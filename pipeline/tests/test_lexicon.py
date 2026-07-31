@@ -258,3 +258,97 @@ def test_prose_sentences_in_structured_fields_are_not_concepts():
     entries = {"x": {"archetype": "mechanic", "tier": "standard", "summary": "s",
                      "state": ["This is a long sentence describing behaviour at length"]}}
     assert structural_candidates([], entries) == []
+
+
+# --- glyph decisions (spec: 2026-07-31-glyph-rendering-design.md) ---
+
+def term(**kw):
+    base = {"term": "Asleep", "category": "state", "gloss": "A Special Condition."}
+    base.update(kw)
+    return base
+
+
+def test_a_term_with_no_glyph_key_is_valid():
+    """Absent means no glyph. Classifying a term must never silently create
+    an obligation to source an icon for it."""
+    assert validate([term()]) == []
+
+
+def test_glyph_must_be_a_boolean():
+    errors = validate([term(glyph="yes", glyph_render={"symbol": "moon.zzz"})])
+    assert any("must be true or false" in e for e in errors)
+
+
+def test_a_glyph_bearing_term_needs_a_rendering():
+    errors = validate([term(glyph=True)])
+    assert any("needs a glyph_render" in e for e in errors)
+
+
+def test_a_held_out_term_must_say_why():
+    """A false without a reason is indistinguishable from never having
+    considered the concept at all."""
+    errors = validate([term(term="attack", category="action", glyph=False)])
+    assert any("needs a glyph_note" in e for e in errors)
+
+
+def test_a_held_out_term_with_a_reason_is_valid():
+    assert validate([term(term="attack", category="action", glyph=False,
+                          glyph_note="Renders 49 times; too common to carry meaning.")]) == []
+
+
+def test_a_glyph_render_must_be_a_symbol_or_a_chip():
+    errors = validate([term(glyph=True, glyph_render={})])
+    assert any("either a symbol or a chip" in e for e in errors)
+
+
+def test_a_glyph_render_cannot_be_both():
+    errors = validate([term(glyph=True,
+                            glyph_render={"symbol": "moon.zzz", "chip": "ASLEEP"})])
+    assert any("either a symbol or a chip" in e for e in errors)
+
+
+def test_a_symbol_render_is_valid():
+    assert validate([term(glyph=True, glyph_render={"symbol": "moon.zzz"})]) == []
+
+
+def test_a_chip_render_is_valid():
+    """The chip is the backstop for any concept no picture states clearly."""
+    assert validate([term(term="Ability", category="entity", glyph=True,
+                          glyph_render={"chip": "ABILITY", "tint": "negative"})]) == []
+
+
+def test_a_chip_needs_text():
+    errors = validate([term(glyph=True, glyph_render={"chip": "  ", "tint": "accent"})])
+    assert any("chip needs text" in e for e in errors)
+
+
+def test_a_chip_needs_a_tint():
+    errors = validate([term(glyph=True, glyph_render={"chip": "ABILITY"})])
+    assert any("chip needs a tint" in e for e in errors)
+
+
+def test_glyph_triggers_must_be_non_empty_strings():
+    errors = validate([term(glyph=True, glyph_render={"symbol": "nosign"},
+                            glyph_triggers=["no attacking", "  "])])
+    assert any("glyph_triggers" in e for e in errors)
+
+
+def test_glyph_triggers_are_valid_on_a_glyph_bearing_term():
+    assert validate([term(term="blocked", category="modifier", gloss="g", glyph=True,
+                          glyph_render={"symbol": "nosign"},
+                          glyph_triggers=["no attacking", "cannot retreat"])]) == []
+
+
+def test_a_held_out_term_cannot_carry_triggers():
+    """A concept with no glyph has nothing for a trigger to render."""
+    errors = validate([term(term="attack", category="action", glyph=False,
+                            glyph_note="too common",
+                            glyph_triggers=["declares an attack"])])
+    assert any("cannot carry glyph_triggers" in e for e in errors)
+
+
+def test_a_glyph_render_without_the_boolean_is_an_error():
+    """The boolean is the decision; the render is how it looks. A render with
+    no decision behind it would never be picked up by the matcher."""
+    errors = validate([term(glyph_render={"symbol": "moon.zzz"})])
+    assert any("glyph_render but no glyph" in e for e in errors)

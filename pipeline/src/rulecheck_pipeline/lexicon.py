@@ -144,6 +144,95 @@ def validate(terms: list[dict]) -> list[str]:
                     f"{term}: variant {variant!r} does not share its stem "
                     f"({stem(variant)} vs {stem(term)}), so it is a different word"
                 )
+
+        errors.extend(_glyph_errors(term, entry))
+    return errors
+
+
+def _glyph_errors(term: str, entry: dict) -> list[str]:
+    """Whether this concept renders an icon, and how.
+
+    The decision is a boolean so that holding a concept back is a recorded
+    judgement rather than an absence someone later mistakes for an oversight.
+    "attack" renders 49 times across 18 sections, which is too often for a
+    glyph to mean anything, and the next person to read the lexicon should be
+    able to see that was considered.
+    """
+    errors: list[str] = []
+    has_key = "glyph" in entry
+    glyph = entry.get("glyph")
+    render = entry.get("glyph_render")
+    triggers = entry.get("glyph_triggers")
+
+    if not has_key:
+        if render is not None:
+            errors.append(
+                f"{term}: has glyph_render but no glyph — without the boolean the "
+                f"matcher never picks it up, so the rendering would go unused")
+        if triggers is not None:
+            errors.append(
+                f"{term}: has glyph_triggers but no glyph — nothing for them to render")
+        return errors
+
+    if not isinstance(glyph, bool):
+        errors.append(f"{term}: glyph must be true or false, not {glyph!r}")
+        return errors
+
+    if glyph:
+        if render is None:
+            errors.append(f"{term}: glyph is true, so it needs a glyph_render")
+        else:
+            errors.extend(_render_errors(term, render))
+    else:
+        if not str(entry.get("glyph_note", "")).strip():
+            errors.append(
+                f"{term}: glyph is false, so it needs a glyph_note saying why. "
+                f"A bare false reads as an oversight rather than a decision")
+        if render is not None:
+            errors.append(f"{term}: glyph is false, so glyph_render is unused")
+        if triggers is not None:
+            errors.append(
+                f"{term}: glyph is false, so it cannot carry glyph_triggers — "
+                f"there is no glyph for them to render")
+
+    if triggers is not None:
+        if not isinstance(triggers, list):
+            errors.append(f"{term}: glyph_triggers must be a list")
+        elif not all(isinstance(t, str) and t.strip() for t in triggers):
+            errors.append(
+                f"{term}: glyph_triggers must all be non-empty strings")
+    return errors
+
+
+def _render_errors(term: str, render: dict) -> list[str]:
+    """A glyph is a symbol or a chip, never both and never neither.
+
+    The chip is the backstop. Where no picture states a concept clearly the
+    word does, which is why "Ability" renders as a chip: the cards print it
+    that way and a player reads the word faster than any symbol for it.
+    """
+    if not isinstance(render, dict):
+        return [f"{term}: glyph_render must be an object"]
+
+    has_symbol = "symbol" in render
+    has_chip = "chip" in render
+    if has_symbol == has_chip:
+        return [
+            f"{term}: glyph_render must be either a symbol or a chip, not "
+            f"{'both' if has_symbol else 'neither'}"
+        ]
+
+    errors: list[str] = []
+    if has_symbol:
+        if not str(render.get("symbol", "")).strip():
+            errors.append(f"{term}: symbol needs a name")
+    else:
+        if not str(render.get("chip", "")).strip():
+            errors.append(f"{term}: chip needs text to show")
+        if not str(render.get("tint", "")).strip():
+            errors.append(
+                f"{term}: chip needs a tint naming a Palette case, so it "
+                f"follows the design tokens and works in dark mode")
     return errors
 
 
