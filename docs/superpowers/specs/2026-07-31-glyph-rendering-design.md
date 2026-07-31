@@ -124,11 +124,23 @@ sourcing obligation.
 }
 ```
 
-A glyph is either a symbol or a text chip. The chip exists because some
-concepts read better as a word than as a picture, and because the source
-material already prints them that way. `tint` names a `Palette` case rather
-than a colour, so chips follow the existing design tokens and light and dark
-mode come free:
+A glyph is either a symbol or a text chip.
+
+**The chip is the general backstop, not a special case for one concept.** Any
+concept where no picture reads unambiguously renders its word instead. This
+matters more than it first appears: it means no concept is ever blocked on
+finding a good icon, and it removes the pressure to accept a weak symbol just
+to fill a slot.
+
+Two rules of thumb for choosing. Use a chip when the word is itself what a
+player recognises, which is why Ability, Heads and Tails are chips: cards
+print ABILITY as a banner, and a coin call is a word before it is a picture.
+Use a symbol when a picture is faster to parse than reading. The failure mode
+to avoid is chipping everything, which turns the page back into text and
+undoes the point of the exercise.
+
+`tint` names a `Palette` case rather than a colour, so chips follow the
+existing design tokens and light and dark mode come free:
 
 ```json
 {
@@ -247,12 +259,17 @@ path built, Pete can judge density, placement and whether the priority rule
 picks the right concept for each row, on a real device, before a single icon
 is sourced.
 
-A useful consequence: some SF Symbols will be good enough to keep, which is a
-legitimate outcome rather than a compromise, since they stay visually
-consistent with the rest of iOS. The concepts that will need real sourcing
-are the ones with a look players already recognise: Bench, Prize card, damage
-counter, Knock Out, Heads and Tails as coin faces, Energy, Trainer card and
-face down. That is roughly 12 rather than 29.
+Two things shrink the sourcing list well below 29. Some SF Symbols will be
+good enough to keep, which is a legitimate outcome rather than a compromise,
+since they stay visually consistent with the rest of iOS. And any concept
+where no symbol reads clearly can render as a chip instead, so nothing is
+blocked on finding the right icon.
+
+What is left needing a real icon are the concepts with a look players already
+recognise and where a word would be slower to read: Bench, Prize card, damage
+counter, Knock Out, Energy, discard pile and face down. At most seven, and
+fewer if chips read well. The exact list is decided at the review gate with
+the placeholders on screen, not now.
 
 ## Testing
 
@@ -281,14 +298,15 @@ App:
 
 ## Open questions
 
-Four concepts need a lexicon category assigned and the answer is not obvious:
+Four concepts need a lexicon category assigned:
 
 - **blocked** and **allowed**. Probably `modifier`, since they qualify whether
   something may happen rather than naming a thing or an act.
-- **Heads** and **Tails**. They are coin outcomes. `state` fits the coin;
-  `entity` fits the face. This one matters, because `state` outranks
-  `modifier` in the priority rule, so a branch condition reading "Heads" beside
-  a blocked outcome would resolve differently depending on the answer.
+- **Heads** and **Tails**. Coin outcomes; `state` fits the coin and `entity`
+  fits the face. Lower stakes than it looks, because both render as chips and
+  the branch conditions they match are the literal words "Heads" and "Tails",
+  so a competing match is unlikely. Still worth deciding rather than
+  defaulting, since category drives the priority rule.
 
 These get decided during classification, following the build-lexicon skill,
 not here.

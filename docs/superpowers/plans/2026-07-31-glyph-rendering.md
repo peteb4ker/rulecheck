@@ -108,23 +108,35 @@ Follow `.claude/skills/build-lexicon/SKILL.md`. Eleven are glyph-bearing:
 Paralyzed, Confused, Knock Out, search, Trainer card, Stadium, blocked,
 allowed, Heads, Tails, face down. One is held out: Pokemon.
 
-Two category questions the spec deliberately left open, because `state`
-outranks `modifier` in the priority rule and the answer changes which glyph
-a row gets:
+Two category questions the spec left open. Category drives the priority rule,
+so decide rather than default, and put the reasoning in the gloss:
 
 - **blocked** and **allowed**. Likely `modifier`: they qualify whether
   something may happen rather than naming a thing or an act.
 - **Heads** and **Tails**. Coin outcomes. `state` fits the coin, `entity`
-  fits the face. Decide, and put the reasoning in the gloss.
+  fits the face. Lower stakes than it first appeared, since both render as
+  chips and the rows they match are the literal words, so a competing match
+  is unlikely.
 
 - [ ] **Step 2: Add glyph fields to all 33 terms**
 
 The 29 glyph-bearing concepts and their counts are in the spec. Use SF Symbol
-names for `glyph_render.symbol`. Ability is the one chip:
+names for `glyph_render.symbol`.
+
+Chips are the backstop for any concept where no symbol reads unambiguously,
+so nothing is blocked on finding a good icon. Three are chips from the start:
 
 ```json
 { "chip": "ABILITY", "tint": "negative" }
+{ "chip": "HEADS",   "tint": "accent" }
+{ "chip": "TAILS",   "tint": "accent" }
 ```
+
+Reach for a chip when the word is what a player recognises. Reach for a
+symbol when a picture is faster to read than the word. Chipping everything
+turns the page back into text, which is the thing this work exists to fix, so
+prefer a symbol where one genuinely works and leave the rest for the review
+gate in Task 6.
 
 The four held out are attack, play, evolve and Pokemon. Each needs a
 `glyph_note` giving its render count and why it is held out.
@@ -320,14 +332,19 @@ The questions to put to him, which are the reason this phase exists:
 - Is the density right, or does the page look busy?
 - Does the priority rule pick the concept each row is actually about?
 - Do the held-out four look like the right call now that it is visible?
-- Which placeholder symbols read wrong and need a real icon?
+- Which placeholder symbols read wrong, and for each one, does it need a real
+  icon or is a chip clearer? The chip is always available, so no concept has
+  to wait on sourcing.
+- Are there too many chips? If the page reads as text badges, some need to
+  become symbols instead.
 
 - [ ] **Step 3: Do not proceed past this point without an answer**
 
 The next work is replacing placeholder symbols, and it depends entirely on
-what he says. Roughly twelve are expected to need a real icon: Bench, Prize
-card, damage counter, Knock Out, Heads, Tails, Energy, Trainer card, face
-down, discard pile, Stadium, and the rotation pair if it is ever taken.
+what he says. At most seven are expected to need a real icon, and fewer if
+chips read well: Bench, Prize card, damage counter, Knock Out, Energy,
+discard pile and face down. Everything else is either a system symbol that
+works or a chip.
 
 ---
 
