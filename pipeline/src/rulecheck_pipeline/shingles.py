@@ -23,18 +23,25 @@ import re
 # fingerprints of the same n-grams when it is not, and a mismatch would mean
 # the two paths ask different questions.
 #
-# 25 rather than 12. The check exists to catch source prose pasted in
-# wholesale, not to stop an entry stating a rule in the words the rule needs.
-# At 12 an author could not write "A competitor causes their system to lose
-# power or internet connection" without tripping it, so they wrote around it
-# and dropped the word the rule turns on. Accuracy is the product. Where
-# exact wording is load-bearing the entry declares a quote, which the build
-# verifies against the source and exempts here.
+# This was briefly raised to 25 on the theory that the cap was forcing
+# authors to reword rules inaccurately. That theory was wrong and the review
+# that caught it is worth recording. The rule that prompted the change is
+# eleven tokens long and always passed. The entry that dropped a word from it
+# shared two consecutive tokens with the source, so the author was nowhere
+# near the cap. The real control was the fidelity review, which found it.
+#
+# Raising it also costs something specific. Below this number a declared
+# quote cannot be fingerprinted, so CI, which has no source text, cannot
+# check it at all. At 12 that blind spot covers very short quotes. At 25 it
+# covers essentially every quote anyone would write.
+#
+# Where exact wording is load-bearing, declare a quote. Those are exempt at
+# any length, so the escape hatch never needed the cap moved.
 #
 # Bumping this invalidates every committed fingerprint — `just parse`
 # regenerates them, and verify fails loudly on a mismatch rather than
 # silently checking nothing.
-SHINGLE_TOKENS = 25
+SHINGLE_TOKENS = 12
 DIGEST_CHARS = 12
 
 # Not a secret. It exists so the fingerprints are specific to this project

@@ -76,11 +76,18 @@ Non-negotiable rules, every one learned from a real defect:
 - **Accuracy beats overlap. Always.** If the only accurate way to state a
   rule reuses the source's words, use those words and declare the quote.
   Never reword a rule into something weaker or different to get clear of the
-  tripwire. This rule is first because it was learned last, and expensively:
-  this list used to open with the overlap limit, and an author writing a
-  penalty entry turned "a competitor **causes** their system to lose power"
-  into "a competitor's system loses power". One word, and it moved a dead
-  battery from a Warning to a Game Loss.
+  tripwire. An author writing a penalty entry turned "a competitor
+  **causes** their system to lose power" into "a competitor's system loses
+  power". One word, and it moved a dead battery from a Warning to a Game
+  Loss.
+
+  Worth knowing how that one actually happened, because the obvious
+  explanation was wrong. The rewrite shared **two** consecutive tokens with
+  the source, so the tripwire was nowhere in sight, and the source sentence
+  is eleven tokens and always passed. Nobody was cornered by the cap. The
+  word was simply dropped, and only the fidelity review caught it. Do not
+  reach for the tripwire as an excuse, and do not assume you are safe just
+  because you are far from it.
 - **Preserve every load-bearing fact**: numbers, thresholds, tier→penalty
   mappings, deadlines, counts, deck caps, per-game limits.
 - **Preserve modality exactly** — `may` is not `must`. A real finding
@@ -105,12 +112,14 @@ Non-negotiable rules, every one learned from a real defect:
   default, short verbatim quotes where exact wording is load-bearing for
   judges. That was available from the start and no entry ever used it, which
   is how a rule got paraphrased away.
-- **Undeclared reuse is capped at 25 consecutive tokens** and the verify
-  tripwire fails the build there. That limit is aimed at source prose pasted
-  in wholesale, not at stating a rule precisely. A rule that needs eleven of
-  the source's words is a quote, not a violation. Rules are systems and are
-  not themselves copyrightable; their creative expression is. Copying a
-  sentence that states a rule is not the risk. Reproducing the document is.
+- **Undeclared reuse is capped at 12 consecutive tokens** and the verify
+  tripwire fails the build there. Declared quotes are exempt at any length,
+  so the cap has never been a reason to state a rule less accurately. If you
+  find yourself rewording to get under it, declare a quote instead. Rules are
+  systems and are not themselves copyrightable; what is protected is their
+  creative expression. Copying a sentence that states a rule is not the risk.
+  Reproducing the document is, and that is a volume question the corpus-wide
+  quote budget measures.
 - **`see_also` must point at ids that exist and are not skipped.**
 - `tier`: `judge` for anything staff cite or enforce; `standard` for
   player-facing content.

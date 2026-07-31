@@ -31,11 +31,11 @@ the spec wins if this file and the spec ever disagree.
   get clear of the paraphrase tripwire. Where the exact wording is the rule,
   quote it and declare it. The Research Gate closed on 2026-07-26 on exactly
   this: faithful paraphrase by default, short verbatim quotes where exact
-  wording is load-bearing for judges. The undeclared limit is 25 consecutive
-  tokens, aimed at source prose pasted in wholesale rather than at stating a
-  rule precisely. Rules are systems and are not themselves copyrightable;
-  what is protected is their creative expression, so the risk is reproducing
-  the document, not sharing a sentence that states a rule.
+  wording is load-bearing for judges. Declared quotes are exempt from the
+  12-token tripwire at any length, so the cap has never been a reason to
+  state a rule less accurately. Rules are systems and are not themselves
+  copyrightable; what is protected is their creative expression, so the risk
+  is reproducing the document, not sharing a sentence that states a rule.
   `just transformation-report` quantifies where the corpus sits: declared
   quote share against budget, the distribution of longest shared token runs,
   and how much shorter the paraphrase is than its source. It needs the PDFs,
