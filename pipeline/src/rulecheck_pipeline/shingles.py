@@ -17,7 +17,28 @@ from __future__ import annotations
 import hashlib
 import re
 
-# Bumping either value invalidates every committed fingerprint — `just parse`
+# The one place this number is defined. content_check imports it as
+# OVERLAP_TOKENS, because the two must be the same number: the tripwire
+# compares exact n-grams when the source text is present and these
+# fingerprints of the same n-grams when it is not, and a mismatch would mean
+# the two paths ask different questions.
+#
+# This was briefly raised to 25 on the theory that the cap was forcing
+# authors to reword rules inaccurately. That theory was wrong and the review
+# that caught it is worth recording. The rule that prompted the change is
+# eleven tokens long and always passed. The entry that dropped a word from it
+# shared two consecutive tokens with the source, so the author was nowhere
+# near the cap. The real control was the fidelity review, which found it.
+#
+# Raising it also costs something specific. Below this number a declared
+# quote cannot be fingerprinted, so CI, which has no source text, cannot
+# check it at all. At 12 that blind spot covers very short quotes. At 25 it
+# covers essentially every quote anyone would write.
+#
+# Where exact wording is load-bearing, declare a quote. Those are exempt at
+# any length, so the escape hatch never needed the cap moved.
+#
+# Bumping this invalidates every committed fingerprint — `just parse`
 # regenerates them, and verify fails loudly on a mismatch rather than
 # silently checking nothing.
 SHINGLE_TOKENS = 12

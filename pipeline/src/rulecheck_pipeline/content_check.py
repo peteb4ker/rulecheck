@@ -24,7 +24,9 @@ from rulecheck_pipeline import shingles
 from rulecheck_pipeline.model import load_document
 from rulecheck_pipeline.rewrites import is_skip, load_rewrites, validate_entry
 
-OVERLAP_TOKENS = 12
+# Defined in shingles, because the fingerprints must be built from n-grams of
+# exactly this size. Two constants drifted apart silently before this.
+OVERLAP_TOKENS = shingles.SHINGLE_TOKENS
 
 _SKIP_KEYS = {"archetype", "tier", "review", "see_also", "quotes"}
 

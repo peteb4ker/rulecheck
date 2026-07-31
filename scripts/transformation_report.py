@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Quantify how transformative the shipped content is.
 
-Issue #7(b). The 12-token tripwire answers one question, yes or no: does any
+Issue #7(b). The overlap tripwire answers one question, yes or no: does any
 entry reuse a run of source wording it did not declare? That is the floor. It
 says nothing about how far above the floor we are, and "we have a tripwire and
 it passes" is a weaker thing to show a lawyer than a distribution.
@@ -13,7 +13,7 @@ This measures three things and writes them where a reader can check them:
                     still quote half its source through declared quotes.
 
   Overlap profile   the longest shared token run per section, whether declared
-                    or not. The tripwire fires at 12; this shows whether the
+                    or not. The tripwire fires at OVERLAP_TOKENS; this shows
                     corpus sits at 3 or at 11.
 
   Compression       authored tokens against source tokens. Paraphrase that is
@@ -36,7 +36,8 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "pipeline" / "src"))
-from rulecheck_pipeline.content_check import _text_fields, _tokens  # noqa: E402
+from rulecheck_pipeline.content_check import (  # noqa: E402
+    OVERLAP_TOKENS, _text_fields, _tokens)
 
 # A section quoting more than this share of its source is leaning on the
 # source rather than transforming it, even with every quote declared.
@@ -141,13 +142,20 @@ def main() -> int:
           f"({report['corpus_quote_share']:.2%} of source, "
           f"budget {CORPUS_QUOTE_BUDGET:.0%})")
     print()
-    print("longest shared token run per section (the tripwire fires at 12):")
+    print(f"longest shared token run per section "
+          f"(the tripwire fires at {OVERLAP_TOKENS}):")
     print(f"  median {report['longest_run_median']}   "
           f"95th {report['longest_run_p95']}   max {report['longest_run_max']}")
-    print("  NOTE: the maximum is censored. The tripwire fails the build at 12,")
-    print("  so nothing can exceed 11 and a maximum of 11 is evidence that the")
-    print("  constraint binds, not that the content is transformative. Read the")
-    print("  median and the 95th percentile instead.")
+    if report["longest_run_max"] >= OVERLAP_TOKENS - 1:
+        # Only worth saying when the corpus is actually pressed against the
+        # limit. Once the cap is well clear of the writing, the maximum is a
+        # real measurement again.
+        print(f"  NOTE: the maximum is set by the limit, not by the writing. The")
+        print(f"  build fails at {OVERLAP_TOKENS}, so nothing can exceed "
+              f"{OVERLAP_TOKENS - 1}, and a maximum of")
+        print(f"  {report['longest_run_max']} shows the cap binding rather than "
+              f"transformation. Read the")
+        print("  median and the 95th percentile instead.")
 
     worst = report["rows"][:5]
     if worst:
