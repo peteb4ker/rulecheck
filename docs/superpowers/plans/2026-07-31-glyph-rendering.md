@@ -150,9 +150,13 @@ The four held out are attack, play, evolve and Pokemon. Each needs a
 - Two terms declare the same `glyph_render.symbol`, which would make two
   concepts indistinguishable on screen.
 
-It must warn when a glyph-bearing term is dense enough that the glyph would
-likely become wallpaper. Use the held-out four as the calibration: the
-warning should fire on them and not on `deck` at 28 renders.
+~~It must warn when a glyph-bearing term is dense enough that the glyph would
+likely become wallpaper.~~ **Dropped, and the reason is worth keeping.** The
+corpus does not support a threshold: "deck" is written 107 times and keeps
+its glyph while "attack" is written 117 and does not, and by structured
+renders it is 28 against 31. Any cut-off fires on the wrong terms often
+enough to be ignored, and a check people ignore is worse than no check.
+Judging this is what Task 6 is for.
 
 - [ ] **Step 4: Verify**
 
@@ -210,8 +214,19 @@ from rulecheck_pipeline import glyphs, lexicon
 "
 ```
 
-Read the output. The spec predicts 270 renders across 48 of 62 sections. A
-wildly different number means the matcher is wrong, not that the spec is.
+Read the output. **Done: 130 glyphs on 214 structured rows, 60% of them,
+across 47 sections.**
+
+The spec first said 270, and that was the spec being wrong rather than the
+matcher. 270 counts how often concepts *occur*; only one glyph renders per
+row, so a row naming three concepts draws one. The spec now carries the real
+figure.
+
+One thing this surfaced: `build_index` needs the occurrence counts passed in,
+or every tie inside a category breaks alphabetically instead of toward the
+rarer concept. Without them "Tails, Still Asleep" draws the Asleep glyph;
+with them it draws TAILS, which is what the row is about. Task 4 must compute
+and pass them.
 
 - [ ] **Step 4: PR**
 
