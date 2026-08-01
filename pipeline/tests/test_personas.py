@@ -70,3 +70,29 @@ def test_judge_deck_check():
     assert number and number[0].isdigit()  # citable by section number
     text = f"{title} {body}".lower()
     assert "deck" in text and "check" in text, f"top hit unrelated to deck checks: {sec_id}"
+
+
+def test_asleep_blocks_attacking_and_retreating():
+    """A content guarantee, checked where content changes actually run.
+
+    This lived in the app's RulesRepositoryTests, which asserted the Asleep
+    effects were exactly ["Abilities", "Attack", "Retreat"]. Removing the
+    "Abilities" row — an invention the source never supports — broke that
+    test, and CI never noticed, because the app job is skipped on
+    content-only changes. The comment justifying that skip said content
+    changes "can only move search ranking", which this disproved.
+
+    Asserting it here costs nothing: the pipeline job runs on Linux and runs
+    on every content change by definition.
+    """
+    import json
+    con = sqlite3.connect(DB)
+    row = con.execute(
+        "select structure from sections where id = 'tcg-Asleep'").fetchone()
+    effects = json.loads(row[0])["effects"]
+    assert effects.get("Attack") == "Blocked"
+    assert effects.get("Retreat") == "Blocked"
+    assert "Abilities" not in effects, (
+        "the source never says Abilities stay usable while Asleep, and the "
+        "corpus glossary says most Poké-Powers switch off under a Special "
+        "Condition")

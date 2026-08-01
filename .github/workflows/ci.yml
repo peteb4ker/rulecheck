@@ -43,9 +43,16 @@ jobs:
 
           # The macOS runner bills at 10x Linux, so the app job is gated
           # tightly: only code that can actually break the app triggers it.
-          # Content changes (rewrites/, content/) can only move search
-          # ranking, and the DB-level persona gates cover that on Linux in
-          # the pipeline job below.
+          # Content changes (rewrites/, content/) do not trigger it, so any
+          # app test that asserts what the content SAYS is untested here and
+          # will break silently. That is not hypothetical: an app test pinned
+          # the Asleep effect labels, a content fix removed one of them, and
+          # this filter skipped the job that would have caught it.
+          #
+          # The rule that follows from it: assertions about content belong in
+          # the pipeline job, which runs on Linux and on every content change
+          # by definition. App tests assert decoding and rendering. The
+          # persona gates hold the line on search behaviour the same way.
           # Scheduled runs still force it, so a path-filter gap surfaces
           # daily rather than never.
           #
