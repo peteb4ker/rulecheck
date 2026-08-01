@@ -145,8 +145,20 @@ def check_rewrites(content_dir: Path, rewrites_dir: Path, release: bool = False,
             if body:
                 if _normalize(quote) not in source_norm:
                     errors.append(f'{sid}: quote "{quote}" not found in source text')
-            elif len(_tokens(quote)) >= OVERLAP_TOKENS and not (
-                    marks(quote) and marks(quote) <= source_marks):
+            elif len(_tokens(quote)) < OVERLAP_TOKENS:
+                # A run shorter than the fingerprint window produces no shingle,
+                # so there is nothing here to check it against. This used to
+                # pass in silence: an invented quote naming a goldfish, present
+                # in no source document, was accepted without a word. Say so
+                # instead, and refuse to ship it unchecked.
+                message = (
+                    f'{sid}: quote "{quote}" cannot be verified without the source text. '
+                    f"It is shorter than the {OVERLAP_TOKENS}-token fingerprint window, "
+                    f"so nothing here can confirm it appears in the source at all — "
+                    f"run `just parse` locally, where it is checked exactly"
+                )
+                errors.append(message if release else f"warning: {message}")
+            elif not (marks(quote) and marks(quote) <= source_marks):
                 errors.append(
                     f'{sid}: quote "{quote}" does not match the source fingerprints '
                     f"(run `just parse` to verify quotes against real text)"

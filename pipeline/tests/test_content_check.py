@@ -12,7 +12,13 @@ SOURCE_BODY = (
 )
 
 
-def make_content(tmp_path):
+def make_content(tmp_path, bodies: bool = True):
+    """The committed index, with or without prose.
+
+    `bodies=False` is what CI actually sees: the repository ships no verbatim
+    text, only structure and one-way fingerprints. Several checks take a
+    different path there, so the difference has to be testable.
+    """
     content = tmp_path / "content"
     content.mkdir()
     source = SourceDoc(
@@ -30,7 +36,13 @@ def make_content(tmp_path):
                 title="Other", body="Some other rule text entirely.",
                 breadcrumb="Fixture Rules", order=2),
     ]
-    dump_document(source, sections, content / "fixture-doc.json")
+    if bodies:
+        dump_document(source, sections, content / "fixture-doc.json")
+    else:
+        from rulecheck_pipeline import shingles
+        from rulecheck_pipeline.model import dump_index
+        dump_index(source, sections, content / "fixture-doc.json")
+        shingles.dump(sections, content / "fingerprints" / "fixture-doc.json")
     return content
 
 
@@ -193,3 +205,51 @@ def test_see_also_pointing_at_skipped_section_fails(tmp_path):
         "fix-1.1": entry(see_also=["fix-2"]),
         "fix-2": {"skip": "not shipped"}})
     assert any("fix-2" in m and "skipped" in m for m in check_rewrites(content, rewrites))
+
+
+# --- issue #43: a short declared quote cannot be checked without the text ---
+
+def test_a_short_quote_is_reported_as_unverifiable_without_the_text(tmp_path):
+    """The silent hole. A quote below the fingerprint window cannot be
+    checked at all in CI, because a run shorter than the window produces no
+    shingle. An invented quote about a goldfish passed without a word."""
+    content = make_content(tmp_path, bodies=False)
+    quoted = "cannot attack"                      # 2 tokens, far below the window
+    rewrites = write_rewrites(tmp_path, {
+        "fix-1.1": entry(paragraphs=[quoted], quotes=[quoted]), "fix-2": entry()})
+    messages = check_rewrites(content, rewrites)
+    assert any("cannot be verified" in m and "cannot attack" in m for m in messages)
+
+
+def test_the_unverifiable_report_is_a_warning_not_an_error(tmp_path):
+    """It must not fail an ordinary build. The quote may be perfectly good and
+    the checker simply has no way to look."""
+    content = make_content(tmp_path, bodies=False)
+    quoted = "cannot attack"
+    rewrites = write_rewrites(tmp_path, {
+        "fix-1.1": entry(paragraphs=[quoted], quotes=[quoted]), "fix-2": entry()})
+    messages = check_rewrites(content, rewrites)
+    unverifiable = [m for m in messages if "cannot be verified" in m]
+    assert unverifiable and all(m.startswith("warning:") for m in unverifiable)
+
+
+def test_an_unverifiable_quote_fails_a_release(tmp_path):
+    """Shipping a quote nobody has checked against the source is exactly what
+    the release gate is for."""
+    content = make_content(tmp_path, bodies=False)
+    quoted = "cannot attack"
+    rewrites = write_rewrites(tmp_path, {
+        "fix-1.1": entry(paragraphs=[quoted], quotes=[quoted]), "fix-2": entry()})
+    messages = check_rewrites(content, rewrites, release=True)
+    assert any("cannot be verified" in m and not m.startswith("warning:")
+               for m in messages)
+
+
+def test_a_short_quote_is_checked_exactly_when_the_text_is_present(tmp_path):
+    """Locally, with the PDFs, nothing changes: the quote is still verified
+    against the real source and a false one still fails."""
+    content = make_content(tmp_path)
+    rewrites = write_rewrites(tmp_path, {
+        "fix-1.1": entry(paragraphs=["it cannot fly"], quotes=["it cannot fly"]),
+        "fix-2": entry()})
+    assert any("not found in source text" in m for m in check_rewrites(content, rewrites))
