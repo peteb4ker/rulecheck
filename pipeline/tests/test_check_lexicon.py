@@ -108,3 +108,24 @@ def test_a_held_out_term_needs_no_checks():
 def test_a_term_with_no_glyph_key_needs_no_checks():
     terms = [{"term": "bye", "category": "entity", "gloss": "g"}]
     assert cl.glyph_problems(terms, STEMS) == []
+
+
+# --- what should actually fail a build ---
+
+def test_agreement_and_coverage_are_different_questions():
+    """The script answered two questions with one exit code.
+
+    Agreement failures are defects: an invented term, a variant that never
+    occurs, a trigger naming wording nobody writes. Coverage is a backlog,
+    deliberately at 68%, and gating on it means the check fails on every
+    build forever. A check that always fails is a check people ignore, so it
+    could never be added to CI, which is how a content fix removed the
+    corpus's last "attacked" while the lexicon still declared it.
+    """
+    assert cl.exit_code(problems=[], missing=[]) == 0
+    assert cl.exit_code(problems=["asleep: appears nowhere"], missing=[]) == 1
+    assert cl.exit_code(problems=[], missing=[(9, "shuffle")]) == 0, \
+        "a coverage backlog must not fail the build"
+    assert cl.exit_code(problems=[], missing=[(9, "shuffle")],
+                        require_complete=True) == 1, \
+        "asking for completeness explicitly must still be possible"

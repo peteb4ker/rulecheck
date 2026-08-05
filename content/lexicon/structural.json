@@ -97,6 +97,15 @@
         "chip": "TAILS",
         "tint": "accent"
       }
+    },
+    {
+      "term": "clockwise",
+      "category": "modifier",
+      "gloss": "The direction a card is turned to show it is Paralyzed, as against the counterclockwise turn that shows Asleep.",
+      "glyph": true,
+      "glyph_render": {
+        "symbol": "rotate.right"
+      }
     }
   ],
   "declined": [

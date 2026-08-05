@@ -19,8 +19,17 @@ Three questions:
      metric that ignores it rewards padding the lexicon with words that are
      not game vocabulary.
 
+Agreement and coverage are different questions, and only the first fails a
+build. A term that appears nowhere is a defect; a backlog of undecided terms
+is a backlog. Gating on the backlog meant failing on every run until the day
+it reached 100%, which is why this could never be added to CI, and why a
+content edit was able to remove the corpus's last "attacked" while the
+lexicon still declared it a variant of "attack".
+
 Usage:  python3 scripts/check_lexicon.py [--min-count N] [--root DIR]
+                                         [--require-complete]
 Exit 0 when the lexicon agrees with the corpus, 1 when it does not.
+--require-complete additionally fails on the coverage backlog.
 """
 
 from __future__ import annotations
@@ -94,6 +103,26 @@ def occurs(stems: list[str], phrase: str) -> bool:
                for i in range(len(stems) - len(key) + 1))
 
 
+def exit_code(problems: list, missing: list, require_complete: bool = False) -> int:
+    """What actually fails a build.
+
+    Agreement and coverage are different questions and used to share one exit
+    code. Agreement failures are defects: a term that appears nowhere, a
+    variant that never occurs, a trigger naming wording nobody writes. Coverage
+    is a backlog, deliberately incomplete, and gating on it means failing on
+    every build until the day it reaches 100%.
+
+    That is why this could never run in CI, and why a content fix was able to
+    remove the corpus's last "attacked" while the lexicon still declared it as
+    a variant. Pass require_complete to gate on the backlog too.
+    """
+    if problems:
+        return 1
+    if missing and require_complete:
+        return 1
+    return 0
+
+
 def glyph_problems(terms: list[dict], corpus_stems: list[str]) -> list[str]:
     """Glyph checks that reading the lexicon cannot do for you.
 
@@ -152,6 +181,9 @@ def glyph_problems(terms: list[dict], corpus_stems: list[str]) -> list[str]:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])
+    ap.add_argument("--require-complete", action="store_true",
+                    help="also fail when recurring terms are still undecided "
+                         "(the coverage backlog, not an agreement failure)")
     ap.add_argument("--min-count", type=int, default=5,
                     help="a corpus term appearing at least this often must be "
                          "classified or declined (default 5)")
@@ -270,10 +302,12 @@ def main() -> int:
     for p in problems:
         print(f"LEXICON FAIL: {p}", file=sys.stderr)
 
-    if problems or missing:
-        return 1
-    print("lexicon OK")
-    return 0
+    code = exit_code(problems, missing, require_complete=args.require_complete)
+    if code == 0 and not missing:
+        print("lexicon OK")
+    elif code == 0:
+        print(f"lexicon agrees with the corpus ({len(missing)} terms still undecided)")
+    return code
 
 
 if __name__ == "__main__":
