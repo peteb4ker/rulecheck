@@ -181,6 +181,16 @@ jobs:
           uv run python -m rulecheck_pipeline verify --root ..
       - name: Unit tests (incl. persona gates against the built database)
         run: uv run pytest -v
+      # The lexicon is derived from the authored corpus, so editing content
+      # can invalidate it: a declared variant stops occurring, a glyph trigger
+      # names wording nobody writes any more. This never ran in CI, and a
+      # content fix duly removed the corpus's last "attacked" while the
+      # lexicon still declared it as a variant of "attack". Cheap, Linux, and
+      # it runs wherever content or the lexicon moves.
+      - name: Lexicon agrees with the corpus
+        if: needs.detect.outputs.has-content == 'true'
+        working-directory: .
+        run: python3 scripts/check_lexicon.py
 
   app:
     needs: detect
