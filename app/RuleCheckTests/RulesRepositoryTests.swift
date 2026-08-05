@@ -81,12 +81,24 @@ final class RulesRepositoryTests: XCTestCase {
     }
 
     func testStructureDecodesForAuthoredSections() throws {
+        // Decoding, not content. This used to assert the exact effect labels,
+        // including an "Abilities" row that turned out to be an invention the
+        // source never supports. Removing it broke this test, and CI did not
+        // notice, because the app job is skipped on content-only changes.
+        //
+        // What this test is for is that the pipeline's JSON decodes into the
+        // shape the reader renders. What the content actually says is asserted
+        // in pipeline/tests/test_personas.py, which runs on Linux and on every
+        // content change by definition.
         let asleep = try XCTUnwrap(repo.section(id: "tcg-Asleep"))
         let structure = try XCTUnwrap(asleep.structure)
         XCTAssertEqual(structure.archetype, .mechanic)
         XCTAssertFalse(structure.state?.isEmpty ?? true)
         XCTAssertEqual(structure.branch?.options.count, 2)
-        XCTAssertEqual(structure.orderedEffects.map(\.label), ["Abilities", "Attack", "Retreat"])
+        XCTAssertFalse(structure.orderedEffects.isEmpty)
+        XCTAssertEqual(structure.orderedEffects.map(\.label).sorted(),
+                       structure.orderedEffects.map(\.label),
+                       "orderedEffects must be sorted; the pipeline aligns glyphs to that order")
     }
 
     func testStartupPathTiming() throws {
